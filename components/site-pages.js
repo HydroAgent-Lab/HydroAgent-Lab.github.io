@@ -1,0 +1,507 @@
+import { CtaBand } from "@/components/cta-band";
+import { Hero } from "@/components/hero";
+import { PageLead } from "@/components/page-lead";
+import { SectionHeader } from "@/components/section-header";
+import { SiteShell } from "@/components/site-shell";
+import { getSiteContent } from "@/content/site";
+
+function ArchitectureWorld({ content }) {
+  const platform = content.platform;
+  const layers = platform.architectureSection.layers;
+
+  return (
+    <section className="architecture-world" id="architecture">
+      <div className="architecture-sticky-header">
+        <p className="architecture-label">HydroAgent Intelligence Architecture</p>
+        <p className="architecture-world-line">{platform.architectureSection.title}</p>
+      </div>
+
+      <div className="architecture-scene">
+        <div className="architecture-core" aria-hidden="true">
+          <span className="core-ring ring-one" />
+          <span className="core-ring ring-two" />
+          <span className="core-ring ring-three" />
+          <span className="core-center">H</span>
+        </div>
+        <div className="architecture-layer-list">
+          {layers.map((layer, index) => (
+            <article className="architecture-world-card" key={layer.title}>
+              <span>{`0${index + 1}`}</span>
+              <h3>{layer.title}</h3>
+              <p>{layer.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BrandManifesto({ lang }) {
+  const copy =
+    lang === "zh"
+      ? {
+          eyebrow: "定位",
+          title: "不是又一个水文工具，而是一套决策操作层。",
+          text:
+            "HydroAgent-Lab 把模型、数据、专家判断与行动流程组织进同一个界面。用户看到的不是技术堆栈，而是一条更清晰的决策链。"
+        }
+      : {
+          eyebrow: "Positioning",
+          title: "Not another hydrology tool. An intelligence layer for water decisions.",
+          text:
+            "HydroAgent-Lab brings models, data, expert judgment, and operational action into one interface. The user does not see a technology stack. They see a clearer decision chain."
+        };
+
+  return (
+    <section className="brand-manifesto">
+      <p className="eyebrow">{copy.eyebrow}</p>
+      <div className="manifesto-grid">
+        <h2>{copy.title}</h2>
+        <p>{copy.text}</p>
+      </div>
+    </section>
+  );
+}
+
+function BusinessMap({ content, lang }) {
+  const { highlightsSection } = content.home;
+  const items = highlightsSection.items;
+  const label = lang === "zh" ? "产品线" : "Product Lines";
+
+  return (
+    <section className="business-map" id="business">
+      <div className="business-heading-line">
+        <p className="eyebrow">{label}</p>
+        <h2>{highlightsSection.title}</h2>
+      </div>
+      <div className="business-line-list">
+        {items.map((item, index) => (
+          <article className="business-line" key={`${item.title}-${index}`}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ProofStatement({ lang }) {
+  const copy =
+    lang === "zh"
+      ? {
+          eyebrow: "原则",
+          title: "系统处理复杂性，用户掌握判断链路。",
+          points: ["清晰的态势", "可解释的判断", "可执行的下一步"]
+        }
+      : {
+          eyebrow: "Principle",
+          title: "Complexity stays inside the system. The decision chain stays clear to the user.",
+          points: ["Clear situation awareness", "Explainable judgment", "Actionable next step"]
+        };
+
+  return (
+    <section className="proof-statement">
+      <p className="eyebrow">{copy.eyebrow}</p>
+      <h2>{copy.title}</h2>
+      <div className="proof-line">
+        {copy.points.map((point) => (
+          <span key={point}>{point}</span>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function HomePageContent({ lang = "en" }) {
+  const content = getSiteContent(lang);
+
+  return (
+    <SiteShell lang={lang}>
+      <main className="main-content">
+        <Hero lang={lang} content={content} />
+        <BrandManifesto lang={lang} />
+        <ArchitectureWorld content={content} />
+        <BusinessMap content={content} lang={lang} />
+        <ProofStatement lang={lang} />
+        <CtaBand lang={lang} content={content} />
+      </main>
+    </SiteShell>
+  );
+}
+
+export function PlatformPageContent({ lang = "en" }) {
+  const content = getSiteContent(lang);
+  const page = content.platform;
+
+  return (
+    <SiteShell lang={lang}>
+      <main className="main-content">
+        <PageLead
+          eyebrow={page.lead.eyebrow}
+          title={page.lead.title}
+          text={page.lead.text}
+          facts={page.lead.facts}
+        />
+
+        <section className="content-section">
+          <SectionHeader
+            eyebrow={page.offeringsSection.eyebrow}
+            title={page.offeringsSection.title}
+          />
+          <div className="three-up-grid">
+            {page.offeringsSection.items.map((item) => (
+              <article className="info-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section platform-architecture">
+          <SectionHeader
+            eyebrow={page.architectureSection.eyebrow}
+            title={page.architectureSection.title}
+            text={page.architectureSection.text}
+          />
+          <div className="architecture-stack">
+            {page.architectureSection.layers.map((layer, index) => (
+              <article key={layer.title} className="architecture-layer">
+                <span>{`0${index + 1}`}</span>
+                <div>
+                  <h3>{layer.title}</h3>
+                  <p>{layer.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section">
+          <SectionHeader
+            eyebrow={page.principlesSection.eyebrow}
+            title={page.principlesSection.title}
+          />
+          <div className="three-up-grid">
+            {page.principlesSection.items.map((item) => (
+              <article className="info-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section platform-surfaces">
+          <SectionHeader
+            eyebrow={page.surfacesSection.eyebrow}
+            title={page.surfacesSection.title}
+          />
+          <div className="surface-grid">
+            {page.surfacesSection.items.map((item) => (
+              <article className="surface-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section">
+          <SectionHeader
+            eyebrow={page.capabilitiesSection.eyebrow}
+            title={page.capabilitiesSection.title}
+            text={page.capabilitiesSection.text}
+          />
+          <div className="capability-grid">
+            {page.capabilitiesSection.items.map((item) => (
+              <article className="capability-card" key={item}>
+                <span className="capability-dot" />
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <CtaBand lang={lang} content={content} />
+      </main>
+    </SiteShell>
+  );
+}
+
+export function WorkflowPageContent({ lang = "en" }) {
+  const content = getSiteContent(lang);
+  const page = content.workflow;
+
+  return (
+    <SiteShell lang={lang}>
+      <main className="main-content">
+        <PageLead
+          eyebrow={page.lead.eyebrow}
+          title={page.lead.title}
+          text={page.lead.text}
+          facts={page.lead.facts}
+        />
+
+        <section className="content-section workflow-section">
+          <SectionHeader
+            eyebrow={page.stepsSection.eyebrow}
+            title={page.stepsSection.title}
+            text={page.stepsSection.text}
+          />
+          <div className="workflow-rail">
+            {page.stepsSection.items.map((step) => (
+              <article className="workflow-step" key={step.id}>
+                <div className="workflow-step-index">{step.id}</div>
+                <div className="workflow-step-body">
+                  <h3>{step.name}</h3>
+                  <p>{step.summary}</p>
+                  <div className="workflow-meta">
+                    <span>{step.owner}</span>
+                    <strong>{step.output}</strong>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section">
+          <SectionHeader
+            eyebrow={page.artifactsSection.eyebrow}
+            title={page.artifactsSection.title}
+          />
+          <div className="three-up-grid">
+            {page.artifactsSection.items.map((item) => (
+              <article className="info-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section handoff-section">
+          <div className="handoff-copy">
+            <p className="eyebrow">{page.handoffSection.eyebrow}</p>
+            <h2>{page.handoffSection.title}</h2>
+            <p className="section-text">{page.handoffSection.text}</p>
+          </div>
+          <div className="handoff-points">
+            {page.handoffSection.points.map((point) => (
+              <article className="argument-row" key={point}>
+                <span className="argument-bullet" />
+                <p>{point}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <CtaBand lang={lang} content={content} />
+      </main>
+    </SiteShell>
+  );
+}
+
+export function ResearchPageContent({ lang = "en" }) {
+  const content = getSiteContent(lang);
+  const page = content.research;
+
+  return (
+    <SiteShell lang={lang}>
+      <main className="main-content">
+        <PageLead
+          eyebrow={page.lead.eyebrow}
+          title={page.lead.title}
+          text={page.lead.text}
+          facts={page.lead.facts}
+        />
+
+        <section className="content-section thesis-section">
+          <div className="thesis-card">
+            <p className="eyebrow">{page.thesisSection.eyebrow}</p>
+            <h2>{page.thesisSection.title}</h2>
+          </div>
+          <div className="thesis-claims">
+            {page.thesisSection.claims.map((claim) => (
+              <article className="argument-row" key={claim}>
+                <span className="argument-bullet" />
+                <p>{claim}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section">
+          <SectionHeader
+            eyebrow={page.themesSection.eyebrow}
+            title={page.themesSection.title}
+            text={page.themesSection.text}
+          />
+          <div className="three-up-grid">
+            {page.themesSection.items.map((theme) => (
+              <article className="info-card" key={theme.title}>
+                <h3>{theme.title}</h3>
+                <p>{theme.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section">
+          <SectionHeader
+            eyebrow={page.evaluationSection.eyebrow}
+            title={page.evaluationSection.title}
+          />
+          <div className="surface-grid">
+            {page.evaluationSection.items.map((item) => (
+              <article className="surface-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section narrative-panel">
+          <SectionHeader
+            eyebrow={page.narrativeSection.eyebrow}
+            title={page.narrativeSection.title}
+          />
+          <p className="longform-text">{page.narrativeSection.text}</p>
+        </section>
+
+        <CtaBand lang={lang} content={content} />
+      </main>
+    </SiteShell>
+  );
+}
+
+export function TeamPageContent({ lang = "en" }) {
+  const content = getSiteContent(lang);
+  const page = content.team;
+
+  return (
+    <SiteShell lang={lang}>
+      <main className="main-content">
+        <PageLead
+          eyebrow={page.lead.eyebrow}
+          title={page.lead.title}
+          text={page.lead.text}
+          facts={page.lead.facts}
+        />
+
+        <section className="content-section team-operating-section">
+          <SectionHeader
+            eyebrow={page.operatingSection.eyebrow}
+            title={page.operatingSection.title}
+            text={page.operatingSection.text}
+          />
+          <div className="three-up-grid">
+            {page.operatingSection.items.map((item) => (
+              <article className="info-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section team-principles-section">
+          <SectionHeader
+            eyebrow={page.principlesSection.eyebrow}
+            title={page.principlesSection.title}
+          />
+          <div className="three-up-grid">
+            {page.principlesSection.items.map((item) => (
+              <article className="info-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <CtaBand lang={lang} content={content} />
+      </main>
+    </SiteShell>
+  );
+}
+
+export function ContactPageContent({ lang = "en" }) {
+  const content = getSiteContent(lang);
+  const page = content.contact;
+
+  return (
+    <SiteShell lang={lang}>
+      <main className="main-content">
+        <PageLead
+          eyebrow={page.lead.eyebrow}
+          title={page.lead.title}
+          text={page.lead.text}
+          facts={page.lead.facts}
+        />
+
+        <section className="content-section contact-primary-section">
+          <div className="contact-primary-card">
+            <p className="eyebrow">{page.primarySection.eyebrow}</p>
+            <h2>{page.primarySection.title}</h2>
+            <p className="section-text">{page.primarySection.summary}</p>
+          </div>
+          <div className="contact-details-grid">
+            <article className="contact-detail-card">
+              <span>{page.primarySection.emailLabel}</span>
+              <strong>{page.primarySection.email}</strong>
+            </article>
+            <article className="contact-detail-card">
+              <span>{page.primarySection.responseLabel}</span>
+              <strong>{page.primarySection.response}</strong>
+            </article>
+            <article className="contact-detail-card">
+              <span>{page.primarySection.formatLabel}</span>
+              <strong>{page.primarySection.format}</strong>
+            </article>
+          </div>
+        </section>
+
+        <section className="content-section">
+          <SectionHeader
+            eyebrow={page.inquirySection.eyebrow}
+            title={page.inquirySection.title}
+          />
+          <div className="three-up-grid">
+            {page.inquirySection.items.map((item) => (
+              <article className="info-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section">
+          <SectionHeader
+            eyebrow={page.stepsSection.eyebrow}
+            title={page.stepsSection.title}
+          />
+          <div className="contact-steps">
+            {page.stepsSection.items.map((step) => (
+              <article className="step-card" key={step.id}>
+                <span>{step.id}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="contact-callout">
+            <strong>{page.callout.title}</strong>
+            <p>{page.callout.text}</p>
+          </div>
+        </section>
+      </main>
+    </SiteShell>
+  );
+}
