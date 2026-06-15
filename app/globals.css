@@ -1336,8 +1336,6 @@ body {
 /* NEW STYLE — single row for title, sub-content below */
 .agent-thinking-head {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(20px, 3vw, 36px);
 }
 
 /* NEW STYLE */
@@ -1362,14 +1360,11 @@ body {
 
 .agent-thinking-steps {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: clamp(42px, 6vw, 86px) auto 0;
   border-top: 1px solid rgba(210, 232, 248, 0.14);
 }
 
 .agent-thinking-step {
-  min-height: 280px;
-  padding: 30px 28px 36px 0;
   border-bottom: 1px solid rgba(210, 232, 248, 0.1);
 }
 
@@ -1388,8 +1383,6 @@ body {
 .agent-thinking-step h3 {
   margin: 46px 0 14px;
   color: #f8fbff;
-  font-size: clamp(22px, 2vw, 32px);
-  line-height: 1.08;
 }
 
 .agent-thinking-step p {
@@ -5007,9 +5000,6 @@ body {
 }
 
 /* Final user-requested fixes: fixed full-width nav, no fake tabs, larger labels, public footer, back-to-top */
-html {
-  scroll-padding-top: 112px;
-}
 
 .site-header {
   position: fixed;
@@ -5445,5 +5435,221 @@ body {
   .hero-copy h1,
   .brand-hero .hero-copy h1 {
     letter-spacing: -0.035em;
+  }
+}
+
+/* Screen rhythm and overflow correction: page-sized sections, readable workflow, bounded cards. */
+html {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 76px;
+}
+
+.main-content > section,
+.site-footer {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+.main-content > section:not(.brand-hero) {
+  min-height: calc(100svh - 76px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-manifesto,
+.agent-thinking,
+.human-agent,
+.architecture-world,
+.business-map,
+.proof-statement,
+.content-section,
+.page-lead,
+.cta-band {
+  width: min(100%, 1680px);
+  margin-inline: auto;
+}
+
+.main-content > section > *,
+.content-section > *,
+.page-lead > *,
+.brand-manifesto > *,
+.agent-thinking > *,
+.human-agent > *,
+.architecture-world > *,
+.business-map > *,
+.proof-statement > *,
+.cta-band > * {
+  min-width: 0;
+}
+
+.agent-thinking {
+  gap: clamp(34px, 5vw, 72px);
+}
+
+.agent-thinking-head {
+  grid-template-columns: minmax(160px, 0.22fr) minmax(0, 0.48fr) minmax(300px, 0.3fr);
+  gap: clamp(28px, 4.6vw, 84px);
+  align-items: end;
+}
+
+.agent-thinking-head h2 {
+  max-width: 11em;
+  font-size: clamp(48px, 5.8vw, 92px);
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.agent-thinking-head > p:last-child {
+  max-width: 31em;
+  color: rgba(230, 239, 246, 0.76);
+  font-size: clamp(17px, 1.25vw, 22px);
+}
+
+.agent-thinking-steps {
+  width: 100%;
+  margin-top: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.agent-thinking-step {
+  min-width: 0;
+  min-height: clamp(210px, 24svh, 280px);
+  padding: clamp(24px, 2.4vw, 34px) clamp(18px, 2vw, 30px);
+  overflow: hidden;
+}
+
+.agent-thinking-step h3 {
+  max-width: 100%;
+  margin-top: clamp(30px, 3vw, 46px);
+  font-size: clamp(22px, 1.85vw, 32px);
+  line-height: 1.14;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.lang-zh .agent-thinking-head h2 {
+  max-width: 9.2em;
+  font-size: clamp(48px, 5.2vw, 84px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.lang-zh .agent-thinking-step h3 {
+  font-size: clamp(22px, 1.75vw, 30px);
+  letter-spacing: 0;
+}
+
+.lang-zh .agent-thinking-step:nth-child(4) h3 {
+  white-space: nowrap;
+  font-size: clamp(18px, 1.28vw, 24px);
+}
+
+.three-up-grid,
+.surface-grid,
+.capability-grid,
+.workflow-rail,
+.architecture-stack,
+.architecture-layer-list,
+.business-line-list,
+.handoff-points,
+.thesis-claims,
+.contact-steps {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.info-card,
+.surface-card,
+.capability-card,
+.workflow-step,
+.architecture-layer,
+.architecture-world-card,
+.business-line,
+.argument-row,
+.step-card,
+.comparison-card,
+.contact-detail-card,
+.contact-callout,
+.agent-thinking-step,
+.page-lead-fact {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.info-card h3,
+.surface-card h3,
+.capability-card h3,
+.workflow-step h3,
+.architecture-layer h3,
+.architecture-world-card h3,
+.business-line h3,
+.argument-row h3,
+.step-card h3,
+.comparison-card h3,
+.agent-thinking-step h3,
+.page-lead-fact strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  text-wrap: balance;
+}
+
+.info-card p,
+.surface-card p,
+.capability-card p,
+.workflow-step p,
+.architecture-layer p,
+.architecture-world-card p,
+.business-line p,
+.argument-row p,
+.step-card p,
+.comparison-card p,
+.contact-callout p,
+.agent-thinking-step p,
+.page-lead-fact span,
+.page-lead-fact strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.surface-card {
+  display: grid;
+  align-content: start;
+}
+
+@media (max-width: 1280px) {
+  .agent-thinking-head {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .agent-thinking-head h2 {
+    max-width: 12em;
+  }
+
+  .agent-thinking-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lang-zh .agent-thinking-step:nth-child(4) h3 {
+    white-space: normal;
+    font-size: clamp(22px, 2.5vw, 32px);
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    scroll-snap-type: none;
+  }
+
+  .main-content > section:not(.brand-hero) {
+    min-height: auto;
+    display: block;
+  }
+
+  .agent-thinking-steps {
+    grid-template-columns: 1fr;
   }
 }
