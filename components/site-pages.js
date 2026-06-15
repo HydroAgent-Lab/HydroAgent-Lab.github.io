@@ -393,6 +393,58 @@ export function ResearchPageContent({ lang = "en" }) {
           facts={page.lead.facts}
         />
 
+        <section className="content-section research-presentation-section">
+          <SectionHeader
+            eyebrow={page.presentationSection.eyebrow}
+            title={page.presentationSection.title}
+            text={page.presentationSection.text}
+          />
+          <div className="research-presentation-panel">
+            {page.presentationSection.details.map((item) => (
+              <article className="research-detail-row" key={item.label}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </article>
+            ))}
+          </div>
+          <a className="primary-action research-download" href={page.presentationSection.href}>
+            {page.presentationSection.cta}
+          </a>
+        </section>
+
+        <section className="content-section research-results-section">
+          <SectionHeader
+            eyebrow={page.resultsSection.eyebrow}
+            title={page.resultsSection.title}
+          />
+          <div className="research-result-grid">
+            {page.resultsSection.items.map((item) => (
+              <article className="research-result-card" key={item.title}>
+                <span>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section research-takeaways-section">
+          <div className="about-milestone-head">
+            <p className="eyebrow">{page.takeawaysSection.eyebrow}</p>
+            <h2>{page.takeawaysSection.title}</h2>
+          </div>
+          <div className="about-milestone-list">
+            {page.takeawaysSection.items.map((item, index) => (
+              <article className="about-milestone-row" key={item}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <p>{item}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="content-section thesis-section">
           <div className="thesis-card">
             <p className="eyebrow">{page.thesisSection.eyebrow}</p>

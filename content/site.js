@@ -718,13 +718,61 @@ export const siteContent = {
     research: {
       lead: {
         eyebrow: "Research",
-        title: "The research program is broader than one product surface.",
+        title: "From research prototype to flood forecasting frontline.",
         text:
-          "HydroAgent-Lab brings products, operational workflows, and hydrologic research into one shared program of work.",
+          "HydroAgent-Lab studies whether LLM-based agents can support real hydrologic forecasting workflows, using flood forecasting as the first operational test case.",
         facts: [
-          { label: "Research focus", value: "Workflow intelligence in hydrologic operations" },
-          { label: "Contribution", value: "Judgment formalization and replayability" },
-          { label: "Evaluation", value: "Operational clarity, usability, and review value" }
+          { label: "EGU 2026", value: "Session HS3.5 oral presentation" },
+          { label: "Case", value: "South Yamhill River, March 2022" },
+          { label: "Status", value: "Presentation deck available; manuscript under submission" }
+        ]
+      },
+      presentationSection: {
+        eyebrow: "EGU General Assembly 2026",
+        title: "Is it ready to apply Large Language Models to frontline hydro practice?",
+        text:
+          "Taking the flood forecasting agent as an example, this presentation frames HydroAgent as a skill-driven, human-in-the-loop workflow rather than a chatbot or single-step tool caller.",
+        details: [
+          { label: "Presenter", value: "Baoying Shan · Politecnico di Milano, on behalf of HydroAgent Lab" },
+          { label: "Session", value: "HS3.5 · Oral · Tue 05 May · 11:00-11:10 CEST · Room C" },
+          { label: "Deck", value: "EGU26_pre_v1.pdf" }
+        ],
+        cta: "Download presentation deck",
+        href: "/assets/EGU26_pre_v1.pdf"
+      },
+      resultsSection: {
+        eyebrow: "Evidence From the Deck",
+        title: "The current evidence is specific enough to discuss, and still early enough to test with partners.",
+        items: [
+          {
+            label: "01",
+            title: "End-to-end flood case",
+            text: "The demonstration uses the March 2022 South Yamhill River event with XAJ, DDS optimization, and a staged HydroAgent workflow from scenario judgment to bulletin."
+          },
+          {
+            label: "02",
+            title: "14 validation events",
+            text: "Step 1 narrows similar-case spread; hit rates within 5% tolerance reach 10/14 for peak flow and 11/14 for flood volume."
+          },
+          {
+            label: "03",
+            title: "Scheme selection",
+            text: "After selecting parameter sets from the Step 0 library, simulated peak falls inside the Step 1 range for 14/14 events and volume for 13/14."
+          },
+          {
+            label: "04",
+            title: "5-fold × 5 LLM comparison",
+            text: "No single SOTA LLM dominates. Hit rates stay in a 60-85% band, while cost varies substantially across models."
+          }
+        ]
+      },
+      takeawaysSection: {
+        eyebrow: "Take-home",
+        title: "Three things worth remembering.",
+        items: [
+          "LLMs are not here to replace hydrological models; they scale expert judgment around those models.",
+          "The key is not only prompting. Structured skills make agents reliable, auditable, and reproducible.",
+          "It is not fully ready yet, but it is ready enough to be worth building together."
         ]
       },
       thesisSection: {
@@ -1607,13 +1655,61 @@ export const siteContent = {
     research: {
       lead: {
         eyebrow: "研究",
-        title: "研究计划本身也不应只围绕一个产品界面展开。",
+        title: "从研究原型走向洪水预报一线。",
         text:
-          "HydroAgent-Lab 把产品、业务工作流与水文研究组织成一个相互强化的共同计划。",
+          "HydroAgent-Lab 研究基于大语言模型的智能体是否能够支持真实水文预报流程，并以洪水预报作为第一个业务测试场景。",
         facts: [
-          { label: "研究重点", value: "水文业务流程中的工作流智能" },
-          { label: "核心贡献", value: "判断形式化与可回放能力" },
-          { label: "验证方向", value: "流程清晰度、可用性与审核价值" }
+          { label: "EGU 2026", value: "HS3.5 口头报告" },
+          { label: "案例", value: "South Yamhill River，2022 年 3 月" },
+          { label: "状态", value: "汇报 PDF 已提供；manuscript under submission" }
+        ]
+      },
+      presentationSection: {
+        eyebrow: "EGU General Assembly 2026",
+        title: "Is it ready to apply Large Language Models to frontline hydro practice?",
+        text:
+          "以洪水预报智能体为例，这个报告把 HydroAgent 定位为 skill-driven、human-in-the-loop 的工作流系统，而不是聊天机器人或单步工具调用。",
+        details: [
+          { label: "汇报人", value: "Baoying Shan · Politecnico di Milano，代表 HydroAgent Lab" },
+          { label: "场次", value: "HS3.5 · Oral · Tue 05 May · 11:00-11:10 CEST · Room C" },
+          { label: "文件", value: "EGU26_pre_v1.pdf" }
+        ],
+        cta: "下载汇报 PDF",
+        href: "/assets/EGU26_pre_v1.pdf"
+      },
+      resultsSection: {
+        eyebrow: "汇报中的具体证据",
+        title: "当前结果已经具体到可以讨论，也仍然早到需要真实伙伴共同测试。",
+        items: [
+          {
+            label: "01",
+            title: "端到端洪水案例",
+            text: "演示使用 2022 年 3 月 South Yamhill River 事件，结合 XAJ、水文模型、DDS 优化与从情景判断到公告发布的分阶段 HydroAgent 工作流。"
+          },
+          {
+            label: "02",
+            title: "14 个验证事件",
+            text: "Step 1 缩窄相似洪水样本的范围；在 5% 容差内，峰值流量命中 10/14，洪量命中 11/14。"
+          },
+          {
+            label: "03",
+            title: "方案选择",
+            text: "从 Step 0 方案库选择参数集后，模拟峰值落入 Step 1 范围的事件为 14/14，洪量为 13/14。"
+          },
+          {
+            label: "04",
+            title: "5 折 × 5 个 LLM 对比",
+            text: "没有单一 SOTA LLM 明显胜出。命中率大致处于 60-85% 区间，但不同模型的成本差异很大。"
+          }
+        ]
+      },
+      takeawaysSection: {
+        eyebrow: "Take-home",
+        title: "三个最值得记住的结论。",
+        items: [
+          "LLM 不是用来替代水文模型，而是围绕模型扩展专家判断。",
+          "关键不只是提示词。结构化 skills 才能让 agent 更可靠、可审核、可复现。",
+          "它还没有完全 ready，但已经足够值得和真实业务伙伴一起继续建设。"
         ]
       },
       thesisSection: {
