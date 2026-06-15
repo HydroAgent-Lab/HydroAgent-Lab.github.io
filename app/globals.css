@@ -6088,14 +6088,14 @@ html {
 /* Team page: About-us layout inspired by modern company pages. */
 .team-about-page {
   background:
-    radial-gradient(circle at 78% 8%, rgba(86, 184, 255, 0.16), transparent 30%),
-    linear-gradient(180deg, #07111b 0%, #08111a 42%, #05090e 100%);
+    linear-gradient(180deg, rgba(8, 16, 26, 0.96), rgba(8, 16, 26, 0.96)),
+    radial-gradient(circle at 74% 8%, rgba(86, 184, 255, 0.18), transparent 32%);
 }
 
 .team-about-frame {
-  width: min(100%, 1680px);
+  width: min(100%, 1720px);
   margin: 0 auto;
-  padding: clamp(58px, 7.5vw, 116px) clamp(40px, 6.5vw, 118px);
+  padding: clamp(60px, 8vw, 128px) clamp(42px, 6.8vw, 128px);
 }
 
 .team-about-hero {
@@ -6109,8 +6109,8 @@ html {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(5, 9, 14, 0.18), transparent 42%),
-    radial-gradient(circle at 84% 46%, rgba(73, 168, 229, 0.18), transparent 32%);
+    radial-gradient(circle at 82% 26%, rgba(95, 178, 255, 0.18), transparent 28%),
+    linear-gradient(90deg, rgba(5, 9, 14, 0.08), transparent 44%);
   pointer-events: none;
 }
 
@@ -6119,9 +6119,10 @@ html {
   z-index: 1;
   min-height: calc(100vh - var(--nav-height));
   display: grid;
-  grid-template-columns: minmax(0, 0.68fr) minmax(320px, 0.32fr);
-  gap: clamp(44px, 6vw, 112px);
-  align-items: center;
+  grid-template-columns: 1fr;
+  align-items: end;
+  padding-top: clamp(150px, 18vw, 310px);
+  padding-bottom: clamp(86px, 12vw, 180px);
 }
 
 .team-about-hero-copy {
@@ -6130,18 +6131,18 @@ html {
 }
 
 .team-about-hero-copy h1 {
-  max-width: 12.5ch;
+  max-width: min(980px, 76vw);
   margin: 0;
   color: #f8fbff;
-  font-size: clamp(58px, 7.2vw, 132px);
+  font-size: clamp(64px, 8.4vw, 156px);
   font-weight: var(--weight-semibold);
-  line-height: 0.98;
+  line-height: 0.94;
   letter-spacing: -0.035em;
   text-wrap: balance;
 }
 
 .lang-zh .team-about-hero-copy h1 {
-  max-width: 11ch;
+  max-width: min(900px, 72vw);
   letter-spacing: -0.01em;
 }
 
@@ -6149,33 +6150,10 @@ html {
   max-width: 760px;
   margin: 0;
   color: rgba(232, 241, 248, 0.76);
-  font-size: clamp(18px, 1.35vw, 25px);
+  font-size: clamp(18px, 1.24vw, 24px);
   line-height: 1.66;
 }
 
-.team-about-hero-panel {
-  display: grid;
-  gap: 18px;
-  align-self: stretch;
-  align-content: end;
-  padding: clamp(22px, 2.8vw, 38px);
-  border: 1px solid rgba(220, 236, 248, 0.14);
-  background: linear-gradient(180deg, rgba(18, 29, 43, 0.68), rgba(8, 14, 22, 0.82));
-}
-
-.team-about-hero-panel strong {
-  color: #f8fbff;
-  font-size: clamp(24px, 2vw, 38px);
-  line-height: 1.08;
-}
-
-.team-about-hero-panel span {
-  color: rgba(232, 241, 248, 0.7);
-  font-size: clamp(15px, 1.1vw, 18px);
-  line-height: 1.55;
-}
-
-.team-about-hero-panel a,
 .team-about-member-links a {
   width: fit-content;
   color: #8fdcff;
@@ -6189,6 +6167,7 @@ html {
 .team-about-timeline,
 .team-about-metrics {
   border-top: 1px solid rgba(220, 236, 248, 0.1);
+  background: rgba(8, 16, 26, 0.94);
 }
 
 .team-about-mission h2,
@@ -6222,8 +6201,8 @@ html {
 
 .team-about-manifest-grid p {
   margin: 0;
-  padding-left: 18px;
-  border-left: 1px solid rgba(143, 220, 255, 0.28);
+  padding-left: 0;
+  border-left: 0;
   color: rgba(232, 241, 248, 0.74);
   font-size: clamp(17px, 1.25vw, 22px);
   line-height: 1.72;
@@ -6320,13 +6299,13 @@ html {
 
 .team-about-member-card {
   min-width: 0;
-  min-height: 420px;
+  min-height: 360px;
   display: grid;
   align-content: start;
   gap: 16px;
-  padding: clamp(18px, 2vw, 28px);
+  padding: clamp(20px, 2.2vw, 32px);
   scroll-snap-align: start;
-  background: rgba(9, 17, 27, 0.96);
+  background: rgba(11, 20, 31, 0.96);
 }
 
 .team-about-member-avatar {
@@ -6483,14 +6462,14 @@ html {
 /* Careers page: join-us layout with large statements and clear collaboration tracks. */
 .careers-page {
   background:
-    radial-gradient(circle at 18% 12%, rgba(88, 191, 255, 0.16), transparent 30%),
-    linear-gradient(180deg, #07111b 0%, #061019 44%, #05090e 100%);
+    linear-gradient(180deg, rgba(8, 16, 26, 0.96), rgba(8, 16, 26, 0.96)),
+    radial-gradient(circle at 24% 12%, rgba(88, 191, 255, 0.16), transparent 30%);
 }
 
 .careers-frame {
-  width: min(100%, 1680px);
+  width: min(100%, 1720px);
   margin: 0 auto;
-  padding: clamp(58px, 7.5vw, 116px) clamp(40px, 6.5vw, 118px);
+  padding: clamp(60px, 8vw, 128px) clamp(42px, 6.8vw, 128px);
 }
 
 .careers-hero {
@@ -6506,9 +6485,9 @@ html {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(5, 9, 14, 0.34), rgba(5, 9, 14, 0.78)),
-    radial-gradient(circle at 78% 48%, rgba(88, 191, 255, 0.2), transparent 30%),
-    linear-gradient(135deg, rgba(26, 55, 76, 0.86), rgba(6, 13, 21, 0.98));
+    linear-gradient(90deg, rgba(5, 9, 14, 0.26), rgba(5, 9, 14, 0.74)),
+    radial-gradient(circle at 78% 44%, rgba(88, 191, 255, 0.22), transparent 32%),
+    linear-gradient(135deg, rgba(27, 59, 83, 0.92), rgba(6, 13, 21, 0.98));
 }
 
 .careers-hero-backdrop::after {
@@ -6525,9 +6504,11 @@ html {
   position: relative;
   z-index: 1;
   display: grid;
-  align-content: center;
+  align-content: end;
   justify-items: start;
   gap: clamp(18px, 2.2vw, 30px);
+  padding-top: clamp(150px, 18vw, 310px);
+  padding-bottom: clamp(86px, 12vw, 180px);
 }
 
 .careers-hero h1 {
@@ -6563,6 +6544,67 @@ html {
   grid-template-columns: minmax(0, 0.56fr) minmax(420px, 0.44fr);
   gap: clamp(40px, 6vw, 112px);
   align-items: start;
+}
+
+.careers-split-row {
+  display: grid;
+  grid-template-columns: minmax(420px, 0.52fr) minmax(0, 0.48fr);
+  gap: clamp(34px, 5vw, 82px);
+  align-items: center;
+}
+
+.careers-split-reverse .careers-split-media {
+  order: 2;
+}
+
+.careers-split-media {
+  position: relative;
+  min-height: clamp(300px, 34vw, 560px);
+  overflow: hidden;
+  border: 1px solid rgba(220, 236, 248, 0.12);
+  background:
+    radial-gradient(circle at 30% 26%, rgba(143, 220, 255, 0.22), transparent 24%),
+    linear-gradient(135deg, rgba(18, 42, 62, 0.96), rgba(6, 13, 21, 0.96));
+}
+
+.careers-split-media::before,
+.careers-split-media::after {
+  content: "";
+  position: absolute;
+  inset: 14%;
+  border: 1px solid rgba(143, 220, 255, 0.2);
+  transform: rotate(-8deg);
+}
+
+.careers-split-media::after {
+  inset: 28% -8% 18% 38%;
+  background: rgba(143, 220, 255, 0.1);
+  transform: rotate(12deg);
+}
+
+.careers-split-media span {
+  position: absolute;
+  inset: auto 10% 12% 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(143, 220, 255, 0.72), transparent);
+}
+
+.careers-split-media-alt {
+  background:
+    radial-gradient(circle at 68% 34%, rgba(124, 227, 207, 0.2), transparent 24%),
+    linear-gradient(135deg, rgba(10, 29, 38, 0.96), rgba(6, 13, 21, 0.96));
+}
+
+.careers-split-copy {
+  display: grid;
+  gap: clamp(18px, 2vw, 28px);
+}
+
+.careers-split-copy p {
+  margin: 0;
+  color: rgba(232, 241, 248, 0.74);
+  font-size: clamp(17px, 1.2vw, 21px);
+  line-height: 1.72;
 }
 
 .careers-band h2 {
@@ -6687,8 +6729,13 @@ html {
 @media (max-width: 1180px) {
   .careers-statement-block,
   .careers-principles-grid,
-  .careers-process-layout {
+  .careers-process-layout,
+  .careers-split-row {
     grid-template-columns: 1fr;
+  }
+
+  .careers-split-reverse .careers-split-media {
+    order: 0;
   }
 
   .careers-track-grid {

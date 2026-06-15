@@ -526,12 +526,6 @@ export function TeamPageContent({ lang = "en" }) {
               <h1>{page.lead.title}</h1>
               <p>{page.lead.text}</p>
             </div>
-            <div className="team-about-hero-panel" aria-label={page.peopleSection.title}>
-              <strong>{page.peopleSection.title}</strong>
-              <span>{page.peopleSection.disciplineLine}</span>
-              <span>{page.peopleSection.countryLine}</span>
-              <a href="#members">{page.missionSection.navItems[0].label}</a>
-            </div>
           </div>
         </section>
 
@@ -724,6 +718,32 @@ export function CareersPageContent({ lang = "en" }) {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="careers-band careers-split">
+          <div className="careers-frame careers-split-row">
+            <div className="careers-split-media" aria-hidden="true">
+              <span />
+            </div>
+            <div className="careers-split-copy">
+              <h2>{page.tracksSection.items[0].title}</h2>
+              <p>{page.tracksSection.items[0].text}</p>
+              <p>{page.tracksSection.items[2].text}</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="careers-band careers-split careers-split-reverse">
+          <div className="careers-frame careers-split-row">
+            <div className="careers-split-media careers-split-media-alt" aria-hidden="true">
+              <span />
+            </div>
+            <div className="careers-split-copy">
+              <h2>{page.tracksSection.items[1].title}</h2>
+              <p>{page.tracksSection.items[1].text}</p>
+              <p>{page.tracksSection.items[3].text}</p>
             </div>
           </div>
         </section>
