@@ -21,6 +21,116 @@ export function getLanguageSwitchHref(pathname, lang) {
   return lang === "zh" ? localizeHref("en", basePath) : localizeHref("zh", basePath);
 }
 
+const hydroAgentTeamMembers = [
+  {
+    name: "Baoying Shan",
+    initials: "BS",
+    affiliation: "Department of Civil and Environmental Engineering (D.I.C.A.), Politecnico di Milano, Milan, Italy",
+    email: "baoying.shan@polimi.it",
+    focus: "Flood forecasting agents, hydrologic workflow intelligence, and applied LLM evaluation"
+  },
+  {
+    name: "Qingyi Yang",
+    initials: "QY",
+    affiliation: "Department of Civil and Environmental Engineering (D.I.C.A.), Politecnico di Milano, Milan, Italy",
+    email: "qingyi.yang@polimi.it",
+    focus: "Hydrologic AI, forecasting workflows, and research translation"
+  },
+  {
+    name: "Xu Shan",
+    initials: "XS",
+    affiliation: "Max Planck Institute for Biogeochemistry, Jena, Germany",
+    email: "xshan@bgc-jena.mpg.de",
+    focus: "Hydro-climate intelligence, environmental systems, and model evaluation"
+  },
+  {
+    name: "Xiaoyi Dong",
+    initials: "XD",
+    affiliation: "China IPPR International Engineering Co., Ltd., SINOMACH, Beijing, China",
+    email: "dxiaoyi18@gmail.com",
+    focus: "Engineering applications, water infrastructure context, and operational product translation"
+  },
+  {
+    name: "Shunan Zhou",
+    initials: "SZ",
+    affiliation:
+      "School of Hydraulic Engineering, Dalian University of Technology, Dalian, China; Institute of Photogrammetry and Remote Sensing, TU Dresden University of Technology, Dresden, Germany",
+    email: "j.david.anan@gmail.com",
+    focus: "Hydraulic engineering, remote sensing, and flood forecasting workflows"
+  },
+  {
+    name: "Xun Zhang",
+    initials: "XZ",
+    affiliation: "College of Civil Engineering, Tongji University, Shanghai, China",
+    email: "2232324@tongji.edu.cn",
+    focus: "Civil engineering, flood forecasting workflows, and applied hydrologic systems"
+  },
+  {
+    name: "Siqian Qiu",
+    initials: "SQ",
+    affiliation: "College of Hydraulic and Environmental Engineering, China Three Gorges University, Yichang, China",
+    email: "siqian@ctgu.edu.cn",
+    focus: "Hydraulic and environmental engineering, operational hydrology, and workflow evaluation"
+  },
+  {
+    name: "Nuo Lei",
+    initials: "NL",
+    affiliation: "College of Civil Engineering, Tongji University, Shanghai, China",
+    email: "leinuo@tongji.edu.cn",
+    focus: "Civil engineering, hydrologic applications, and AI-assisted workflow design"
+  },
+  {
+    name: "Yongkang Xu",
+    initials: "YX",
+    affiliation: "College of Water Sciences, Beijing Normal University, Beijing, China",
+    email: "hydrokang@mail.bnu.edu.cn",
+    focus: "Water sciences, flood forecasting, and hydrologic AI evaluation"
+  },
+  {
+    name: "Haiyang Qian",
+    initials: "HQ",
+    affiliation:
+      "Zhejiang Institute of Hydraulics and Estuary, Hangzhou, China; Hydro-Climate Extremes Lab (H-CEL), Ghent University, Ghent, Belgium",
+    email: "Haiyang.Qian@ugent.be",
+    focus: "Hydro-climate extremes, estuary and hydraulics research, and forecasting intelligence"
+  },
+  {
+    name: "Xudong Zhou",
+    initials: "XZ",
+    affiliation: "School of Civil & Environmental Engineering and Geography Science, Ningbo University, Ningbo, China",
+    email: "zhouxudong@nbu.edu.cn",
+    focus: "Civil and environmental engineering, geography science, and hydrologic systems"
+  },
+  {
+    name: "Jia Feng",
+    initials: "JF",
+    affiliation: "Qinhuangdao Hydrological Survey and Research Center of Hebei Province, Qinhuangdao, China",
+    email: "736251778@qq.com",
+    focus: "Frontline hydrologic practice, forecasting operations, and local workflow translation"
+  },
+  {
+    name: "Haiqing Pu",
+    initials: "HP",
+    affiliation: "Qinhuangdao Hydrological Survey and Research Center of Hebei Province, Qinhuangdao, China",
+    email: "409872917@qq.com",
+    focus: "Frontline hydrologic practice, operational review, and forecasting workflow needs"
+  },
+  {
+    name: "Carlo De Michele",
+    initials: "CDM",
+    affiliation: "Department of Civil and Environmental Engineering (D.I.C.A.), Politecnico di Milano, Milan, Italy",
+    email: "carlo.demichele@polimi.it",
+    focus: "Civil and environmental engineering, hydrologic science, and research mentorship"
+  },
+  {
+    name: "Bing Li",
+    initials: "BL",
+    affiliation: "HydroAgent-Lab",
+    email: "",
+    focus: "HydroAgent-Lab coordination, AI product direction, and hydrologic workflow systems"
+  }
+];
+
 export const siteContent = {
   en: {
     ui: {
@@ -673,25 +783,52 @@ export const siteContent = {
     team: {
       lead: {
         eyebrow: "About HydroAgent-Lab",
-        title: "We connect hydrologic expertise, AI systems, and operational delivery.",
+        title: "The people behind HydroAgent-Lab.",
         text:
-          "HydroAgent-Lab is a focused team building AI-native water intelligence systems for forecasting agencies, water organizations, technical partners, and research collaborators.",
+          "Before diving into the product, it matters to know who is building it. HydroAgent-Lab brings together young developers, master's and PhD students, frontline hydrologists, junior AI researchers, and senior research mentors across Italy, Germany, the United States, and China.",
         facts: [
-          { label: "Company focus", value: "Operational hydrology and water intelligence" },
-          { label: "Delivery model", value: "Products, workflow systems, pilots, and research" },
-          { label: "Team shape", value: "Lean core team with domain and technical partners" }
+          { label: "Team size", value: "Around 20 to 30 contributors" },
+          { label: "Geography", value: "Italy, Germany, the US, and China" },
+          { label: "Support", value: "Interest-driven effort with no funding support" }
         ]
       },
       missionSection: {
         eyebrow: "About Us",
-        title: "We are building the operating layer for water decisions.",
+        title: "An interest-driven lab for frontline hydro practice.",
         text:
-          "Our work starts from a simple belief: better forecasts are not only a modeling problem. Real water decisions depend on context, expert judgment, review discipline, and the ability to explain what changed before a release is made.",
+          "HydroAgent-Lab is not a conventional funded project. It is a collaborative effort by people who care about whether AI can actually help hydrologists in real forecasting work. Some members are joining from universities, some from engineering and hydrological practice, and some from AI product development.",
         navItems: [
-          { label: "Workstreams", href: "#workstreams" },
-          { label: "Signals", href: "#signals" },
-          { label: "Current priorities", href: "#priorities" }
+          { label: "EGU26 abstract", href: "#egu" },
+          { label: "Members", href: "#members" },
+          { label: "Workstreams", href: "#workstreams" }
         ]
+      },
+      presentationSection: {
+        eyebrow: "EGU26 Abstract",
+        title: "Is it ready to apply LLM to frontline hydro practice?",
+        text:
+          "Taking the flooding forecasting agent as an example, this work asks whether large language models are ready to support real hydrologic forecasting workflows rather than only demonstrate generic AI capability.",
+        note:
+          "Qingyi Yang and Shunan Zhou are expected to be around EGU, so feel free to find them for a chat.",
+        meta: [
+          { label: "Title", value: "Is it ready to apply LLM to frontline hydro practice? Taking the flooding forecasting agent as an example" },
+          { label: "Status", value: "EGU26 abstract; preprint coming soon" },
+          { label: "Team note", value: "Member order on this page is not hierarchical." }
+        ]
+      },
+      peopleSection: {
+        eyebrow: "Team Members",
+        title: "A distributed team connecting research, engineering, and frontline hydrology.",
+        text:
+          "The list below includes named contributors currently associated with the HydroAgent-Lab effort. Member order is not hierarchical.",
+        memberOrderNote: "Listed in no particular order after the requested first entry.",
+        photoNote: "Photos, Google Scholar, and LinkedIn links will be added where members provide public URLs.",
+        emailLabel: "Email",
+        focusLabel: "Focus",
+        affiliationLabel: "Affiliation",
+        linksLabel: "Public links",
+        pendingLinksLabel: "Scholar / LinkedIn pending",
+        members: hydroAgentTeamMembers
       },
       operatingSection: {
         eyebrow: "How We Work",
@@ -1533,25 +1670,52 @@ export const siteContent = {
     team: {
       lead: {
         eyebrow: "关于 HydroAgent-Lab",
-        title: "连接水文专业能力、AI 系统与业务交付。",
+        title: "先认识 HydroAgent-Lab 背后的团队。",
         text:
-          "HydroAgent-Lab 是一个专注于 AI 原生水务智能系统的团队，服务预报机构、水务组织、技术合作方与研究伙伴。",
+          "在介绍产品之前，更重要的是让访问者知道是谁在做这件事。HydroAgent-Lab 由来自意大利、德国、美国和中国的青年开发者、硕博学生、一线水文工作者、青年 AI 研究者与研究导师共同组成。",
         facts: [
-          { label: "公司方向", value: "业务水文与水务智能" },
-          { label: "交付模式", value: "产品、工作流系统、试点与研究" },
-          { label: "团队形态", value: "精干核心团队与领域、技术伙伴协作" }
+          { label: "团队规模", value: "约 20 到 30 位贡献者" },
+          { label: "地域分布", value: "意大利、德国、美国与中国" },
+          { label: "支持方式", value: "兴趣驱动，目前无经费支持" }
         ]
       },
       missionSection: {
         eyebrow: "关于我们",
-        title: "我们正在建设水务决策的操作层。",
+        title: "一个面向一线水文实践的兴趣驱动实验室。",
         text:
-          "我们的出发点很简单：更好的预报不只是模型问题。真实的水务决策依赖情境、专家判断、审核纪律，以及在发布前解释清楚哪里变化、为什么变化的能力。",
+          "HydroAgent-Lab 不是一个传统经费项目，而是一群真正关心 AI 是否能进入一线水文业务的人共同推动的协作。成员来自高校、工程与水文业务一线，也包括 AI 产品和智能体系统方向的年轻开发者。",
         navItems: [
-          { label: "工作线", href: "#workstreams" },
-          { label: "可信信号", href: "#signals" },
-          { label: "当前重点", href: "#priorities" }
+          { label: "EGU26 摘要", href: "#egu" },
+          { label: "团队成员", href: "#members" },
+          { label: "工作线", href: "#workstreams" }
         ]
+      },
+      presentationSection: {
+        eyebrow: "EGU26 摘要",
+        title: "Is it ready to apply LLM to frontline hydro practice?",
+        text:
+          "以洪水预报智能体为例，这项工作讨论大语言模型是否已经准备好支持真实的一线水文预报流程，而不只是展示通用 AI 能力。",
+        note:
+          "Qingyi Yang 和 Shunan Zhou 会在 EGU 附近，如有兴趣可以现场交流。",
+        meta: [
+          { label: "题目", value: "Is it ready to apply LLM to frontline hydro practice? Taking the flooding forecasting agent as an example" },
+          { label: "状态", value: "EGU26 摘要；preprint coming soon" },
+          { label: "团队说明", value: "本页成员排序不代表贡献或职位排序。" }
+        ]
+      },
+      peopleSection: {
+        eyebrow: "团队成员",
+        title: "一个连接研究、工程与一线水文实践的分布式团队。",
+        text:
+          "以下为当前参与 HydroAgent-Lab 工作的已列名成员。排名不分先后。",
+        memberOrderNote: "除按要求将 Baoying Shan 放在首位外，其余成员排名不分先后。",
+        photoNote: "成员照片、Google Scholar 与 LinkedIn 链接会在成员提供公开 URL 后补充。",
+        emailLabel: "邮箱",
+        focusLabel: "方向",
+        affiliationLabel: "机构",
+        linksLabel: "公开链接",
+        pendingLinksLabel: "Scholar / LinkedIn 待补充",
+        members: hydroAgentTeamMembers
       },
       operatingSection: {
         eyebrow: "工作方式",

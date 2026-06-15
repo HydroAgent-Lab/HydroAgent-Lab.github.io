@@ -482,6 +482,61 @@ export function TeamPageContent({ lang = "en" }) {
           </div>
         </section>
 
+        <section className="content-section team-presentation-section" id="egu">
+          <SectionHeader
+            eyebrow={page.presentationSection.eyebrow}
+            title={page.presentationSection.title}
+            text={page.presentationSection.text}
+          />
+          <div className="team-presentation-panel">
+            {page.presentationSection.meta.map((item) => (
+              <article className="team-meta-row" key={item.label}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </article>
+            ))}
+          </div>
+          <p className="team-note">{page.presentationSection.note}</p>
+        </section>
+
+        <section className="content-section team-members-section" id="members">
+          <SectionHeader
+            eyebrow={page.peopleSection.eyebrow}
+            title={page.peopleSection.title}
+            text={page.peopleSection.text}
+          />
+          <div className="team-members-intro">
+            <span>{page.peopleSection.memberOrderNote}</span>
+            <span>{page.peopleSection.photoNote}</span>
+          </div>
+          <div className="team-member-grid">
+            {page.peopleSection.members.map((member) => (
+              <article className="team-member-card" key={`${member.name}-${member.email || member.affiliation}`}>
+                <div className="team-member-photo" aria-hidden="true">
+                  {member.initials}
+                </div>
+                <div className="team-member-body">
+                  <h3>{member.name}</h3>
+                  <p className="team-member-affiliation">
+                    <span>{page.peopleSection.affiliationLabel}</span>
+                    {member.affiliation}
+                  </p>
+                  <p>
+                    <span>{page.peopleSection.focusLabel}</span>
+                    {member.focus}
+                  </p>
+                  <div className="team-member-links">
+                    {member.email ? (
+                      <a href={`mailto:${member.email}`}>{page.peopleSection.emailLabel}</a>
+                    ) : null}
+                    <span>{page.peopleSection.pendingLinksLabel}</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="content-section team-operating-section">
           <SectionHeader
             eyebrow={page.operatingSection.eyebrow}
