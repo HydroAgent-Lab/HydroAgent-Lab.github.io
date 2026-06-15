@@ -3859,16 +3859,16 @@ body {
 
 .business-line h3 {
   margin: 0;
-  font-size: clamp(32px, 3.8vw, 62px);
-  line-height: 1;
-  letter-spacing: -0.045em;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
 }
 
 .business-line p {
   max-width: 33ch;
   margin: 16px 0 0;
-  color: rgba(246, 248, 252, 0.58);
-  line-height: 1.58;
+  color: var(--text);
+  line-height: 1.72;
 }
 
 .proof-statement {
@@ -3891,8 +3891,8 @@ body {
 
 .proof-line span {
   padding: 24px 28px;
-  color: rgba(246, 248, 252, 0.72);
-  font-size: clamp(18px, 2vw, 28px);
+  color: var(--text);
+  font-size: clamp(16px, 1.6vw, 22px);
   letter-spacing: -0.02em;
 }
 
@@ -4279,16 +4279,16 @@ body {
 
 .business-line h3 {
   margin: 0;
-  font-size: clamp(32px, 3.8vw, 62px);
-  line-height: 1;
-  letter-spacing: -0.045em;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
 }
 
 .business-line p {
   max-width: 33ch;
   margin: 16px 0 0;
-  color: rgba(246, 248, 252, 0.58);
-  line-height: 1.58;
+  color: var(--text);
+  line-height: 1.72;
 }
 
 .proof-statement {
@@ -4314,8 +4314,8 @@ body {
 
 .proof-line span {
   padding: 24px 28px;
-  color: rgba(246, 248, 252, 0.72);
-  font-size: clamp(18px, 2vw, 28px);
+  color: var(--text);
+  font-size: clamp(16px, 1.6vw, 22px);
   letter-spacing: -0.02em;
 }
 
@@ -6490,4 +6490,85 @@ html {
     height: 44px;
     font-size: 22px;
   }
+}
+
+/* ── Chinese (.lang-zh) NEW STYLE — reduced font, consistent spacing ── */
+
+.lang-zh .brand-hero .hero-copy h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.lang-zh .manifesto-grid h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.28;
+  letter-spacing: 0.01em;
+}
+
+.lang-zh .agent-thinking-head h2,
+.lang-zh .human-agent-copy h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.lang-zh .business-heading-line h2,
+.lang-zh .proof-statement h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.lang-zh .architecture-world-line {
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.22;
+  letter-spacing: 0;
+}
+
+.lang-zh .cta-copy h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+@media (max-width: 820px) {
+  .lang-zh .brand-hero .hero-copy h1 {
+    font-size: clamp(28px, 8vw, 44px);
+    line-height: 1.18;
+  }
+
+  .lang-zh .manifesto-grid h2 {
+    font-size: clamp(24px, 6.5vw, 36px);
+    line-height: 1.28;
+  }
+
+  .lang-zh .agent-thinking-head h2,
+  .lang-zh .human-agent-copy h2,
+  .lang-zh .business-heading-line h2,
+  .lang-zh .proof-statement h2,
+  .lang-zh .cta-copy h2 {
+    font-size: clamp(26px, 7vw, 40px);
+    line-height: 1.18;
+  }
+
+  .lang-zh .architecture-world-line {
+    font-size: clamp(24px, 6.5vw, 36px);
+    line-height: 1.22;
+  }
+}
+
+/* ── Site Nav — single-line adaptive ── */
+
+.site-nav {
+  flex-wrap: nowrap;
+  gap: clamp(4px, 1vw, 18px);
+}
+
+.site-nav a,
+.header-lang,
+.header-cta {
+  padding: 0 clamp(8px, 0.8vw, 18px);
+  font-size: clamp(12px, 0.9vw, 14px);
+  white-space: nowrap;
 }
