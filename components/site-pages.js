@@ -467,6 +467,21 @@ export function TeamPageContent({ lang = "en" }) {
           facts={page.lead.facts}
         />
 
+        <section className="content-section about-mission-section">
+          <div className="about-mission-copy">
+            <p className="eyebrow">{page.missionSection.eyebrow}</p>
+            <h2>{page.missionSection.title}</h2>
+            <p>{page.missionSection.text}</p>
+          </div>
+          <div className="about-nav-list">
+            {page.missionSection.navItems.map((item) => (
+              <a key={item.href} href={item.href}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </section>
+
         <section className="content-section team-operating-section">
           <SectionHeader
             eyebrow={page.operatingSection.eyebrow}
@@ -493,6 +508,58 @@ export function TeamPageContent({ lang = "en" }) {
               <article className="info-card" key={item.title}>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section team-leadership-section" id="workstreams">
+          <SectionHeader
+            eyebrow={page.workstreamsSection.eyebrow}
+            title={page.workstreamsSection.title}
+            text={page.workstreamsSection.text}
+          />
+          <div className="about-leader-grid">
+            {page.workstreamsSection.items.map((item) => (
+              <article className="about-leader-card" key={item.title}>
+                <span>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section team-proof-section" id="signals">
+          <SectionHeader
+            eyebrow={page.signalsSection.eyebrow}
+            title={page.signalsSection.title}
+            text={page.signalsSection.text}
+          />
+          <div className="about-signal-list">
+            {page.signalsSection.items.map((item) => (
+              <article className="about-signal-row" key={item.label}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section team-milestones-section" id="priorities">
+          <div className="about-milestone-head">
+            <p className="eyebrow">{page.prioritiesSection.eyebrow}</p>
+            <h2>{page.prioritiesSection.title}</h2>
+          </div>
+          <div className="about-milestone-list">
+            {page.prioritiesSection.items.map((item) => (
+              <article className="about-milestone-row" key={item.title}>
+                <span>{item.phase}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
               </article>
             ))}
           </div>

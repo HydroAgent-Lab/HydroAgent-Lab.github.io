@@ -672,14 +672,25 @@ export const siteContent = {
     },
     team: {
       lead: {
-        eyebrow: "Team",
-        title: "A focused team building AI-native systems for water operations.",
+        eyebrow: "About HydroAgent-Lab",
+        title: "We connect hydrologic expertise, AI systems, and operational delivery.",
         text:
-          "HydroAgent-Lab brings together hydrologic modeling, operational workflow design, AI product engineering, and research translation.",
+          "HydroAgent-Lab is a focused team building AI-native water intelligence systems for forecasting agencies, water organizations, technical partners, and research collaborators.",
         facts: [
-          { label: "Operating mode", value: "Product, research, and pilot delivery" },
-          { label: "Core discipline", value: "Hydrology, AI systems, and operational workflows" },
-          { label: "Collaboration model", value: "Lean team with domain partners" }
+          { label: "Company focus", value: "Operational hydrology and water intelligence" },
+          { label: "Delivery model", value: "Products, workflow systems, pilots, and research" },
+          { label: "Team shape", value: "Lean core team with domain and technical partners" }
+        ]
+      },
+      missionSection: {
+        eyebrow: "About Us",
+        title: "We are building the operating layer for water decisions.",
+        text:
+          "Our work starts from a simple belief: better forecasts are not only a modeling problem. Real water decisions depend on context, expert judgment, review discipline, and the ability to explain what changed before a release is made.",
+        navItems: [
+          { label: "Workstreams", href: "#workstreams" },
+          { label: "Signals", href: "#signals" },
+          { label: "Current priorities", href: "#priorities" }
         ]
       },
       operatingSection: {
@@ -699,6 +710,90 @@ export const siteContent = {
           {
             title: "Operational translation",
             text: "Pilot design, stakeholder alignment, release discipline, and institutional adoption."
+          }
+        ]
+      },
+      workstreamsSection: {
+        eyebrow: "Team Structure",
+        title: "Instead of a large hierarchy, we organize around the work that must be accountable.",
+        text:
+          "For an early technical company, credibility comes from clear ownership: who understands the domain, who builds the system, who protects the workflow, and who turns collaboration into adoption.",
+        items: [
+          {
+            label: "Domain",
+            title: "Hydrologic science and forecasting judgment",
+            text:
+              "Frames basin behavior, model evidence, event context, uncertainty, and the expert reasoning that should remain visible in every workflow."
+          },
+          {
+            label: "Product",
+            title: "AI product and agentic workflow engineering",
+            text:
+              "Builds the operating surfaces, agent orchestration, review interfaces, and capability directory that make HydroAgent usable beyond a demo."
+          },
+          {
+            label: "Delivery",
+            title: "Pilots, institutional fit, and operational translation",
+            text:
+              "Shapes pilots, briefings, stakeholder alignment, release discipline, and the path from research prototype to deployable system."
+          },
+          {
+            label: "Research",
+            title: "Evaluation, replayability, and research collaboration",
+            text:
+              "Turns real workflows into reviewable evidence, evaluation questions, reusable artifacts, and publishable research directions."
+          }
+        ]
+      },
+      signalsSection: {
+        eyebrow: "Signals and Figures",
+        title: "What partners should understand about the team today.",
+        text:
+          "We avoid inflated company metrics. The useful signals at this stage are focus, accountability, and whether the team can connect scientific credibility with operational product work.",
+        items: [
+          {
+            label: "01",
+            value: "Product plus research",
+            text: "HydroAgent-Lab is designed to support both deployable product work and research-grade evaluation."
+          },
+          {
+            label: "02",
+            value: "Human release authority",
+            text: "The system is built around reviewable decisions, not automated replacement of forecasters."
+          },
+          {
+            label: "03",
+            value: "Workflow-first design",
+            text: "Capabilities are organized by operational tasks: scenario preparation, model review, release packaging, and replay."
+          },
+          {
+            label: "04",
+            value: "Partner-led adoption",
+            text: "The strongest deployments will come from teams that bring local basins, release practices, and evaluation needs."
+          }
+        ]
+      },
+      prioritiesSection: {
+        eyebrow: "Current Priorities",
+        title: "What we are building toward next.",
+        items: [
+          {
+            phase: "Now",
+            title: "HydroAgent-FF and flood forecasting workflows",
+            text:
+              "Continue shaping the flagship flood product around scenario setup, rolling updates, model review, and release readiness."
+          },
+          {
+            phase: "Next",
+            title: "Capability directory and product modules",
+            text:
+              "Expand the public capability map so partners can quickly understand what is available and what is emerging."
+          },
+          {
+            phase: "With partners",
+            title: "Pilots, validation, and research translation",
+            text:
+              "Work with domain teams to evaluate fit, preserve expert judgment, and produce evidence that supports adoption."
           }
         ]
       },
@@ -1437,14 +1532,25 @@ export const siteContent = {
     },
     team: {
       lead: {
-        eyebrow: "团队",
-        title: "一个专注于水务智能产品的精干团队。",
+        eyebrow: "关于 HydroAgent-Lab",
+        title: "连接水文专业能力、AI 系统与业务交付。",
         text:
-          "HydroAgent-Lab 将水文建模、业务工作流设计、AI 产品工程与研究转化组织在同一个方向上。",
+          "HydroAgent-Lab 是一个专注于 AI 原生水务智能系统的团队，服务预报机构、水务组织、技术合作方与研究伙伴。",
         facts: [
-          { label: "工作方式", value: "产品、研究与试点交付并行" },
-          { label: "核心能力", value: "水文、AI 系统与业务流程" },
-          { label: "协作模式", value: "精干团队与领域伙伴共同推进" }
+          { label: "公司方向", value: "业务水文与水务智能" },
+          { label: "交付模式", value: "产品、工作流系统、试点与研究" },
+          { label: "团队形态", value: "精干核心团队与领域、技术伙伴协作" }
+        ]
+      },
+      missionSection: {
+        eyebrow: "关于我们",
+        title: "我们正在建设水务决策的操作层。",
+        text:
+          "我们的出发点很简单：更好的预报不只是模型问题。真实的水务决策依赖情境、专家判断、审核纪律，以及在发布前解释清楚哪里变化、为什么变化的能力。",
+        navItems: [
+          { label: "工作线", href: "#workstreams" },
+          { label: "可信信号", href: "#signals" },
+          { label: "当前重点", href: "#priorities" }
         ]
       },
       operatingSection: {
@@ -1464,6 +1570,90 @@ export const siteContent = {
           {
             title: "业务转化",
             text: "支持试点设计、相关方沟通、发布纪律与机构采用。"
+          }
+        ]
+      },
+      workstreamsSection: {
+        eyebrow: "团队结构",
+        title: "相比复杂层级，我们更关注哪些工作必须有人负责。",
+        text:
+          "对于早期技术公司，可信度来自清楚的责任：谁理解领域，谁建设系统，谁保护业务流程，谁把合作转化为采用。",
+        items: [
+          {
+            label: "领域",
+            title: "水文科学与预报判断",
+            text:
+              "负责流域行为、模型证据、事件情境、不确定性，以及每个工作流中应当保持可见的专家推理。"
+          },
+          {
+            label: "产品",
+            title: "AI 产品与智能体工作流工程",
+            text:
+              "建设操作界面、智能体编排、审核界面与能力目录，让 HydroAgent 不停留在演示层面。"
+          },
+          {
+            label: "交付",
+            title: "试点、机构匹配与业务转化",
+            text:
+              "设计试点、技术简报、相关方对齐、发布纪律，以及从研究原型走向可部署系统的路径。"
+          },
+          {
+            label: "研究",
+            title: "评价、回放能力与研究合作",
+            text:
+              "把真实工作流转化为可审核证据、评价问题、可复用材料与可发表的研究方向。"
+          }
+        ]
+      },
+      signalsSection: {
+        eyebrow: "可信信号",
+        title: "合作伙伴现在应该理解团队的哪些特点。",
+        text:
+          "我们不堆砌夸大的公司数字。当前阶段真正有用的信号，是专注度、责任边界，以及能否把科学可信度和业务产品连接起来。",
+        items: [
+          {
+            label: "01",
+            value: "产品与研究并行",
+            text: "HydroAgent-Lab 同时面向可部署产品与研究级评价。"
+          },
+          {
+            label: "02",
+            value: "人工发布责任保留",
+            text: "系统围绕可审核决策构建，而不是自动替代预报员。"
+          },
+          {
+            label: "03",
+            value: "工作流优先",
+            text: "能力围绕真实任务组织：情景准备、模型复核、发布打包与事后回放。"
+          },
+          {
+            label: "04",
+            value: "伙伴驱动采用",
+            text: "最有价值的部署来自带来本地流域、发布流程与评价需求的合作团队。"
+          }
+        ]
+      },
+      prioritiesSection: {
+        eyebrow: "当前重点",
+        title: "我们下一步重点建设什么。",
+        items: [
+          {
+            phase: "现在",
+            title: "HydroAgent-FF 与洪水预报工作流",
+            text:
+              "继续围绕情景设置、滚动更新、模型复核与发布准备打磨旗舰洪水产品。"
+          },
+          {
+            phase: "下一步",
+            title: "能力目录与产品模块",
+            text:
+              "扩展公开能力图谱，让合作方快速了解目前可用能力和正在形成的模块。"
+          },
+          {
+            phase: "与伙伴共建",
+            title: "试点、验证与研究转化",
+            text:
+              "与领域团队一起评价适配度、保留专家判断，并形成支持采用的证据。"
           }
         ]
       },
