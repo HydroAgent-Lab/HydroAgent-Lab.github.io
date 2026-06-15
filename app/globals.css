@@ -3042,9 +3042,9 @@ body {
 .workflow-step h3,
 .architecture-layer h3 {
   margin: 0;
-  font-size: clamp(22px, 2vw, 32px);
-  line-height: 1.08;
-  letter-spacing: -0.025em;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
 }
 
 .info-card p,
@@ -3058,9 +3058,9 @@ body {
 .contact-callout p {
   max-width: 68ch;
   margin: 0;
-  color: var(--body-copy);
+  color: var(--text);
   font-size: 16px;
-  line-height: 1.62;
+  line-height: 1.72;
 }
 
 .platform-architecture,
@@ -6134,22 +6134,32 @@ body {
 }
 
 .section-header h2,
-.page-lead h1,
 .product-preview-copy h2,
 .handoff-copy h2,
 .thesis-card h2,
 .contact-primary-card h2 {
   max-width: 18ch;
-  font-size: clamp(32px, 5.2vw, 64px);
-  line-height: 1.04;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.18;
   font-weight: 760;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.page-lead h1 {
+  max-width: 18ch;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.18;
+  font-weight: 760;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
 .section-text {
   max-width: 760px;
-  color: rgba(246, 248, 252, 0.64);
+  color: var(--text);
   font-size: 16px;
+  line-height: 1.72;
 }
 
 .business-panels {
@@ -6317,14 +6327,22 @@ body {
     min-height: auto;
   }
 
-  .architecture-world-line,
+  .architecture-world-line {
+    font-size: clamp(24px, 6.5vw, 36px);
+  }
+
   .section-header h2,
-  .page-lead h1,
   .product-preview-copy h2,
   .handoff-copy h2,
   .thesis-card h2,
   .contact-primary-card h2 {
-    font-size: clamp(30px, 10vw, 48px);
+    font-size: clamp(26px, 7vw, 40px);
+    line-height: 1.18;
+  }
+
+  .page-lead h1 {
+    font-size: clamp(28px, 8vw, 44px);
+    line-height: 1.18;
   }
 }
 
@@ -6532,6 +6550,22 @@ html {
   letter-spacing: 0;
 }
 
+.lang-zh .page-lead h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.lang-zh .section-header h2,
+.lang-zh .product-preview-copy h2,
+.lang-zh .handoff-copy h2,
+.lang-zh .thesis-card h2,
+.lang-zh .contact-primary-card h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
 @media (max-width: 820px) {
   .lang-zh .brand-hero .hero-copy h1 {
     font-size: clamp(28px, 8vw, 44px);
@@ -6555,6 +6589,20 @@ html {
   .lang-zh .architecture-world-line {
     font-size: clamp(24px, 6.5vw, 36px);
     line-height: 1.22;
+  }
+
+  .lang-zh .page-lead h1 {
+    font-size: clamp(28px, 8vw, 44px);
+    line-height: 1.18;
+  }
+
+  .lang-zh .section-header h2,
+  .lang-zh .product-preview-copy h2,
+  .lang-zh .handoff-copy h2,
+  .lang-zh .thesis-card h2,
+  .lang-zh .contact-primary-card h2 {
+    font-size: clamp(26px, 7vw, 40px);
+    line-height: 1.18;
   }
 }
 
