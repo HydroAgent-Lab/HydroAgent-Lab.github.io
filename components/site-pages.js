@@ -547,7 +547,15 @@ export function TeamPageContent({ lang = "en" }) {
                   {member.initials}
                 </div>
                 <div className="team-member-body">
-                  <h3>{member.name}</h3>
+                  <h3>
+                    {member.linkedin ? (
+                      <a href={member.linkedin} target="_blank" rel="noreferrer">
+                        {member.name}
+                      </a>
+                    ) : (
+                      member.name
+                    )}
+                  </h3>
                   <p className="team-member-affiliation">
                     <span>{page.peopleSection.affiliationLabel}</span>
                     {member.affiliation}
@@ -560,7 +568,13 @@ export function TeamPageContent({ lang = "en" }) {
                     {member.email ? (
                       <a href={`mailto:${member.email}`}>{page.peopleSection.emailLabel}</a>
                     ) : null}
-                    <span>{page.peopleSection.pendingLinksLabel}</span>
+                    {member.linkedin ? (
+                      <a href={member.linkedin} target="_blank" rel="noreferrer">
+                        LinkedIn
+                      </a>
+                    ) : (
+                      <span>{page.peopleSection.pendingLinksLabel}</span>
+                    )}
                   </div>
                 </div>
               </article>

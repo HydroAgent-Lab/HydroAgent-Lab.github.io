@@ -123,10 +123,11 @@ const hydroAgentTeamMembers = [
     focus: "Civil and environmental engineering, hydrologic science, and research mentorship"
   },
   {
-    name: "Bing Li",
-    initials: "BL",
+    name: "Joseph Lee",
+    initials: "JL",
     affiliation: "HydroAgent-Lab",
     email: "",
+    linkedin: "https://www.linkedin.com/in/joseph-lee-645575408/",
     focus: "HydroAgent-Lab coordination, AI product direction, and hydrologic workflow systems"
   }
 ];

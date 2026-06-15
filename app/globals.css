@@ -5771,6 +5771,15 @@ html {
   overflow-wrap: anywhere;
 }
 
+.team-member-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.team-member-card h3 a:hover {
+  color: #8fdcff;
+}
+
 .team-member-card p {
   display: block;
   margin: 4px auto 0;
