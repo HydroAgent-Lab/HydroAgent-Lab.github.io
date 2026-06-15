@@ -540,10 +540,6 @@ export function TeamPageContent({ lang = "en" }) {
             title={page.peopleSection.title}
             text={page.peopleSection.text}
           />
-          <div className="team-members-intro">
-            <span>{page.peopleSection.memberOrderNote}</span>
-            <span>{page.peopleSection.photoNote}</span>
-          </div>
           <div className="team-member-grid">
             {page.peopleSection.members.map((member) => (
               <article className="team-member-card" key={`${member.name}-${member.email || member.affiliation}`}>
