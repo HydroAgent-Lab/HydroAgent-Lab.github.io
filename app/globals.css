@@ -1340,6 +1340,578 @@ html {
   }
 }
 
+/* Editorial-grade website pass: wider canvas, fewer boxes, cleaner enterprise rhythm. */
+:root {
+  --max-width: 1480px;
+  --section-gap: 0px;
+  --bg: #071018;
+  --bg-soft: #0b1822;
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-alt: rgba(255, 255, 255, 0.065);
+  --surface-line: rgba(255, 255, 255, 0.075);
+  --border: rgba(197, 215, 230, 0.16);
+  --border-strong: rgba(220, 235, 246, 0.26);
+  --text: #f6f9fc;
+  --muted: #aebcc8;
+  --muted-strong: #d4dde6;
+  --accent: #9bd8ff;
+  --accent-strong: #88f0d4;
+  --shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+}
+
+body {
+  background:
+    linear-gradient(180deg, rgba(13, 31, 43, 0.92), rgba(5, 12, 18, 0.98) 38%, #060b10 100%);
+}
+
+.page-shell {
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: none;
+  min-height: 72px;
+  padding: 0 clamp(22px, 4vw, 72px);
+  border: 0;
+  border-bottom: 1px solid rgba(221, 238, 250, 0.14);
+  border-radius: 0;
+  background: rgba(5, 12, 18, 0.78);
+  box-shadow: none;
+  backdrop-filter: blur(22px) saturate(120%);
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+}
+
+.brand-copy strong {
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.brand-copy span {
+  max-width: 240px;
+  overflow: hidden;
+  color: rgba(224, 234, 242, 0.72);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-nav {
+  gap: clamp(18px, 2.4vw, 42px);
+}
+
+.site-nav a,
+.header-lang {
+  min-height: 72px;
+  padding: 0;
+  border-radius: 0;
+  color: rgba(231, 238, 244, 0.72);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.site-nav a.active {
+  color: #fff;
+  background: transparent;
+  box-shadow: inset 0 -2px 0 rgba(136, 240, 212, 0.9);
+}
+
+.header-actions {
+  gap: 20px;
+}
+
+.header-cta,
+.primary-action,
+.secondary-action {
+  min-height: 44px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.header-cta {
+  padding: 0 20px;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.92);
+  color: #071018;
+}
+
+.main-content {
+  display: block;
+  max-width: none;
+  padding-top: 0;
+}
+
+.main-content > section,
+.brand-manifesto,
+.architecture-world,
+.business-map,
+.content-section,
+.page-lead,
+.cta-band {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(70px, 7vw, 118px) clamp(28px, 6vw, 96px);
+  border-bottom: 1px solid rgba(218, 234, 246, 0.1);
+}
+
+.main-content > section > *,
+.brand-manifesto > *,
+.architecture-world > *,
+.business-map > *,
+.content-section > *,
+.page-lead > *,
+.cta-band > * {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brand-hero,
+.main-content > .brand-hero {
+  min-height: 100svh;
+  padding: 0 clamp(28px, 6vw, 96px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.brand-hero-image {
+  filter: saturate(1.06) brightness(0.9) contrast(1.04);
+  transform: scale(1.01);
+}
+
+.brand-hero-scrim {
+  background:
+    linear-gradient(90deg, rgba(5, 12, 18, 0.82) 0%, rgba(5, 12, 18, 0.62) 34%, rgba(5, 12, 18, 0.18) 72%, rgba(5, 12, 18, 0.36) 100%),
+    linear-gradient(180deg, rgba(5, 12, 18, 0.18) 0%, rgba(5, 12, 18, 0.28) 58%, rgba(5, 12, 18, 0.74) 100%);
+}
+
+.brand-hero .hero-copy {
+  width: min(760px, 92vw);
+  max-width: 760px;
+  margin: 0;
+  padding-top: 72px;
+}
+
+.brand-hero .hero-copy h1 {
+  max-width: 11.5ch;
+  margin-top: 18px;
+  font-size: clamp(58px, 7.2vw, 112px);
+  line-height: 0.94;
+}
+
+.lang-zh .brand-hero .hero-copy h1 {
+  max-width: 8.5em;
+  font-size: clamp(58px, 7.8vw, 118px);
+  line-height: 0.98;
+}
+
+.brand-hero .hero-text {
+  max-width: 680px;
+  margin-top: 26px;
+  color: rgba(238, 246, 252, 0.82);
+  font-size: clamp(17px, 1.35vw, 22px);
+  line-height: 1.55;
+}
+
+.hero-actions {
+  margin-top: 34px;
+}
+
+.eyebrow {
+  color: rgba(155, 216, 255, 0.92);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+
+.brand-manifesto,
+.content-section,
+.page-lead {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035), transparent 42%),
+    rgba(4, 10, 15, 0.18);
+}
+
+.manifesto-grid,
+.page-lead,
+.handoff-section,
+.thesis-section,
+.platform-architecture,
+.cta-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+  gap: clamp(44px, 6vw, 112px);
+  align-items: start;
+}
+
+.manifesto-grid h2,
+.page-lead h1,
+.section-header h2,
+.handoff-copy h2,
+.thesis-card h2,
+.cta-copy h2 {
+  max-width: 12.5ch;
+  font-size: clamp(44px, 5.4vw, 92px);
+  line-height: 0.98;
+}
+
+.manifesto-grid p,
+.page-lead-side > p,
+.section-text,
+.longform-text,
+.cta-copy p:not(.eyebrow) {
+  max-width: 760px;
+  color: rgba(222, 232, 240, 0.78);
+  font-size: clamp(17px, 1.25vw, 21px);
+  line-height: 1.72;
+}
+
+.architecture-world {
+  position: relative;
+  overflow: hidden;
+  min-height: 720px;
+  background:
+    radial-gradient(circle at 22% 52%, rgba(95, 178, 255, 0.16), transparent 26%),
+    linear-gradient(180deg, #061018, #07131c);
+}
+
+.architecture-sticky-header,
+.business-heading-line,
+.section-header {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.34fr) minmax(0, 0.66fr);
+  gap: clamp(30px, 6vw, 100px);
+  align-items: start;
+}
+
+.architecture-label {
+  color: rgba(155, 216, 255, 0.88);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.architecture-world-line,
+.business-heading-line h2 {
+  max-width: 12.5ch;
+  font-size: clamp(48px, 6vw, 104px);
+  line-height: 0.96;
+}
+
+.architecture-scene {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.44fr) minmax(0, 0.56fr);
+  gap: clamp(44px, 7vw, 120px);
+  align-items: center;
+  padding-top: clamp(48px, 6vw, 90px);
+}
+
+.architecture-layer-list {
+  display: grid;
+  gap: 0;
+}
+
+.architecture-world-card,
+.business-line,
+.info-card,
+.surface-card,
+.capability-card,
+.workflow-step,
+.architecture-layer,
+.argument-row,
+.page-lead-fact,
+.contact-detail-card,
+.preview-module-card,
+.preview-kpi-card {
+  border: 0;
+  border-top: 1px solid rgba(220, 236, 248, 0.15);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.architecture-world-card,
+.business-line {
+  display: grid;
+  grid-template-columns: 72px minmax(180px, 0.36fr) minmax(0, 0.64fr);
+  gap: 30px;
+  align-items: baseline;
+  min-height: 116px;
+  padding: 30px 0;
+}
+
+.architecture-world-card span,
+.business-line span {
+  color: rgba(136, 240, 212, 0.86);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.architecture-world-card h3,
+.business-line h3,
+.info-card h3,
+.surface-card h3,
+.workflow-step h3,
+.architecture-layer h3 {
+  margin: 0;
+  color: #f8fbff;
+  font-size: clamp(20px, 1.7vw, 30px);
+  line-height: 1.18;
+}
+
+.architecture-world-card p,
+.business-line p,
+.info-card p,
+.surface-card p,
+.workflow-step p,
+.architecture-layer p {
+  margin: 0;
+  color: rgba(222, 232, 240, 0.68);
+  font-size: clamp(15px, 1.05vw, 18px);
+  line-height: 1.68;
+}
+
+.business-map {
+  background:
+    linear-gradient(180deg, rgba(7, 19, 28, 0.86), rgba(5, 11, 16, 0.98));
+}
+
+.business-line-list {
+  max-width: var(--max-width);
+  margin: clamp(46px, 6vw, 86px) auto 0;
+}
+
+.three-up-grid,
+.surface-grid,
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: clamp(38px, 5vw, 72px);
+}
+
+.info-card,
+.surface-card,
+.capability-card {
+  min-height: 230px;
+  padding: 28px 28px 34px 0;
+}
+
+.info-card + .info-card,
+.surface-card + .surface-card,
+.capability-card + .capability-card {
+  padding-left: 28px;
+  border-left: 1px solid rgba(220, 236, 248, 0.12);
+}
+
+.page-lead {
+  padding-top: clamp(150px, 14vw, 210px);
+  background:
+    radial-gradient(circle at 80% 18%, rgba(72, 150, 230, 0.16), transparent 24%),
+    linear-gradient(180deg, #07121b, #050b11);
+}
+
+.page-lead-side {
+  padding-top: 8px;
+}
+
+.page-lead-facts {
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: 42px;
+  border-top: 1px solid rgba(220, 236, 248, 0.16);
+}
+
+.page-lead-fact {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.34fr) minmax(0, 0.66fr);
+  gap: 24px;
+  min-height: 72px;
+  padding: 20px 0;
+}
+
+.page-lead-fact span {
+  color: rgba(174, 188, 200, 0.72);
+  font-size: 13px;
+}
+
+.page-lead-fact strong {
+  font-size: clamp(16px, 1.2vw, 20px);
+}
+
+.workflow-rail,
+.architecture-stack,
+.handoff-points,
+.thesis-claims {
+  display: grid;
+  gap: 0;
+  margin-top: clamp(36px, 5vw, 70px);
+}
+
+.workflow-step,
+.architecture-layer,
+.argument-row {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 28px;
+  padding: 30px 0;
+}
+
+.workflow-meta {
+  margin-top: 18px;
+}
+
+.cta-band {
+  background:
+    linear-gradient(90deg, rgba(139, 219, 255, 0.14), rgba(136, 240, 212, 0.08) 48%, transparent),
+    #071018;
+}
+
+.cta-actions {
+  justify-content: flex-start;
+  align-self: end;
+}
+
+.site-footer {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.42fr) minmax(240px, 0.24fr) minmax(280px, 0.34fr);
+  max-width: none;
+  margin: 0;
+  padding: 54px clamp(28px, 6vw, 96px);
+  border-top: 1px solid rgba(220, 236, 248, 0.14);
+  color: rgba(222, 232, 240, 0.78);
+  background: #050b10;
+}
+
+.back-to-top {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.92);
+  color: #071018;
+}
+
+.architecture-world-card:hover,
+.business-line:hover,
+.info-card:hover,
+.surface-card:hover,
+.capability-card:hover,
+.workflow-step:hover,
+.architecture-layer:hover {
+  transform: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.035), transparent 72%);
+  box-shadow: none;
+}
+
+@media (max-width: 1100px) {
+  .site-header {
+    grid-template-columns: 1fr auto;
+    min-height: auto;
+    padding: 12px 20px;
+  }
+
+  .site-nav {
+    grid-column: 1 / -1;
+    order: 3;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+
+  .site-nav a,
+  .header-lang {
+    min-height: 42px;
+  }
+
+  .manifesto-grid,
+  .page-lead,
+  .handoff-section,
+  .thesis-section,
+  .platform-architecture,
+  .cta-band,
+  .architecture-sticky-header,
+  .architecture-scene,
+  .business-heading-line,
+  .section-header {
+    grid-template-columns: 1fr;
+  }
+
+  .three-up-grid,
+  .surface-grid,
+  .capability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card + .info-card,
+  .surface-card + .surface-card,
+  .capability-card + .capability-card {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 820px) {
+  .main-content > section,
+  .brand-manifesto,
+  .architecture-world,
+  .business-map,
+  .content-section,
+  .page-lead,
+  .cta-band {
+    padding: 56px 22px;
+  }
+
+  .brand-hero,
+  .main-content > .brand-hero {
+    min-height: 92svh;
+    padding: 0 22px;
+  }
+
+  .brand-hero .hero-copy {
+    padding-top: 118px;
+  }
+
+  .brand-hero .hero-copy h1,
+  .lang-zh .brand-hero .hero-copy h1,
+  .manifesto-grid h2,
+  .page-lead h1,
+  .section-header h2,
+  .handoff-copy h2,
+  .thesis-card h2,
+  .cta-copy h2,
+  .architecture-world-line,
+  .business-heading-line h2 {
+    max-width: 100%;
+    font-size: clamp(40px, 13vw, 64px);
+  }
+
+  .architecture-world-card,
+  .business-line,
+  .workflow-step,
+  .architecture-layer,
+  .argument-row,
+  .page-lead-fact {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+    padding: 42px 22px 82px;
+  }
+}
+
 /* Hero final stability and brightness pass: real image, no CSS background flash */
 .brand-hero {
   position: relative;
