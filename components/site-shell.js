@@ -23,7 +23,9 @@ export function SiteShell({ children, lang = "en" }) {
             <span className="brand-wave" />
           </span>
           <span className="brand-copy">
-            <strong>HydroAgent-Lab</strong>
+            <strong>
+              Hydro <span>Agent</span>
+            </strong>
             <span>{content.ui.brandTagline}</span>
           </span>
         </Link>

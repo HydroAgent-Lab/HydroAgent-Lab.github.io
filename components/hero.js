@@ -25,7 +25,15 @@ export function Hero({ lang = "en", content }) {
       </div>
       <div className="hero-copy">
         <p className="eyebrow">{hero.eyebrow}</p>
-        <h1>{hero.title}</h1>
+        <h1>
+          {hero.title === "HydroAgent" ? (
+            <>
+              Hydro<span>Agent</span>
+            </>
+          ) : (
+            hero.title
+          )}
+        </h1>
         <p className="hero-text">{hero.text}</p>
         <div className="hero-actions">
           <Link className="primary-action" href={localizeHref(lang, hero.primaryPath)}>

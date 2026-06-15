@@ -26,7 +26,7 @@ export const siteContent = {
     ui: {
       localeLabel: "EN",
       switchLabel: "中文",
-      brandTagline: "Agentic intelligence for water operations",
+      brandTagline: "Water intelligence, agentic by design",
       footerTitle:
         "HydroAgent-Lab supports forecasting teams with hydrologic AI products, workflow systems, and expert collaboration.",
       footerMetaOne:
@@ -34,8 +34,7 @@ export const siteContent = {
       footerMetaTwo:
         "Use the contact page to discuss products, pilots, technical briefings, or research collaboration.",
       nav: [
-        { path: "/", label: "Overview" },
-        { path: "/platform", label: "Platform" },
+        { path: "/platform", label: "Approach" },
         { path: "/workflow", label: "Workflow" },
         { path: "/research", label: "Research" },
         { path: "/team", label: "Team" },
@@ -57,12 +56,12 @@ export const siteContent = {
       hero: {
         eyebrow: "HydroAgent-Lab",
         chip: "Products and services",
-        title: "HydroAgent-Lab builds hydrologic AI systems for operational forecasting.",
+        title: "HydroAgent",
         text:
-          "We combine productized forecasting tools, workflow systems, and expert services for teams that need hydrologic decisions they can review, operate, and defend.",
-        primary: "See the platform",
+          "We teach AI to work alongside flood forecasters: reading context, preserving expert judgment, and turning hydrologic uncertainty into reviewable decisions.",
+        primary: "Read the approach",
         primaryPath: "/platform",
-        secondary: "See the workflow",
+        secondary: "See it in action",
         secondaryPath: "/workflow",
         supporting:
           "HydroAgent-FF is the flagship flood product. The wider HydroAgent portfolio is built for many water-intelligence workflows.",
@@ -651,8 +650,7 @@ export const siteContent = {
       footerMetaOne: "面向预报团队、水务机构与研究伙伴，提供 AI 原生水务智能系统。",
       footerMetaTwo: "如需了解产品、试点、技术简报或研究合作，请通过联系页面预约沟通。",
       nav: [
-        { path: "/", label: "总览" },
-        { path: "/platform", label: "平台" },
+        { path: "/platform", label: "方法" },
         { path: "/workflow", label: "工作流" },
         { path: "/research", label: "研究" },
         { path: "/team", label: "团队" },
@@ -674,12 +672,12 @@ export const siteContent = {
       hero: {
         eyebrow: "HydroAgent-Lab",
         chip: "产品与服务",
-        title: "HydroAgent-Lab 构建面向业务预报的水文 AI 系统。",
+        title: "让水务决策更清晰。",
         text:
-          "我们将产品化预报工具、工作流系统与专家服务结合起来，服务需要可审核、可运行、可负责水文决策的团队。",
-        primary: "查看平台",
+          "HydroAgent-Lab 让 AI 沿着预报员的工作流思考：理解情境、保留专家判断，并把水文不确定性转化为可审核的业务决策。",
+        primary: "查看方法",
         primaryPath: "/platform",
-        secondary: "查看工作流",
+        secondary: "查看流程",
         secondaryPath: "/workflow",
         supporting:
           "HydroAgent-FF 是旗舰洪水产品，但 HydroAgent 的产品版图远不止一个预测工具。",
