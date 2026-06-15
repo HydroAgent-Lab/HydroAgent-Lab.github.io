@@ -6,7 +6,7 @@ Use these prompts when starting future websites. They are designed to fight the 
 
 Build a professional brand-grade company website, not a generic SaaS landing page.
 
-Style references: Apple, OpenAI, Anthropic, Vercel, Linear, and the Agentrix-style immersive AI website. Use the references for taste and structure, not direct copying.
+Style references: Apple, OpenAI, Anthropic, Vercel, Linear, MotionSites-style premium hero prompts, and the Agentrix-style immersive AI website. Use the references for taste and structure, not direct copying.
 
 Hard constraints:
 
@@ -133,3 +133,33 @@ Output:
 - Updated CSS.
 - Explanation of what was removed and why.
 
+## 6. HydroAgent-Lab House Style Prompt
+
+Build a HydroAgent-Lab page using the house style in `HYDROAGENT_VISUAL_LANGUAGE.md`.
+
+Design direction:
+
+- Dark editorial, not generic SaaS.
+- Cinematic hydrologic operations imagery.
+- Full-width fixed navigation.
+- Wide layout, no narrow shell.
+- Large confident typography.
+- Thin dividers and rows instead of card grids.
+- Restrained cyan / green-blue accent.
+- No purple AI-gradient identity.
+- No decorative blobs, floating cards, or tiny labels.
+
+Hero:
+
+- Full-bleed image or cinematic scene.
+- Large left-aligned headline.
+- Short supporting copy.
+- One primary CTA and one secondary CTA.
+- No delayed layer reveal or visible loading flash.
+
+Content:
+
+- Customer-facing statements only.
+- HydroAgent-Lab is the umbrella brand.
+- HydroAgent-FF is one flagship product, not the whole company.
+- Show products, workflow systems, expert services, research collaboration, and team credibility.

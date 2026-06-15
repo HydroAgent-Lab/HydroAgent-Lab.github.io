@@ -31,6 +31,8 @@ Primary reference:
 
 Secondary references:
 
+Visual prompt reference:
+
 What to copy from them:
 
 - Layout rhythm
@@ -39,6 +41,8 @@ What to copy from them:
 - Navigation style
 - Motion style
 - Section structure
+- Image treatment
+- Card policy
 
 What not to copy:
 
@@ -116,4 +120,3 @@ Before shipping:
 - Is the writing public-facing?
 - Does it look like a real company website?
 - Does it avoid the default AI-generated template look?
-
