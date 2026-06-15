@@ -535,6 +535,11 @@ export function TeamPageContent({ lang = "en" }) {
               </article>
             ))}
           </div>
+          <div className="team-roster-summary">
+            <p>{page.peopleSection.disciplineLine}</p>
+            <p>{page.peopleSection.countryLine}</p>
+            <span>{page.peopleSection.supportBadge}</span>
+          </div>
         </section>
 
         <section className="content-section team-operating-section">

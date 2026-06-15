@@ -818,11 +818,14 @@ export const siteContent = {
       },
       peopleSection: {
         eyebrow: "Team Members",
-        title: "A distributed team connecting research, engineering, and frontline hydrology.",
+        title: "HydroAgent Lab",
         text:
           "The list below includes named contributors currently associated with the HydroAgent-Lab effort. Member order is not hierarchical.",
         memberOrderNote: "Listed in no particular order after the requested first entry.",
         photoNote: "Photos, Google Scholar, and LinkedIn links will be added where members provide public URLs.",
+        disciplineLine: "Frontline hydrologists · AI specialists · Early-career researchers · Scientific software developers",
+        countryLine: "Italy · Germany · United States · China",
+        supportBadge: "Community-driven · Volunteer-led · Seeking funding support",
         emailLabel: "Email",
         focusLabel: "Focus",
         affiliationLabel: "Affiliation",
@@ -1705,11 +1708,14 @@ export const siteContent = {
       },
       peopleSection: {
         eyebrow: "团队成员",
-        title: "一个连接研究、工程与一线水文实践的分布式团队。",
+        title: "HydroAgent Lab",
         text:
           "以下为当前参与 HydroAgent-Lab 工作的已列名成员。排名不分先后。",
         memberOrderNote: "除按要求将 Baoying Shan 放在首位外，其余成员排名不分先后。",
         photoNote: "成员照片、Google Scholar 与 LinkedIn 链接会在成员提供公开 URL 后补充。",
+        disciplineLine: "一线水文工作者 · AI 专家 · 青年研究者 · 科学软件开发者",
+        countryLine: "意大利 · 德国 · 美国 · 中国",
+        supportBadge: "社区驱动 · 志愿协作 · 正在寻求经费支持",
         emailLabel: "邮箱",
         focusLabel: "方向",
         affiliationLabel: "机构",
