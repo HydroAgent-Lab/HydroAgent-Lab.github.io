@@ -3725,13 +3725,15 @@ body {
 .business-heading-line h2,
 .proof-statement h2 {
   margin: 0;
-  line-height: 0.94;
-  letter-spacing: -0.055em;
+  /* NEW STYLE */
+  line-height: 1.18;
+  letter-spacing: -0.02em;
 }
 
 .manifesto-grid h2 {
   max-width: 12ch;
-  font-size: clamp(48px, 7.4vw, 116px);
+  /* NEW STYLE */
+  font-size: clamp(32px, 4vw, 48px);
 }
 
 .manifesto-grid p {
@@ -4085,30 +4087,32 @@ body {
   padding-top: clamp(110px, 14vw, 210px);
 }
 
+/* NEW STYLE — single column layout, paragraph below title */
 .manifesto-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(320px, 0.56fr);
-  gap: clamp(32px, 7vw, 120px);
-  align-items: end;
+  grid-template-columns: 1fr;
+  gap: 30px;
   padding-top: 20px;
   padding-bottom: clamp(64px, 8vw, 120px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .manifesto-grid h2 {
-  max-width: 12ch;
+  max-width: 38ch;
   margin: 0;
-  font-size: clamp(48px, 7.4vw, 116px);
-  line-height: 0.94;
-  letter-spacing: -0.055em;
+  /* NEW STYLE */
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.28;
+  letter-spacing: 0.01em;
 }
 
 .manifesto-grid p {
-  max-width: 520px;
+  max-width: 100%;
   margin: 0;
-  color: rgba(246, 248, 252, 0.62);
+  /* NEW STYLE — white text */
+  color: var(--text);
   font-size: clamp(17px, 1.4vw, 21px);
-  line-height: 1.62;
+  line-height: 1.72;
 }
 
 .architecture-world {
@@ -4207,12 +4211,13 @@ body {
   grid-column: 1 / -1;
 }
 
+/* NEW STYLE */
 .business-heading-line h2 {
-  max-width: 11ch;
+  max-width: 24ch;
   margin: 0;
-  font-size: clamp(52px, 8vw, 118px);
-  line-height: 0.94;
-  letter-spacing: -0.055em;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
 }
 
 .business-line-list {
@@ -4260,12 +4265,13 @@ body {
   padding-top: clamp(120px, 14vw, 210px);
 }
 
+/* NEW STYLE */
 .proof-statement h2 {
-  max-width: 15ch;
+  max-width: 24ch;
   margin: 18px 0 0;
-  font-size: clamp(48px, 7vw, 104px);
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
 }
 
 .proof-line {

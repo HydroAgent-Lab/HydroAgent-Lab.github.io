@@ -43,23 +43,21 @@ function BrandManifesto({ lang }) {
     lang === "zh"
       ? {
           eyebrow: "定位",
-          title: "不是又一个水文工具，而是一套决策操作层。",
-          text:
-            "HydroAgent-Lab 把模型、数据、专家判断与行动流程组织进同一个界面。用户看到的不是技术堆栈，而是一条更清晰的决策链。"
+          title: ["不是又一个水文工具，", "而是一套决策操作层。"],
+          text: ["HydroAgent-Lab 把模型、数据、专家判断与行动流程组织进同一个界面。", "用户看到的不是技术堆栈，而是一条更清晰的决策链。"]
         }
       : {
           eyebrow: "Positioning",
-          title: "Not another hydrology tool. An intelligence layer for water decisions.",
-          text:
-            "HydroAgent-Lab brings models, data, expert judgment, and operational action into one interface. The user does not see a technology stack. They see a clearer decision chain."
+          title: ["Not another hydrology tool.", "An intelligence layer for water decisions."],
+          text: ["HydroAgent-Lab brings models, data, expert judgment, and operational action into one interface.", "The user does not see a technology stack. They see a clearer decision chain."]
         };
 
   return (
     <section className="brand-manifesto">
       <p className="eyebrow">{copy.eyebrow}</p>
       <div className="manifesto-grid">
-        <h2>{copy.title}</h2>
-        <p>{copy.text}</p>
+        <h2>{copy.title.map((line, i) => <span key={i} style={{ display: "block" }}>{line}</span>)}</h2>
+        <p>{copy.text.map((line, i) => <span key={i} style={{ display: "block" }}>{line}</span>)}</p>
       </div>
     </section>
   );
