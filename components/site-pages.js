@@ -508,45 +508,82 @@ export function ResearchPageContent({ lang = "en" }) {
 export function TeamPageContent({ lang = "en" }) {
   const content = getSiteContent(lang);
   const page = content.team;
+  const memberCards = page.peopleSection.members;
+  const metricItems = page.lead.facts;
+  const missionItems = [
+    ...page.operatingSection.items,
+    ...page.principlesSection.items
+  ].slice(0, 4);
+  const timelineItems = page.prioritiesSection.items;
 
   return (
     <SiteShell lang={lang}>
-      <main className="main-content">
-        <PageLead
-          eyebrow={page.lead.eyebrow}
-          title={page.lead.title}
-          text={page.lead.text}
-          facts={page.lead.facts}
-        />
-
-        <section className="content-section about-mission-section">
-          <div className="about-mission-copy">
-            <p className="eyebrow">{page.missionSection.eyebrow}</p>
-            <h2>{page.missionSection.title}</h2>
-            <p>{page.missionSection.text}</p>
-          </div>
-          <div className="about-nav-list">
-            {page.missionSection.navItems.map((item) => (
-              <a key={item.href} href={item.href}>
-                {item.label}
-              </a>
-            ))}
+      <main className="main-content team-about-page">
+        <section className="team-about-hero">
+          <div className="team-about-frame team-about-hero-grid">
+            <div className="team-about-hero-copy">
+              <p className="eyebrow">{page.lead.eyebrow}</p>
+              <h1>{page.lead.title}</h1>
+              <p>{page.lead.text}</p>
+            </div>
+            <div className="team-about-hero-panel" aria-label={page.peopleSection.title}>
+              <strong>{page.peopleSection.title}</strong>
+              <span>{page.peopleSection.disciplineLine}</span>
+              <span>{page.peopleSection.countryLine}</span>
+              <a href="#members">{page.missionSection.navItems[0].label}</a>
+            </div>
           </div>
         </section>
 
-        <section className="content-section team-members-section" id="members">
-          <SectionHeader
-            eyebrow={page.peopleSection.eyebrow}
-            title={page.peopleSection.title}
-            text={page.peopleSection.text}
-          />
-          <div className="team-member-grid">
-            {page.peopleSection.members.map((member) => (
-              <article className="team-member-card" key={`${member.name}-${member.email || member.affiliation}`}>
-                <div className="team-member-photo" aria-hidden="true">
-                  {member.initials}
-                </div>
-                <div className="team-member-body">
+        <section className="team-about-mission">
+          <div className="team-about-frame">
+            <p className="eyebrow">{page.missionSection.eyebrow}</p>
+            <h2>{page.missionSection.title}</h2>
+            <div className="team-about-manifest-grid">
+              <p>{page.missionSection.text}</p>
+              {missionItems.map((item) => (
+                <p key={item.title}>
+                  <strong>{item.title}</strong>
+                  {item.text}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="team-about-values" id="workstreams">
+          <div className="team-about-frame team-about-values-layout">
+            <aside className="team-about-values-quote">
+              <p className="eyebrow">{page.workstreamsSection.eyebrow}</p>
+              <h2>{page.workstreamsSection.title}</h2>
+              <blockquote>{page.workstreamsSection.text}</blockquote>
+            </aside>
+            <div className="team-about-values-main">
+              <p>{page.operatingSection.text}</p>
+              <div className="team-about-values-grid">
+                {page.workstreamsSection.items.map((item) => (
+                  <article key={item.title}>
+                    <span>{item.label}</span>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="team-about-members" id="members">
+          <div className="team-about-frame">
+            <p className="eyebrow">{page.peopleSection.eyebrow}</p>
+            <h2>{page.peopleSection.title}</h2>
+            <p className="team-about-section-copy">{page.peopleSection.text}</p>
+            <div className="team-about-member-row" aria-label={page.peopleSection.title}>
+              {memberCards.map((member) => (
+                <article className="team-about-member-card" key={`${member.name}-${member.email || member.affiliation}`}>
+                  <div className="team-about-member-avatar" aria-hidden="true">
+                    {member.initials}
+                  </div>
                   <h3>
                     {member.linkedin ? (
                       <a href={member.linkedin} target="_blank" rel="noreferrer">
@@ -555,118 +592,73 @@ export function TeamPageContent({ lang = "en" }) {
                     ) : (
                       member.name
                     )}
+                    <span>{member.focus}</span>
                   </h3>
-                  <p className="team-member-affiliation">
-                    <span>{page.peopleSection.affiliationLabel}</span>
-                    {member.affiliation}
-                  </p>
-                  <p>
-                    <span>{page.peopleSection.focusLabel}</span>
-                    {member.focus}
-                  </p>
-                  <div className="team-member-links">
-                    {member.email ? (
-                      <a href={`mailto:${member.email}`}>{page.peopleSection.emailLabel}</a>
-                    ) : null}
-                    {member.linkedin ? (
-                      <a href={member.linkedin} target="_blank" rel="noreferrer">
-                        LinkedIn
-                      </a>
-                    ) : (
-                      <span>{page.peopleSection.pendingLinksLabel}</span>
-                    )}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="team-roster-summary">
-            <p>{page.peopleSection.disciplineLine}</p>
-            <p>{page.peopleSection.countryLine}</p>
-            <span>{page.peopleSection.supportBadge}</span>
+                  <p>{member.affiliation}</p>
+                  {(member.email || member.linkedin) ? (
+                    <div className="team-about-member-links">
+                      {member.email ? (
+                        <a href={`mailto:${member.email}`}>{page.peopleSection.emailLabel}</a>
+                      ) : null}
+                      {member.linkedin ? (
+                        <a href={member.linkedin} target="_blank" rel="noreferrer">
+                          LinkedIn
+                        </a>
+                      ) : null}
+                    </div>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+            <div className="team-roster-summary">
+              <p>{page.peopleSection.disciplineLine}</p>
+              <p>{page.peopleSection.countryLine}</p>
+              <span>{page.peopleSection.supportBadge}</span>
+            </div>
           </div>
         </section>
 
-        <section className="content-section team-operating-section">
-          <SectionHeader
-            eyebrow={page.operatingSection.eyebrow}
-            title={page.operatingSection.title}
-            text={page.operatingSection.text}
-          />
-          <div className="three-up-grid">
-            {page.operatingSection.items.map((item) => (
-              <article className="info-card" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="content-section team-principles-section">
-          <SectionHeader
-            eyebrow={page.principlesSection.eyebrow}
-            title={page.principlesSection.title}
-          />
-          <div className="three-up-grid">
-            {page.principlesSection.items.map((item) => (
-              <article className="info-card" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="content-section team-leadership-section" id="workstreams">
-          <SectionHeader
-            eyebrow={page.workstreamsSection.eyebrow}
-            title={page.workstreamsSection.title}
-            text={page.workstreamsSection.text}
-          />
-          <div className="about-leader-grid">
-            {page.workstreamsSection.items.map((item) => (
-              <article className="about-leader-card" key={item.title}>
-                <span>{item.label}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="content-section team-proof-section" id="signals">
-          <SectionHeader
-            eyebrow={page.signalsSection.eyebrow}
-            title={page.signalsSection.title}
-            text={page.signalsSection.text}
-          />
-          <div className="about-signal-list">
-            {page.signalsSection.items.map((item) => (
-              <article className="about-signal-row" key={item.label}>
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="content-section team-milestones-section" id="priorities">
-          <div className="about-milestone-head">
+        <section className="team-about-timeline" id="priorities">
+          <div className="team-about-frame">
             <p className="eyebrow">{page.prioritiesSection.eyebrow}</p>
             <h2>{page.prioritiesSection.title}</h2>
+            <div className="team-about-timeline-list">
+              {timelineItems.map((item) => (
+                <article key={item.title}>
+                  <span>{item.phase}</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
-          <div className="about-milestone-list">
-            {page.prioritiesSection.items.map((item) => (
-              <article className="about-milestone-row" key={item.title}>
-                <span>{item.phase}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
+        </section>
+
+        <section className="team-about-metrics" id="signals">
+          <div className="team-about-frame">
+            <p className="eyebrow">{page.signalsSection.eyebrow}</p>
+            <div className="team-about-metrics-grid">
+              {metricItems.map((item) => (
+                <article key={item.label}>
+                  <strong>{item.value}</strong>
+                  <span>{item.label}</span>
+                </article>
+              ))}
+              <article>
+                <strong>{page.peopleSection.members.length}</strong>
+                <span>{page.peopleSection.title}</span>
               </article>
-            ))}
+            </div>
+            <div className="team-about-signal-list">
+              {page.signalsSection.items.map((item) => (
+                <p key={item.label}>
+                  <strong>{item.value}</strong>
+                  {item.text}
+                </p>
+              ))}
+            </div>
           </div>
         </section>
 
