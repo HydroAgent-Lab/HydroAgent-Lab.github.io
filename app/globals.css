@@ -6767,3 +6767,392 @@ html {
     min-height: 0;
   }
 }
+
+/* Reference-style internal pages: replace generic card templates with broad editorial sections. */
+.main-content > .page-lead:first-child {
+  width: min(100%, 1720px) !important;
+  min-height: calc(100vh - var(--nav-height));
+  margin: 0 auto !important;
+  padding: clamp(150px, 17vw, 300px) clamp(42px, 6.8vw, 128px) clamp(78px, 10vw, 160px) !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: clamp(28px, 4vw, 58px) !important;
+  align-content: end !important;
+  border-top: 1px solid rgba(220, 236, 248, 0.14);
+  background:
+    radial-gradient(circle at 82% 24%, rgba(88, 191, 255, 0.16), transparent 30%),
+    linear-gradient(180deg, rgba(8, 16, 26, 0.96), rgba(6, 12, 20, 0.96));
+}
+
+.main-content > .page-lead:first-child::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(5, 9, 14, 0.08), transparent 46%),
+    repeating-linear-gradient(90deg, rgba(220, 236, 248, 0.035) 0 1px, transparent 1px 11vw);
+}
+
+.main-content > .page-lead:first-child .page-lead-main,
+.main-content > .page-lead:first-child .page-lead-side {
+  position: relative;
+  z-index: 1;
+}
+
+.main-content > .page-lead:first-child h1 {
+  max-width: min(1060px, 78vw) !important;
+  font-size: clamp(62px, 8vw, 150px) !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.lang-zh .main-content > .page-lead:first-child h1 {
+  max-width: min(980px, 74vw) !important;
+  letter-spacing: -0.01em !important;
+}
+
+.main-content > .page-lead:first-child .page-lead-side {
+  max-width: none !important;
+  display: grid;
+  grid-template-columns: minmax(0, 0.46fr) minmax(0, 0.54fr);
+  gap: clamp(36px, 5vw, 92px);
+  align-items: start;
+}
+
+.main-content > .page-lead:first-child .page-lead-side > p {
+  max-width: 760px !important;
+  margin: 0;
+  color: rgba(232, 241, 248, 0.78);
+  font-size: clamp(18px, 1.25vw, 24px) !important;
+  line-height: 1.68 !important;
+}
+
+.main-content > .page-lead:first-child .page-lead-facts {
+  margin: 0 !important;
+  align-self: start;
+}
+
+.content-section,
+.capability-directory,
+.cta-band {
+  width: min(100%, 1720px) !important;
+  margin: 0 auto !important;
+  padding: clamp(62px, 8vw, 126px) clamp(42px, 6.8vw, 128px) !important;
+  border-top: 1px solid rgba(220, 236, 248, 0.1);
+  background: rgba(8, 16, 26, 0.94);
+}
+
+.content-section .section-header,
+.capability-directory-head {
+  display: grid !important;
+  grid-template-columns: minmax(240px, 0.28fr) minmax(0, 0.72fr);
+  gap: clamp(32px, 5vw, 92px);
+  align-items: start;
+  margin: 0 0 clamp(30px, 4.5vw, 64px);
+}
+
+.content-section .section-header h2,
+.capability-directory-head h2,
+.handoff-copy h2,
+.thesis-card h2,
+.about-milestone-head h2 {
+  max-width: 16ch !important;
+  margin: 0;
+  color: #f8fbff;
+  font-size: clamp(34px, 4.4vw, 82px) !important;
+  font-weight: var(--weight-semibold);
+  line-height: 1.04 !important;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.lang-zh .content-section .section-header h2,
+.lang-zh .capability-directory-head h2,
+.lang-zh .handoff-copy h2,
+.lang-zh .thesis-card h2,
+.lang-zh .about-milestone-head h2 {
+  letter-spacing: -0.01em;
+}
+
+.content-section .section-text,
+.longform-text {
+  max-width: 780px !important;
+  margin: 0;
+  color: rgba(232, 241, 248, 0.74);
+  font-size: clamp(17px, 1.18vw, 22px) !important;
+  line-height: 1.72 !important;
+}
+
+.three-up-grid,
+.surface-grid,
+.capability-grid,
+.research-result-grid,
+.contact-details-grid,
+.contact-steps {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1px !important;
+  border: 1px solid rgba(220, 236, 248, 0.12);
+  background: rgba(220, 236, 248, 0.12);
+}
+
+.surface-grid,
+.capability-grid,
+.research-result-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.info-card,
+.surface-card,
+.capability-card,
+.research-result-card,
+.contact-detail-card,
+.step-card {
+  min-width: 0;
+  min-height: 260px;
+  padding: clamp(22px, 2.8vw, 42px) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: rgba(9, 17, 27, 0.96) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.info-card:hover,
+.surface-card:hover,
+.capability-card:hover,
+.research-result-card:hover,
+.contact-detail-card:hover,
+.step-card:hover {
+  transform: none !important;
+  background: rgba(12, 23, 35, 0.98) !important;
+}
+
+.info-card h3,
+.surface-card h3,
+.capability-card h3,
+.research-result-card h3,
+.step-card h3 {
+  margin: 0 0 12px;
+  color: #f8fbff;
+  font-size: clamp(21px, 1.65vw, 32px) !important;
+  line-height: 1.14 !important;
+}
+
+.info-card p,
+.surface-card p,
+.capability-card p,
+.research-result-card p,
+.step-card p {
+  margin: 0;
+  color: rgba(232, 241, 248, 0.7);
+  font-size: clamp(15px, 1vw, 18px);
+  line-height: 1.7;
+}
+
+.architecture-stack,
+.workflow-rail,
+.research-presentation-panel,
+.about-milestone-list,
+.about-signal-list,
+.handoff-points,
+.thesis-claims {
+  display: grid;
+  border-top: 1px solid rgba(220, 236, 248, 0.14);
+}
+
+.architecture-layer,
+.workflow-step,
+.research-detail-row,
+.about-milestone-row,
+.about-signal-row,
+.argument-row {
+  display: grid !important;
+  grid-template-columns: minmax(90px, 0.14fr) minmax(0, 0.86fr) !important;
+  gap: clamp(24px, 4vw, 78px) !important;
+  padding: clamp(24px, 3.2vw, 46px) 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(220, 236, 248, 0.1) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.workflow-step-index,
+.architecture-layer > span,
+.research-detail-row > span,
+.about-milestone-row > span,
+.about-signal-row > span {
+  width: auto !important;
+  height: auto !important;
+  color: rgba(143, 220, 255, 0.84);
+  background: transparent !important;
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.architecture-layer h3,
+.workflow-step h3,
+.about-milestone-row h3,
+.about-signal-row strong,
+.research-detail-row strong {
+  color: #f8fbff;
+  font-size: clamp(22px, 2vw, 34px) !important;
+  line-height: 1.14 !important;
+}
+
+.workflow-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-top: 18px;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.workflow-meta span,
+.workflow-meta strong {
+  color: rgba(143, 220, 255, 0.82) !important;
+  font-size: 13px !important;
+}
+
+.capability-directory {
+  display: block;
+}
+
+.capability-directory-head {
+  grid-template-columns: minmax(0, 0.58fr) minmax(320px, 0.42fr);
+}
+
+.capability-search {
+  align-self: end;
+  border-radius: 0 !important;
+  border: 1px solid rgba(220, 236, 248, 0.16) !important;
+  background: rgba(9, 17, 27, 0.72) !important;
+}
+
+.capability-filter-row {
+  gap: 1px !important;
+  padding: 0 !important;
+  border: 1px solid rgba(220, 236, 248, 0.12);
+  border-radius: 0 !important;
+  background: rgba(220, 236, 248, 0.12) !important;
+}
+
+.capability-filter-row button {
+  border-radius: 0 !important;
+  background: rgba(9, 17, 27, 0.96) !important;
+}
+
+.capability-results {
+  display: grid !important;
+  margin-top: clamp(28px, 4vw, 58px);
+  border-top: 1px solid rgba(220, 236, 248, 0.14);
+}
+
+.capability-result {
+  display: grid !important;
+  grid-template-columns: minmax(72px, 0.1fr) minmax(0, 0.9fr) !important;
+  gap: clamp(24px, 4vw, 78px) !important;
+  padding: clamp(24px, 3vw, 42px) 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(220, 236, 248, 0.1) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.capability-index {
+  color: rgba(143, 220, 255, 0.84) !important;
+  font-size: 13px !important;
+  font-weight: 850 !important;
+}
+
+.capability-result h3 {
+  color: #f8fbff;
+  font-size: clamp(24px, 2.2vw, 38px) !important;
+  line-height: 1.12 !important;
+}
+
+.capability-tags span {
+  border-radius: 0 !important;
+  background: transparent !important;
+  border-color: rgba(220, 236, 248, 0.18) !important;
+}
+
+.handoff-section,
+.thesis-section,
+.narrative-panel,
+.contact-primary-section {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr) !important;
+  gap: clamp(40px, 6vw, 110px) !important;
+  align-items: start !important;
+}
+
+.contact-primary-card,
+.thesis-card {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 1180px) {
+  .main-content > .page-lead:first-child .page-lead-side,
+  .content-section .section-header,
+  .capability-directory-head,
+  .handoff-section,
+  .thesis-section,
+  .narrative-panel,
+  .contact-primary-section {
+    grid-template-columns: 1fr !important;
+  }
+
+  .surface-grid,
+  .capability-grid,
+  .research-result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .main-content > .page-lead:first-child,
+  .content-section,
+  .capability-directory,
+  .cta-band {
+    padding-inline: 22px !important;
+  }
+
+  .main-content > .page-lead:first-child h1 {
+    max-width: 100% !important;
+    font-size: clamp(42px, 13vw, 66px) !important;
+  }
+
+  .three-up-grid,
+  .surface-grid,
+  .capability-grid,
+  .research-result-grid,
+  .contact-details-grid,
+  .contact-steps,
+  .architecture-layer,
+  .workflow-step,
+  .research-detail-row,
+  .about-milestone-row,
+  .about-signal-row,
+  .argument-row,
+  .capability-result {
+    grid-template-columns: 1fr !important;
+  }
+
+  .info-card,
+  .surface-card,
+  .capability-card,
+  .research-result-card,
+  .contact-detail-card,
+  .step-card {
+    min-height: 0;
+  }
+}
