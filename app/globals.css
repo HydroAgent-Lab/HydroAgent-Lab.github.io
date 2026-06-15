@@ -7358,3 +7358,398 @@ html {
     font-size: clamp(42px, 13vw, 66px);
   }
 }
+
+/* Strict reference alignment for About and Careers pages. */
+.team-about-page,
+.careers-page {
+  --ref-gutter: clamp(28px, 6vw, 96px);
+  --ref-dark-surface: #08101a;
+  --ref-dark-ink: #f8fbff;
+  --ref-dark-muted: rgba(220, 232, 249, 0.74);
+  --ref-dark-line: rgba(220, 232, 249, 0.14);
+}
+
+.team-about-frame,
+.careers-frame {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: var(--ref-gutter) !important;
+  padding-right: var(--ref-gutter) !important;
+}
+
+.team-about-page {
+  background: var(--ref-dark-surface) !important;
+}
+
+.team-about-hero {
+  background:
+    linear-gradient(120deg, rgba(8, 16, 25, 0.82), rgba(8, 16, 25, 0.62)),
+    radial-gradient(circle at 76% 22%, rgba(95, 178, 255, 0.2), transparent 30%),
+    linear-gradient(135deg, #0d1a27, #08101a) !important;
+}
+
+.team-about-hero-grid {
+  min-height: auto !important;
+  gap: clamp(18px, 5vw, 72px) !important;
+  padding-top: clamp(136px, 16vw, 210px) !important;
+  padding-bottom: clamp(80px, 10vw, 132px) !important;
+  align-items: start !important;
+}
+
+.team-about-hero-copy {
+  max-width: min(900px, 80%) !important;
+  gap: 18px !important;
+}
+
+.team-about-hero-copy h1 {
+  width: fit-content !important;
+  max-width: min(900px, 80vw) !important;
+  font-size: clamp(1.85rem, 5vw, 4.2rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.lang-zh .team-about-hero-copy h1 {
+  max-width: 12ch !important;
+  line-height: 1.18 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.team-about-hero-copy > p:not(.eyebrow) {
+  max-width: 34ch !important;
+  color: rgba(241, 247, 253, 0.86) !important;
+  font-size: clamp(1.03rem, 2vw, 1.34rem) !important;
+  line-height: 1.52 !important;
+}
+
+.team-about-mission,
+.team-about-values,
+.team-about-members,
+.team-about-timeline,
+.team-about-metrics {
+  background: var(--ref-dark-surface) !important;
+  border-top: 0 !important;
+}
+
+.team-about-mission .team-about-frame,
+.team-about-values .team-about-frame,
+.team-about-members .team-about-frame,
+.team-about-timeline .team-about-frame,
+.team-about-metrics .team-about-frame {
+  padding-top: clamp(56px, 8vw, 96px) !important;
+  padding-bottom: clamp(56px, 8vw, 98px) !important;
+}
+
+.team-about-mission h2,
+.team-about-values h2,
+.team-about-members h2,
+.team-about-timeline h2 {
+  max-width: 920px !important;
+  margin: 10px 0 16px !important;
+  font-size: clamp(1.5rem, 2vw, 2.4rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.team-about-manifest-grid {
+  max-width: none !important;
+  gap: clamp(8px, 1.4vw, 16px) !important;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
+    linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28));
+  background-size: 1px 100%, 1px 100%;
+  background-repeat: no-repeat;
+  background-position: 0 0, calc(50% + clamp(14px, 2.5vw, 44px)) 0;
+}
+
+.team-about-manifest-grid p {
+  padding-left: 18px !important;
+  color: var(--ref-dark-muted) !important;
+  font-size: 1rem !important;
+  line-height: 1.8 !important;
+}
+
+.team-about-manifest-grid strong {
+  margin-bottom: 6px !important;
+  font-size: 1.02rem !important;
+}
+
+.team-about-values-layout {
+  grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr) !important;
+  gap: clamp(18px, 4vw, 52px) !important;
+}
+
+.team-about-values-quote {
+  min-height: 0 !important;
+  justify-content: center !important;
+  padding: clamp(20px, 4vw, 36px) !important;
+  border-left: 2px solid rgba(191, 212, 255, 0.66);
+  background: linear-gradient(180deg, rgba(18, 30, 45, 0.95), rgba(13, 21, 33, 0.9));
+}
+
+.team-about-values-quote blockquote {
+  font-size: clamp(1.5rem, 3.2vw, 2.8rem) !important;
+  line-height: 1.18 !important;
+}
+
+.team-about-values-main > p,
+.team-about-section-copy {
+  max-width: 100% !important;
+  font-size: clamp(1rem, 1.35vw, 1.08rem) !important;
+  line-height: 1.85 !important;
+}
+
+.team-about-values-grid {
+  gap: 12px !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.team-about-values-grid article {
+  padding: clamp(18px, 2.8vw, 26px) !important;
+  border: 1px solid var(--ref-dark-line) !important;
+  background: rgba(14, 24, 38, 0.92) !important;
+}
+
+.team-about-values-grid h3 {
+  margin: 0 0 8px !important;
+  font-size: 1.12rem !important;
+}
+
+.team-about-member-row {
+  gap: 12px !important;
+  min-height: 430px !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.team-about-member-card {
+  min-height: 0 !important;
+  height: 100%;
+  padding: 16px !important;
+  border: 1px solid var(--ref-dark-line) !important;
+  background: rgba(14, 24, 38, 0.92) !important;
+}
+
+.team-about-member-avatar {
+  width: 64px !important;
+  background: rgba(184, 204, 234, 0.18) !important;
+  color: var(--ref-dark-ink) !important;
+  border: 1px solid var(--ref-dark-line);
+}
+
+.team-about-member-card h3 {
+  font-size: 1.08rem !important;
+  line-height: 1.35 !important;
+}
+
+.team-about-member-card h3 span,
+.team-about-member-card p {
+  font-size: 0.92rem !important;
+  line-height: 1.72 !important;
+}
+
+.team-about-metrics-grid {
+  border-top: 1px solid var(--ref-dark-line) !important;
+  border-left: 1px solid var(--ref-dark-line) !important;
+}
+
+.team-about-metrics-grid article {
+  padding: clamp(20px, 3vw, 34px) !important;
+  border-right: 1px solid var(--ref-dark-line) !important;
+  border-bottom: 1px solid var(--ref-dark-line) !important;
+}
+
+.team-about-metrics-grid strong {
+  font-size: clamp(1.9rem, 4.4vw, 3.4rem) !important;
+  line-height: 1 !important;
+}
+
+.team-about-metrics-grid span {
+  max-width: 18ch;
+  font-size: 0.9rem !important;
+}
+
+.careers-page {
+  --careers-surface-ref: #f4f6f9;
+  --careers-ink-ref: #141a22;
+  --careers-muted-ref: rgba(20, 26, 34, 0.66);
+  --careers-line-ref: rgba(20, 26, 34, 0.12);
+  background: var(--careers-surface-ref) !important;
+}
+
+.careers-hero {
+  min-height: calc(100vh - var(--nav-height)) !important;
+  background: #08101a;
+}
+
+.careers-hero-backdrop {
+  background:
+    linear-gradient(180deg, rgba(8, 10, 16, 0.16) 0%, rgba(8, 10, 16, 0.42) 44%, rgba(8, 10, 16, 0.72) 100%),
+    radial-gradient(circle at 74% 28%, rgba(100, 185, 255, 0.24), transparent 28%),
+    linear-gradient(135deg, #13283b, #08101a) !important;
+}
+
+.careers-hero-inner {
+  min-height: calc(100vh - var(--nav-height));
+  align-content: center !important;
+  justify-items: center !important;
+  text-align: center;
+  padding-top: clamp(88px, 12vw, 150px) !important;
+  padding-bottom: clamp(88px, 12vw, 150px) !important;
+}
+
+.careers-hero h1 {
+  max-width: min(1400px, 92vw) !important;
+  font-size: clamp(1.42rem, 3.2vw, 3.8rem) !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.02em !important;
+  text-align: center !important;
+}
+
+.careers-hero p:not(.eyebrow) {
+  max-width: 720px !important;
+  color: rgba(244, 247, 251, 0.82) !important;
+  font-size: clamp(1rem, 1.35vw, 1.32rem) !important;
+}
+
+.careers-band {
+  background: var(--careers-surface-ref) !important;
+  border-top: 0 !important;
+}
+
+.careers-band .careers-frame {
+  padding-top: clamp(56px, 8vw, 128px) !important;
+  padding-bottom: clamp(56px, 8vw, 128px) !important;
+}
+
+.careers-band .eyebrow {
+  color: rgba(20, 26, 34, 0.56) !important;
+  letter-spacing: 0.07em !important;
+}
+
+.careers-band h2 {
+  max-width: 920px !important;
+  margin: 0 0 16px !important;
+  color: var(--careers-ink-ref) !important;
+  font-size: clamp(1.5rem, 2vw, 2.4rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.careers-statement-block {
+  display: block !important;
+  max-width: 920px !important;
+}
+
+.careers-statement-block p,
+.careers-statement-grid p,
+.careers-track-grid p,
+.careers-process-list p,
+.careers-final-card p,
+.careers-split-copy p {
+  color: var(--careers-muted-ref) !important;
+  font-size: clamp(1rem, 1.35vw, 1.5rem) !important;
+  line-height: 1.76 !important;
+}
+
+.careers-statement-grid,
+.careers-track-grid {
+  gap: 12px !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.careers-statement-grid article,
+.careers-track-grid article {
+  min-height: 0 !important;
+  padding: clamp(18px, 2.8vw, 26px) !important;
+  border: 1px solid var(--careers-line-ref) !important;
+  background: rgba(255, 255, 255, 0.58) !important;
+}
+
+.careers-statement-grid h3,
+.careers-track-grid h3,
+.careers-process-list h3 {
+  color: var(--careers-ink-ref) !important;
+  font-size: clamp(1.12rem, 1.55vw, 1.55rem) !important;
+}
+
+.careers-principles-grid {
+  gap: clamp(32px, 6vw, 72px) !important;
+}
+
+.careers-principles-grid li {
+  padding-left: 0 !important;
+  padding-bottom: 16px !important;
+  border-left: 0 !important;
+  border-bottom: 1px solid var(--careers-line-ref) !important;
+  color: var(--careers-muted-ref) !important;
+  font-size: clamp(0.98rem, 1.28vw, 1.42rem) !important;
+  line-height: 1.76 !important;
+}
+
+.careers-split-row {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: clamp(28px, 5vw, 56px) !important;
+}
+
+.careers-split-media {
+  min-height: clamp(220px, 36vw, 380px) !important;
+  border-radius: 12px !important;
+  border: 1px dashed rgba(20, 26, 34, 0.18) !important;
+  background: linear-gradient(145deg, #e1e6ee, #f0f2f5) !important;
+}
+
+.careers-split-media::before,
+.careers-split-media::after {
+  border-color: rgba(20, 26, 34, 0.1) !important;
+}
+
+.careers-split-media span {
+  background: linear-gradient(90deg, transparent, rgba(20, 26, 34, 0.2), transparent) !important;
+}
+
+.careers-split-reverse .careers-split-row {
+  direction: rtl;
+}
+
+.careers-split-reverse .careers-split-media,
+.careers-split-reverse .careers-split-copy {
+  direction: ltr;
+}
+
+.careers-process-list {
+  border-top: 1px solid var(--careers-line-ref) !important;
+}
+
+.careers-process-list article {
+  border-bottom: 1px solid var(--careers-line-ref) !important;
+}
+
+.careers-final-card {
+  border: 1px solid var(--careers-line-ref) !important;
+  background: rgba(255, 255, 255, 0.64) !important;
+}
+
+@media (max-width: 1040px) {
+  .team-about-values-layout,
+  .careers-split-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .team-about-frame,
+  .careers-frame {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  .team-about-hero-copy,
+  .team-about-hero-copy h1,
+  .careers-hero h1 {
+    max-width: 100% !important;
+  }
+}
