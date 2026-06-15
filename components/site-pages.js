@@ -534,23 +534,6 @@ export function TeamPageContent({ lang = "en" }) {
           </div>
         </section>
 
-        <section className="content-section team-presentation-section" id="egu">
-          <SectionHeader
-            eyebrow={page.presentationSection.eyebrow}
-            title={page.presentationSection.title}
-            text={page.presentationSection.text}
-          />
-          <div className="team-presentation-panel">
-            {page.presentationSection.meta.map((item) => (
-              <article className="team-meta-row" key={item.label}>
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
-              </article>
-            ))}
-          </div>
-          <p className="team-note">{page.presentationSection.note}</p>
-        </section>
-
         <section className="content-section team-members-section" id="members">
           <SectionHeader
             eyebrow={page.peopleSection.eyebrow}

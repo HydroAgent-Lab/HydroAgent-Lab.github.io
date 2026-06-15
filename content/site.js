@@ -846,22 +846,9 @@ export const siteContent = {
         text:
           "HydroAgent-Lab is not a conventional funded project. It is a collaborative effort by people who care about whether AI can actually help hydrologists in real forecasting work. Some members are joining from universities, some from engineering and hydrological practice, and some from AI product development.",
         navItems: [
-          { label: "EGU26 abstract", href: "#egu" },
           { label: "Members", href: "#members" },
-          { label: "Workstreams", href: "#workstreams" }
-        ]
-      },
-      presentationSection: {
-        eyebrow: "EGU26 Abstract",
-        title: "Is it ready to apply LLM to frontline hydro practice?",
-        text:
-          "Taking the flooding forecasting agent as an example, this work asks whether large language models are ready to support real hydrologic forecasting workflows rather than only demonstrate generic AI capability.",
-        note:
-          "Qingyi Yang and Shunan Zhou are expected to be around EGU, so feel free to find them for a chat.",
-        meta: [
-          { label: "Title", value: "Is it ready to apply LLM to frontline hydro practice? Taking the flooding forecasting agent as an example" },
-          { label: "Status", value: "EGU26 abstract; preprint coming soon" },
-          { label: "Team note", value: "Member order on this page is not hierarchical." }
+          { label: "Workstreams", href: "#workstreams" },
+          { label: "Signals", href: "#signals" }
         ]
       },
       peopleSection: {
@@ -1784,22 +1771,9 @@ export const siteContent = {
         text:
           "HydroAgent-Lab 不是一个传统经费项目，而是一群真正关心 AI 是否能进入一线水文业务的人共同推动的协作。成员来自高校、工程与水文业务一线，也包括 AI 产品和智能体系统方向的年轻开发者。",
         navItems: [
-          { label: "EGU26 摘要", href: "#egu" },
           { label: "团队成员", href: "#members" },
-          { label: "工作线", href: "#workstreams" }
-        ]
-      },
-      presentationSection: {
-        eyebrow: "EGU26 摘要",
-        title: "Is it ready to apply LLM to frontline hydro practice?",
-        text:
-          "以洪水预报智能体为例，这项工作讨论大语言模型是否已经准备好支持真实的一线水文预报流程，而不只是展示通用 AI 能力。",
-        note:
-          "Qingyi Yang 和 Shunan Zhou 会在 EGU 附近，如有兴趣可以现场交流。",
-        meta: [
-          { label: "题目", value: "Is it ready to apply LLM to frontline hydro practice? Taking the flooding forecasting agent as an example" },
-          { label: "状态", value: "EGU26 摘要；preprint coming soon" },
-          { label: "团队说明", value: "本页成员排序不代表贡献或职位排序。" }
+          { label: "工作线", href: "#workstreams" },
+          { label: "可信信号", href: "#signals" }
         ]
       },
       peopleSection: {
