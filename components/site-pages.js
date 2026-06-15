@@ -137,6 +137,86 @@ function HumanCenteredAgent({ content }) {
   );
 }
 
+function ProductEvidence({ page }) {
+  const section = page.productEvidenceSection;
+  if (!section) return null;
+
+  return (
+    <section className="content-section product-evidence-section">
+      <div className="product-evidence-copy">
+        <p className="eyebrow">{section.eyebrow}</p>
+        <h2>{section.title}</h2>
+        <p>{section.text}</p>
+        <span>{section.status}</span>
+      </div>
+      <div className="product-flow-preview" aria-label={section.title}>
+        {section.items.map((item) => (
+          <article key={item.title} className="product-flow-step">
+            <span>{item.label}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ResearchOutputs({ page }) {
+  const section = page.outputsSection;
+  if (!section) return null;
+
+  return (
+    <section className="content-section research-outputs-section">
+      <SectionHeader eyebrow={section.eyebrow} title={section.title} text={section.text} />
+      <div className="research-output-list">
+        {section.items.map((item) => (
+          <article className="research-output-row" key={item.title}>
+            <span>{item.status}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.venue}</p>
+            </div>
+            <p>{item.text}</p>
+            {item.href ? <a href={item.href}>{item.linkLabel}</a> : <strong>{item.linkLabel}</strong>}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function PeopleSection({ page }) {
+  const section = page.peopleSection;
+  if (!section) return null;
+
+  return (
+    <section className="content-section people-section">
+      <SectionHeader eyebrow={section.eyebrow} title={section.title} text={section.text} />
+      <div className="people-grid">
+        {section.items.map((person) => (
+          <article className="person-card" key={person.name}>
+            <div className="person-photo-placeholder" aria-hidden="true">
+              {person.initials}
+            </div>
+            <div>
+              <h3>{person.name}</h3>
+              <p className="person-role">{person.role}</p>
+              <p>{person.affiliation}</p>
+              <p>{person.bio}</p>
+              <div className="person-links">
+                {person.links.map((link) => (
+                  <span key={link}>{link}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function ProofStatement({ lang }) {
   const copy =
     lang === "zh"
@@ -198,6 +278,8 @@ export function PlatformPageContent({ lang = "en" }) {
           text={page.lead.text}
           facts={page.lead.facts}
         />
+
+        <ProductEvidence page={page} />
 
         <section className="content-section">
           <SectionHeader
@@ -393,6 +475,8 @@ export function ResearchPageContent({ lang = "en" }) {
           facts={page.lead.facts}
         />
 
+        <ResearchOutputs page={page} />
+
         <section className="content-section thesis-section">
           <div className="thesis-card">
             <p className="eyebrow">{page.thesisSection.eyebrow}</p>
@@ -466,6 +550,8 @@ export function TeamPageContent({ lang = "en" }) {
           text={page.lead.text}
           facts={page.lead.facts}
         />
+
+        <PeopleSection page={page} />
 
         <section className="content-section about-mission-section">
           <div className="about-mission-copy">

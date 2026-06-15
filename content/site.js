@@ -34,14 +34,11 @@ export const siteContent = {
       footerMetaTwo:
         "Use the contact page to discuss products, pilots, technical briefings, or research collaboration.",
       nav: [
-        { path: "/platform", label: "Approach" },
-        { path: "/capabilities", label: "Capabilities" },
-        { path: "/workflow", label: "Workflow" },
+        { path: "/platform", label: "Product" },
         { path: "/research", label: "Research" },
-        { path: "/team", label: "Team" },
-        { path: "/contact", label: "Contact" }
+        { path: "/team", label: "Team" }
       ],
-      headerCta: "Request a briefing",
+      headerCta: "Book a demo",
       cta: {
         eyebrow: "Next Step",
         title: "Start a focused discussion about product fit, workflow design, or research collaboration.",
@@ -302,13 +299,37 @@ export const siteContent = {
     platform: {
       lead: {
         eyebrow: "Platform",
-        title: "One platform foundation behind products, workflow systems, and expert collaboration.",
+        title: "HydroAgent-FF gives the workflow a visible product surface.",
         text:
-          "The platform provides the shared foundation behind HydroAgent-FF and future domain-specific offerings.",
+          "The product connects scenario preparation, model review, rolling forecast updates, and release packaging in one reviewable operating flow.",
         facts: [
-          { label: "Primary use", value: "Operational hydrologic workflow support" },
+          { label: "Flagship product", value: "HydroAgent-FF for flood forecasting" },
           { label: "Core model", value: "Human review remains inside the release chain" },
-          { label: "Adoption path", value: "Products, pilots, and workflow integration" }
+          { label: "Current state", value: "Product screenshots and preprint materials coming soon" }
+        ]
+      },
+      productEvidenceSection: {
+        eyebrow: "Product Preview",
+        title: "A concrete operating flow, not a generic AI dashboard.",
+        text:
+          "Until the preprint and final product screenshots are released, this preview shows the intended product structure: scenario context, model review, and release gate.",
+        status: "High-fidelity product materials coming soon",
+        items: [
+          {
+            label: "01",
+            title: "Scenario setup",
+            text: "Rainfall, basin state, analog events, and operational constraints are assembled before the forecast is interpreted."
+          },
+          {
+            label: "02",
+            title: "Model review",
+            text: "Model outputs, uncertainty drivers, correction notes, and version deltas are reviewed in one place."
+          },
+          {
+            label: "03",
+            title: "Release gate",
+            text: "Bulletin language, confidence notes, unresolved watchpoints, and approval context are packaged for human release."
+          }
         ]
       },
       offeringsSection: {
@@ -608,13 +629,37 @@ export const siteContent = {
     research: {
       lead: {
         eyebrow: "Research",
-        title: "The research program is broader than one product surface.",
+        title: "Research outputs are the evidence layer behind HydroAgent-Lab.",
         text:
-          "HydroAgent-Lab brings products, operational workflows, and hydrologic research into one shared program of work.",
+          "The research page now tracks public outputs, work in progress, and the evaluation questions behind HydroAgent-FF.",
         facts: [
-          { label: "Research focus", value: "Workflow intelligence in hydrologic operations" },
-          { label: "Contribution", value: "Judgment formalization and replayability" },
-          { label: "Evaluation", value: "Operational clarity, usability, and review value" }
+          { label: "EGU26", value: "Abstract link to be added" },
+          { label: "Preprint", value: "Presentation preprint coming soon" },
+          { label: "Focus", value: "Human-centered AI for flood forecasting workflows" }
+        ]
+      },
+      outputsSection: {
+        eyebrow: "Selected Work",
+        title: "Public outputs and work in progress.",
+        text:
+          "This section is intentionally explicit about publication status. Final links will be added as the EGU26 abstract and presentation preprint become available.",
+        items: [
+          {
+            status: "EGU26 abstract",
+            title: "HydroAgent: Human-centered AI for flood forecasting workflows",
+            venue: "EGU General Assembly 2026",
+            text: "Abstract accepted / submitted reference link to be added here.",
+            linkLabel: "Abstract link coming soon",
+            href: ""
+          },
+          {
+            status: "Preprint",
+            title: "Presentation preprint",
+            venue: "HydroAgent-Lab working paper",
+            text: "Preprint and presentation materials will be linked when released.",
+            linkLabel: "Preprint coming soon",
+            href: ""
+          }
         ]
       },
       thesisSection: {
@@ -680,6 +725,23 @@ export const siteContent = {
           { label: "Company focus", value: "Operational hydrology and water intelligence" },
           { label: "Delivery model", value: "Products, workflow systems, pilots, and research" },
           { label: "Team shape", value: "Lean core team with domain and technical partners" }
+        ]
+      },
+      peopleSection: {
+        eyebrow: "People",
+        title: "The team page should show the people behind the work.",
+        text:
+          "This first public profile gives the page a real accountable anchor. Additional members, photos, and academic links should be added as soon as they are ready.",
+        items: [
+          {
+            name: "Bing Li",
+            role: "HydroAgent-Lab lead",
+            affiliation: "Hydrologic AI systems and operational forecasting workflows",
+            bio:
+              "Leads the HydroAgent-Lab website and product narrative, connecting flood forecasting workflows, AI product systems, and research translation.",
+            initials: "BL",
+            links: ["Google Scholar / profile coming soon", "LinkedIn / profile coming soon"]
+          }
         ]
       },
       missionSection: {
@@ -895,14 +957,11 @@ export const siteContent = {
       footerMetaOne: "面向预报团队、水务机构与研究伙伴，提供 AI 原生水务智能系统。",
       footerMetaTwo: "如需了解产品、试点、技术简报或研究合作，请通过联系页面预约沟通。",
       nav: [
-        { path: "/platform", label: "方法" },
-        { path: "/capabilities", label: "能力" },
-        { path: "/workflow", label: "工作流" },
+        { path: "/platform", label: "产品" },
         { path: "/research", label: "研究" },
-        { path: "/team", label: "团队" },
-        { path: "/contact", label: "联系" }
+        { path: "/team", label: "团队" }
       ],
-      headerCta: "预约沟通",
+      headerCta: "预约演示",
       cta: {
         eyebrow: "下一步",
         title: "从产品匹配、工作流设计或研究合作开始一次聚焦沟通。",
@@ -1162,13 +1221,37 @@ export const siteContent = {
     platform: {
       lead: {
         eyebrow: "平台",
-        title: "一个共享的平台基础，支撑产品、工作流系统与专家协作。",
+        title: "HydroAgent-FF 让工作流有一个可见的产品界面。",
         text:
-          "这个平台为 HydroAgent-FF 以及后续领域化产品提供共享的基础能力。",
+          "产品把情景准备、模型复核、滚动预报更新与发布打包连接到一条可审核的业务流程中。",
         facts: [
-          { label: "主要用途", value: "支持业务级水文工作流" },
+          { label: "旗舰产品", value: "HydroAgent-FF 洪水预报产品" },
           { label: "核心模式", value: "人工审核保留在发布链路中" },
-          { label: "采用路径", value: "产品、试点与流程集成" }
+          { label: "当前状态", value: "产品截图与 preprint 材料即将补充" }
+        ]
+      },
+      productEvidenceSection: {
+        eyebrow: "产品预览",
+        title: "这是具体业务流程，而不是通用 AI 看板。",
+        text:
+          "在 preprint 和最终产品截图发布前，这里先展示产品结构：情景上下文、模型复核与发布关口。",
+        status: "高保真产品材料即将补充",
+        items: [
+          {
+            label: "01",
+            title: "情景设置",
+            text: "在解释预报前，先整理降雨、流域状态、类比事件与业务约束。"
+          },
+          {
+            label: "02",
+            title: "模型复核",
+            text: "在同一界面复核模型输出、不确定性来源、修正说明与版本差异。"
+          },
+          {
+            label: "03",
+            title: "发布关口",
+            text: "将公告文本、置信说明、未解决关注点与审批上下文打包给人工发布。"
+          }
         ]
       },
       offeringsSection: {
@@ -1467,13 +1550,37 @@ export const siteContent = {
     research: {
       lead: {
         eyebrow: "研究",
-        title: "研究计划本身也不应只围绕一个产品界面展开。",
+        title: "研究产出是 HydroAgent-Lab 的证据层。",
         text:
-          "HydroAgent-Lab 把产品、业务工作流与水文研究组织成一个相互强化的共同计划。",
+          "研究页面现在明确追踪公开产出、进行中的工作，以及 HydroAgent-FF 背后的验证问题。",
         facts: [
-          { label: "研究重点", value: "水文业务流程中的工作流智能" },
-          { label: "核心贡献", value: "判断形式化与可回放能力" },
-          { label: "验证方向", value: "流程清晰度、可用性与审核价值" }
+          { label: "EGU26", value: "摘要链接待补充" },
+          { label: "Preprint", value: "汇报 preprint coming soon" },
+          { label: "重点", value: "面向洪水预报工作流的人本 AI" }
+        ]
+      },
+      outputsSection: {
+        eyebrow: "研究产出",
+        title: "公开产出与进行中的工作。",
+        text:
+          "这里会明确标注发布状态。EGU26 摘要链接和汇报 preprint 发布后会第一时间补上。",
+        items: [
+          {
+            status: "EGU26 摘要",
+            title: "HydroAgent：面向洪水预报工作流的人本 AI",
+            venue: "EGU General Assembly 2026",
+            text: "摘要链接将在可公开访问后补充。",
+            linkLabel: "摘要链接即将补充",
+            href: ""
+          },
+          {
+            status: "Preprint",
+            title: "汇报 preprint",
+            venue: "HydroAgent-Lab working paper",
+            text: "Preprint 与汇报材料发布后会在这里链接。",
+            linkLabel: "Preprint coming soon",
+            href: ""
+          }
         ]
       },
       thesisSection: {
@@ -1540,6 +1647,23 @@ export const siteContent = {
           { label: "公司方向", value: "业务水文与水务智能" },
           { label: "交付模式", value: "产品、工作流系统、试点与研究" },
           { label: "团队形态", value: "精干核心团队与领域、技术伙伴协作" }
+        ]
+      },
+      peopleSection: {
+        eyebrow: "成员",
+        title: "团队页必须展示工作背后的人。",
+        text:
+          "这个首个公开成员资料给页面一个真实责任锚点。后续成员、照片与学术链接准备好后应继续补充。",
+        items: [
+          {
+            name: "李兵",
+            role: "HydroAgent-Lab 负责人",
+            affiliation: "水文 AI 系统与业务预报工作流",
+            bio:
+              "负责 HydroAgent-Lab 的网站、产品叙事与系统方向，连接洪水预报工作流、AI 产品系统与研究转化。",
+            initials: "BL",
+            links: ["Google Scholar / 个人主页待补充", "LinkedIn / 个人主页待补充"]
+          }
         ]
       },
       missionSection: {
