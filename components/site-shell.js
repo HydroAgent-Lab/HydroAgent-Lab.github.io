@@ -14,6 +14,21 @@ export function SiteShell({ children, lang = "en" }) {
   const content = getSiteContent(lang);
   const switchHref = getLanguageSwitchHref(pathname || "/", lang);
   const normalizedPathname = normalizePath(pathname || "/");
+  const primaryPaths = ["/platform", "/capabilities", "/research", "/team", "/contact"];
+  const primaryNav = content.ui.nav.filter((item) => primaryPaths.includes(item.path));
+  const footerGroups =
+    lang === "zh"
+      ? [
+          { title: "平台产品", paths: ["/platform", "/capabilities", "/workflow", "/runs"] },
+          { title: "技术资源", paths: ["/research"] },
+          { title: "关于我们", paths: ["/team", "/careers", "/contact"] }
+        ]
+      : [
+          { title: "Platform", paths: ["/platform", "/capabilities", "/workflow", "/runs"] },
+          { title: "Resources", paths: ["/research"] },
+          { title: "Company", paths: ["/team", "/careers", "/contact"] }
+        ];
+  const navByPath = new Map(content.ui.nav.map((item) => [item.path, item]));
 
   return (
     <div className={`page-shell lang-${lang}`} id="top">
@@ -30,7 +45,7 @@ export function SiteShell({ children, lang = "en" }) {
           </span>
         </Link>
         <nav className="site-nav" aria-label="Primary">
-          {content.ui.nav.map((item) => {
+          {primaryNav.map((item) => {
             const href = localizeHref(lang, item.path);
             const isActive = normalizedPathname === normalizePath(href);
             return (
@@ -42,6 +57,7 @@ export function SiteShell({ children, lang = "en" }) {
         </nav>
         <div className="header-actions">
           <Link className="header-lang" href={switchHref}>
+            <span aria-hidden="true">◎</span>
             {content.ui.switchLabel}
           </Link>
           <Link className="header-cta" href={localizeHref(lang, "/contact")}>
@@ -58,11 +74,20 @@ export function SiteShell({ children, lang = "en" }) {
           <strong>HydroAgent-Lab</strong>
           <p>{content.ui.footerTitle}</p>
         </div>
-        <nav className="footer-nav" aria-label="Footer">
-          {content.ui.nav.map((item) => (
-            <Link key={item.path} href={localizeHref(lang, item.path)}>
-              {item.label}
-            </Link>
+        <nav className="footer-nav footer-nav-grouped" aria-label="Footer">
+          {footerGroups.map((group) => (
+            <div className="footer-nav-column" key={group.title}>
+              <strong>{group.title}</strong>
+              {group.paths.map((path) => {
+                const item = navByPath.get(path);
+                if (!item) return null;
+                return (
+                  <Link key={path} href={localizeHref(lang, item.path)}>
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </div>
           ))}
         </nav>
         <div className="footer-meta">

@@ -38,6 +38,41 @@ function ArchitectureWorld({ content }) {
   );
 }
 
+function PlatformArchitectureDiagram({ layers }) {
+  return (
+    <div className="platform-architecture-diagram" aria-label="HydroAgent architecture diagram">
+      <div className="diagram-flow">
+        <span>Inputs</span>
+        <span>Review</span>
+        <span>Delivery</span>
+      </div>
+      <div className="diagram-layers">
+        {layers.map((layer, index) => (
+          <article className={`diagram-layer diagram-layer-${index + 1}`} key={layer.title}>
+            <span>{`0${index + 1}`}</span>
+            <h3>{layer.title}</h3>
+            <p>{layer.text}</p>
+          </article>
+        ))}
+      </div>
+      <div className="diagram-dashboard" aria-hidden="true">
+        <div className="dashboard-topline" />
+        <div className="dashboard-map">
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="dashboard-bars">
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function BrandManifesto({ lang }) {
   const copy =
     lang === "zh"
@@ -205,8 +240,9 @@ export function PlatformPageContent({ lang = "en" }) {
             title={page.offeringsSection.title}
           />
           <div className="three-up-grid">
-            {page.offeringsSection.items.map((item) => (
-              <article className="info-card" key={item.title}>
+            {page.offeringsSection.items.map((item, index) => (
+              <article className={`info-card offering-card offering-card-${index + 1}`} key={item.title}>
+                <span className="offering-type">{index === 0 ? "Product" : index === 1 ? "System" : "Service"}</span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </article>
@@ -220,6 +256,7 @@ export function PlatformPageContent({ lang = "en" }) {
             title={page.architectureSection.title}
             text={page.architectureSection.text}
           />
+          <PlatformArchitectureDiagram layers={page.architectureSection.layers} />
           <div className="architecture-stack">
             {page.architectureSection.layers.map((layer, index) => (
               <article key={layer.title} className="architecture-layer">
@@ -325,7 +362,7 @@ export function WorkflowPageContent({ lang = "en" }) {
             title={page.stepsSection.title}
             text={page.stepsSection.text}
           />
-          <div className="workflow-rail">
+          <div className="workflow-rail workflow-timeline">
             {page.stepsSection.items.map((step) => (
               <article className="workflow-step" key={step.id}>
                 <div className="workflow-step-index">{step.id}</div>
