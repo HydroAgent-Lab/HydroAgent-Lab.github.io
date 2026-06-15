@@ -7753,3 +7753,233 @@ html {
     max-width: 100% !important;
   }
 }
+
+/* Density pass: fewer empty bands, wider usable content, less repeated-card bulk. */
+.main-content > .page-lead:first-child {
+  min-height: min(680px, calc(78vh - var(--nav-height))) !important;
+  padding-top: clamp(90px, 9vw, 150px) !important;
+  padding-bottom: clamp(42px, 5vw, 78px) !important;
+  gap: clamp(18px, 3vw, 38px) !important;
+}
+
+.main-content > .page-lead:first-child h1 {
+  max-width: min(1120px, 86vw) !important;
+}
+
+.main-content > .page-lead:first-child .page-lead-side > p {
+  max-width: 720px !important;
+}
+
+.content-section,
+.capability-directory,
+.cta-band {
+  padding-top: clamp(38px, 5vw, 72px) !important;
+  padding-bottom: clamp(38px, 5vw, 72px) !important;
+}
+
+.content-section .section-header,
+.capability-directory-head {
+  margin-bottom: clamp(20px, 3vw, 38px) !important;
+  gap: clamp(20px, 3.4vw, 56px) !important;
+}
+
+.content-section .section-header h2,
+.capability-directory-head h2 {
+  max-width: min(980px, 78vw) !important;
+}
+
+.info-card,
+.surface-card,
+.capability-card,
+.research-result-card,
+.contact-detail-card,
+.step-card {
+  min-height: 170px !important;
+  padding: clamp(16px, 2.1vw, 28px) !important;
+}
+
+.architecture-layer,
+.workflow-step,
+.research-detail-row,
+.about-milestone-row,
+.about-signal-row,
+.argument-row,
+.capability-result {
+  padding-top: clamp(14px, 2vw, 26px) !important;
+  padding-bottom: clamp(14px, 2vw, 26px) !important;
+  gap: clamp(16px, 3vw, 48px) !important;
+}
+
+.workflow-rail {
+  margin-top: clamp(20px, 3vw, 38px) !important;
+}
+
+.workflow-step h3 {
+  max-width: 16ch !important;
+}
+
+.workflow-meta {
+  gap: 6px !important;
+}
+
+.team-about-hero-grid {
+  padding-top: clamp(92px, 10vw, 150px) !important;
+  padding-bottom: clamp(42px, 5vw, 76px) !important;
+  gap: clamp(18px, 4vw, 56px) !important;
+}
+
+.team-about-mission .team-about-frame,
+.team-about-values .team-about-frame,
+.team-about-members .team-about-frame,
+.team-about-timeline .team-about-frame,
+.team-about-metrics .team-about-frame,
+.careers-band .careers-frame {
+  padding-top: clamp(34px, 5vw, 68px) !important;
+  padding-bottom: clamp(34px, 5vw, 68px) !important;
+}
+
+.team-about-manifest-grid,
+.team-about-values-layout,
+.team-about-values-grid,
+.team-about-member-row,
+.team-about-metrics-grid,
+.careers-statement-grid,
+.careers-track-grid,
+.careers-principles-grid,
+.careers-split-row {
+  margin-top: clamp(18px, 3vw, 34px) !important;
+}
+
+.team-about-member-row {
+  min-height: 320px !important;
+}
+
+.team-about-member-card {
+  padding: 14px !important;
+}
+
+.team-about-member-avatar {
+  width: 56px !important;
+  height: 56px !important;
+}
+
+.careers-hero {
+  min-height: min(680px, calc(76vh - var(--nav-height))) !important;
+}
+
+.careers-hero-inner {
+  min-height: min(680px, calc(76vh - var(--nav-height))) !important;
+  padding-top: clamp(70px, 8vw, 118px) !important;
+  padding-bottom: clamp(50px, 6vw, 92px) !important;
+}
+
+.careers-split-media {
+  min-height: clamp(180px, 28vw, 300px) !important;
+}
+
+.careers-process-list article {
+  padding-top: clamp(16px, 2vw, 26px) !important;
+  padding-bottom: clamp(16px, 2vw, 26px) !important;
+}
+
+.runs-frame {
+  padding-top: clamp(34px, 5vw, 70px) !important;
+  padding-bottom: clamp(34px, 5vw, 70px) !important;
+}
+
+.runs-hero .runs-frame {
+  min-height: min(520px, calc(58vh - var(--nav-height))) !important;
+}
+
+.runs-toolbar {
+  margin-bottom: clamp(20px, 3vw, 36px) !important;
+}
+
+.run-row {
+  padding-top: clamp(14px, 2vw, 26px) !important;
+  padding-bottom: clamp(14px, 2vw, 26px) !important;
+  gap: clamp(18px, 3vw, 52px) !important;
+}
+
+@media (max-width: 760px) {
+  .main-content > .page-lead:first-child {
+    min-height: auto !important;
+    padding-top: 78px !important;
+    padding-bottom: 36px !important;
+  }
+
+  .content-section,
+  .capability-directory,
+  .cta-band {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .team-about-hero-grid,
+  .careers-hero-inner,
+  .runs-frame {
+    padding-top: 52px !important;
+    padding-bottom: 42px !important;
+  }
+}
+
+/* Home page density: keep the cinematic first screen, remove oversized follow-up gaps. */
+.brand-hero,
+.main-content > .brand-hero {
+  min-height: min(760px, calc(88vh - var(--nav-height))) !important;
+}
+
+.brand-hero .hero-copy {
+  gap: clamp(12px, 1.8vw, 22px) !important;
+}
+
+.brand-hero .hero-copy h1 {
+  max-width: min(980px, 74vw) !important;
+}
+
+.brand-hero .hero-copy p:not(.eyebrow) {
+  max-width: 760px !important;
+}
+
+.brand-manifesto,
+.business-map,
+.agent-thinking,
+.human-agent,
+.architecture-world,
+.proof-statement {
+  padding-top: clamp(42px, 5.5vw, 82px) !important;
+  padding-bottom: clamp(42px, 5.5vw, 82px) !important;
+}
+
+.business-map-grid,
+.agent-thinking-grid,
+.human-agent-grid,
+.architecture-world-grid,
+.proof-statement-grid {
+  gap: clamp(18px, 3vw, 46px) !important;
+}
+
+.business-map-card,
+.agent-thinking-card,
+.architecture-world-card,
+.proof-statement-card {
+  min-height: 0 !important;
+  padding: clamp(16px, 2vw, 28px) !important;
+}
+
+@media (max-width: 760px) {
+  .brand-hero,
+  .main-content > .brand-hero {
+    min-height: auto !important;
+  }
+
+  .brand-manifesto,
+  .business-map,
+  .agent-thinking,
+  .human-agent,
+  .architecture-world,
+  .proof-statement {
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+  }
+}

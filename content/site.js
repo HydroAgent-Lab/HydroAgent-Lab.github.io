@@ -415,13 +415,13 @@ export const siteContent = {
     platform: {
       lead: {
         eyebrow: "Platform",
-        title: "One platform foundation behind products, workflow systems, and expert collaboration.",
+        title: "One shared foundation for products, expert review, and delivery.",
         text:
-          "The platform provides the shared foundation behind HydroAgent-FF and future domain-specific offerings.",
+          "HydroAgent-FF is the first product on this foundation. Future modules can reuse the same review, deployment, and handoff layer.",
         facts: [
-          { label: "Primary use", value: "Operational hydrologic workflow support" },
+          { label: "Primary use", value: "Operational hydrologic review" },
           { label: "Core model", value: "Human review remains inside the release chain" },
-          { label: "Adoption path", value: "Products, pilots, and workflow integration" }
+          { label: "Adoption path", value: "Products, pilots, and integration" }
         ]
       },
       offeringsSection: {
@@ -446,7 +446,7 @@ export const siteContent = {
         eyebrow: "Architecture",
         title: "The platform keeps each layer clear and accountable.",
         text:
-          "Models generate evidence. Analysts define context and judgment. HydroAgent-Lab coordinates the workflow and preserves the record.",
+          "Models provide signals, analysts add context, and the platform keeps the record clear enough to audit.",
         layers: [
           {
             title: "Data and model layer",
@@ -516,9 +516,9 @@ export const siteContent = {
     capabilities: {
       lead: {
         eyebrow: "Capabilities",
-        title: "Find what HydroAgent-Lab can do today.",
+        title: "Find what is available today.",
         text:
-          "A searchable directory of current product capabilities, workflow services, and collaboration modes. As the portfolio grows, this becomes the place to check what is already available.",
+          "A searchable directory of current product functions, services, and collaboration modes. As the portfolio grows, this becomes the quickest way to check fit.",
         facts: [
           { label: "Scope", value: "Products, workflow systems, services, and research collaboration" },
           { label: "Use", value: "Search by task, stage, product, or adoption need" },
@@ -635,9 +635,9 @@ export const siteContent = {
     workflow: {
       lead: {
         eyebrow: "Workflow",
-        title: "Five steps, one chain of responsibility, and a clear handoff to human release authority.",
+        title: "Five steps from scenario setup to release.",
         text:
-          "The workflow makes reasoning explicit under operational pressure while preserving the analyst's role in review and release.",
+          "Each step leaves an artifact the team can review, update, or replay.",
         facts: [
           { label: "Coverage", value: "Scenario framing through release gate" },
           { label: "Operating mode", value: "Rolling forecast with traceable updates" },
@@ -690,7 +690,7 @@ export const siteContent = {
       },
       artifactsSection: {
         eyebrow: "Artifacts",
-        title: "The workflow is useful because every stage leaves behind something reusable.",
+        title: "Each stage produces a concrete artifact.",
         items: [
           {
             title: "Before forecast updates",
@@ -723,7 +723,7 @@ export const siteContent = {
         eyebrow: "Research",
         title: "From research prototype to flood forecasting frontline.",
         text:
-          "HydroAgent-Lab studies whether LLM-based agents can support real hydrologic forecasting workflows, using flood forecasting as the first operational test case.",
+          "We test whether LLM agents can support frontline flood forecasting without weakening scientific accountability.",
         facts: [
           { label: "EGU 2026", value: "Session HS3.5 oral presentation" },
           { label: "Case", value: "South Yamhill River, March 2022" },
@@ -780,7 +780,7 @@ export const siteContent = {
       },
       thesisSection: {
         eyebrow: "Core Thesis",
-        title: "HydroAgent-Lab treats flood forecasting as an institutional workflow, not only a modeling problem.",
+        title: "Flood forecasting is an institutional practice, not only a modeling problem.",
         claims: [
           "Tacit forecasting expertise can be externalized into structured artifacts.",
           "Replayability and reviewability belong in the system design, not in a post hoc notebook.",
@@ -916,7 +916,7 @@ export const siteContent = {
         eyebrow: "About HydroAgent-Lab",
         title: "The people behind HydroAgent-Lab.",
         text:
-          "Before diving into the product, it matters to know who is building it. HydroAgent-Lab brings together young developers, master's and PhD students, frontline hydrologists, junior AI researchers, and senior research mentors across Italy, Germany, the United States, and China.",
+          "HydroAgent-Lab brings together students, frontline hydrologists, AI researchers, software builders, and mentors across Italy, Germany, the United States, and China.",
         facts: [
           { label: "Team size", value: "Around 20 to 30 contributors" },
           { label: "Geography", value: "Italy, Germany, the US, and China" },
@@ -927,7 +927,7 @@ export const siteContent = {
         eyebrow: "About Us",
         title: "An interest-driven lab for frontline hydro practice.",
         text:
-          "HydroAgent-Lab is not a conventional funded project. It is a collaborative effort by people who care about whether AI can actually help hydrologists in real forecasting work. Some members are joining from universities, some from engineering and hydrological practice, and some from AI product development.",
+          "This is an interest-driven effort by people who want AI to become useful in real forecasting work. Members come from universities, engineering practice, hydrological operations, and AI product development.",
         navItems: [
           { label: "Members", href: "#members" },
           { label: "Workstreams", href: "#workstreams" },
@@ -1077,14 +1077,14 @@ export const siteContent = {
         eyebrow: "Join HydroAgent-Lab",
         title: "Build water intelligence with people who know the front line.",
         text:
-          "HydroAgent-Lab is an interest-driven team for people who want AI to help real hydrologic practice. We welcome contributors who can connect science, software, product judgment, and operational responsibility.",
+          "We welcome contributors who can connect hydrology, software, product judgment, and operational responsibility.",
         cta: "Start a conversation",
         ctaPath: "/contact"
       },
       missionSection: {
         title: "We are not hiring for headcount. We are looking for builders who can carry real work.",
         text:
-          "This is currently a community-driven, volunteer-led effort with no funding support. The right fit is someone who wants to build useful hydrologic AI systems, produce credible evidence, and learn through serious collaboration rather than only collect a title."
+          "This is currently community-driven and volunteer-led. The right fit is someone who wants to build useful systems, produce credible evidence, and learn through serious collaboration."
       },
       statementSection: {
         title: "The work is close to the problem.",
@@ -1515,13 +1515,13 @@ export const siteContent = {
     platform: {
       lead: {
         eyebrow: "平台",
-        title: "一个共享的平台基础，支撑产品、工作流系统与专家协作。",
+        title: "一个支撑产品、专家审核与交付的平台基础。",
         text:
-          "这个平台为 HydroAgent-FF 以及后续领域化产品提供共享的基础能力。",
+          "HydroAgent-FF 是第一个产品；后续水务智能模块可以复用同一套审核、部署与交付层。",
         facts: [
-          { label: "主要用途", value: "支持业务级水文工作流" },
+          { label: "主要用途", value: "支持业务级水文审核" },
           { label: "核心模式", value: "人工审核保留在发布链路中" },
-          { label: "采用路径", value: "产品、试点与流程集成" }
+          { label: "采用路径", value: "产品、试点与集成" }
         ]
       },
       offeringsSection: {
@@ -1546,7 +1546,7 @@ export const siteContent = {
         eyebrow: "平台结构",
         title: "平台结构清楚，责任链路清楚。",
         text:
-          "模型负责提供证据，分析师负责给出上下文与判断，HydroAgent-Lab 负责把整个流程组织起来并留下记录。",
+          "模型提供信号，分析师补充情境，平台把记录保留下来，便于审核与复盘。",
         layers: [
           {
             title: "数据与模型层",
@@ -1616,9 +1616,9 @@ export const siteContent = {
     capabilities: {
       lead: {
         eyebrow: "能力目录",
-        title: "查看 HydroAgent-Lab 目前能支持什么。",
+        title: "查看目前可以支持什么。",
         text:
-          "这里整理当前可用的产品能力、工作流服务与合作方式。未来功能变多后，客户可以直接在这里按任务、阶段或需求查找。",
+          "这里汇总当前可用的产品功能、服务方式与合作入口。功能变多后，客户可以按任务、阶段或需求快速查找。",
         facts: [
           { label: "范围", value: "产品、工作流系统、服务与研究合作" },
           { label: "用途", value: "按任务、阶段、产品或采用需求检索" },
@@ -1735,9 +1735,9 @@ export const siteContent = {
     workflow: {
       lead: {
         eyebrow: "工作流",
-        title: "五个步骤，一条责任链，最终清楚交给人工发布。",
+        title: "从情景准备到发布关口的五步流程。",
         text:
-          "这个流程在业务压力下把判断变得更显性、更稳，同时保留分析师在审核与发布中的角色。",
+          "每一步都留下可审核、可更新、可复盘的产物。",
         facts: [
           { label: "覆盖范围", value: "从情景构建到发布关口" },
           { label: "运行方式", value: "滚动预报与可追溯更新" },
@@ -1789,7 +1789,7 @@ export const siteContent = {
       },
       artifactsSection: {
         eyebrow: "阶段产物",
-        title: "这个流程之所以有价值，是因为每一步都会留下可复用的业务工件。",
+        title: "每个阶段都产出明确材料。",
         items: [
           {
             title: "更新前",
@@ -1822,7 +1822,7 @@ export const siteContent = {
         eyebrow: "研究",
         title: "从研究原型走向洪水预报一线。",
         text:
-          "HydroAgent-Lab 研究基于大语言模型的智能体是否能够支持真实水文预报流程，并以洪水预报作为第一个业务测试场景。",
+          "我们测试 LLM 智能体能否支持一线洪水预报，同时保留科学责任。",
         facts: [
           { label: "EGU 2026", value: "HS3.5 口头报告" },
           { label: "案例", value: "South Yamhill River，2022 年 3 月" },
@@ -1879,7 +1879,7 @@ export const siteContent = {
       },
       thesisSection: {
         eyebrow: "核心命题",
-        title: "HydroAgent-Lab 把洪水预报视为一个机构化工作流，而不只是一个建模问题。",
+        title: "洪水预报是机构化业务，不只是建模问题。",
         claims: [
           "隐性的预报经验可以被外化为结构化工件。",
           "可复盘与可审核应当是系统设计的一部分，而不是事后补充。",
@@ -2016,7 +2016,7 @@ export const siteContent = {
         eyebrow: "关于 HydroAgent-Lab",
         title: "先认识 HydroAgent-Lab 背后的团队。",
         text:
-          "在介绍产品之前，更重要的是让访问者知道是谁在做这件事。HydroAgent-Lab 由来自意大利、德国、美国和中国的青年开发者、硕博学生、一线水文工作者、青年 AI 研究者与研究导师共同组成。",
+          "HydroAgent-Lab 由来自意大利、德国、美国和中国的学生、一线水文工作者、AI 研究者、软件开发者与导师组成。",
         facts: [
           { label: "团队规模", value: "约 20 到 30 位贡献者" },
           { label: "地域分布", value: "意大利、德国、美国与中国" },
@@ -2027,7 +2027,7 @@ export const siteContent = {
         eyebrow: "关于我们",
         title: "一个面向一线水文实践的兴趣驱动实验室。",
         text:
-          "HydroAgent-Lab 不是一个传统经费项目，而是一群真正关心 AI 是否能进入一线水文业务的人共同推动的协作。成员来自高校、工程与水文业务一线，也包括 AI 产品和智能体系统方向的年轻开发者。",
+          "这不是传统经费项目，而是一群关心 AI 能否进入一线水文业务的人共同推动的协作。成员来自高校、工程与水文业务一线，也包括 AI 产品和智能体系统方向的年轻开发者。",
         navItems: [
           { label: "团队成员", href: "#members" },
           { label: "工作线", href: "#workstreams" },
@@ -2177,14 +2177,14 @@ export const siteContent = {
         eyebrow: "加入 HydroAgent-Lab",
         title: "和真正理解一线问题的人一起建设水务智能。",
         text:
-          "HydroAgent-Lab 是一个兴趣驱动的协作团队，面向希望让 AI 真正进入水文业务的人。我们欢迎能够连接科学、软件、产品判断与业务责任的贡献者。",
+          "欢迎能连接水文、软件、产品判断与业务责任的贡献者。",
         cta: "开始沟通",
         ctaPath: "/contact"
       },
       missionSection: {
         title: "我们不是为了扩充人数而招人，而是在寻找能承担真实工作的建设者。",
         text:
-          "当前 HydroAgent-Lab 仍是社区驱动、志愿协作、暂无经费支持的项目。更适合加入的人，是希望做出有用的水文 AI 系统、形成可信证据，并在严肃协作中持续学习的人。"
+          "当前项目仍是社区驱动、志愿协作、暂无经费支持。更适合加入的人，是希望做出有用系统、形成可信证据，并在严肃协作中持续学习的人。"
       },
       statementSection: {
         title: "这里的工作贴近真实问题。",
