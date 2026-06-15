@@ -17,7 +17,7 @@
   --radius-xl: 30px;
   --radius-lg: 22px;
   --radius-md: 16px;
-  --max-width: 1260px;
+  --max-width: 1520px;
 }
 
 * { box-sizing: border-box; }
@@ -54,7 +54,7 @@ body::before {
 .trust-band,
 .signals-band,
 .site-footer {
-  width: min(calc(100% - 32px), var(--max-width));
+  width: min(calc(100% - 24px), var(--max-width));
   margin: 0 auto;
 }
 
@@ -310,7 +310,7 @@ body::before {
 }
 
 .landing-overview {
-  width: min(calc(100% - 32px), var(--max-width));
+  width: min(calc(100% - 24px), var(--max-width));
   margin: 0 auto 24px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -713,7 +713,7 @@ body::before {
 }
 
 .proof-strip {
-  width: min(calc(100% - 32px), var(--max-width));
+  width: min(calc(100% - 24px), var(--max-width));
   margin: -10px auto 18px;
   padding: 12px 14px 14px;
   border-radius: 24px;
@@ -984,7 +984,7 @@ body::before {
 }
 
 .institution-strip {
-  width: min(calc(100% - 32px), var(--max-width));
+  width: min(calc(100% - 24px), var(--max-width));
   margin: 0 auto 18px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2466,7 +2466,7 @@ body::before {
   .trust-band,
   .signals-band,
   .site-footer {
-    width: min(calc(100% - 20px), var(--max-width));
+    width: min(calc(100% - 16px), var(--max-width));
   }
 
   .hero h1 {
