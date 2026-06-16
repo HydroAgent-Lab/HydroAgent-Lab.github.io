@@ -17,7 +17,7 @@
   --radius-xl: 30px;
   --radius-lg: 22px;
   --radius-md: 16px;
-  --max-width: 1520px;
+  --max-width: 1680px;
 }
 
 * { box-sizing: border-box; }
@@ -102,6 +102,7 @@ body::before {
   display: flex;
   align-items: center;
   gap: 18px;
+  min-width: 0;
 }
 
 .eyebrow,
@@ -142,6 +143,7 @@ body::before {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-left: auto;
 }
 
 .header-pill,
@@ -238,6 +240,23 @@ body::before {
   font-size: 1.06rem;
   max-width: 40ch;
   margin-bottom: 20px;
+}
+
+main > .hero,
+main > .section,
+main > .site-footer {
+  max-width: var(--max-width);
+}
+
+body:not(.home-page) main > .hero,
+body:not(.home-page) main > .section {
+  width: min(calc(100% - 24px), var(--max-width));
+}
+
+body:not(.home-page) .hero h1,
+body:not(.home-page) .hero-lead,
+body:not(.home-page) .section-heading p {
+  max-width: none;
 }
 
 .hero-actions,
@@ -493,13 +512,14 @@ body::before {
 .product-hero-visual-clean {
   min-height: auto;
   align-items: flex-start;
-  justify-content: center;
-  padding: 0;
+  justify-content: flex-start;
+  padding: 24px 0 0 0;
 }
 
 .product-hero-card-clean {
   width: 100%;
   max-width: none;
+  margin-left: -26px;
 }
 
 .product-hero-figure-clean {
