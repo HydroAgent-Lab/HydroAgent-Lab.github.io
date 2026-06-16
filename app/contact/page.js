@@ -1,4 +1,4 @@
-import { ContactPageContent } from "@/components/site-pages-v2";
+import { ContactPageContent } from "@/components/pages/contact";
 
 export const metadata = {
   title: "Contact | HydroAgent-Lab"

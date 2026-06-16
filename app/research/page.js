@@ -1,4 +1,4 @@
-import { ResearchPageContent } from "@/components/site-pages-v2";
+import { ResearchPageContent } from "@/components/pages/research";
 
 export const metadata = {
   title: "Research | HydroAgent-Lab"

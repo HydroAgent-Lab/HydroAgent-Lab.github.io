@@ -1,0 +1,177 @@
+/* ==========================================================
+   Platform Page — Capability Grid, Architecture Diagram/Stack
+   ========================================================== */
+
+/* --- Capability Grid --- */
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.capability-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 16px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.capability-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.capability-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- Platform Architecture Diagram --- */
+.platform-architecture-diagram {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.diagram-flow {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.diagram-flow span {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+}
+
+.diagram-layers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.diagram-layer {
+  padding: 16px;
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent);
+}
+
+.diagram-layer span {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.diagram-layer h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.diagram-layer p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.diagram-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg);
+  border-radius: var(--radius-md);
+}
+
+.dashboard-topline {
+  grid-column: 1 / -1;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+}
+
+.dashboard-map {
+  display: flex;
+  gap: 8px;
+}
+
+.dashboard-map span {
+  flex: 1;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--border);
+}
+
+.dashboard-bars {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.dashboard-bars span {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  background: var(--accent-light);
+  opacity: 0.4;
+}
+
+.dashboard-bars span:nth-child(1) { height: 24px; }
+.dashboard-bars span:nth-child(2) { height: 36px; }
+.dashboard-bars span:nth-child(3) { height: 28px; }
+.dashboard-bars span:nth-child(4) { height: 44px; }
+
+/* --- Architecture Stack --- */
+.architecture-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.architecture-layer {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  padding: 20px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.architecture-layer span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.architecture-layer h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.architecture-layer p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}

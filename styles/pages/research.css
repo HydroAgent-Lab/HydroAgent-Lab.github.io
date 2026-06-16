@@ -1,0 +1,132 @@
+/* ==========================================================
+   Research Page — Presentation panel, results, milestones,
+   thesis, longform text
+   ========================================================== */
+
+.research-presentation-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 24px;
+}
+
+.research-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.research-detail-row span {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.research-detail-row strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.research-download {
+  margin-top: 8px;
+}
+
+.research-result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.research-result-card {
+  padding: 24px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.research-result-card span {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.research-result-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.research-result-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Milestones / Takeaways --- */
+.about-milestone-head {
+  margin-bottom: 32px;
+}
+
+.about-milestone-head .eyebrow { margin-bottom: 12px; }
+
+.about-milestone-head h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.about-milestone-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-milestone-row {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-milestone-row span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.about-milestone-row p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* --- Thesis --- */
+.thesis-card {
+  margin-bottom: 32px;
+}
+
+.thesis-card .eyebrow { margin-bottom: 12px; }
+
+.thesis-card h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.thesis-claims {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Narrative / Longform --- */
+.longform-text {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 680px;
+}

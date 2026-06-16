@@ -1,4 +1,4 @@
-import "./globals-v2.css";
+import "./globals.css";
 
 export const metadata = {
   title: "HydroAgent-Lab",

@@ -1,4 +1,4 @@
-import { WorkflowPageContent } from "@/components/site-pages-v2";
+import { WorkflowPageContent } from "@/components/pages/workflow";
 
 export const metadata = {
   title: "Workflow | HydroAgent-Lab"

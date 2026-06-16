@@ -1,4 +1,4 @@
-import { CareersPageContent } from "@/components/site-pages-v2";
+import { CareersPageContent } from "@/components/pages/careers";
 
 export const metadata = {
   title: "加入我们 | HydroAgent-Lab"

@@ -1,4 +1,4 @@
-import { RunsPageContent } from "@/components/site-pages-v2";
+import { RunsPageContent } from "@/components/pages/runs";
 
 export const metadata = {
   title: "Runs | HydroAgent-Lab"

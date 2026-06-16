@@ -1,0 +1,121 @@
+/* ==========================================================
+   Footer + Back-to-top
+   ========================================================== */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 64px var(--gutter) 40px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+}
+
+.footer-brand-mark img {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-brand strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.footer-brand p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.footer-nav-grouped {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.footer-nav-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-nav-column strong {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.footer-nav-column a {
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.footer-nav-column a:hover { color: var(--text); }
+
+.footer-meta {
+  grid-column: 1 / -1;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-meta p {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* --- Back to top --- */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  color: var(--text-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all var(--transition);
+  z-index: 90;
+}
+
+.back-to-top:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+  .footer-nav-grouped { grid-template-columns: repeat(2, 1fr); }
+}

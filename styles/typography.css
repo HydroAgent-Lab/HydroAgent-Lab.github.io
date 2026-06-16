@@ -1,0 +1,24 @@
+/* ==========================================================
+   Typography — Shared heading, eyebrow, and text styles
+   ========================================================== */
+
+.eyebrow {
+  margin: 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* --- Chinese language adjustments --- */
+.lang-zh .eyebrow {
+  letter-spacing: 0.02em;
+}

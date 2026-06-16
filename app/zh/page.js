@@ -1,4 +1,4 @@
-import { HomePageContent } from "@/components/site-pages-v2";
+import { HomePageContent } from "@/components/pages/home";
 
 export const metadata = {
   title: "HydroAgent-Lab",
