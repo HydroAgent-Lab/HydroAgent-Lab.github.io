@@ -1,4 +1,4 @@
-import { CapabilitiesPageContent } from "@/components/site-pages";
+import { CapabilitiesPageContent } from "@/components/site-pages-v2";
 
 export const metadata = {
   title: "能力目录 | HydroAgent-Lab"

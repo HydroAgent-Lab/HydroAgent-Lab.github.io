@@ -1,4 +1,4 @@
-import { TeamPageContent } from "@/components/site-pages";
+import { TeamPageContent } from "@/components/site-pages-v2";
 
 export const metadata = {
   title: "团队 | HydroAgent-Lab"

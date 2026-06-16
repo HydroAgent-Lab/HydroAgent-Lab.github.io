@@ -1,4 +1,4 @@
-import { PlatformPageContent } from "@/components/site-pages";
+import { PlatformPageContent } from "@/components/site-pages-v2";
 
 export const metadata = {
   title: "Platform | HydroAgent-Lab"

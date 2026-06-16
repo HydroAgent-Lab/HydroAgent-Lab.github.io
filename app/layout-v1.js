@@ -1,4 +1,4 @@
-import "./globals-v2.css";
+import "./globals.css";
 
 export const metadata = {
   title: "HydroAgent-Lab",
@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="preload" as="image" href="/assets/hero-hydroagent-lab-fast.webp" />
         <link rel="icon" href="/assets/hydroagent-mark.svg" type="image/svg+xml" />
       </head>
       <body>{children}</body>
