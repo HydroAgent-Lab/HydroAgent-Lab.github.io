@@ -419,6 +419,33 @@ body::before {
   padding: 12px 4px 12px 34px;
 }
 
+.product-hero-visual {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  min-height: 620px;
+}
+
+.product-hero-card {
+  width: 100%;
+}
+
+.product-hero-figure {
+  position: relative;
+}
+
+.product-hero-figure img {
+  display: block;
+  width: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  background: #fff;
+}
+
+.product-hero-overlay .cockpit-hud {
+  background: rgba(7, 18, 29, 0.8);
+}
+
 .system-perspective {
   position: relative;
   display: grid;
@@ -2278,6 +2305,14 @@ body::before {
     padding: 12px 0 0;
   }
 
+  .product-hero-visual {
+    min-height: 0;
+  }
+
+  .product-hero-figure img {
+    min-height: 420px;
+  }
+
   .system-perspective,
   .hero-perspective,
   .map-perspective {
@@ -2399,6 +2434,10 @@ body::before {
   .product-proof-grid,
   .credibility-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-hero-figure img {
+    min-height: 0;
   }
 
   .hero-signal-row,
