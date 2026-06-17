@@ -242,29 +242,103 @@
   margin-top: 2px;
 }
 
-/* --- Brand Manifesto --- */
+/* --- Brand Manifesto — Alternating Block Row --- */
 .brand-manifesto {
   padding: 80px var(--gutter);
   border-top: 1px solid var(--border);
 }
 
-.brand-manifesto .eyebrow { margin-bottom: 24px; }
+.brand-manifesto .eyebrow { margin-bottom: 16px; }
 
-.manifesto-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-}
-
-.manifesto-grid h2 {
+.manifesto-title {
   font-size: 1.75rem;
   line-height: 1.2;
+  margin: 0 0 40px;
+  max-width: 640px;
 }
 
-.manifesto-grid p {
-  font-size: 15px;
+/* 6-column row */
+.manifesto-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+
+/* Block base */
+.manifesto-block {
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.manifesto-block:hover {
+  transform: translateY(-2px);
+}
+
+/* Light grey blocks (01, 03, 05) */
+.manifesto-block.dark {
+  background: #e8e8e4;
+  box-shadow: 4px 4px 0 0 #c8c8c4;
+}
+
+.manifesto-block.dark .manifesto-block-num {
+  color: var(--accent);
+}
+
+.manifesto-block.dark h3 {
+  color: var(--text);
+}
+
+.manifesto-block.dark p {
   color: var(--text-muted);
-  line-height: 1.7;
+}
+
+.manifesto-block.dark:hover {
+  box-shadow: 6px 6px 0 0 #c8c8c4;
+}
+
+/* White blocks (02, 04, 06) */
+.manifesto-block.light {
+  background: #ffffff;
+  box-shadow: 4px 4px 0 0 #d8d8d4;
+}
+
+.manifesto-block.light .manifesto-block-num {
+  color: var(--accent);
+}
+
+.manifesto-block.light h3 {
+  color: var(--text);
+}
+
+.manifesto-block.light p {
+  color: var(--text-muted);
+}
+
+.manifesto-block.light:hover {
+  box-shadow: 6px 6px 0 0 #d8d8d4;
+}
+
+/* Block content */
+.manifesto-block-num {
+  font-size: 12px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.manifesto-block h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.manifesto-block p {
+  font-size: 12.5px;
+  line-height: 1.55;
   margin: 0;
 }
 
@@ -566,7 +640,7 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
-  .manifesto-grid { grid-template-columns: 1fr; gap: 24px; }
+  .manifesto-row { grid-template-columns: repeat(2, 1fr); }
   .human-agent { grid-template-columns: 1fr; }
   .architecture-scene { grid-template-columns: 1fr; }
   .architecture-core { margin: 0 auto 24px; }
