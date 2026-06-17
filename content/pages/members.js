@@ -26,9 +26,9 @@ export const membersContent = {
   zh: {
     lead: {
       eyebrow: "实验室成员",
-      title: "遍布全球的 HydroAgent-Lab 团队。",
+      title: "遍布全球的 HydroAgent-Lab 团队 ",
       text:
-        "HydroAgent-Lab 汇聚了学生、一线水文工作者、AI 研究者、软件建设者与导师，分布在意大利、德国、美国、加拿大、比利时和中国。",
+        "HydroAgent-Lab 汇聚了学生、一线水文工作者、AI 研究者、软件建设者与导师，分布在意大利、德国、美国、加拿大、比利时和中国 ",
       facts: [
         { label: "分布", value: "意大利 · 德国 · 美国 · 加拿大 · 比利时 · 中国" },
         { label: "方向", value: "水文 · AI · 软件 · 研究" },
@@ -39,7 +39,7 @@ export const membersContent = {
     roster: {
       eyebrow: "团队成员",
       title: "HydroAgent-Lab",
-      text: "排名不分先后。",
+      text: "排名不分先后 ",
       emailLabel: "邮箱",
       disciplineLine: "一线水文工作者 · AI 研究者 · 早期研究者 · 软件建设者 · 顾问",
       countryLine: "意大利 · 德国 · 美国 · 加拿大 · 比利时 · 中国",

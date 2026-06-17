@@ -123,6 +123,69 @@
   margin-bottom: 12px;
 }
 
+/* --- Editorial List (divided rows, replaces conceptual card grids) --- */
+.editorial-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.editorial-row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 28px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+
+.editorial-index {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.editorial-row p {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 62ch;
+}
+
+/* --- Definition Rows (title / description split, replaces 3-up cards) --- */
+.split-list {
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+
+.split-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 28px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+
+.split-row dt {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.split-row dd {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 52ch;
+}
+
 /* --- CTA Band --- */
 .cta-band {
   display: flex;
@@ -213,10 +276,16 @@
 @media (max-width: 900px) {
   .page-lead { grid-template-columns: 1fr; gap: 24px; }
   .three-up-grid { grid-template-columns: 1fr; }
+  .split-row { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
   .cta-band {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+@media (max-width: 600px) {
+  .editorial-row { grid-template-columns: 36px 1fr; gap: 16px; padding: 22px 0; }
+  .editorial-row p { font-size: 16px; }
 }
 
 @media (min-width: 901px) and (max-width: 1100px) {

@@ -10,7 +10,7 @@ export function CapabilitiesPageContent({ lang = "en" }) {
 
   return (
     <SiteShell lang={lang}>
-      <main className="main-content">
+      <main className="main-content capabilities-page">
         <PageLead
           eyebrow={page.lead.eyebrow}
           title={page.lead.title}
@@ -40,14 +40,14 @@ export function CapabilitiesPageContent({ lang = "en" }) {
             title={page.tasksSection.title}
             text={page.tasksSection.text}
           />
-          <div className="capability-grid">
-            {page.tasksSection.items.map((item) => (
-              <article className="capability-card" key={item.slice(0, 24)}>
-                <span className="capability-dot" />
+          <ol className="editorial-list">
+            {page.tasksSection.items.map((item, i) => (
+              <li className="editorial-row" key={item.slice(0, 24)}>
+                <span className="editorial-index">{`0${i + 1}`}</span>
                 <p>{item}</p>
-              </article>
+              </li>
             ))}
-          </div>
+          </ol>
         </section>
 
         <CtaBand lang={lang} content={content} />

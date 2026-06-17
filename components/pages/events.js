@@ -7,7 +7,7 @@ export function EventsPageContent({ lang = "en" }) {
 
   return (
     <SiteShell lang={lang}>
-      <main className="main-content">
+      <main className="main-content events-page">
         <PageLead
           eyebrow={c.lead.eyebrow}
           title={c.lead.title}
@@ -19,8 +19,16 @@ export function EventsPageContent({ lang = "en" }) {
           <div className="event-list">
             {c.items.map((item) => (
               <article className="event-card" key={item.title}>
-                <div className="event-card-media" aria-hidden="true">
-                  <span>{item.photo}</span>
+                <div className={`event-card-media${item.photos ? " has-photos" : ""}`} aria-hidden={!item.photos}>
+                  {item.photos ? (
+                    <div className="event-photo-collage">
+                      {item.photos.map((photo) => (
+                        <img key={photo.src} src={photo.src} alt={photo.alt} />
+                      ))}
+                    </div>
+                  ) : (
+                    <span>{item.photo}</span>
+                  )}
                 </div>
                 <div className="event-card-body">
                   <h3>{item.title}</h3>

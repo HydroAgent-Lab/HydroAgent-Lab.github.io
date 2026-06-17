@@ -28,9 +28,9 @@ export const whitePapersContent = {
   zh: {
     lead: {
       eyebrow: "白皮书",
-      title: "第一版白皮书正在筹备。",
+      title: "第一版白皮书正在筹备 ",
       text:
-        "HydroAgent 白皮书是面向 hydro + agent（水文水利 + 智能体）领域的行业白皮书——汇总值得关注的学术论文、行业新闻、新产品、新政策等动态。",
+        "HydroAgent 白皮书是面向 hydro + agent（水文水利 + 智能体）领域的行业白皮书——汇总值得关注的学术论文、行业新闻、新产品、新政策等动态 ",
       facts: [
         { label: "范围", value: "hydro + agent 领域" },
         { label: "形式", value: "月度 notes、季度白皮书与年度综述" },
@@ -39,16 +39,16 @@ export const whitePapersContent = {
     },
     cadenceSection: {
       eyebrow: "更新节奏",
-      title: "保持稳定的节奏。",
+      title: "保持稳定的节奏 ",
       items: [
-        { label: "每月", text: "一篇 notes，整理当月主要动态。" },
-        { label: "每季度", text: "一篇白皮书，系统梳理领域进展。" },
-        { label: "每年", text: "一份年度综述。" }
+        { label: "每月", text: "一篇 notes，整理当月主要动态 " },
+        { label: "每季度", text: "一篇白皮书，系统梳理领域进展 " },
+        { label: "每年", text: "一份年度综述 " }
       ]
     },
     status: {
-      title: "归档页会随第一篇一起开放。",
-      text: "关注我们，第一篇上线时第一时间知道。"
+      title: "归档页会随第一篇一起开放 ",
+      text: "关注我们，第一篇上线时第一时间知道 "
     }
   }
 };

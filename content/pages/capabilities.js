@@ -45,9 +45,9 @@ export const capabilitiesContent = {
   zh: {
     lead: {
       eyebrow: "能力",
-      title: "能力与合作。",
+      title: "能力与合作 ",
       text:
-        "HydroAgent 不止是一个洪水预报产品（那是 HydroAgent-FF）。这一页从两个维度说明你能从我们这儿获得什么：按合作方式，以及按任务能力。",
+        "HydroAgent 不止是一个洪水预报产品（那是 HydroAgent-FF）。这一页从两个维度说明你能从我们这儿获得什么：按合作方式，以及按任务能力 ",
       facts: [
         { label: "两个维度", value: "按合作方式 · 按任务能力" },
         { label: "旗舰产品", value: "HydroAgent-FF 面向洪水预报" },
@@ -56,32 +56,32 @@ export const capabilitiesContent = {
     },
     collaborationSection: {
       eyebrow: "按合作方式",
-      title: "可以这样开始。",
+      title: "可以这样开始 ",
       items: [
         {
           title: "本地化适配的 HydroAgent",
-          text: "把 HydroAgent 适配到你的流域与机构——结合当地数据、你现有的水文模型和本地业务实践，而不是一个通用 demo。"
+          text: "把 HydroAgent 适配到你的流域与机构——结合当地数据、你现有的水文模型和本地业务实践，而不是一个通用 demo "
         },
         {
           title: "与已有数字孪生 / 业务系统耦合",
-          text: "把 HydroAgent 作为 AI 工作流与复核层，接入已有数字孪生平台或业务预报系统。已有系统继续承担数据底座和模型计算，HydroAgent 负责有条理的推理组织、专家判断显性化和人机复核——不替换，只增强。"
+          text: "把 HydroAgent 作为 AI 工作流与复核层，接入已有数字孪生平台或业务预报系统。已有系统继续承担数据底座和模型计算，HydroAgent 负责有条理的推理组织、专家判断显性化和人机复核——不替换，只增强 "
         },
         {
           title: "试点、研究与机构介绍",
-          text: "从一次聚焦的试点或简报开始，逐步进入更深的合作（详见联系页）。"
+          text: "从一次聚焦的试点或简报开始，逐步进入更深的合作（详见联系页） "
         }
       ]
     },
     tasksSection: {
       eyebrow: "按任务能力",
-      title: "快速了解 HydroAgent 支持哪类工作。",
-      text: "想了解旗舰洪水产品，见 HydroAgent-FF。",
+      title: "快速了解 HydroAgent 支持哪类工作 ",
+      text: "想了解旗舰洪水产品，见 HydroAgent-FF ",
       items: [
-        "把预报所需的信息和背景组织成一个清晰的整体。",
-        "让专家判断可见、可复用、可复核。",
-        "跟踪并解释预报如何随情况变化。",
-        "为决策与发布准备可复核的材料。",
-        "保留可追溯的记录，用于复核、培训和沉淀。"
+        "把预报所需的信息和背景组织成一个清晰的整体 ",
+        "让专家判断可见、可复用、可复核 ",
+        "跟踪并解释预报如何随情况变化 ",
+        "为决策与发布准备可复核的材料 ",
+        "保留可追溯的记录，用于复核、培训和沉淀 "
       ]
     }
   }

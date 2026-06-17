@@ -18,14 +18,14 @@ export function HomePageContent({ lang = "en" }) {
             eyebrow={page.whatSection.eyebrow}
             title={page.whatSection.title}
           />
-          <div className="capability-grid">
-            {page.whatSection.items.map((item) => (
-              <article className="capability-card" key={item.slice(0, 24)}>
-                <span className="capability-dot" />
+          <ol className="editorial-list">
+            {page.whatSection.items.map((item, i) => (
+              <li className="editorial-row" key={item.slice(0, 24)}>
+                <span className="editorial-index">{`0${i + 1}`}</span>
                 <p>{item}</p>
-              </article>
+              </li>
             ))}
-          </div>
+          </ol>
         </section>
 
         <section className="content-section">
@@ -44,14 +44,14 @@ export function HomePageContent({ lang = "en" }) {
             eyebrow={page.trustSection.eyebrow}
             title={page.trustSection.title}
           />
-          <div className="capability-grid">
-            {page.trustSection.items.map((item) => (
-              <article className="capability-card" key={item.slice(0, 24)}>
-                <span className="capability-dot" />
+          <ol className="editorial-list">
+            {page.trustSection.items.map((item, i) => (
+              <li className="editorial-row" key={item.slice(0, 24)}>
+                <span className="editorial-index">{`0${i + 1}`}</span>
                 <p>{item}</p>
-              </article>
+              </li>
             ))}
-          </div>
+          </ol>
         </section>
 
         <section className="content-section">
@@ -59,14 +59,14 @@ export function HomePageContent({ lang = "en" }) {
             eyebrow={page.whoSection.eyebrow}
             title={page.whoSection.title}
           />
-          <div className="three-up-grid">
+          <dl className="split-list">
             {page.whoSection.items.map((item) => (
-              <article className="info-card" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
+              <div className="split-row" key={item.title}>
+                <dt>{item.title}</dt>
+                <dd>{item.text}</dd>
+              </div>
             ))}
-          </div>
+          </dl>
         </section>
 
         <CtaBand lang={lang} content={content} />
