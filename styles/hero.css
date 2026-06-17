@@ -154,14 +154,22 @@
   transform: translateX(3px);
 }
 
-/* Video tag caption */
+/* Video tag caption — pinned to bottom-right of hero */
 .hero-video-tag {
-  margin-top: 16px;
+  position: absolute;
+  z-index: 2;
+  right: var(--gutter, 28px);
+  bottom: 24px;
+  margin: 0;
   font-size: 11px;
   color: var(--text-muted);
   font-weight: 400;
   letter-spacing: 0.02em;
-  opacity: 0.7;
+  opacity: 0.65;
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.45);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill, 100px);
 }
 
 /* ---- Legacy elements — hidden ---- */

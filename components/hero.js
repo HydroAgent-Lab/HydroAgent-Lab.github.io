@@ -35,10 +35,12 @@ export function Hero({ lang = "en", content }) {
             {hero.secondary} <span className="action-arrow">→</span>
           </Link>
         </div>
-        {hero.videoTag && (
-          <p className="hero-video-tag">{hero.videoTag}</p>
-        )}
       </div>
+
+      {/* Video tag — bottom-right, below the video area */}
+      {hero.videoTag && (
+        <p className="hero-video-tag">{hero.videoTag}</p>
+      )}
     </section>
   );
 }
