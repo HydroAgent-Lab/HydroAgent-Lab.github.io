@@ -1,0 +1,98 @@
+/* ==========================================================
+   HydroAgent-Lab — designV2 additions
+   New components introduced when applying v2 content:
+   Events cards, Members map, footer social links.
+   ========================================================== */
+
+/* --- Events / Community --- */
+.event-list {
+  display: grid;
+  gap: 1.5rem;
+}
+.event-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 280px) 1fr;
+  gap: 1.5rem;
+  border: 1px solid rgba(15, 35, 60, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+}
+.event-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #5b6b7e;
+  background: linear-gradient(135deg, #eef2f7, #dde6f0);
+}
+.event-card-body {
+  padding: 1.5rem 1.5rem 1.5rem 0;
+}
+.event-card-body h3 {
+  margin: 0 0 0.4rem;
+}
+.event-card-meta {
+  margin: 0 0 0.8rem;
+  font-size: 0.9rem;
+  color: #6b7785;
+}
+.event-card-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.event-card-links a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+@media (max-width: 720px) {
+  .event-card {
+    grid-template-columns: 1fr;
+  }
+  .event-card-body {
+    padding: 0 1.5rem 1.5rem;
+  }
+}
+
+/* --- Lab Members map --- */
+.members-map-section {
+  margin-top: 1rem;
+}
+.members-map {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 35, 60, 0.08);
+}
+.members-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* --- Drawer group label (Follow Us, mobile) --- */
+.drawer-grouplabel {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* --- Footer social --- */
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1rem;
+}
+.footer-social a,
+.footer-social span {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+.footer-social a {
+  text-decoration: underline;
+}

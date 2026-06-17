@@ -2,139 +2,139 @@ export const contactContent = {
   en: {
     lead: {
       eyebrow: "Contact",
-      title: "A clear entry point for product inquiries, service discussions, and research collaboration.",
+      title: "Tell us what you're working on.",
       text:
-        "Use this page to start commercial, operational, or research conversations with the HydroAgent team.",
+        "Use this page to start a focused conversation about product fit, pilot work, or research collaboration. If HydroAgent may be relevant to your forecasting work, a short note with concrete context is enough to begin.",
       facts: [
         { label: "Best for", value: "Pilots, collaboration, and institutional briefings" },
-        { label: "Response window", value: "Typically within 3 business days" },
+        { label: "Response window", value: "Usually within 3 business days" },
         { label: "Contact route", value: "Email-first with scoped follow-up" }
       ]
     },
     primarySection: {
       eyebrow: "Primary Contact",
-      title: "Use one clear route for serious conversations.",
+      title: "A short, specific note is the best start.",
       summary:
-        "Start with a short note about your team, your use case, and whether the discussion is about research, deployment, or institutional collaboration.",
+        "You do not need a formal RFP or a polished proposal. The most useful first message is a clear description of the problem, workflow, or decision process you want to improve.",
       emailLabel: "Email",
-      email: "contact@hydroagent-lab.org",
+      email: "contact@hydroagentlab.com",
       responseLabel: "Response window",
-      response: "Typically within 3 business days",
+      response: "Usually within 3 business days",
       formatLabel: "Best for",
-      format: "Pilot inquiries, collaboration discussions, and research briefings"
+      format: "Pilots, collaboration, and institutional briefings"
     },
     inquirySection: {
       eyebrow: "Inquiry Types",
-      title: "Three common reasons to reach out.",
+      title: "Common reasons people reach out.",
       items: [
         {
           title: "Research collaboration",
-          text: "Discuss workflow intelligence, judgment formalization, evaluation design, or joint papers."
+          text: "Workflow intelligence, expert judgment formalization, evaluation design, datasets, or joint papers."
         },
         {
           title: "Operational pilot",
-          text: "Explore how the platform could support repeated forecast updates, review gates, and release packaging."
+          text: "Explore whether HydroAgent can make your forecasting work more organized, reviewable, and reproducible."
         },
         {
           title: "Institutional briefing",
-          text: "Introduce the framing, the workflow, and the product direction to a broader stakeholder group."
+          text: "Introduce HydroAgent's approach, evidence, and product direction to your team or stakeholders."
         }
       ]
     },
     stepsSection: {
-      eyebrow: "Engagement Path",
-      title: "A straightforward three-step path moves the conversation forward quickly.",
+      eyebrow: "How It Works",
+      title: "After we connect, a short path moves things forward.",
       items: [
         {
           id: "01",
-          title: "Send context",
-          text: "Describe your team, basin, current workflow, and what kind of conversation you need."
+          title: "Clarify the context",
+          text: "We may ask a few focused questions about your work, region or basin, data, or decision process."
         },
         {
           id: "02",
           title: "Review fit",
-          text: "We review whether the conversation is best handled as a briefing, pilot discussion, or research exchange."
+          text: "Together we decide whether the right next step is a briefing, a pilot discussion, or a research exchange."
         },
         {
           id: "03",
-          title: "Schedule next step",
-          text: "Move into a focused call, a scoped follow-up, or a document exchange."
+          title: "Move forward",
+          text: "We schedule a focused call, prepare a scoped follow-up, or exchange the materials needed for the next step."
         }
       ]
     },
     callout: {
       title: "For the fastest path, include your operational context in the first message.",
       text:
-        "A short note with region, workflow maturity, and desired collaboration type is usually enough to start."
+        "Your team, region or basin, current workflow maturity, pain points, and the type of collaboration you have in mind are usually enough to start."
     }
   },
   zh: {
     lead: {
       eyebrow: "联系",
-      title: "面向产品咨询、服务合作与研究协作的清楚入口。",
+      title: "告诉我们你正在解决的问题。",
       text:
-        "你可以通过这个页面发起商业、业务或研究相关的正式沟通。",
+        "如果你想了解产品、探讨试点，或发起研究合作，都可以从这里联系我们。第一封消息不需要写成正式方案，只要把场景和问题讲清楚，就足够开始一次有效沟通。",
       facts: [
-        { label: "适合场景", value: "试点、合作与机构简报" },
-        { label: "响应周期", value: "通常 3 个工作日内" },
+        { label: "适合场景", value: "试点、合作与机构介绍" },
+        { label: "响应周期", value: "一般 3 个工作日内" },
         { label: "联系方式", value: "先邮件沟通，再进入定向跟进" }
       ]
     },
     primarySection: {
       eyebrow: "主要联系渠道",
-      title: "用一个清楚的入口承接严肃对话。",
+      title: "一封简短、具体的消息就是最好的开始。",
       summary:
-        "建议在首封邮件里简单说明团队背景、使用场景，以及希望讨论的是研究、部署还是机构合作。",
+        "不需要正式方案或精致的提案。最有用的第一封消息，是把你想改进的问题、工作流或决策过程讲清楚。",
       emailLabel: "邮箱",
-      email: "contact@hydroagent-lab.org",
+      email: "contact@hydroagentlab.com",
       responseLabel: "响应周期",
-      response: "通常 3 个工作日内",
+      response: "一般 3 个工作日内",
       formatLabel: "适合场景",
-      format: "试点咨询、研究合作、机构简报"
+      format: "试点、研究合作、面向机构的介绍交流"
     },
     inquirySection: {
       eyebrow: "联系原因",
-      title: "最常见的三类对话场景。",
+      title: "大家通常为这些事找我们。",
       items: [
         {
           title: "研究合作",
-          text: "围绕工作流智能、判断形式化、验证设计或联合论文展开沟通。"
+          text: "工作流智能、专家判断显性化、评估方法设计、数据集建设，或联合论文。"
         },
         {
           title: "业务试点",
-          text: "讨论平台如何支持滚动预报、审核节点与发布打包。"
+          text: "一起评估 HydroAgent 能否让你们的预报工作更有条理、更易复核、更易复现。"
         },
         {
-          title: "机构简报",
-          text: "向更广泛的相关方介绍定位、流程与产品方向。"
+          title: "机构介绍",
+          text: "向你的团队或相关方介绍 HydroAgent 的思路、已有证据和产品方向。"
         }
       ]
     },
     stepsSection: {
-      eyebrow: "沟通路径",
-      title: "三步即可把对话快速推进到下一阶段。",
+      eyebrow: "如何开始",
+      title: "建立联系之后，几步即可推进。",
       items: [
         {
           id: "01",
-          title: "发送背景",
-          text: "说明你的团队、流域、当前流程，以及希望展开的对话类型。"
+          title: "澄清背景",
+          text: "我们可能会围绕你的工作、所在地区或流域、数据或决策流程补充几个具体问题。"
         },
         {
           id: "02",
           title: "确认匹配度",
-          text: "我们会判断更适合做简报、试点讨论还是研究交流。"
+          text: "一起判断更适合先做介绍、讨论试点，还是进入研究交流。"
         },
         {
           id: "03",
-          title: "安排下一步",
-          text: "进入一次聚焦沟通、定向跟进，或文档交换。"
+          title: "推进下一步",
+          text: "安排一次聚焦沟通、准备有针对性的跟进材料，或交换后续所需资料。"
         }
       ]
     },
     callout: {
-      title: "最快的方式，是在第一封消息里写清业务背景。",
+      title: "想最快推进，第一封消息就带上你的业务背景。",
       text:
-        "只要补充区域、流程成熟度与希望合作的类型，通常就足够开始。"
+        "你的团队、所在地区或流域、当前流程成熟度、痛点，以及希望开展的合作类型，通常就足够开始。"
     }
   }
 };

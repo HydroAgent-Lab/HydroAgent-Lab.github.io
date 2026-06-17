@@ -2,239 +2,87 @@ export const capabilitiesContent = {
   en: {
     lead: {
       eyebrow: "Capabilities",
-      title: "Find what is available today.",
+      title: "Capabilities & collaboration.",
       text:
-        "A searchable directory of current product functions, services, and collaboration modes. As the portfolio grows, this becomes the quickest way to check fit.",
+        "HydroAgent is more than a flood forecasting product (that is HydroAgent-FF). This page tells you what you can get from us along two dimensions: how we work with you, and what HydroAgent can do by task.",
       facts: [
-        { label: "Scope", value: "Products, workflow systems, services, and research collaboration" },
-        { label: "Use", value: "Search by task, stage, product, or adoption need" },
-        { label: "Status", value: "Current capabilities, with room for future modules" }
+        { label: "Two views", value: "How we work with you · What HydroAgent does" },
+        { label: "Flagship", value: "HydroAgent-FF for flood forecasting" },
+        { label: "Engagement", value: "Localization, integration, pilots, research" }
       ]
     },
-    directoryEyebrow: "Capability Directory",
-    directoryTitle: "Search by the work you need to support.",
-    searchLabel: "Search capabilities",
-    searchPlaceholder: "Try forecast review, release package, pilot, replay...",
-    filterLabel: "Capability categories",
-    allLabel: "All",
-    emptyText: "No matching capability yet. Try another keyword or contact the team.",
-    categories: [
-      { id: "forecasting", label: "Forecasting" },
-      { id: "workflow", label: "Workflow" },
-      { id: "review", label: "Review" },
-      { id: "adoption", label: "Adoption" },
-      { id: "research", label: "Research" }
-    ],
-    items: [
-      {
-        category: "forecasting",
-        categoryLabel: "Forecasting",
-        stage: "Before forecast",
-        status: "Available",
-        title: "Scenario preparation",
-        summary:
-          "Assemble rainfall, basin state, upstream context, analog events, and known operational constraints before interpretation starts.",
-        tags: ["HydroAgent-FF", "rainfall", "basin state", "scenario"]
-      },
-      {
-        category: "workflow",
-        categoryLabel: "Workflow",
-        stage: "Before forecast",
-        status: "Available",
-        title: "Prior judgment capture",
-        summary:
-          "Turn forecaster expectations, thresholds, watchpoints, and assumptions into reusable structured artifacts.",
-        tags: ["expert judgment", "templates", "watchpoints", "assumptions"]
-      },
-      {
-        category: "review",
-        categoryLabel: "Review",
-        stage: "During update",
-        status: "Available",
-        title: "Model run review",
-        summary:
-          "Review model mismatch, surface uncertainty drivers, record correction hypotheses, and keep the evidence chain visible.",
-        tags: ["model review", "uncertainty", "correction", "diagnostics"]
-      },
-      {
-        category: "forecasting",
-        categoryLabel: "Forecasting",
-        stage: "During update",
-        status: "Available",
-        title: "Rolling forecast comparison",
-        summary:
-          "Compare forecast versions across update cycles so teams can see what changed, why it changed, and what still needs attention.",
-        tags: ["rolling forecast", "versions", "deltas", "updates"]
-      },
-      {
-        category: "review",
-        categoryLabel: "Review",
-        stage: "Release gate",
-        status: "Available",
-        title: "Release package assembly",
-        summary:
-          "Prepare bulletin language, confidence notes, unresolved watchpoints, and approval context for final human release authority.",
-        tags: ["bulletin", "approval", "handoff", "release"]
-      },
-      {
-        category: "workflow",
-        categoryLabel: "Workflow",
-        stage: "After event",
-        status: "Available",
-        title: "Post-event replay",
-        summary:
-          "Preserve scenario context, decisions, revisions, and release artifacts for training, review, and institutional learning.",
-        tags: ["replay", "training", "audit", "post-event"]
-      },
-      {
-        category: "adoption",
-        categoryLabel: "Adoption",
-        stage: "Pilot",
-        status: "Available",
-        title: "Operational pilot design",
-        summary:
-          "Scope a pilot around a real workflow, define review gates, decide success criteria, and map integration constraints.",
-        tags: ["pilot", "deployment", "integration", "evaluation"]
-      },
-      {
-        category: "adoption",
-        categoryLabel: "Adoption",
-        stage: "Briefing",
-        status: "Available",
-        title: "Technical briefing",
-        summary:
-          "Support stakeholder alignment with product walkthroughs, system framing, use-case mapping, and adoption discussion.",
-        tags: ["briefing", "stakeholders", "product walkthrough", "fit"]
-      },
-      {
-        category: "research",
-        categoryLabel: "Research",
-        stage: "Collaboration",
-        status: "Available",
-        title: "Research collaboration",
-        summary:
-          "Frame studies around hydrologic workflow intelligence, judgment formalization, replayability, and operational evaluation.",
-        tags: ["research", "evaluation", "judgment", "workflow intelligence"]
-      }
-    ]
+    collaborationSection: {
+      eyebrow: "How We Work With You",
+      title: "Ways to get started.",
+      items: [
+        {
+          title: "A localized HydroAgent",
+          text: "Adapt HydroAgent to your basin and institution — working with your local data, the hydrological model you already use, and your local operational practice, rather than a generic demo."
+        },
+        {
+          title: "Coupling with your existing digital twin / system",
+          text: "Run HydroAgent as an AI workflow and review layer on top of your existing digital twin or operational forecasting system. Your system keeps the data foundation and model computation; HydroAgent adds organized reasoning, visible expert judgment, and human-in-the-loop review — augmenting, not replacing."
+        },
+        {
+          title: "Pilots, research & briefings",
+          text: "Start from a focused pilot or briefing and grow into deeper collaboration (see Contact →)."
+        }
+      ]
+    },
+    tasksSection: {
+      eyebrow: "What HydroAgent Can Do",
+      title: "A quick view of the work HydroAgent supports.",
+      text: "For the flagship flood product, see HydroAgent-FF.",
+      items: [
+        "Organize forecasting inputs and context into one clear view.",
+        "Keep expert judgment visible, reusable, and reviewable.",
+        "Track and explain how a forecast changes as conditions evolve.",
+        "Prepare review-ready materials for decision and release.",
+        "Preserve a traceable record for review, training, and learning."
+      ]
+    }
   },
   zh: {
     lead: {
-      eyebrow: "能力目录",
-      title: "查看目前可以支持什么。",
+      eyebrow: "能力",
+      title: "能力与合作。",
       text:
-        "这里汇总当前可用的产品功能、服务方式与合作入口。功能变多后，客户可以按任务、阶段或需求快速查找。",
+        "HydroAgent 不止是一个洪水预报产品（那是 HydroAgent-FF）。这一页从两个维度说明你能从我们这儿获得什么：按合作方式，以及按任务能力。",
       facts: [
-        { label: "范围", value: "产品、工作流系统、服务与研究合作" },
-        { label: "用途", value: "按任务、阶段、产品或采用需求检索" },
-        { label: "状态", value: "当前能力目录，可持续扩展" }
+        { label: "两个维度", value: "按合作方式 · 按任务能力" },
+        { label: "旗舰产品", value: "HydroAgent-FF 面向洪水预报" },
+        { label: "合作形态", value: "本地化、系统耦合、试点、研究" }
       ]
     },
-    directoryEyebrow: "能力检索",
-    directoryTitle: "按你需要支持的工作来查找。",
-    searchLabel: "搜索能力",
-    searchPlaceholder: "试试：预报审核、发布包、试点、复盘...",
-    filterLabel: "能力分类",
-    allLabel: "全部",
-    emptyText: "暂时没有匹配能力。可以换一个关键词，或直接联系团队。",
-    categories: [
-      { id: "forecasting", label: "预报" },
-      { id: "workflow", label: "工作流" },
-      { id: "review", label: "审核" },
-      { id: "adoption", label: "采用" },
-      { id: "research", label: "研究" }
-    ],
-    items: [
-      {
-        category: "forecasting",
-        categoryLabel: "预报",
-        stage: "预报前",
-        status: "可用",
-        title: "情景准备",
-        summary:
-          "在解释开始前整理降雨、流域状态、上游背景、历史类比事件与本地业务约束。",
-        tags: ["HydroAgent-FF", "降雨", "流域状态", "情景"]
-      },
-      {
-        category: "workflow",
-        categoryLabel: "工作流",
-        stage: "预报前",
-        status: "可用",
-        title: "先验判断沉淀",
-        summary:
-          "把预报员的预期、阈值、关注点与假设转化为可复用的结构化材料。",
-        tags: ["专家判断", "模板", "关注点", "假设"]
-      },
-      {
-        category: "review",
-        categoryLabel: "审核",
-        stage: "更新中",
-        status: "可用",
-        title: "模型结果复核",
-        summary:
-          "复核模型偏差，显式呈现不确定性来源，记录修正假设，并保留证据链。",
-        tags: ["模型审核", "不确定性", "修正", "诊断"]
-      },
-      {
-        category: "forecasting",
-        categoryLabel: "预报",
-        stage: "更新中",
-        status: "可用",
-        title: "滚动预报版本比较",
-        summary:
-          "比较多轮更新之间的版本差异，让团队看到哪里变了、为什么变、还需要关注什么。",
-        tags: ["滚动预报", "版本", "差异", "更新"]
-      },
-      {
-        category: "review",
-        categoryLabel: "审核",
-        stage: "发布关口",
-        status: "可用",
-        title: "发布包整理",
-        summary:
-          "整理公告文本、置信说明、未解决关注点与审批上下文，交给最终人工发布。",
-        tags: ["公告", "审批", "交接", "发布"]
-      },
-      {
-        category: "workflow",
-        categoryLabel: "工作流",
-        stage: "事件后",
-        status: "可用",
-        title: "事后回放复盘",
-        summary:
-          "保留情景背景、决策、修订与发布材料，用于训练、复核与机构知识沉淀。",
-        tags: ["回放", "训练", "审计", "复盘"]
-      },
-      {
-        category: "adoption",
-        categoryLabel: "采用",
-        stage: "试点",
-        status: "可用",
-        title: "业务试点设计",
-        summary:
-          "围绕真实业务流程定义试点范围、审核关口、成功标准与集成约束。",
-        tags: ["试点", "部署", "集成", "评估"]
-      },
-      {
-        category: "adoption",
-        categoryLabel: "采用",
-        stage: "简报",
-        status: "可用",
-        title: "技术简报",
-        summary:
-          "通过产品走查、系统框架、场景匹配与采用讨论，支持机构内部对齐。",
-        tags: ["简报", "利益相关方", "产品走查", "匹配"]
-      },
-      {
-        category: "research",
-        categoryLabel: "研究",
-        stage: "合作",
-        status: "可用",
-        title: "研究合作",
-        summary:
-          "围绕水文工作流智能、判断形式化、可回放性与业务评价设计研究合作。",
-        tags: ["研究", "评价", "判断", "工作流智能"]
-      }
-    ]
+    collaborationSection: {
+      eyebrow: "按合作方式",
+      title: "可以这样开始。",
+      items: [
+        {
+          title: "本地化适配的 HydroAgent",
+          text: "把 HydroAgent 适配到你的流域与机构——结合当地数据、你现有的水文模型和本地业务实践，而不是一个通用 demo。"
+        },
+        {
+          title: "与已有数字孪生 / 业务系统耦合",
+          text: "把 HydroAgent 作为 AI 工作流与复核层，接入已有数字孪生平台或业务预报系统。已有系统继续承担数据底座和模型计算，HydroAgent 负责有条理的推理组织、专家判断显性化和人机复核——不替换，只增强。"
+        },
+        {
+          title: "试点、研究与机构介绍",
+          text: "从一次聚焦的试点或简报开始，逐步进入更深的合作（详见联系页）。"
+        }
+      ]
+    },
+    tasksSection: {
+      eyebrow: "按任务能力",
+      title: "快速了解 HydroAgent 支持哪类工作。",
+      text: "想了解旗舰洪水产品，见 HydroAgent-FF。",
+      items: [
+        "把预报所需的信息和背景组织成一个清晰的整体。",
+        "让专家判断可见、可复用、可复核。",
+        "跟踪并解释预报如何随情况变化。",
+        "为决策与发布准备可复核的材料。",
+        "保留可追溯的记录，用于复核、培训和沉淀。"
+      ]
+    }
   }
 };

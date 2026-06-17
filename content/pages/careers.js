@@ -11,14 +11,14 @@ export const careersContent = {
     missionSection: {
       title: "We are not hiring for headcount. We are looking for builders who can carry real work.",
       text:
-        "This is currently community-driven and volunteer-led. The right fit is someone who wants to build useful systems, produce credible evidence, and learn through serious collaboration."
+        "This is currently community-driven and volunteer-led. The right fit is someone who wants to build useful systems, produce credible evidence, and learn through serious collaboration. Code and technical work are organized on GitHub; day-to-day discussion happens in WeChat groups — both free to join, with translation that helps people work across languages."
     },
     statementSection: {
       title: "The work is close to the problem.",
       paragraphs: [
         {
           title: "Not generic AI demos",
-          text: "We work on forecasting workflows, model review, scenario preparation, release packaging, and replayable evidence."
+          text: "We work on real forecasting problems — making the work more organized, reviewable, and reproducible for the people responsible for it."
         },
         {
           title: "Not isolated academic slogans",
@@ -53,7 +53,7 @@ export const careersContent = {
         },
         {
           title: "AI agents and software engineering",
-          text: "Build interfaces, orchestration, evaluation tooling, capability modules, and reliable deployment paths."
+          text: "Build interfaces, orchestration, evaluation tooling, and reliable deployment paths."
         },
         {
           title: "Research and evaluation",
@@ -81,7 +81,7 @@ export const careersContent = {
         },
         {
           label: "03",
-          title: "Work in a small loop",
+          title: "Start small",
           text: "We start with a scoped task or conversation, then decide whether deeper collaboration makes sense."
         }
       ]
@@ -89,7 +89,7 @@ export const careersContent = {
     ctaSection: {
       title: "Interested in building with us?",
       text:
-        "Send a short email with your background, preferred contribution track, and one concrete idea you would like to explore.",
+        "Send a short email to contact@hydroagentlab.com (or reach us by phone / WeChat at 18301695791) with your background and the direction you would like to contribute to.",
       button: "Contact the team",
       href: "/contact"
     }
@@ -106,14 +106,14 @@ export const careersContent = {
     missionSection: {
       title: "我们不是为了扩充人数而招人，而是在寻找能承担真实工作的建设者。",
       text:
-        "当前项目仍是社区驱动、志愿协作、暂无经费支持。更适合加入的人，是希望做出有用系统、形成可信证据，并在严肃协作中持续学习的人。"
+        "当前项目仍是社区驱动、志愿协作、暂无经费支持。更适合加入的人，是希望做出有用系统、形成可信证据，并在严肃协作中持续学习的人。代码和技术工作主要在 GitHub 上组织，日常沟通在微信群进行——都可免费参与，微信群的自动翻译也方便跨语言协作。"
     },
     statementSection: {
       title: "这里的工作贴近真实问题。",
       paragraphs: [
         {
           title: "不是通用 AI 演示",
-          text: "我们关注预报工作流、模型复核、情景准备、发布打包与可回放证据。"
+          text: "我们关注真实的预报问题——为真正负责的人，让工作更有条理、更易复核、更易复现。"
         },
         {
           title: "不是空泛学术口号",
@@ -148,7 +148,7 @@ export const careersContent = {
         },
         {
           title: "AI 智能体与软件工程",
-          text: "建设界面、编排、评估工具、能力模块和可靠部署路径。"
+          text: "建设界面、编排、评估工具和可靠部署路径。"
         },
         {
           title: "研究与评估",
@@ -176,7 +176,7 @@ export const careersContent = {
         },
         {
           label: "03",
-          title: "从小闭环开始",
+          title: "从小处着手",
           text: "我们会先从一个小任务或一次讨论开始，再判断是否进入更深入的协作。"
         }
       ]
@@ -184,7 +184,7 @@ export const careersContent = {
     ctaSection: {
       title: "想和我们一起建设吗？",
       text:
-        "请发一封简短邮件，说明你的背景、希望参与的方向，以及一个你想探索的具体想法。",
+        "请发一封简短邮件至 contact@hydroagentlab.com（也可通过电话 / 微信 18301695791 联系），说明你的背景和希望参与的方向。",
       button: "联系团队",
       href: "/contact"
     }

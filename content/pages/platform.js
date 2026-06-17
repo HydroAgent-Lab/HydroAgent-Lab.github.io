@@ -1,204 +1,120 @@
 export const platformContent = {
   en: {
     lead: {
-      eyebrow: "Platform",
-      title: "One shared foundation for products, expert review, and delivery.",
+      eyebrow: "Product",
+      title: "HydroAgent-FF",
       text:
-        "HydroAgent-FF is the first product on this foundation. Future modules can reuse the same review, deployment, and handoff layer.",
+        "An agentic workflow product for flood forecasting operations. Climate change is driving more extreme floods, and forecasting is the first line of defense. Operational forecasting today starts from a hydrological model, but the final bulletin is never the model's raw output. Experienced forecasters stay in the loop, combining rainfall and water-regime information with local experience before deciding how to revise and release.",
       facts: [
-        { label: "Primary use", value: "Operational hydrologic review" },
-        { label: "Core model", value: "Human review remains inside the release chain" },
-        { label: "Adoption path", value: "Products, pilots, and integration" }
+        { label: "Built for", value: "Flood forecasting operations" },
+        { label: "Approach", value: "Works with your existing hydrological model" },
+        { label: "Control", value: "Forecasters keep review and release authority" }
       ]
     },
-    offeringsSection: {
-      eyebrow: "Offerings",
-      title: "The platform supports multiple outward-facing offerings.",
+    valueSection: {
+      eyebrow: "What It Gives You",
+      title: "Organized, reviewable, reproducible — with experts in control.",
+      paragraphs: [
+        "HydroAgent-FF is not about letting an LLM replace the hydrological model, nor about automating the forecaster away. It organizes real flood forecasting work into a structured, reviewable, and reproducible process, while keeping forecasters in control.",
+        "It works alongside your existing hydrological models and forecasters to make the whole forecasting effort more organized, easier to review, and easier to reproduce. Expert review stays built in, so the people responsible confirm the key results and keep full control of what gets released."
+      ]
+    },
+    signalsSection: {
+      eyebrow: "Current Validation Signals",
+      title: "Specific enough to discuss, early enough to test with partners.",
+      items: [
+        "Demonstrated end to end on a real river basin (South Yamhill River, Oregon, USA) using historical flood events, including a March 2022 event.",
+        "On independent validation events, the system reproduces observed flood peaks and volumes well.",
+        "It performs consistently across several leading large language models.",
+        "Methods paper under submission; presented as an oral talk at EGU 2026.",
+        "Evaluation looks beyond accuracy: whether the process is clearer, the judgment is reviewable, and the result is reproducible."
+      ]
+    },
+    pilotSection: {
+      eyebrow: "Pilot Scenarios",
+      title: "Worth discussing if any of these sound familiar.",
       items: [
         {
-          title: "HydroAgent-FF",
-          text: "A flood forecasting workflow product for teams that need structured updates, review gates, and release readiness."
+          title: "Experience that is hard to record",
+          text: "You already run a hydrological model, but the forecast-revision process relies on experience and is hard to record."
         },
         {
-          title: "Workflow systems",
-          text: "Reusable operating structures for scenario preparation, judgment capture, revision tracking, and replay."
+          title: "Updates that are hard to track",
+          text: "Across repeated forecast updates, version changes and the reasons behind them are hard to track."
         },
         {
-          title: "Expert support",
-          text: "Pilot design, workflow integration, and technical collaboration with domain teams."
+          title: "Release needs clearer handoff",
+          text: "You need clearer review materials and handoff notes before a bulletin is released."
+        },
+        {
+          title: "Turning history into learning",
+          text: "You want to turn historical forecasting into training and review material."
         }
       ]
     },
-    architectureSection: {
-      eyebrow: "Architecture",
-      title: "The platform keeps each layer clear and accountable.",
-      text:
-        "Models provide signals, analysts add context, and the platform keeps the record clear enough to audit.",
-      layers: [
-        {
-          title: "Data and model layer",
-          text: "Radar, basin state, forcings, simulation outputs, and diagnostics remain the evidence base."
-        },
-        {
-          title: "Reasoning and review layer",
-          text: "Analyst priors, watchpoints, correction notes, and confidence framing stay explicit."
-        },
-        {
-          title: "Operational delivery layer",
-          text: "Rolling forecast versions, release packaging, and replay-ready artifacts move through review."
-        }
-      ]
-    },
-    principlesSection: {
-      eyebrow: "Product Principles",
-      title: "Three constraints keep the platform credible.",
-      items: [
-        {
-          title: "Models stay central",
-          text: "The system supports process-based hydrology instead of pretending the LLM replaces it."
-        },
-        {
-          title: "Humans stay accountable",
-          text: "Forecast authority and release approval remain with the operational team."
-        },
-        {
-          title: "The record stays inspectable",
-          text: "Assumptions, revisions, and evidence are preserved in a form the team can revisit."
-        }
-      ]
-    },
-    surfacesSection: {
-      eyebrow: "Work Surfaces",
-      title: "The interface is organized around the tasks people actually perform.",
-      items: [
-        {
-          title: "Scenario workspace",
-          text: "Build event context from rainfall, basin state, upstream conditions, and analog history."
-        },
-        {
-          title: "Judgment workspace",
-          text: "Capture priors, watchpoints, confidence notes, and correction hypotheses in structured form."
-        },
-        {
-          title: "Release workspace",
-          text: "Assemble bulletin drafts, revision notes, and approval packages for final issuance."
-        }
-      ]
-    },
-    capabilitiesSection: {
-      eyebrow: "Delivery Model",
-      title: "Capabilities are packaged around operational work, not AI feature marketing.",
-      text:
-        "The platform earns trust by helping teams complete forecast work with more structure and less fragmentation.",
-      items: [
-        "Scenario preparation and context assembly",
-        "Prior judgment capture with reusable templates",
-        "Model run review and correction traceability",
-        "Rolling forecast comparison across update cycles",
-        "Bulletin drafting with review-ready context",
-        "Post-event replay for training and analysis"
-      ]
+    positioning: {
+      title:
+        "HydroAgent-FF turns flood forecasting from “model output + verbal experience + manual release” into one organized, reviewable, and reproducible process.",
+      text: "Experts stay in control throughout."
     }
   },
   zh: {
     lead: {
-      eyebrow: "平台",
-      title: "一个支撑产品、专家审核与交付的平台基础。",
+      eyebrow: "产品",
+      title: "HydroAgent-FF",
       text:
-        "HydroAgent-FF 是第一个产品；后续水务智能模块可以复用同一套审核、部署与交付层。",
+        "面向洪水预报业务的智能体工作流产品。气候变化带来越来越极端的洪水，而预报是防御洪水的第一道防线。今天的业务化预报从水文模型起步，但最终预报单从来不是模型直接输出的结果。有经验的预报员始终在环路里，把雨水情信息和本地经验结合起来，再决定如何修正和发布。",
       facts: [
-        { label: "主要用途", value: "支持业务级水文审核" },
-        { label: "核心模式", value: "人工审核保留在发布链路中" },
-        { label: "采用路径", value: "产品、试点与集成" }
+        { label: "面向", value: "洪水预报业务" },
+        { label: "方式", value: "与你现有的水文模型协同" },
+        { label: "掌控", value: "预报员保留复核与发布权" }
       ]
     },
-    offeringsSection: {
-      eyebrow: "对外能力",
-      title: "这个平台能够支撑多种对外产品与合作形态。",
+    valueSection: {
+      eyebrow: "它带来什么",
+      title: "更有条理、更易复核、更易复现——全程由专家掌控。",
+      paragraphs: [
+        "HydroAgent-FF 要解决的不是“让 LLM 替代水文模型”，也不是“自动替代预报员”。它把真实洪水预报工作组织成一个结构化、可复核、可复现的过程，并让预报员始终掌握关键决策。",
+        "它与你现有的水文模型和预报员协同，让整个预报工作更有条理、更易复核、更易复现。人工复核始终内置其中——关键结果由负责人确认，发布什么始终由人掌控。"
+      ]
+    },
+    signalsSection: {
+      eyebrow: "当前验证信号",
+      title: "足够具体可以讨论，也足够早期可以一起验证。",
+      items: [
+        "已在真实流域（美国俄勒冈 South Yamhill River）基于历史洪水事件完成端到端演示，包括一次 2022 年 3 月的洪水事件。",
+        "在独立验证事件上，对实测洪峰和洪量的还原效果良好。",
+        "在多个主流大语言模型上表现稳定一致。",
+        "方法论文在投，EGU 2026 已作口头报告。",
+        "评估不只看精度，也看流程是否更清晰、判断是否可复核、结果是否可复现。"
+      ]
+    },
+    pilotSection: {
+      eyebrow: "试点场景",
+      title: "如果你遇到以下情况，欢迎一起讨论。",
       items: [
         {
-          title: "HydroAgent-FF",
-          text: "面向洪水预报业务的工作流产品，强调结构化更新、审核关口与发布准备。"
+          title: "经验难以记录",
+          text: "已有水文模型，但预报修正过程依赖经验、难以记录。"
         },
         {
-          title: "工作流系统",
-          text: "为情景准备、判断沉淀、修订追踪与回放复盘提供可复用的业务结构。"
+          title: "更新难以追踪",
+          text: "多轮预报更新中，版本变化和修改原因难以追踪。"
         },
         {
-          title: "专家支持",
-          text: "面向领域团队提供试点设计、流程集成与技术协作。"
+          title: "发布需要更清晰的交接",
+          text: "预报单发布前需要更清楚的审核材料和交接说明。"
+        },
+        {
+          title: "把历史沉淀为学习材料",
+          text: "希望把历史预报过程沉淀为培训和复盘材料。"
         }
       ]
     },
-    architectureSection: {
-      eyebrow: "平台结构",
-      title: "平台结构清楚，责任链路清楚。",
-      text:
-        "模型提供信号，分析师补充情境，平台把记录保留下来，便于审核与复盘。",
-      layers: [
-        {
-          title: "数据与模型层",
-          text: "承载雷达、流域状态、驱动数据、模型输出与诊断信息。"
-        },
-        {
-          title: "判断与审核层",
-          text: "显式记录先验、关注点、修正说明与置信表达。"
-        },
-        {
-          title: "业务交付层",
-          text: "管理滚动预报版本、发布打包与复盘工件。"
-        }
-      ]
-    },
-    principlesSection: {
-      eyebrow: "产品原则",
-      title: "三个约束让平台保持可信。",
-      items: [
-        {
-          title: "模型仍是核心",
-          text: "系统服务于过程机理模型，而不是假装 LLM 可以替代它。"
-        },
-        {
-          title: "人仍然负责",
-          text: "预报责任与发布审批始终留在业务团队手中。"
-        },
-        {
-          title: "记录必须可查",
-          text: "假设、修订与证据都要以可回看的形式留下来。"
-        }
-      ]
-    },
-    surfacesSection: {
-      eyebrow: "工作界面",
-      title: "界面围绕真实任务组织，而不是围绕 AI 功能名组织。",
-      items: [
-        {
-          title: "情景工作区",
-          text: "构建事件背景，整合降雨、流域状态、上游条件与类比历史。"
-        },
-        {
-          title: "判断工作区",
-          text: "记录先验、关注点、置信说明与修正假设。"
-        },
-        {
-          title: "发布工作区",
-          text: "形成公告草稿、修订说明与可审批的发布包。"
-        }
-      ]
-    },
-    capabilitiesSection: {
-      eyebrow: "交付方式",
-      title: "所有能力都围绕真实业务动作打包，而不是围绕 AI 标签堆砌。",
-      text:
-        "平台通过减少流程碎片化、增强记录能力来建立团队信任。",
-      items: [
-        "情景准备与上下文整理",
-        "先验判断模板化沉淀",
-        "模型复核与修正可追溯",
-        "滚动预报多版本比较",
-        "公告撰写与审核打包",
-        "事后复盘与训练回放"
-      ]
+    positioning: {
+      title:
+        "HydroAgent-FF 把洪水预报从“模型结果 + 口头经验 + 手工发布”，整理为一个有条理、可复核、可复现的过程。",
+      text: "全程由专家掌控。"
     }
   }
 };

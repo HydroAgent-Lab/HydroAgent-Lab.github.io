@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState, useCallback } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, useCallback, useEffect, useRef } from "react";
 import {
   getLanguageSwitchHref,
   getSiteContent,
   localizeHref,
-  normalizePath
+  normalizePath,
+  stripLangPrefix
 } from "@/content/site";
 
 export function SiteShell({ children, lang = "en" }) {
@@ -20,6 +21,7 @@ export function SiteShell({ children, lang = "en" }) {
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [expandedId, setExpandedId] = useState(null);
+  const [openMenuId, setOpenMenuId] = useState(null);
 
   const toggleDrawer = useCallback(() => {
     setDrawerOpen((prev) => !prev);
@@ -35,6 +37,40 @@ export function SiteShell({ children, lang = "en" }) {
     setExpandedId(null);
   }, []);
 
+  // Scroll-to-advance: reaching the bottom auto-navigates to the next page
+  // WITHIN the same top-level section only (does not cross into the next section).
+  const router = useRouter();
+  const basePath = stripLangPrefix(normalizedPathname);
+  let nextBase = null;
+  for (const it of topNav) {
+    if (!it.children) continue;
+    const paths = it.children.filter((c) => c.path).map((c) => normalizePath(c.path));
+    const i = paths.indexOf(basePath);
+    if (i >= 0) {
+      nextBase = i < paths.length - 1 ? paths[i + 1] : null;
+      break;
+    }
+  }
+
+  const advancedRef = useRef(false);
+  useEffect(() => {
+    advancedRef.current = false;
+    if (!nextBase) return undefined;
+    let scrolledOnce = false;
+    const onScroll = () => {
+      if (window.scrollY > 4) scrolledOnce = true;
+      const doc = document.documentElement;
+      const scrollable = doc.scrollHeight > window.innerHeight + 8;
+      const atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 2;
+      if (scrollable && scrolledOnce && atBottom && !advancedRef.current) {
+        advancedRef.current = true;
+        router.push(localizeHref(lang, nextBase));
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [basePath, nextBase, lang, router]);
+
   return (
     <div className={`page-shell lang-${lang}`} id="top">
       <header className="site-header">
@@ -47,30 +83,80 @@ export function SiteShell({ children, lang = "en" }) {
               if (item.children) {
                 const childPaths = item.children.filter((c) => c.path).map((c) => normalizePath(localizeHref(lang, c.path)));
                 const isActive = childPaths.includes(normalizedPathname);
+                const isOpen = openMenuId === item.id;
+                let di = 0;
                 return (
-                  <div key={item.id} className="nav-dropdown-wrap">
-                    <span className={`nav-item-parent${isActive ? " active" : ""}`}>
+                  <div
+                    key={item.id}
+                    className={`nav-dropdown-wrap${isOpen ? " open" : ""}`}
+                    onMouseLeave={() => setOpenMenuId(null)}
+                  >
+                    <button
+                      type="button"
+                      className={`nav-item-parent${isActive ? " active" : ""}`}
+                      aria-haspopup="true"
+                      aria-expanded={isOpen}
+                      onClick={() => setOpenMenuId((prev) => (prev === item.id ? null : item.id))}
+                    >
                       {item.label}
                       <svg className="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
                         <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                    </span>
+                    </button>
                     <div className="nav-dropdown">
                       {item.children.map((child) => {
-                        if (!child.path) {
-                          return (
-                            <span key={child.id} className="nav-dropdown-item disabled">
-                              {child.label}
-                            </span>
-                          );
-                        }
-                        const childHref = localizeHref(lang, child.path);
-                        const childActive = normalizedPathname === normalizePath(childHref);
-                        return (
-                          <Link key={child.id} href={childHref} className={`nav-dropdown-item${childActive ? " active" : ""}`}>
+                        const childHref = child.path ? localizeHref(lang, child.path) : null;
+                        const childActive = childHref ? normalizedPathname === normalizePath(childHref) : false;
+                        const childLink = childHref ? (
+                          <Link
+                            key={child.id}
+                            href={childHref}
+                            className={`nav-dropdown-item${childActive ? " active" : ""}`}
+                            style={{ "--i": di++ }}
+                          >
                             {child.label}
                           </Link>
+                        ) : (
+                          <span
+                            key={child.id}
+                            className="nav-dropdown-item nav-dropdown-grouplabel"
+                            style={{ "--i": di++ }}
+                          >
+                            {child.label}
+                          </span>
                         );
+                        if (child.showSocial && content.ui.social) {
+                          return (
+                            <div key={child.id} className="nav-dropdown-branch">
+                              {childLink}
+                              <div className="nav-dropdown-sub">
+                                {content.ui.social.map((s) =>
+                                  s.href ? (
+                                    <a
+                                      key={s.label}
+                                      href={s.href}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="nav-dropdown-item nav-dropdown-subitem"
+                                      style={{ "--i": di++ }}
+                                    >
+                                      {s.label}
+                                    </a>
+                                  ) : (
+                                    <span
+                                      key={s.label}
+                                      className="nav-dropdown-item nav-dropdown-subitem disabled"
+                                      style={{ "--i": di++ }}
+                                    >
+                                      {s.label}
+                                    </span>
+                                  )
+                                )}
+                              </div>
+                            </div>
+                          );
+                        }
+                        return childLink;
                       })}
                     </div>
                   </div>
@@ -121,20 +207,36 @@ export function SiteShell({ children, lang = "en" }) {
                 {isExpanded && (
                   <div className="drawer-children">
                     {item.children.map((child) => {
-                      if (!child.path) {
-                        return (
-                          <span key={child.id} className="drawer-item disabled">
-                            {child.label}
-                          </span>
-                        );
-                      }
-                      const childHref = localizeHref(lang, child.path);
-                      const childActive = normalizedPathname === normalizePath(childHref);
-                      return (
+                      const childHref = child.path ? localizeHref(lang, child.path) : null;
+                      const childActive = childHref ? normalizedPathname === normalizePath(childHref) : false;
+                      const childLink = childHref ? (
                         <Link key={child.id} href={childHref} className={`drawer-item${childActive ? " active" : ""}`} onClick={closeDrawer}>
                           {child.label}
                         </Link>
+                      ) : (
+                        <span key={child.id} className="drawer-item drawer-grouplabel">
+                          {child.label}
+                        </span>
                       );
+                      if (child.showSocial && content.ui.social) {
+                        return (
+                          <div key={child.id} className="drawer-social-group">
+                            {childLink}
+                            {content.ui.social.map((s) =>
+                              s.href ? (
+                                <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="drawer-item drawer-subitem" onClick={closeDrawer}>
+                                  {s.label}
+                                </a>
+                              ) : (
+                                <span key={s.label} className="drawer-item drawer-subitem disabled">
+                                  {s.label}
+                                </span>
+                              )
+                            )}
+                          </div>
+                        );
+                      }
+                      return childLink;
                     })}
                   </div>
                 )}
@@ -177,6 +279,19 @@ export function SiteShell({ children, lang = "en" }) {
         <div className="footer-meta">
           <p>{content.ui.footerMetaOne}</p>
           <p>{content.ui.footerMetaTwo}</p>
+          {content.ui.social ? (
+            <div className="footer-social">
+              {content.ui.social.map((s) =>
+                s.href ? (
+                  <a key={s.label} href={s.href} target="_blank" rel="noreferrer">
+                    {s.label}
+                  </a>
+                ) : (
+                  <span key={s.label}>{s.label}</span>
+                )
+              )}
+            </div>
+          ) : null}
         </div>
       </footer>
       <a className="back-to-top" href="#top" aria-label={lang === "zh" ? "\u56de\u5230\u9876\u90e8" : "Back to top"}>
