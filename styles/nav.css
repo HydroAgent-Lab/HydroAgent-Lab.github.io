@@ -161,12 +161,6 @@
 
 .header-lang:hover { color: var(--text); }
 
-/* Legacy classes kept for compatibility */
-.brand { display: none; }
-.brand-mark { display: none; }
-.brand-copy { display: none; }
-.header-actions { display: none; }
-.header-cta { display: none; }
 
 /* ==========================================================
    Hamburger button

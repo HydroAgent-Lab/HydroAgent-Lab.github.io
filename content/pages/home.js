@@ -4,12 +4,14 @@ export const homeContent = {
       eyebrow: "HydroAgent-Lab",
       chip: "Products and services",
       title: "HydroAgent",
+      subtitle: "An agentic platform for water operational workflows.",
       text:
-        "We teach AI to work alongside flood forecasters: reading context, preserving expert judgment, and turning hydrologic uncertainty into reviewable decisions.",
-      primary: "Read the approach",
+        "Organize data, models, expert judgment, and release into one reviewable operational workflow.",
+      primary: "Explore HydroAgent-FF",
       primaryPath: "/platform",
-      secondary: "See it in action",
-      secondaryPath: "/workflow",
+      secondary: "Discuss a pilot",
+      secondaryPath: "#contact",
+      videoTag: "HydroAgent-FF workflow demo",
       supporting:
         "HydroAgent-FF is the flagship flood product. The wider HydroAgent portfolio is built for many water-intelligence workflows.",
       signals: [
@@ -249,13 +251,15 @@ export const homeContent = {
     hero: {
       eyebrow: "HydroAgent-Lab",
       chip: "产品与服务",
-      title: "让水务决策更清晰。",
+      title: "HydroAgent",
+      subtitle: "面向水文水利业务工作流的智能体平台。",
       text:
-        "HydroAgent-Lab 让 AI 沿着预报员的工作流思考：理解情境、保留专家判断，并把水文不确定性转化为可审核的业务决策。",
-      primary: "查看方法",
+        "把数据、模型、专家判断和发布流程组织成可复核的业务工作流。",
+      primary: "了解 HydroAgent-FF",
       primaryPath: "/platform",
-      secondary: "查看流程",
-      secondaryPath: "/workflow",
+      secondary: "讨论试点合作",
+      secondaryPath: "#contact",
+      videoTag: "HydroAgent-FF 工作流演示",
       supporting:
         "HydroAgent-FF 是旗舰洪水产品，但 HydroAgent 的产品版图远不止一个预测工具。",
       signals: [

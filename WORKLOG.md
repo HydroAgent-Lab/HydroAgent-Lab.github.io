@@ -2,6 +2,20 @@
 
 ## 2026-06-17
 
+### Hero redesign: full-screen video background → split layout
+
+Redesigned Hero section from fullscreen video background with bottom-left overlay text to a left-right split layout:
+- **Left column:** eyebrow, title (HydroAgent), subtitle, description, primary + secondary CTA buttons
+- **Right column:** autoplay/muted/loop demo video with rounded card frame and caption tag
+- Responsive: stacks vertically on mobile (≤900px), video on top
+- Primary button now filled (accent background) instead of outline-only
+- Content updated for both EN and ZH with new copy per spec
+
+**Files modified:**
+- `content/pages/home.js` — new `subtitle`, `videoTag` fields; updated `text`, `primary`, `secondary`, `secondaryPath` for both EN and ZH
+- `components/hero.js` — full rewrite: split layout with `.hero-left` / `.hero-right` columns
+- `styles/hero.css` — full rewrite: CSS grid split layout, video card styling, responsive breakpoints
+
 ### Step 4: Build multi-level navigation system
 
 **4a — Restructured nav data** (`content/nav.js`):

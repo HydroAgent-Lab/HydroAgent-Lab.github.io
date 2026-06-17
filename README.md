@@ -29,7 +29,7 @@ app/                      # Next.js App Router pages (en + zh, 24 pages total)
   white-papers/, events/, members/   # New placeholder pages
 
 components/
-  hero.js                 # Hero section with video background
+  hero.js                 # Hero section — split layout (left text/CTA, right autoplay video)
   shell.js                # Site shell (dropdown nav + hamburger menu + footer)
   pages/                  # Per-page content components
     home.js, platform.js, capabilities.js, workflow.js,
@@ -63,7 +63,7 @@ styles/
 
 ## Design Language
 - Light background (#f0f0ee), pill navbar (#EDEDED), blue accent (#3B82F6)
-- Fullscreen looping video background on hero
+- Split-layout hero: left text/CTA column + right autoplay demo video
 - Multi-level nav: 5 top-level items, hover dropdown on desktop, hamburger drawer on mobile (≤900px)
 - System font stack, clean minimal cards, 200ms hover transitions
 - Dark theme placeholder in `styles/tokens.css` (via `[data-theme="dark"]`)
