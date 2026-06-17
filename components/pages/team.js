@@ -30,7 +30,7 @@ export function TeamPageContent({ lang = "en" }) {
             eyebrow={page.credibilitySection.eyebrow}
             title={page.credibilitySection.title}
           />
-          <div className="three-up-grid">
+          <div className="signals-grid">
             {page.credibilitySection.items.map((item) => (
               <article className="info-card" key={item.title}>
                 <h3>{item.title}</h3>

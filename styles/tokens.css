@@ -28,6 +28,8 @@
   /* --- Layout --- */
   --max-width:       1200px;
   --gutter:          max(28px, calc(50vw - 600px));
+  /* Sticky header height (16px top + ~44px nav + 16px bottom) */
+  --header-height:   76px;
 
   /* --- Motion --- */
   --transition:      200ms ease;

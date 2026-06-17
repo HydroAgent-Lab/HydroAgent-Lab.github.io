@@ -1,7 +1,7 @@
 export const membersContent = {
   en: {
     lead: {
-      eyebrow: "Lab Members",
+      eyebrow: "Where we are",
       title: "The people behind HydroAgent-Lab, across the globe.",
       text:
         "HydroAgent-Lab brings together students, frontline hydrologists, AI researchers, software builders, and mentors working across Italy, Germany, the US, Canada, Belgium, and China.",
@@ -13,7 +13,7 @@ export const membersContent = {
     },
     mapAlt: "World map highlighting HydroAgent-Lab member locations",
     roster: {
-      eyebrow: "Team Members",
+      eyebrow: "Lab members",
       title: "HydroAgent-Lab",
       text: "Member order is not hierarchical.",
       emailLabel: "Email",
@@ -25,10 +25,10 @@ export const membersContent = {
   },
   zh: {
     lead: {
-      eyebrow: "实验室成员",
+      eyebrow: "我们在哪里",
       title: "遍布全球的 HydroAgent-Lab 团队 ",
       text:
-        "HydroAgent-Lab 汇聚了学生、一线水文工作者、AI 研究者、软件建设者与导师，分布在意大利、德国、美国、加拿大、比利时和中国 ",
+        "HydroAgent-Lab 汇聚了学生、一线水文工作者、AI 研究者、软件建设者与导师，分布在意大利、德国、美国、加拿大、比利时和中国。",
       facts: [
         { label: "分布", value: "意大利 · 德国 · 美国 · 加拿大 · 比利时 · 中国" },
         { label: "方向", value: "水文 · AI · 软件 · 研究" },

@@ -5,10 +5,7 @@ export const navContent = {
     brandTagline: "Water intelligence, agentic by design",
     footerTitle:
       "HydroAgent-Lab supports forecasting teams with hydrologic AI products, workflow systems, and expert collaboration.",
-    footerMetaOne:
-      "For forecasting teams, water agencies, and research partners evaluating AI-native water intelligence systems.",
-    footerMetaTwo:
-      "Use the contact page to discuss products, pilots, technical briefings, or research collaboration.",
+    footerCredit: "@Built by HydroAgent-Lab · Site by Tiantian Xing, Baoying Shan, Joseph Lee",
     nav: [
       { id: "A", path: "/", label: "Home" },
       {
@@ -77,7 +74,7 @@ export const navContent = {
       { label: "Bluesky", href: "https://bsky.app/profile/hydroagent-lab.bsky.social" },
       { label: "X", href: "https://x.com/HydroAgentLab" },
       { label: "WeChat · hydroagent-lab", href: "https://mp.weixin.qq.com/s/Ne4hQ_MOtW-xuemJmpP0yQ" },
-      { label: "Rednote 小红书 · hydroagent-lab", href: "https://www.xiaohongshu.com/user/profile/6a2ece94000000000d034c00?xsec_token=ABvQUYog_f3DV6ww1GIBPlKwbQ-wqrfWOTQvB_UDTYMoM%3D&xsec_source=pc_search" }
+      { label: "Rednote · hydroagent-lab", href: "https://www.xiaohongshu.com/user/profile/6a2ece94000000000d034c00?xsec_token=ABvQUYog_f3DV6ww1GIBPlKwbQ-wqrfWOTQvB_UDTYMoM%3D&xsec_source=pc_search" }
     ],
     headerCta: "Request a briefing",
     cta: {
@@ -96,8 +93,7 @@ export const navContent = {
     switchLabel: "EN",
     brandTagline: "面向水务运行的智能体平台",
     footerTitle: "HydroAgent-Lab 面向预报团队提供水文 AI 产品、业务工作流系统与专家协作支持。",
-    footerMetaOne: "面向预报团队、水务机构与研究伙伴，提供 AI 原生水务智能系统。",
-    footerMetaTwo: "如需了解产品、试点、技术简报或研究合作，请通过联系页面预约沟通。",
+    footerCredit: "@由 HydroAgent-Lab 出品 · 网站开发者为邢甜甜、单宝英、李兵",
     nav: [
       { id: "A", path: "/", label: "首页" },
       {

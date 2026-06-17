@@ -30,7 +30,7 @@ export const whitePapersContent = {
       eyebrow: "白皮书",
       title: "第一版白皮书正在筹备 ",
       text:
-        "HydroAgent 白皮书是面向 hydro + agent（水文水利 + 智能体）领域的行业白皮书——汇总值得关注的学术论文、行业新闻、新产品、新政策等动态 ",
+        "HydroAgent 白皮书是面向 hydro + agent（水文水利 + 智能体）领域的行业白皮书——汇总值得关注的学术论文、行业新闻、新产品、新政策等动态。",
       facts: [
         { label: "范围", value: "hydro + agent 领域" },
         { label: "形式", value: "月度 notes、季度白皮书与年度综述" },

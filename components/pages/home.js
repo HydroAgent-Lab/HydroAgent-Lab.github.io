@@ -13,19 +13,22 @@ export function HomePageContent({ lang = "en" }) {
       <main className="main-content">
         <Hero lang={lang} content={content} />
 
-        <section className="content-section">
-          <SectionHeader
-            eyebrow={page.whatSection.eyebrow}
-            title={page.whatSection.title}
-          />
-          <ol className="timeline">
-            {page.whatSection.items.map((item) => (
-              <li className="timeline-item" key={item.slice(0, 24)}>
-                <span className="timeline-dot" aria-hidden="true" />
-                <p>{item}</p>
-              </li>
-            ))}
-          </ol>
+        <section className="content-section home-workflow-section">
+          <div className="home-workflow-copy">
+            <SectionHeader
+              eyebrow={page.whatSection.eyebrow}
+              title={page.whatSection.title}
+            />
+            <ol className="timeline">
+              {page.whatSection.items.map((item) => (
+                <li className="timeline-item" key={item.slice(0, 24)}>
+                  <span className="timeline-dot" aria-hidden="true" />
+                  <p>{item}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+
         </section>
 
         <section className="content-section">

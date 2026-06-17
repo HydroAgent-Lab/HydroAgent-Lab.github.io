@@ -27,31 +27,15 @@ export function CareersPageContent({ lang = "en" }) {
           </div>
         </section>
 
-        <section className="careers-band careers-statement">
-          <div className="careers-frame">
-            <h2>{page.statementSection.title}</h2>
-            <div className="careers-statement-grid">
-              {page.statementSection.paragraphs.map((item) => (
-                <article key={item.title}>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="careers-band careers-principles">
-          <div className="careers-frame careers-principles-grid">
-            <div>
-              <h2>{page.valuesSection.title}</h2>
+          <div className="careers-frame">
+            <h2>{page.valuesSection.title}</h2>
+            <div className="careers-principles-grid">
               <ul>
                 {page.valuesSection.left.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </div>
-            <div>
               <ul>
                 {page.valuesSection.right.map((item) => (
                   <li key={item}>{item}</li>
@@ -67,9 +51,12 @@ export function CareersPageContent({ lang = "en" }) {
               <span />
             </div>
             <div className="careers-split-copy">
-              <h2>{page.tracksSection.items[0].title}</h2>
-              <p>{page.tracksSection.items[0].text}</p>
-              <p>{page.tracksSection.items[2].text}</p>
+              {[page.tracksSection.items[0], page.tracksSection.items[2]].map((item) => (
+                <div className="careers-split-block" key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -80,23 +67,11 @@ export function CareersPageContent({ lang = "en" }) {
               <span />
             </div>
             <div className="careers-split-copy">
-              <h2>{page.tracksSection.items[1].title}</h2>
-              <p>{page.tracksSection.items[1].text}</p>
-              <p>{page.tracksSection.items[3].text}</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="careers-band careers-tracks">
-          <div className="careers-frame">
-            <p className="eyebrow">{page.tracksSection.eyebrow}</p>
-            <h2>{page.tracksSection.title}</h2>
-            <div className="careers-track-grid">
-              {page.tracksSection.items.map((item) => (
-                <article key={item.title}>
+              {[page.tracksSection.items[1], page.tracksSection.items[3]].map((item) => (
+                <div className="careers-split-block" key={item.title}>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
-                </article>
+                </div>
               ))}
             </div>
           </div>

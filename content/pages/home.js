@@ -88,7 +88,7 @@ export const homeContent = {
       eyebrow: "旗舰产品",
       title: "HydroAgent-FF",
       text:
-        "HydroAgent-FF 是 HydroAgent 当前最具体的产品线，面向洪水预报业务。它端到端支撑洪水预报过程，并让预报员始终掌握关键决策 ",
+        "HydroAgent-FF 是 HydroAgent 当前最具体的产品线，面向洪水预报业务。它端到端支撑洪水预报过程，并让预报员始终掌握关键决策。 ",
       cta: "了解 HydroAgent-FF",
       ctaPath: "/platform"
     },
