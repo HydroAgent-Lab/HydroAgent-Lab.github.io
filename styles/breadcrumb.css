@@ -1,0 +1,67 @@
+/* ==========================================================
+   Breadcrumb — pinned to bottom-left of fixed header
+   ========================================================== */
+
+.breadcrumb {
+  position: absolute;
+  bottom: 2px;
+  left: var(--gutter);
+  z-index: 99;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumb-sep {
+  margin: 0 6px;
+  font-size: 10px;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.breadcrumb-link {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.breadcrumb-link:hover {
+  color: var(--accent);
+}
+
+.breadcrumb-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.breadcrumb-current {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .breadcrumb {
+    left: 20px;
+    bottom: 2px;
+  }
+
+  .breadcrumb-link,
+  .breadcrumb-text,
+  .breadcrumb-current {
+    font-size: 11px;
+  }
+}

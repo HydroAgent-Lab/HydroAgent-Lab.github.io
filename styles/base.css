@@ -20,7 +20,11 @@ img { display: block; max-width: 100%; }
 /* Layout shell */
 .page-shell { min-height: 100vh; }
 
-.main-content,
+.main-content {
+  width: 100%;
+  padding-top: 76px; /* compensate for fixed nav height */
+}
+
 .site-footer {
   width: 100%;
 }

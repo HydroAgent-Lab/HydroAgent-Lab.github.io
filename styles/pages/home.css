@@ -1,7 +1,30 @@
 /* ==========================================================
-   Home Page — ProductPreview, Manifesto, AgentThinking,
-   HumanAgent, Architecture World, BusinessMap, ProofStatement
+   Home Page
    ========================================================== */
+
+/* --- Home: alternating background + no divider lines --- */
+.home-alt-bg {
+  background: #F9FAFB;
+}
+
+/* Remove border-top between home sections — background alternation replaces it */
+main.main-content > .content-section + .content-section {
+  border-top: none;
+}
+
+/* Uniform inner width for home sections */
+main.main-content > .content-section {
+  padding: 80px var(--gutter);
+}
+
+main.main-content > .content-section > .section-header,
+main.main-content > .content-section > .timeline,
+main.main-content > .content-section > .flip-grid,
+main.main-content > .content-section > .scroll-strip {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* --- Product Preview --- */
 .product-preview {
@@ -338,22 +361,24 @@
 }
 
 /* --- Flagship Section (left copy + right image) --- */
-.flagship-section {
+.flagship-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.flagship-wrapper .section-header {
+  margin-bottom: 16px;
+}
+
+.flagship-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
+  gap: 60px;
+  align-items: start;
 }
 
-.flagship-copy .eyebrow {
-  margin-bottom: 12px;
-}
-
-.flagship-title {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.15;
-  margin: 0 0 16px;
+.flagship-copy {
+  padding-top: 48px;
 }
 
 .flagship-text {
@@ -381,13 +406,13 @@
 .flagship-image {
   border-radius: 6px;
   overflow: hidden;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .flagship-image img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 6px;
 }
 
 /* --- Flip Cards (Why Trust It) --- */
@@ -433,14 +458,14 @@
   text-align: center;
 }
 
-/* Front — full image card, title at bottom */
+/* Front — full image card, title + arrow at bottom */
 .flip-card-front {
   background-size: cover;
   background-position: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
   position: relative;
   overflow: hidden;
   padding: 16px;
@@ -477,16 +502,22 @@
 .flip-bg-3 { background-image: url("https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=400&h=800&fit=crop&crop=center"); }
 .flip-bg-4 { background-image: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=800&fit=crop&crop=center"); }
 
-/* Arrow — bottom-right */
+/* Arrow — inline with title */
 .flip-arrow {
-  position: absolute;
-  bottom: 14px;
-  right: 14px;
   font-size: 16px;
+  font-weight: 600;
   color: #ffffff;
   z-index: 1;
   opacity: 0.7;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
 
 .flip-card:hover .flip-arrow {
@@ -510,34 +541,36 @@
   margin: 0;
 }
 
-/* --- Scroll Strip (Who It Serves) --- */
+/* --- Who It Serves — 3-col grid --- */
 .scroll-strip {
-  display: flex;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 880px;
+  margin: 0 auto;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 8px;
 }
 
-/* Hide scrollbar on desktop, keep on mobile */
 .scroll-strip::-webkit-scrollbar { height: 4px; }
 .scroll-strip::-webkit-scrollbar-track { background: transparent; }
 .scroll-strip::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
 
 .scroll-card {
-  flex: 0 0 320px;
-  scroll-snap-align: start;
   padding: 32px 28px;
   background: var(--surface-elevated);
   border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
   border-radius: 6px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .scroll-card:hover {
   border-color: var(--accent-light);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-top-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
 }
 
 .scroll-card h3 {
@@ -862,7 +895,7 @@
   .preview-stage { grid-template-columns: 1fr; }
   .preview-module-grid { grid-template-columns: 1fr 1fr; }
   .preview-bottom { grid-template-columns: 1fr; }
-  .flagship-section { grid-template-columns: 1fr; gap: 28px; }
+  .flagship-grid { grid-template-columns: 1fr; gap: 28px; }
   .flip-grid { flex-wrap: wrap; }
   .flip-card { flex: 0 0 calc((100% - 12px) / 2); }
   .proof-line { flex-direction: column; align-items: center; gap: 12px; }

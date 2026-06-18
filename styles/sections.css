@@ -193,7 +193,6 @@
   justify-content: space-between;
   gap: 32px;
   padding: 40px var(--gutter);
-  border-top: 1px solid var(--border);
 }
 
 .cta-copy { max-width: 560px; }

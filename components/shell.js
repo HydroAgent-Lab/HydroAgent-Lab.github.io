@@ -10,6 +10,7 @@ import {
   normalizePath,
   stripLangPrefix
 } from "@/content/site";
+import { Breadcrumb } from "./breadcrumb";
 
 export function SiteShell({ children, lang = "en" }) {
   const pathname = usePathname();
@@ -22,6 +23,13 @@ export function SiteShell({ children, lang = "en" }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [expandedId, setExpandedId] = useState(null);
   const [openMenuId, setOpenMenuId] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const toggleDrawer = useCallback(() => {
     setDrawerOpen((prev) => !prev);
@@ -73,7 +81,7 @@ export function SiteShell({ children, lang = "en" }) {
 
   return (
     <div className={`page-shell lang-${lang}`} id="top">
-      <header className="site-header">
+      <header className={`site-header${scrolled ? " scrolled" : ""}`}>
         <nav className="site-nav" aria-label="Primary">
           <Link className="nav-logo-pill" href={localizeHref(lang, "/")}>
             <img src="/assets/hydroagent-mark.svg" alt="" aria-hidden="true" />
@@ -185,6 +193,7 @@ export function SiteShell({ children, lang = "en" }) {
           <span />
           <span />
         </button>
+        <Breadcrumb lang={lang} />
       </header>
 
       {/* Mobile drawer */}

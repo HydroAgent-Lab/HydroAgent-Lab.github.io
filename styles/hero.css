@@ -5,13 +5,12 @@
 
 .hero {
   position: relative;
-  /* Subtract the sticky header so the hero fills exactly the remaining
-     viewport instead of overflowing by the header's height */
-  min-height: calc(100vh - var(--header-height));
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   background: #ffffff;
+  margin-top: -76px;
 }
 
 .brand-hero {

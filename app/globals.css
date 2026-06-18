@@ -10,6 +10,7 @@
 
 /* --- Global Components --- */
 @import "../styles/nav.css";
+@import "../styles/breadcrumb.css";
 @import "../styles/hero.css";
 @import "../styles/sections.css";
 @import "../styles/footer.css";
