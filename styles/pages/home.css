@@ -242,48 +242,47 @@
   margin-top: 2px;
 }
 
-/* --- Timeline (What HydroAgent Does) --- */
-
-
-
+/* --- Timeline — zigzag (What HydroAgent Does) --- */
 .timeline {
   list-style: none;
   margin: 0;
-  padding: 0 0 0 24px;
+  padding: 0;
   position: relative;
-  max-width: 860px;
 }
 
-/* Vertical connecting line */
+/* Vertical centre line */
 .timeline::before {
   content: "";
   position: absolute;
-  left: 5px;
-  top: 8px;
-  bottom: 8px;
+  left: 50%;
+  top: 0;
+  bottom: 0;
   width: 2px;
   background: var(--border);
+  transform: translateX(-50%);
 }
 
+/* Shared item layout */
 .timeline-item {
   position: relative;
-  padding: 0 0 28px 28px;
+  width: 50%;
+  padding-bottom: 32px;
 }
 
 .timeline-item:last-child {
   padding-bottom: 0;
 }
 
-/* Dot */
+/* Dot — centred on the vertical line */
 .timeline-dot {
   position: absolute;
-  left: -24px;
-  top: 7px;
+  top: 6px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: var(--bg);
   border: 2px solid var(--accent);
+  z-index: 1;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -292,16 +291,267 @@
   transform: scale(1.25);
 }
 
+/* Left items (odd: 1st, 3rd, 5th) — text on left, dot on right edge */
+.tl-left {
+  margin-left: 0;
+  padding-right: 32px;
+  text-align: left;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tl-left p {
+  width: 380px;
+}
+
+.tl-left .timeline-dot {
+  right: -6px;
+}
+
+/* Right items (even: 2nd, 4th) — text on right, dot on left edge */
+.tl-right {
+  margin-left: 50%;
+  padding-left: 32px;
+  text-align: left;
+}
+
+.tl-right .timeline-dot {
+  left: -6px;
+}
+
+.tl-right p {
+  width: 380px;
+}
+
+/* Text */
 .timeline-item p {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--text-secondary);
   margin: 0;
+  max-width: 380px;
   transition: color 0.2s ease;
 }
 
 .timeline-item:hover p {
   color: var(--text);
+}
+
+/* --- Flagship Section (left copy + right image) --- */
+.flagship-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.flagship-copy .eyebrow {
+  margin-bottom: 12px;
+}
+
+.flagship-title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+
+.flagship-text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0 0 24px;
+  max-width: 48ch;
+}
+
+.flagship-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+  transition: gap 0.2s ease;
+}
+
+.flagship-cta:hover {
+  gap: 12px;
+}
+
+.flagship-image {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.flagship-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* --- Flip Cards (Why Trust It) --- */
+.flip-grid {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.flip-card {
+  flex: 0 0 180px;
+  perspective: 600px;
+  height: 45vh;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 16px;
+  text-align: center;
+}
+
+/* Front — full image card, title at bottom */
+.flip-card-front {
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+}
+
+/* Bottom gradient for text readability */
+.flip-card-front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    transparent 100%
+  );
+  z-index: 0;
+}
+
+.flip-card-front h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.35;
+  position: relative;
+  z-index: 1;
+}
+
+/* Themed backgrounds per card — portrait crop */
+.flip-bg-0 { background-image: url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=700&fit=crop&crop=center"); }
+.flip-bg-1 { background-image: url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=800&fit=crop&crop=center"); }
+.flip-bg-2 { background-image: url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=700&fit=crop&crop=center"); }
+.flip-bg-3 { background-image: url("https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=400&h=800&fit=crop&crop=center"); }
+.flip-bg-4 { background-image: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=800&fit=crop&crop=center"); }
+
+/* Arrow — bottom-right */
+.flip-arrow {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  font-size: 16px;
+  color: #ffffff;
+  z-index: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.flip-card:hover .flip-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* Back */
+.flip-card-back {
+  background: #ffffff;
+  border-right: 3px solid #93C5FD;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transform: rotateY(180deg);
+}
+
+.flip-card-back p {
+  font-size: 12px;
+  line-height: 1.55;
+  color: #374151;
+  margin: 0;
+}
+
+/* --- Scroll Strip (Who It Serves) --- */
+.scroll-strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+/* Hide scrollbar on desktop, keep on mobile */
+.scroll-strip::-webkit-scrollbar { height: 4px; }
+.scroll-strip::-webkit-scrollbar-track { background: transparent; }
+.scroll-strip::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+
+.scroll-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  padding: 32px 28px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scroll-card:hover {
+  border-color: var(--accent-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.scroll-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.scroll-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
 }
 
 /* --- Agent Thinking --- */
@@ -602,24 +852,19 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
-  .home-workflow-section {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .home-workflow-mark {
-    min-height: 0;
-    justify-content: flex-start;
-  }
-  .home-workflow-mark img {
-    width: 120px;
-  }
-  .timeline { max-width: 100%; }
+  .timeline::before { left: 5px; transform: none; }
+  .timeline-item { width: 100%; padding-left: 28px; padding-right: 0; text-align: left; margin-left: 0; }
+  .tl-left .timeline-dot,
+  .tl-right .timeline-dot { left: -1px; right: auto; }
   .human-agent { grid-template-columns: 1fr; }
   .architecture-scene { grid-template-columns: 1fr; }
   .architecture-core { margin: 0 auto 24px; }
   .preview-stage { grid-template-columns: 1fr; }
   .preview-module-grid { grid-template-columns: 1fr 1fr; }
   .preview-bottom { grid-template-columns: 1fr; }
+  .flagship-section { grid-template-columns: 1fr; gap: 28px; }
+  .flip-grid { flex-wrap: wrap; }
+  .flip-card { flex: 0 0 calc((100% - 12px) / 2); }
   .proof-line { flex-direction: column; align-items: center; gap: 12px; }
 }
 

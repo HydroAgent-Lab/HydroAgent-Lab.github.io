@@ -13,33 +13,33 @@ export function HomePageContent({ lang = "en" }) {
       <main className="main-content">
         <Hero lang={lang} content={content} />
 
-        <section className="content-section home-workflow-section">
-          <div className="home-workflow-copy">
-            <SectionHeader
-              eyebrow={page.whatSection.eyebrow}
-              title={page.whatSection.title}
-            />
-            <ol className="timeline">
-              {page.whatSection.items.map((item) => (
-                <li className="timeline-item" key={item.slice(0, 24)}>
-                  <span className="timeline-dot" aria-hidden="true" />
-                  <p>{item}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-
-        </section>
-
         <section className="content-section">
           <SectionHeader
-            eyebrow={page.flagshipSection.eyebrow}
-            title={page.flagshipSection.title}
+            eyebrow={page.whatSection.eyebrow}
+            title={page.whatSection.title}
           />
-          <p className="section-text">{page.flagshipSection.text}</p>
-          <a className="primary-action" href={localizeHref(lang, page.flagshipSection.ctaPath)}>
-            {page.flagshipSection.cta} <span className="action-arrow">→</span>
-          </a>
+          <ol className="timeline">
+            {page.whatSection.items.map((item, i) => (
+              <li className={`timeline-item ${i % 2 === 0 ? "tl-left" : "tl-right"}`} key={item.slice(0, 24)}>
+                <span className="timeline-dot" aria-hidden="true" />
+                <p>{item}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="content-section flagship-section">
+          <div className="flagship-copy">
+            <p className="eyebrow">{page.flagshipSection.eyebrow}</p>
+            <h2 className="flagship-title">{page.flagshipSection.title}</h2>
+            <p className="flagship-text">{page.flagshipSection.text}</p>
+            <a className="flagship-cta" href={localizeHref(lang, page.flagshipSection.ctaPath)}>
+              {page.flagshipSection.cta} <span className="action-arrow">→</span>
+            </a>
+          </div>
+          <div className="flagship-image">
+            <img src="https://images.unsplash.com/photo-1446776858070-70c3d5ed6758?w=720&h=600&fit=crop&crop=center" alt="Flood forecasting operations" />
+          </div>
         </section>
 
         <section className="content-section">
@@ -47,14 +47,19 @@ export function HomePageContent({ lang = "en" }) {
             eyebrow={page.trustSection.eyebrow}
             title={page.trustSection.title}
           />
-          <ol className="editorial-list">
+          <div className="flip-grid">
             {page.trustSection.items.map((item, i) => (
-              <li className="editorial-row" key={item.slice(0, 24)}>
-                <span className="editorial-index">{`0${i + 1}`}</span>
-                <p>{item}</p>
-              </li>
+              <article className="flip-card" key={item.title}>
+                <div className="flip-card-inner">
+                  <div className={`flip-card-front flip-bg-${i}`}>
+                    <h3>{item.title}</h3>
+                    <span className="flip-arrow" aria-hidden="true">→</span>
+                  </div>
+                  <div className="flip-card-back"><p>{item.text}</p></div>
+                </div>
+              </article>
             ))}
-          </ol>
+          </div>
         </section>
 
         <section className="content-section">
@@ -62,14 +67,14 @@ export function HomePageContent({ lang = "en" }) {
             eyebrow={page.whoSection.eyebrow}
             title={page.whoSection.title}
           />
-          <dl className="split-list">
+          <div className="scroll-strip">
             {page.whoSection.items.map((item) => (
-              <div className="split-row" key={item.title}>
-                <dt>{item.title}</dt>
-                <dd>{item.text}</dd>
-              </div>
+              <article className="scroll-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
             ))}
-          </dl>
+          </div>
         </section>
 
         <CtaBand lang={lang} content={content} />
