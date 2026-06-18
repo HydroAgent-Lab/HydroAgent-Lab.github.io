@@ -1,21 +1,29 @@
 /* ==========================================================
-   Footer + Back-to-top
+   Footer — Stacked layout
+   Top: brand left + 4-col nav right
+   Bottom: credit line
    ========================================================== */
 
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 28px var(--gutter) 20px;
+  padding: 56px var(--gutter) 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* --- Top section: brand left + nav right --- */
+.footer-top {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  /* row-gap 28px; wider column-gap so the brand column is clearly
-     separated from the first nav column (产品) */
-  gap: 28px 64px;
+  gap: 32px 72px;
+  padding-bottom: 40px;
 }
 
 .footer-brand {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
 .footer-brand-head {
@@ -28,40 +36,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-pill);
   background: transparent;
 }
 
 .footer-brand-mark img {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
 }
 
 .footer-brand strong {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: var(--text);
 }
 
 .footer-brand p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.65;
   margin: 0;
+  max-width: 320px;
 }
 
+/* --- Nav columns (4 cols: Product, Research, Company, Follow Us) --- */
 .footer-nav-grouped {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 28px;
+  gap: 32px;
 }
 
 .footer-nav-column {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .footer-nav-column strong {
@@ -70,7 +80,7 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--text);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .footer-nav-column a {
@@ -79,10 +89,15 @@
   transition: color var(--transition);
 }
 
-.footer-nav-column a:hover { color: var(--text); }
+.footer-nav-column a:hover {
+  color: var(--accent);
+}
 
-/* Credit/attribution line — sits under the brand description,
-   same rhythm as the rest of the footer (no divider) */
+/* --- Bottom section: credit --- */
+.footer-bottom {
+  padding-top: 28px;
+}
+
 .footer-credit {
   font-size: 12px;
   color: var(--text-muted);
@@ -118,7 +133,20 @@
 /* --- Responsive --- */
 @media (max-width: 900px) {
   .site-footer {
-    grid-template-columns: 1fr;
+    padding: 40px var(--gutter) 32px;
   }
-  .footer-nav-grouped { grid-template-columns: repeat(2, 1fr); }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 32px;
+  }
+
+  .footer-nav-grouped {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-bottom {
+    padding-top: 24px;
+  }
 }

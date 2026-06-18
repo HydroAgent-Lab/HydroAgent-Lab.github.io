@@ -266,31 +266,30 @@ export function SiteShell({ children, lang = "en" }) {
       </aside>
       {children}
       <footer className="site-footer">
-        <div className="footer-brand">
-          <div className="footer-brand-head">
-            <span className="footer-brand-mark">
-              <img src="/assets/hydroagent-mark.svg" alt="" aria-hidden="true" />
-            </span>
-            <strong>HydroAgent-Lab</strong>
-          </div>
-          <p>{content.ui.footerTitle}</p>
-          <p className="footer-credit">{content.ui.footerCredit}</p>
-        </div>
-        <nav className="footer-nav footer-nav-grouped" aria-label="Footer">
-          {footerGroups.map((group) => (
-            <div className="footer-nav-column" key={group.title}>
-              <strong>{group.title}</strong>
-              {group.items.map((item) => (
-                <Link key={item.path} href={localizeHref(lang, item.path)}>
-                  {item.label}
-                </Link>
-              ))}
+        <div className="footer-top">
+          <div className="footer-brand">
+            <div className="footer-brand-head">
+              <span className="footer-brand-mark">
+                <img src="/assets/hydroagent-mark.svg" alt="" aria-hidden="true" />
+              </span>
+              <strong>HydroAgent-Lab</strong>
             </div>
-          ))}
-          {content.ui.social ? (
-            <div className="footer-nav-column footer-social-column">
-              <strong>{lang === "zh" ? "关注我们" : "Follow Us"}</strong>
-              <div className="footer-social">
+            <p>{content.ui.footerTitle}</p>
+          </div>
+          <nav className="footer-nav footer-nav-grouped" aria-label="Footer">
+            {footerGroups.map((group) => (
+              <div className="footer-nav-column" key={group.title}>
+                <strong>{group.title}</strong>
+                {group.items.map((item) => (
+                  <Link key={item.path} href={localizeHref(lang, item.path)}>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            ))}
+            {content.ui.social ? (
+              <div className="footer-nav-column">
+                <strong>{lang === "zh" ? "关注我们" : "Follow Us"}</strong>
                 {content.ui.social.map((s) =>
                   s.href ? (
                     <a key={s.label} href={s.href} target="_blank" rel="noreferrer">
@@ -301,9 +300,12 @@ export function SiteShell({ children, lang = "en" }) {
                   )
                 )}
               </div>
-            </div>
-          ) : null}
-        </nav>
+            ) : null}
+          </nav>
+        </div>
+        <div className="footer-bottom">
+          <p className="footer-credit">{content.ui.footerCredit}</p>
+        </div>
       </footer>
       <a className="back-to-top" href="#top" aria-label={lang === "zh" ? "\u56de\u5230\u9876\u90e8" : "Back to top"}>
         ↑
