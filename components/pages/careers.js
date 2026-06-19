@@ -9,7 +9,16 @@ export function CareersPageContent({ lang = "en" }) {
     <SiteShell lang={lang}>
       <main className="main-content careers-page">
         <section className="careers-hero">
-          <div className="careers-hero-backdrop" aria-hidden="true" />
+          <video
+            className="careers-hero-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260302_085640_276ea93b-d7da-4418-a09b-2aa5b490e838.mp4"
+          />
+          <div className="careers-hero-scrim" aria-hidden="true" />
           <div className="careers-frame careers-hero-inner">
             <p className="eyebrow">{page.hero.eyebrow}</p>
             <h1>{page.hero.title}</h1>
