@@ -13,7 +13,7 @@ export function HomePageContent({ lang = "en" }) {
       <main className="main-content">
         <Hero lang={lang} content={content} />
 
-        <section className="content-section home-alt-bg">
+        <section className="content-section what-section-wrap">
           <div className="what-section">
             <SectionHeader
               eyebrow={page.whatSection.eyebrow}
@@ -48,7 +48,7 @@ export function HomePageContent({ lang = "en" }) {
           </div>
         </section>
 
-        <section className="content-section home-alt-bg">
+        <section className="content-section">
           <SectionHeader
             eyebrow={page.trustSection.eyebrow}
             title={page.trustSection.title}

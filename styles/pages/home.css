@@ -2,28 +2,10 @@
    Home Page
    ========================================================== */
 
-/* --- Home: alternating background + no divider lines --- */
-.home-alt-bg {
-  background: #F9FAFB;
-}
-
-/* Remove border-top between home sections — background alternation replaces it */
-main.main-content > .content-section + .content-section {
-  border-top: none;
-}
-
-/* Uniform inner width for home sections */
+/* --- Home: larger vertical padding --- */
 main.main-content > .content-section {
-  padding: 80px var(--gutter);
-}
-
-main.main-content > .content-section > .section-header,
-main.main-content > .content-section > .timeline,
-main.main-content > .content-section > .flip-grid,
-main.main-content > .content-section > .scroll-strip {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 /* --- Product Preview --- */
@@ -265,78 +247,36 @@ main.main-content > .content-section > .scroll-strip {
   margin-top: 2px;
 }
 
-/* --- What Section — steps + architecture diagram --- */
+/* --- What Section — architecture diagram full-bleed to section bottom --- */
+
+/* Remove bottom padding so the diagram sits flush with the section bottom */
+main.main-content > .what-section-wrap {
+  padding-bottom: 0;
+}
+
 .what-section {
-  max-width: 1100px;
+  max-width: 1080px;
   margin: 0 auto;
-}
-
-.what-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 48px;
-  align-items: center;
-}
-
-.what-steps {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.what-step {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-
-.what-step-num {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 600;
-  display: grid;
-  place-items: center;
-  line-height: 1;
-}
-
-.what-step p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  margin: 0;
 }
 
 .what-diagram {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  margin-top: 40px;
 }
 
 .what-diagram img {
   width: 100%;
-  max-width: 900px;
+  max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
   mix-blend-mode: multiply;
 }
 
 @media (max-width: 900px) {
-  .what-layout {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .what-diagram {
-    order: -1;
+  .what-diagram img {
+    max-width: 100%;
   }
 }
 
@@ -437,7 +377,7 @@ main.main-content > .content-section > .scroll-strip {
 
 /* --- Flagship Section (left copy + right image) --- */
 .flagship-wrapper {
-  max-width: 960px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 

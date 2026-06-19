@@ -33,15 +33,15 @@
 }
 
 .careers-frame {
-  padding: 0 var(--gutter);
+  padding: 0 max(28px, calc(50vw - 540px));
   position: relative;
   z-index: 1;
 }
 
 .careers-hero-inner {
   z-index: 2;
-  padding: 80px var(--gutter) 64px;
-  max-width: 600px;
+  padding: 80px 48px 64px;
+  max-width: 640px;
 }
 
 .careers-hero-inner .eyebrow {
@@ -67,7 +67,15 @@
 /* --- Statement --- */
 .careers-band {
   padding: 64px 0;
-  border-top: 1px solid var(--border);
+}
+
+/* Alternating backgrounds for careers sections, same pattern as content-section */
+.careers-page > .careers-band:nth-child(odd of .careers-band) {
+  background: #F9FAFB;
+}
+
+.careers-page > .careers-band + .careers-band {
+  border-top: none;
 }
 
 .careers-statement-block h2 {

@@ -4,7 +4,7 @@ import { localizeHref } from "@/content/site";
 export function CtaBand({ lang = "en", content }) {
   const cta = content.ui.cta;
   return (
-    <section className="cta-band home-alt-bg">
+    <section className="cta-band">
       <div className="cta-copy">
         <p className="eyebrow">{cta.eyebrow}</p>
         <h2>{cta.title}</h2>

@@ -72,12 +72,26 @@
 }
 
 /* --- Content Section wrapper --- */
+/* Content area capped at 1080px; background stays full-width via padding */
 .content-section {
-  padding: 64px var(--gutter);
+  padding: 64px max(28px, calc(50vw - 540px));
 }
 
-.content-section + .content-section {
-  border-top: 1px solid var(--border);
+/* Alternating backgrounds: odd content-sections = gray, even = white.
+   Uses "of S" selector so only .content-section siblings are counted,
+   ignoring heroes, PageLead, CtaBand, etc. */
+main.main-content > .content-section:nth-child(odd of .content-section) {
+  background: #F9FAFB;
+}
+
+/* Background alternation replaces divider lines between sections */
+main.main-content > .content-section + .content-section {
+  border-top: none;
+}
+
+/* CTA Band always gets the gray background for visual separation */
+.cta-band {
+  background: #F9FAFB;
 }
 
 /* --- Three-Up Grid / Info Cards --- */
@@ -192,7 +206,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  padding: 40px var(--gutter);
+  padding: 40px max(28px, calc(50vw - 540px));
 }
 
 .cta-copy { max-width: 560px; }
