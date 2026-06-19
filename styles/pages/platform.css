@@ -5,6 +5,9 @@
 .platform-hero {
   position: relative;
   overflow: hidden;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
 }
 
 .platform-hero-video {
@@ -24,70 +27,254 @@
     linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.22) 72%,
-      rgba(255, 255, 255, 0.9) 100%
+      rgba(255, 255, 255, 0.18) 60%,
+      rgba(255, 255, 255, 0.85) 100%
     ),
     linear-gradient(
       to right,
       rgba(255, 255, 255, 0.88) 0%,
-      rgba(255, 255, 255, 0.8) 28%,
-      rgba(255, 255, 255, 0.66) 52%,
-      rgba(255, 255, 255, 0.42) 100%
+      rgba(255, 255, 255, 0.78) 30%,
+      rgba(255, 255, 255, 0.55) 55%,
+      rgba(255, 255, 255, 0.3) 100%
     );
   z-index: 1;
 }
 
-.platform-hero .page-lead,
-.platform-hero .platform-hero-value {
+/* --- Hero copy: centered vertically, left-aligned --- */
+.platform-hero-copy {
   position: relative;
   z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 28px 0 max(28px, calc(50vw - 540px));
+  max-width: 620px;
 }
 
-/* Image now reads more clearly, so protect the muted body copy over it:
-   darken it and add a faint white halo so it stays crisp on busy areas */
-.platform-hero .page-lead-side p,
-.platform-hero .platform-hero-value .section-text {
+.platform-hero-copy .eyebrow {
+  margin-bottom: 12px;
+  color: var(--accent);
+}
+
+.platform-hero-copy h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.platform-hero-tagline {
+  font-size: 15px;
+  font-weight: 400;
   color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85);
 }
 
-.platform-hero .platform-hero-value {
-  padding-top: 0;
-  padding-bottom: 72px;
+
+/* --- Facts bar: sits between hero and content --- */
+.platform-facts-bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 48px;
+  padding: 0 28px 0 max(28px, calc(50vw - 540px));
+  margin-bottom: 72px;
+  background: transparent;
+}
+
+.platform-hero-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.platform-hero-fact span {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.platform-hero-fact strong {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Value section title — strongest */
+.platform-value-section h2 {
+  color: var(--text);
+}
+
+/* Lead text — second tier, slightly more prominent */
+.platform-lead-text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  max-width: 760px;
+}
+
+/* Value paragraphs — third tier */
+.platform-value-section .section-text {
+  max-width: 760px;
+  color: var(--text-muted);
 }
 
 .platform-hero + .content-section {
-  border-top: 1px solid var(--border);
+  border-top: none;
 }
 
-.platform-hero .page-lead {
-  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
-}
-
-.platform-page .page-lead-facts {
-  justify-content: space-between;
-  gap: clamp(48px, 8vw, 112px);
-}
-
-.platform-page .page-lead-fact {
-  min-width: 128px;
-}
-
+/* --- Consistent body text across all platform sections --- */
 .platform-page .section-text {
   max-width: none;
 }
 
+.platform-page .timeline-item p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
 .platform-page .editorial-row p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted);
   max-width: 72ch;
 }
 
-.platform-positioning-callout {
-  margin-top: 40px;
+
+/* --- Signals Bento Grid --- */
+.signals-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 12px;
+  max-width: 780px;
+  margin: 0 auto;
 }
 
-.platform-positioning-callout strong {
+/* Card 0: large — spans 2 cols, 2 rows, with basin background */
+.signals-card-0 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  position: relative;
+  overflow: hidden;
+}
+
+.signals-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(0deg) scale(1.6);
+  transform-origin: center center;
+  opacity: 0.18;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.signals-card-0 .signals-index,
+.signals-card-0 h3,
+.signals-card-0 p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Card 1: top-right */
+.signals-card-1 {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* Card 2: bottom-right */
+.signals-card-2 {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Card 3: bottom-left */
+.signals-card-3 {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+/* Card 4: bottom-wide — spans 2 cols */
+.signals-card-4 {
+  grid-column: 2 / 4;
+  grid-row: 3;
+}
+
+.signals-card {
+  padding: 20px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.signals-card:hover {
+  border-color: var(--accent-light);
+  box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
+}
+
+.signals-index {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.signals-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+.signals-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Large card — slightly bigger */
+.signals-card-0 h3 {
   font-size: 16px;
-  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.signals-card-0 p {
+  font-size: 14px;
+}
+
+/* --- Pilot Grid — 2×2 regular grid, same card style as Signals --- */
+.pilot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.platform-positioning-text {
+  margin: 32px auto 0;
+  max-width: 780px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted);
 }
 
 /* --- Capability Grid --- */
@@ -276,5 +463,37 @@
         rgba(255, 255, 255, 0.92) 0%,
         rgba(255, 255, 255, 0.96) 100%
       );
+  }
+
+  .platform-hero-copy {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+
+  .platform-hero-copy h1 {
+    font-size: 1.75rem;
+  }
+
+  .platform-facts-bar {
+    flex-wrap: wrap;
+    gap: 20px 40px;
+    padding: 20px;
+  }
+
+  .signals-bento {
+    grid-template-columns: 1fr;
+  }
+
+  .signals-card-0,
+  .signals-card-1,
+  .signals-card-2,
+  .signals-card-3,
+  .signals-card-4 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .pilot-grid {
+    grid-template-columns: 1fr;
   }
 }

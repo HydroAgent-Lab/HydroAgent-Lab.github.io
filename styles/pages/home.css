@@ -363,9 +363,9 @@ main.main-content > .what-section-wrap {
 
 /* Text */
 .timeline-item p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted);
   margin: 0;
   max-width: 380px;
   transition: color 0.2s ease;
@@ -550,9 +550,9 @@ main.main-content > .what-section-wrap {
 }
 
 .flip-card-back p {
-  font-size: 12px;
-  line-height: 1.55;
-  color: #374151;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -597,7 +597,7 @@ main.main-content > .what-section-wrap {
 
 .scroll-card p {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--text-muted);
   margin: 0;
 }
@@ -660,8 +660,8 @@ main.main-content > .what-section-wrap {
 
 .agent-thinking-step p {
   font-size: 14px;
-  color: var(--text-muted);
   line-height: 1.65;
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -807,9 +807,9 @@ main.main-content > .what-section-wrap {
 }
 
 .architecture-world-card p {
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.65;
   color: var(--text-muted);
-  line-height: 1.6;
   margin: 0;
 }
 

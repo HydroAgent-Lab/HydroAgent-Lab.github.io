@@ -57,7 +57,7 @@ export function HomePageContent({ lang = "en" }) {
             {page.trustSection.items.map((item, i) => {
               const labels = lang === "zh"
                 ? ["真实流域验证", "独立事件校验", "多模型适配", "学术发表", "人类主权"]
-                : ["Basin tested", "Validated results", "Multi-model ready", "Published research", "Human authority"];
+                : ["Basin tested", "Validated results", "Multi-LLM ready", "Published research", "Human authority"];
               return (
                 <article className="flip-card" key={item.slice(0, 24)}>
                   <div className="flip-card-inner">

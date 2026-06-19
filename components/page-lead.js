@@ -6,7 +6,7 @@ export function PageLead({ eyebrow, title, text, facts = [] }) {
         <h1>{title}</h1>
       </div>
       <div className="page-lead-side">
-        <p>{text}</p>
+        {text ? <p>{text}</p> : null}
         {facts.length ? (
           <div className="page-lead-facts">
             {facts.map((fact) => (
