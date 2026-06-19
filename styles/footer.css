@@ -5,11 +5,12 @@
    ========================================================== */
 
 .site-footer {
-  border-top: 1px solid var(--border);
+  border-top: none;
   padding: 56px var(--gutter) 40px;
   display: flex;
   flex-direction: column;
   gap: 0;
+  background: #F9FAFB;
 }
 
 /* --- Top section: brand left + nav right --- */

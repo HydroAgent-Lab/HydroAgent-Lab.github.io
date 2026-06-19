@@ -77,11 +77,9 @@
   padding: 64px max(28px, calc(50vw - 540px));
 }
 
-/* Alternating backgrounds: odd content-sections = gray, even = white.
-   Uses "of S" selector so only .content-section siblings are counted,
-   ignoring heroes, PageLead, CtaBand, etc. */
-main.main-content > .content-section:nth-child(odd of .content-section) {
-  background: #F9FAFB;
+/* All content sections use white background */
+main.main-content > .content-section {
+  background: #fff;
 }
 
 /* Background alternation replaces divider lines between sections */
@@ -209,7 +207,7 @@ main.main-content > .content-section + .content-section {
   padding: 40px max(28px, calc(50vw - 540px));
 }
 
-.cta-copy { max-width: 560px; }
+.cta-copy { max-width: 720px; }
 .cta-copy .eyebrow { margin-bottom: 12px; }
 
 .cta-copy h2 {

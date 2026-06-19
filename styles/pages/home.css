@@ -898,6 +898,11 @@ main.main-content > .what-section-wrap {
   border-radius: var(--radius-pill);
 }
 
+/* Home CTA — align with footer */
+.main-content:has(.home-bottom-band) .cta-band {
+  padding: 40px var(--gutter);
+}
+
 /* --- Responsive --- */
 @media (max-width: 900px) {
   .timeline::before { left: 5px; transform: none; }

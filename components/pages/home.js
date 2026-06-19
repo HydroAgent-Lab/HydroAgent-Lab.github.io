@@ -73,7 +73,7 @@ export function HomePageContent({ lang = "en" }) {
           </div>
         </section>
 
-        <section className="content-section">
+        <section className="content-section home-bottom-band">
           <SectionHeader
             eyebrow={page.whoSection.eyebrow}
             title={page.whoSection.title}
