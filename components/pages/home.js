@@ -14,18 +14,28 @@ export function HomePageContent({ lang = "en" }) {
         <Hero lang={lang} content={content} />
 
         <section className="content-section home-alt-bg">
-          <SectionHeader
-            eyebrow={page.whatSection.eyebrow}
-            title={page.whatSection.title}
-          />
-          <ol className="timeline">
-            {page.whatSection.items.map((item, i) => (
-              <li className={`timeline-item ${i % 2 === 0 ? "tl-left" : "tl-right"}`} key={item.slice(0, 24)}>
-                <span className="timeline-dot" aria-hidden="true" />
-                <p>{item}</p>
-              </li>
-            ))}
-          </ol>
+          <div className="what-section">
+            <SectionHeader
+              eyebrow={page.whatSection.eyebrow}
+              title={page.whatSection.title}
+            />
+            <div className="what-layout">
+              <ol className="what-steps">
+                {page.whatSection.items.map((item, i) => (
+                  <li key={item.slice(0, 24)} className="what-step">
+                    <span className="what-step-num">{i + 1}</span>
+                    <p>{item}</p>
+                  </li>
+                ))}
+              </ol>
+              <div className="what-diagram">
+                <img
+                  src="/assets/hydroagent_architecture_final.svg"
+                  alt={lang === "zh" ? "HydroAgent 架构图" : "HydroAgent architecture diagram"}
+                />
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="content-section">

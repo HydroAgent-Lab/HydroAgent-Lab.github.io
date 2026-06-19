@@ -265,6 +265,79 @@ main.main-content > .content-section > .scroll-strip {
   margin-top: 2px;
 }
 
+/* --- What Section — steps + architecture diagram --- */
+.what-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.what-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.what-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.what-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.what-step-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+}
+
+.what-step p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.what-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.what-diagram img {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 900px) {
+  .what-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .what-diagram {
+    order: -1;
+  }
+}
+
 /* --- Timeline — zigzag (What HydroAgent Does) --- */
 .timeline {
   list-style: none;
