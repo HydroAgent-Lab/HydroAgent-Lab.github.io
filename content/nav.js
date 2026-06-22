@@ -73,7 +73,7 @@ export const navContent = {
       { label: "LinkedIn", href: "https://www.linkedin.com/company/112566682/" },
       { label: "Bluesky", href: "https://bsky.app/profile/hydroagent-lab.bsky.social" },
       { label: "X", href: "https://x.com/HydroAgentLab" },
-      { label: "WeChat · hydroagent-lab", href: "https://mp.weixin.qq.com/s/Ne4hQ_MOtW-xuemJmpP0yQ" },
+      { label: "WeChat · hydroagent-lab", href: "https://mp.weixin.qq.com/s/Nn3dq6fTkI9iIOqDrJDj1A" },
       { label: "Rednote · hydroagent-lab", href: "https://www.xiaohongshu.com/user/profile/6a2ece94000000000d034c00?xsec_token=ABvQUYog_f3DV6ww1GIBPlKwbQ-wqrfWOTQvB_UDTYMoM%3D&xsec_source=pc_search" }
     ],
     headerCta: "Request a briefing",
@@ -161,7 +161,7 @@ export const navContent = {
       { label: "LinkedIn", href: "https://www.linkedin.com/company/112566682/" },
       { label: "Bluesky", href: "https://bsky.app/profile/hydroagent-lab.bsky.social" },
       { label: "X", href: "https://x.com/HydroAgentLab" },
-      { label: "微信公众号 · hydroagent-lab", href: "https://mp.weixin.qq.com/s/Ne4hQ_MOtW-xuemJmpP0yQ" },
+      { label: "微信公众号 · hydroagent-lab", href: "https://mp.weixin.qq.com/s/Nn3dq6fTkI9iIOqDrJDj1A" },
       { label: "小红书 · hydroagent-lab", href: "https://www.xiaohongshu.com/user/profile/6a2ece94000000000d034c00?xsec_token=ABvQUYog_f3DV6ww1GIBPlKwbQ-wqrfWOTQvB_UDTYMoM%3D&xsec_source=pc_search" }
     ],
     headerCta: "预约沟通",
