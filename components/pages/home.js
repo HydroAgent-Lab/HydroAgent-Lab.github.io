@@ -21,7 +21,7 @@ export function HomePageContent({ lang = "en" }) {
             />
             <div className="what-diagram">
               <img
-                src="/assets/hydroagent_architecture_final.svg"
+                src="assets\assets\agent_infrastructure_recreated.svg"
                 alt={lang === "zh" ? "HydroAgent 架构图" : "HydroAgent architecture diagram"}
               />
             </div>
