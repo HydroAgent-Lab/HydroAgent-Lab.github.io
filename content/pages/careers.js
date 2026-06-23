@@ -2,14 +2,14 @@ export const careersContent = {
   en: {
     hero: {
       eyebrow: "Join HydroAgent-Lab",
-      title: "Build water intelligence with people who know the front line.",
+      title: "Work on practical AI systems for hydrologic forecasting.",
       text:
         "We welcome contributors who can connect hydrology, software, product judgment, and operational responsibility.",
       cta: "Start a conversation",
       ctaPath: "mailto:contact@hydroagentlab.com"
     },
     missionSection: {
-      title: "We are not hiring for headcount. We are looking for builders who can carry real work.",
+      title: "We are looking for contributors who can take ownership of real work.",
       text: [
         "This is currently community-driven and volunteer-led. The right fit is someone who wants to build useful systems, produce credible evidence, and learn through serious collaboration.",
         "Code and technical work are organized on GitHub; day-to-day discussion happens in WeChat groups — both free to join, with translation that helps people work across languages.",
@@ -26,7 +26,7 @@ export const careersContent = {
       right: [
         "You respect hydrologic expertise and real operational constraints.",
         "You are willing to build, test, revise, and document.",
-        "You prefer direct collaboration over inflated titles."
+        "You prefer clear collaboration over formal titles."
       ]
     },
     tracksSection: {
@@ -83,7 +83,7 @@ export const careersContent = {
   zh: {
     hero: {
       eyebrow: "加入 HydroAgent-Lab",
-      title: "和真正理解一线问题的人一起建设水利智能 ",
+      title: "参与建设服务于实际洪水预报的 AI 系统 ",
       text:
         "欢迎能连接水文、软件、产品判断与业务责任的贡献者。",
       cta: "开始沟通",
@@ -92,7 +92,7 @@ export const careersContent = {
     missionSection: {
       title: "我们不是为了扩充人数而招人，而是在寻找能承担真实工作的建设者 ",
       text: [
-        "当前项目仍是社区驱动、志愿协作、暂无经费支持。更适合加入的人，是希望做出有用系统、形成可信证据，并在严肃协作中持续学习的人。",
+        "当前项目仍是社区驱动、志愿协作、暂无经费支持。更适合加入的人，是希望做出有用系统、形成可信证据，并在扎实协作中持续学习的人。",
         "代码和技术工作主要通过 GitHub 组织；日常沟通主要在微信群进行。两者都可以免费参与，微信群的自动翻译也方便不同语言背景的人一起协作。",
         "我们承诺，所有的贡献都会被看见与尊重。"
       ]
@@ -107,7 +107,7 @@ export const careersContent = {
       right: [
         "尊重水文专业知识和真实业务约束 ",
         "愿意构建、测试、修订和记录 ",
-        "更看重直接协作，而不是头衔包装 "
+        "更看重实际协作，而不是头衔本身 "
       ]
     },
     tracksSection: {

@@ -5,7 +5,7 @@ export const platformContent = {
       title: "HydroAgent-FF",
       tagline: "Agentic workflow for flood forecasting — organized, reviewable, reproducible.",
       text:
-        "An agentic workflow product for flood forecasting operations. Climate change is driving more extreme floods, and forecasting is the first line of defense. Operational forecasting today starts from a hydrological model, but the final bulletin is never the model's raw output. Experienced forecasters stay in the loop, combining rainfall and water-regime information with local experience before deciding how to revise and release.",
+        "An agentic workflow product for flood forecasting operations. Climate change is driving more extreme floods, and forecasting is the first line of defense. Operational forecasting today starts from a hydrological model, but the final bulletin is never the model's raw output. Experienced forecasters remain responsible for review and release decisions, combining rainfall and water-regime information with local experience before the forecast is revised and released.",
       facts: [
         { label: "Built for", value: "Flood forecasting operations" },
         { label: "Approach", value: "Works with your existing hydrological model" },
@@ -55,7 +55,7 @@ export const platformContent = {
           text: "Across repeated forecast updates, version changes and the reasons behind them are hard to track."
         },
         {
-          title: "Release needs clearer handoff",
+          title: "Release requires clearer review materials",
           text: "You need clearer review materials and handoff notes before a bulletin is released."
         },
         {
@@ -76,7 +76,7 @@ export const platformContent = {
       title: "HydroAgent-FF",
       tagline: "面向洪水预报的智能体工作流 — 有条理、可复核、可复现。",
       text:
-        "面向洪水预报业务的智能体工作流产品。气候变化带来越来越极端的洪水，而预报是防御洪水的第一道防线。今天的业务化预报从水文模型起步，但最终预报单从来不是模型直接输出的结果。有经验的预报员始终在环路里，把雨水情信息和本地经验结合起来，再决定如何修正和发布。",
+        "面向洪水预报业务的智能体工作流产品。气候变化带来越来越极端的洪水，而预报是防御洪水的第一道防线。当前的业务洪水预报从水文模型起步，但最终预报单从来不是模型直接输出的结果。经验丰富的预报员始终参与复核与发布决策，把雨水情信息和本地经验结合起来，再决定如何修正和发布。",
       facts: [
         { label: "面向", value: "洪水预报业务" },
         { label: "方式", value: "与你现有的水文模型协同" },
@@ -85,7 +85,7 @@ export const platformContent = {
     },
     valueSection: {
       eyebrow: "它带来什么",
-      title: "智能且可信的洪水预报，全程由专家掌控 ",
+      title: "让洪水预报流程更清晰、更可复核，并保留专家把关 ",
       paragraphs: [
         "HydroAgent-FF 要解决的不是“让 LLM 替代水文模型”，也不是“自动替代预报员”。它把真实洪水预报工作组织成一个结构化、可复核、可复现的过程，并让预报员始终掌握关键决策。",
         "它与你现有的水文模型和预报员协同，让整个预报工作更有条理、更易复核、更易复现。人工复核始终内置其中，关键结果由负责人确认，发布什么始终由人掌控。"
@@ -126,7 +126,7 @@ export const platformContent = {
           text: "多轮预报更新中，版本变化和修改原因难以追踪。"
         },
         {
-          title: "发布需要更清晰的交接",
+          title: "发布前需要更清晰的审核材料",
           text: "预报单发布前需要更清楚的审核材料和交接说明。"
         },
         {

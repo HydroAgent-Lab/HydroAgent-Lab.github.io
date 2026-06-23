@@ -4,7 +4,7 @@ export const capabilitiesContent = {
       eyebrow: "Capabilities",
       title: "Capabilities & collaboration.",
       text:
-        "HydroAgent is more than a flood forecasting product (that is HydroAgent-FF). This page tells you what you can get from us along two dimensions: how we work with you, and what HydroAgent can do by task.",
+        "HydroAgent is more than a flood forecasting product (that is HydroAgent-FF). This page shows how we work with partners and what HydroAgent can support in practice.",
       facts: [
         { label: "Two views", value: "Ways to work together · What HydroAgent does" },
         { label: "Flagship", value: "HydroAgent-FF for flood forecasting" },
@@ -17,10 +17,10 @@ export const capabilitiesContent = {
       items: [
         {
           title: "A localized HydroAgent",
-          text: "Adapt HydroAgent to your basin and institution — working with your local data, the hydrological model you already use, and your local operational practice, rather than a generic demo."
+          text: "Adapt HydroAgent to your basin, data sources, hydrological model, and operational workflow — working with what you already use, rather than a generic demo."
         },
         {
-          title: "Coupling with your existing digital twin / system",
+          title: "Integrate with your existing forecasting platform or digital twin",
           text: "Run HydroAgent as an AI workflow and review layer on top of your existing digital twin or operational forecasting system. Your system keeps the data foundation and model computation; HydroAgent adds organized reasoning, visible expert judgment, and human-in-the-loop review — augmenting, not replacing."
         },
         {
@@ -79,7 +79,7 @@ export const capabilitiesContent = {
       eyebrow: "服务",
       title: "能力与服务 ",
       text:
-        "HydroAgent 不止是一个洪水预报产品（那是 HydroAgent-FF）。这一页从两个维度说明你能从我们这儿获得什么：合作方式，以及能力清单 ",
+        "HydroAgent 不止是一个洪水预报产品（那是 HydroAgent-FF）。这一页介绍我们如何与合作方协作，以及 HydroAgent 在实际工作中能支持什么。 ",
       facts: [
         { label: "两个维度", value: "合作方式 ·    能力清单" },
         { label: "旗舰产品", value: "HydroAgent-FF 面向洪水预报" },
@@ -92,14 +92,14 @@ export const capabilitiesContent = {
       items: [
         {
           title: "本地化适配的 HydroAgent",
-          text: "把 HydroAgent 适配到你的流域与机构：结合当地数据、你现有的水文模型、本地业务实践和本地大模型，而不是一个通用 demo。 "
+          text: "根据你的流域、数据来源、水文模型和业务流程，对 HydroAgent 进行本地化适配，而不是一个通用 demo。 "
         },
         {
-          title: "与已有数字孪生 / 业务系统耦合",
-          text: "把 HydroAgent 作为 AI 工作流与复核层，接入已有数字孪生平台或业务预报系统。已有系统继续承担数据底座和模型计算，HydroAgent 负责有条理的推理组织、专家判断显性化和人机复核。不替换，只增强。 "
+          title: "接入现有预报平台或数字孪生系统",
+          text: "把 HydroAgent 作为 AI 工作流与复核层，接入已有数字孪生平台或业务预报系统。已有系统继续承担数据底座和模型计算，HydroAgent 负责有条理地组织推理、让专家判断可见可追踪，并保留人机复核。不替换，只增强。 "
         },
         {
-          title: "试点、研究与机构介绍",
+          title: "试点、研究与机构交流",
           text: "从一次聚焦的试点或简报开始，逐步进入更深的合作。 ",
           cta: { label: "详见联系页", path: "/contact" }
         }

@@ -44,8 +44,8 @@ export const hydroAgentTeamMembers = [
     affiliationZh: "中国 IPPR 国际工程有限公司（中机集团 SINOMACH），中国北京",
     email: "dxiaoyi18@gmail.com",
     orcid: "https://orcid.org/0009-0007-1518-1229",
-    focus: "Engineering applications, water infrastructure context, and operational product translation",
-    focusZh: "工程应用、水利基础设施情境、业务化产品转化"
+    focus: "Engineering applications, water infrastructure context, and product strategy and communication",
+    focusZh: "工程应用、水利基础设施情境、产品策略与沟通"
   },
   {
     name: "Shunan Zhou",

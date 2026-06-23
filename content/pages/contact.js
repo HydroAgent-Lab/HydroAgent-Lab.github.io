@@ -8,7 +8,7 @@ export const contactContent = {
       facts: [
         { label: "Best for", value: "Pilots, collaboration, and institutional briefings" },
         { label: "Response window", value: "Usually within 3 business days" },
-        { label: "Contact route", value: "Email-first with scoped follow-up" }
+        { label: "Contact route", value: "Email first, followed by a focused discussion if helpful" }
       ]
     },
     primarySection: {
@@ -43,7 +43,7 @@ export const contactContent = {
     },
     stepsSection: {
       eyebrow: "How It Works",
-      title: "After we connect, a short path moves things forward.",
+      title: "Once we connect, the next steps are usually straightforward.",
       items: [
         {
           id: "01",
@@ -77,7 +77,7 @@ export const contactContent = {
       facts: [
         { label: "适合场景", value: "试点、合作与机构介绍" },
         { label: "响应周期", value: "一般 3 个工作日内" },
-        { label: "联系方式", value: "先邮件沟通，再进入定向跟进" }
+        { label: "联系方式", value: "建议先通过邮件沟通，后续再根据情况安排进一步交流" }
       ]
     },
     primarySection: {
@@ -112,7 +112,7 @@ export const contactContent = {
     },
     stepsSection: {
       eyebrow: "如何开始",
-      title: "建立联系之后，几步即可推进 ",
+      title: "建立联系后，通常会按以下方式推进 ",
       items: [
         {
           id: "01",

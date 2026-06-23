@@ -2,9 +2,9 @@ export const teamContent = {
   en: {
     lead: {
       eyebrow: "About HydroAgent-Lab",
-      title: "An AI-native team for water operations.",
+      title: "A hydrologic AI team for operational forecasting.",
       text:
-        "HydroAgent-Lab is a distributed hydrologic AI product and research team building agentic workflow systems for water operations. Our members work across hydrology, forecasting practice, AI agents, software engineering, product translation, and evaluation."
+        "HydroAgent-Lab is a distributed hydrologic AI product and research team building agentic workflow systems for water operations. Our members work across hydrology, forecasting practice, AI agents, software engineering, product strategy and communication, and evaluation."
     },
     questionSection: {
       eyebrow: "Why We Exist",
@@ -43,9 +43,9 @@ export const teamContent = {
   zh: {
     lead: {
       eyebrow: "关于 HydroAgent-Lab",
-      title: "一个全球分布的水文 AI 产品与研究团队",
+      title: "面向业务预报的水文 AI 团队",
       text:
-        "HydroAgent-Lab 是一个分布式水文 AI 产品与研究团队，正在建设面向水文水利业务的智能体工作流系统。成员覆盖水文科学、预报业务、AI 智能体、软件工程、产品转译和评估等方向。"
+        "HydroAgent-Lab 是一个分布式水文 AI 产品与研究团队，正在建设面向水文水利业务的智能体工作流系统。成员覆盖水文科学、预报业务、AI 智能体、软件工程、产品策略与沟通和评估等方向。"
     },
     questionSection: {
       eyebrow: "我们为什么做这件事",
@@ -58,7 +58,7 @@ export const teamContent = {
       title: "几个值得强调的信号 ",
       items: [
         {
-          title: "一个真实的分布式团队",
+          title: "一个跨国家协作的团队",
           text: "成员包括学生、研究者、一线水文工作者、软件建设者和顾问，分布在意大利、德国、美国、加拿大、比利时和中国。"
         },
         {
@@ -78,7 +78,7 @@ export const teamContent = {
     transparency: {
       title: "关于我们的运作方式 ",
       text:
-        "HydroAgent-Lab 目前仍是社区驱动，并且暂时没有专门的经费支持。这一点作为背景说明，而不是团队的主定位。"
+        "HydroAgent-Lab 目前仍是社区驱动，并且暂时没有专门的经费支持。这只是背景信息，并不是团队对外介绍的重点。"
     }
   }
 };
