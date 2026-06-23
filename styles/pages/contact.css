@@ -1,104 +1,194 @@
 /* ==========================================================
-   Contact Page — Primary card, details, steps, callout
+   Contact Page — Hero, Inquiry split-rows, Timeline, CTA
    ========================================================== */
 
-.contact-primary-card {
-  margin-bottom: 32px;
+/* --- A. Hero Contact — split layout --- */
+.contact-hero-section {
+  background: #F9FAFB !important;
 }
 
-.contact-primary-card .eyebrow { margin-bottom: 12px; }
-
-.contact-primary-card h2 {
-  font-size: 1.75rem;
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-
-.contact-details-grid {
+.contact-hero {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 32px;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
 }
 
-.contact-detail-card {
-  padding: 24px;
-  background: var(--surface-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-}
+.contact-hero-left .eyebrow { margin-bottom: 16px; }
 
-.contact-detail-card span {
-  font-size: 12px;
-  color: var(--text-muted);
-  display: block;
-  margin-bottom: 6px;
-}
-
-.contact-detail-card strong {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.contact-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.step-card {
-  padding: 24px;
-  background: var(--surface-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-}
-
-.step-card span {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 12px;
-}
-
-.step-card h3 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.step-card p {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.6;
+.contact-hero-left h1 {
+  font-size: 2rem;
+  line-height: 1.1;
   margin: 0;
 }
 
-.contact-callout {
-  padding: 24px;
-  background: var(--bg-alt);
-  border-radius: var(--radius-md);
-  border-left: 3px solid var(--accent);
+.contact-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-.contact-callout strong {
+.contact-hero-text {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+
+.contact-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  transition: background var(--transition), gap 0.2s ease;
+  width: fit-content;
+}
+
+.contact-email-btn:hover {
+  background: var(--accent-hover);
+  gap: 12px;
+}
+
+.contact-response-note {
   display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 10px;
+  margin-bottom: 28px;
+}
+
+.contact-channels {
+  display: flex;
+  gap: 32px;
+}
+
+.contact-channel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-channel-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.contact-channel a,
+.contact-channel strong {
   font-size: 14px;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 4px;
 }
 
-.contact-callout p {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.6;
+.contact-channel a:hover {
+  color: var(--accent);
+}
+
+/* --- B. Inquiry Types — split-row format --- */
+.contact-inquiry-list {
   margin: 0;
+  border-top: 1px solid var(--border);
+}
+
+.contact-inquiry-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-inquiry-icon {
+  font-size: 28px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 148px;
+  height: 112px;
+  flex-shrink: 0;
+}
+
+.contact-inquiry-icon img {
+  width: 112px;
+  height: 112px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.contact-inquiry-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-inquiry-row dt {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.contact-inquiry-row dd {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 52ch;
+}
+
+/* --- C. Steps — uses shared scroll-card + home-bottom-band from home.css --- */
+.step-number {
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+/* --- D. CTA bottom band button --- */
+.contact-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background var(--transition), gap 0.2s ease;
+}
+
+.contact-cta-btn:hover {
+  background: var(--accent-hover);
+  gap: 12px;
 }
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
-  .contact-details-grid { grid-template-columns: 1fr; }
+  .contact-hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-inquiry-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 22px 0;
+  }
+
+
+  .contact-channels {
+    flex-direction: column;
+    gap: 16px;
+  }
 }

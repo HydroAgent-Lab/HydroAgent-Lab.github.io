@@ -1,5 +1,66 @@
 # Work Log
 
+## 2026-06-23
+
+### Contact Page Redesign
+
+Redesigned the Contact page layout from 4 sections with duplicate data to a cleaner 4-section design matching Home page section heights (80px padding).
+
+**New layout:**
+- **A. Hero Contact** — split left (eyebrow + title) / right (intro + email CTA button + response note + channels), replacing old PageLead + PrimarySection with duplicates removed
+- **B. Inquiry Types** — changed from 3-up info cards to split-row (dt/dd) format with icons, better reading rhythm
+- **C. How It Works** — changed from card grid to horizontal timeline (numbered dots + connecting lines), visually distinct from section B
+- **D. CTA Callout** — merged old callout + added strong email CTA button, uses `--bg-alt` background for visual separation
+
+**Responsive:** all 4 sections collapse to single-column on mobile (≤900px), timeline switches to vertical layout.
+
+**Files modified:**
+- `content/pages/contact.js` — simplified data structure, removed duplicates (facts/detail-cards), added channels array, new ctaCallout section
+- `components/pages/contact.js` — full rewrite: 4 sections using content-section class for consistent padding
+- `styles/pages/contact.css` — full rewrite: hero split, inquiry split-rows, horizontal timeline, CTA band
+
+**Verified:** `next build` succeeds, all 24 pages exported. `/contact` returns HTTP 200.
+
+### SVG Architecture Diagram Visual Style Upgrade
+
+Upgraded `public/assets/assets/agent_infrastructure_recreated.svg` visual style for premium web presence. **No text, positions, or shapes were changed** — only CSS style definitions.
+
+**Changes:**
+- **Blue accent colors deepened:** #85c3ee→#4A9FE0, #afdbf6→#7EC4ED, #3a98d8→#2563EB, #65baea→#3B8ED6, #529cd9→#2E7DC8, #59aae2→#3585CC, #4190d6→#1D6FC0, #81caef→#5EAEE5, #2570c0→#1E40AF
+- **Border strokes enhanced:** 0.25px→0.75px, 0.5px→1px; stroke colors shifted from washed gray (#f3f3f3, #edeeef, #efefef) to cool blue-gray (#CBD5E1, #B8C4D4, #94A3B8)
+- **Connecting line strokes:** neutral gray (#494949, #474747) → deep navy (#1E3A5F) for stronger contrast
+- **Background fills:** neutral whites/grays → cool-toned Tailwind slate palette (#F8FAFC, #F1F5F9, #E2E8F0, #EFF6FF, etc.)
+- **Dark fills deepened:** #282828→#0F172A, #505050→#1E293B, #6c6c6d→#334155
+- **Text style (.st79):** added fill #0F172A, letter-spacing 0.03em, extended font-family fallback chain
+- **Light blue accent fills:** #def2fb→#DBEAFE, #e8eff9→#DBEAFE
+
+**Files modified:**
+- `public/assets/assets/agent_infrastructure_recreated.svg` — CSS style block only
+
+### 创建中文版架构图 SVG
+
+复制英文版 SVG 并将 12 个文字标签翻译为中文，另存为 `agent_infrastructure_recreated_zh.svg`。
+
+| 英文 | 中文 |
+|------|------|
+| Forecast Models | 预报模型 |
+| Scenario Inputs | 情景输入 |
+| Knowledge Support | 知识支撑 |
+| Bulletin | 预报简报 |
+| Replay | 回放复盘 |
+| Operational Updates | 业务更新 |
+| Forecast Review | 预报审核 |
+| Human Approval | 人工审批 |
+| Release Control | 发布控制 |
+| Hydrograph & Rainfall | 水文过程线与降雨 |
+| Forecast Delivery | 预报发布 |
+| Digital Twin Integration | 数字孪生集成 |
+
+对于原来分两行的英文标签（如 "Forecast" + "Models"），中文四字即可单行显示，translate y 坐标向下微调 ~9px 保持垂直居中。"水文过程线与降雨" 和 "数字孪生集成" 因字数较多仍保留两行。
+
+**Files created:**
+- `public/assets/assets/agent_infrastructure_recreated_zh.svg` — 中文版架构图
+
 ## 2026-06-17
 
 ### Hero redesign: full-screen video background → split layout

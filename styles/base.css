@@ -22,7 +22,7 @@ img { display: block; max-width: 100%; }
 
 .main-content {
   width: 100%;
-  padding-top: 76px; /* compensate for fixed nav height */
+  padding-top: var(--header-height); /* compensate for fixed nav height */
 }
 
 .site-footer {

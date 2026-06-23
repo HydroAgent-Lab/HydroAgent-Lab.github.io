@@ -4,7 +4,7 @@
 
 .breadcrumb {
   position: absolute;
-  bottom: 2px;
+  bottom: 8px;
   left: var(--gutter);
   z-index: 99;
 }
@@ -56,7 +56,7 @@
 @media (max-width: 900px) {
   .breadcrumb {
     left: 20px;
-    bottom: 2px;
+    bottom: 8px;
   }
 
   .breadcrumb-link,

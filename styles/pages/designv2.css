@@ -177,6 +177,7 @@
   z-index: 2;
   padding-top: 96px;
   padding-bottom: 88px;
+  background: transparent;
 }
 
 /* Map backdrop is dark, so force the lead copy to dark/high-contrast

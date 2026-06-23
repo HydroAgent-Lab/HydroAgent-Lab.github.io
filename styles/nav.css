@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 16px var(--gutter);
+  padding: 28px var(--gutter) 32px;
   background: transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
