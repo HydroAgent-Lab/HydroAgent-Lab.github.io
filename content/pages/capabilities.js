@@ -8,7 +8,7 @@ export const capabilitiesContent = {
       facts: [
         { label: "Two views", value: "Ways to work together · What HydroAgent does" },
         { label: "Flagship", value: "HydroAgent-FF for flood forecasting" },
-        { label: "Engagement", value: "Localization, integration, pilots, research" }
+        { label: "Engagement", value: "Lightweight modules, integration, pilots, service" }
       ]
     },
     collaborationSection: {
@@ -17,7 +17,7 @@ export const capabilitiesContent = {
       items: [
         {
           title: "A localized HydroAgent",
-          text: "Adapt HydroAgent to your basin, data sources, hydrological model, and operational workflow, working with what you already use, rather than a generic demo."
+          text: "Adapt HydroAgent to your basin, data sources, hydrological model, and operational workflow, working with what you already use rather than asking teams to rebuild from scratch."
         },
         {
           title: "Integrate with your existing forecasting platform or digital twin",
@@ -36,40 +36,40 @@ export const capabilitiesContent = {
       text: { before: "For the flagship flood product, see ", link: "HydroAgent-FF", path: "/platform", after: "." },
       items: [
         {
-          title: "Real-time flood forecast judgment",
-          text: "Combine historical floods, live rain and water conditions, and forecast rainfall to assess the coming flood and auto-match better parameter sets; every step pauses for human review and confirmation, and stays traceable and auditable."
+          title: "Localized small-basin adaptation",
+          text: "Start from the basin, stations, models, templates, and operating habits already in use, then configure only the functions the local team actually needs."
         },
         {
-          title: "Rapid scenario simulation",
-          text: "Answer ad-hoc \"what if rainfall increases another 20 mm?\" questions in natural language, automatically producing the resulting flow process and assessment."
+          title: "Existing platform and digital twin coupling",
+          text: "Connect HydroAgent to an existing forecasting system, digital twin, database, or monitoring platform as a workflow and review layer, avoiding duplicate construction."
         },
         {
-          title: "Pre-flood drills & contingency rehearsal",
-          text: "Quickly run multiple what-if scenarios (e.g. \"another 50 mm upstream in 12 hours, will it exceed the warning level?\") to prepare plans, rehearse, and assess risk ahead of time."
+          title: "Local knowledge base and experience capture",
+          text: "Distill historical floods, parameter choices, review conclusions, and local rules into a reusable knowledge base that helps preserve institutional experience."
         },
         {
-          title: "Automated operational materials & reports",
-          text: "From a few report templates plus meeting or process notes, draft briefing minutes, reporting materials, and review reports: a multi-thousand-word first draft in minutes."
+          title: "Lightweight model and modular deployment",
+          text: "Use focused modules and cost-controlled model configurations for practical local scenarios, instead of forcing a large all-in-one platform into every project."
         },
         {
-          title: "Alerts & risk-change phone notifications",
-          text: "Configure rainfall, water-regime, and risk-change rules to your practice; critical changes can trigger a phone call, easing the burden of round-the-clock screen watching."
+          title: "Reusable operational workflows",
+          text: "Turn repeated tasks such as model review, risk judgment, bulletin preparation, and handover into workflows that can be reused, audited, and improved."
         },
         {
-          title: "Capturing veteran forecaster experience",
-          text: "Gradually distill historical floods, parameter choices, review conclusions, and local patterns into a local knowledge base that supports capability handover."
+          title: "Forecast judgment with human review",
+          text: "Combine historical floods, live rain and water conditions, and forecast rainfall to support flood judgment, while keeping human review and release authority in the loop."
         },
         {
-          title: "Shift handover & process trail",
-          text: "Automatically compile current conditions, judgments made, why parameters were chosen, and what the next shift should watch: fewer handover gaps, easier review."
+          title: "Scenario simulation and pre-flood rehearsal",
+          text: "Answer what-if questions in natural language and quickly run scenarios such as added upstream rainfall, warning-level exceedance, and contingency rehearsal."
         },
         {
-          title: "Anomaly alerts & data QC",
-          text: "Help spot missing, jumping, delayed, or neighbor-inconsistent data, and flag when current inputs are unsuitable for direct simulation."
+          title: "Monitoring data analysis and risk detection",
+          text: "Analyze incoming observation or safety-monitoring data, flag missing or abnormal values, and identify possible risk signals that should not rely on manual inspection alone."
         },
         {
-          title: "Extensible to your real operations",
-          text: "If frontline work has other repetitive, process-based, or automation needs, we can keep building. HydroAgent is not just a single-point tool but a gradually extensible assistant shaped around grassroots hydrological operations."
+          title: "High-frequency small tools and local service",
+          text: "Add practical functions such as alerts, phone notifications, report drafts, shift handover notes, and data checks as the local workflow evolves, with fast service response."
         }
       ]
     }
@@ -81,9 +81,9 @@ export const capabilitiesContent = {
       text:
         "HydroAgent 不止是一个洪水预报产品（那是 HydroAgent-FF）。这一页介绍我们如何与合作方协作，以及 HydroAgent 在实际工作中能支持什么。 ",
       facts: [
-        { label: "两个维度", value: "合作方式 ·    能力清单" },
+        { label: "两个维度", value: "合作方式 · 能力清单" },
         { label: "旗舰产品", value: "HydroAgent-FF 面向洪水预报" },
-        { label: "合作形态", value: "本地化、系统耦合、试点、研究" }
+        { label: "合作形态", value: "轻量模块、系统耦合、试点、服务" }
       ]
     },
     collaborationSection: {
@@ -92,7 +92,7 @@ export const capabilitiesContent = {
       items: [
         {
           title: "本地化适配的 HydroAgent",
-          text: "根据你的流域、数据来源、水文模型和业务流程，对 HydroAgent 进行本地化适配，而不是一个通用 demo。 "
+          text: "根据你的流域、数据来源、水文模型和业务流程，对 HydroAgent 进行本地化适配，尽量沿用现有系统和数据资产，而不是重新建设一套通用 demo。 "
         },
         {
           title: "接入现有预报平台或数字孪生系统",
@@ -111,40 +111,40 @@ export const capabilitiesContent = {
       text: { before: "想了解旗舰洪水产品，见 ", link: "HydroAgent-FF", path: "/platform", after: "" },
       items: [
         {
-          title: "实时洪水预报研判",
-          text: "结合历史洪水、实时雨水情和预报降雨研判洪水过程，自动匹配更合适的参数组；每一步暂停由人工审核、调整和确认，整个过程可追溯、可复核、可审计。 "
+          title: "小流域本地化适配",
+          text: "围绕地方水文局、小流域和基层单位的真实流程，接入已有站点、模型、模板和工作习惯，只配置当前真正需要的功能。 "
         },
         {
-          title: "快速情景模拟",
-          text: "用自然语言回答「如果降雨再增加 20mm，流量过程会怎么变」这类临时问题，自动生成未来流量过程和研判结果。 "
+          title: "接入现有平台和数字孪生",
+          text: "把 HydroAgent 作为智能工作流与复核层，接到已有预报平台、数字孪生、数据库或监测系统上，尽量避免重复建设。 "
         },
         {
-          title: "汛前推演和预案演练",
-          text: "快速推演多个情景，比如「上游未来 12 小时再下 50mm 会不会超警戒水位」，帮助机构在汛前提前做预案、做演练、做风险研判。 "
+          title: "本地知识库和经验沉淀",
+          text: "把历史洪水、参数选择经验、复盘结论和地方规律逐步沉淀成可复用的本地知识库，支撑单位能力传承。 "
         },
         {
-          title: "自动生成业务材料和报告",
-          text: "基于几份报告模板，再输入会议记录或过程材料，几分钟内生成会商纪要、汇报材料、复盘报告等初稿，大幅减少重复性文字工作。 "
+          title: "轻量模型和模块化部署",
+          text: "用聚焦场景的能力模块和成本可控的模型配置解决具体问题，不把每个项目都做成大而全的平台。 "
         },
         {
-          title: "消息提醒和风险变化电话通知",
-          text: "按业务习惯配置雨情、水情和风险变化提醒规则，关键变化还可触发电话提醒，让值班人员不必长时间盯屏，减轻汛期值班压力。 "
+          title: "可复用业务 workflow",
+          text: "把模型复核、风险研判、材料生成、值班交接等重复工作整理成可运行、可复盘、可持续迭代的 workflow。 "
         },
         {
-          title: "老专家经验沉淀",
-          text: "把历史洪水、参数选择经验、复盘结论和地方规律逐步沉淀成「本地知识库」，支撑单位能力传承。 "
+          title: "洪水预报研判与人机复核",
+          text: "结合历史洪水、实时雨水情和预报降雨辅助研判洪水过程，关键判断保留人工审核、调整和确认，过程可追溯、可审计。 "
         },
         {
-          title: "值班交接和过程留痕",
-          text: "自动整理当前雨水情、已做判断、参数为何这样选、专家在哪一步调整过、下一班要关注什么，减少交接遗漏、方便复盘。 "
+          title: "快速情景模拟和汛前演练",
+          text: "用自然语言快速回答「上游未来 12 小时再下 50mm 会不会超警戒水位」等问题，支撑预案推演和风险研判。 "
         },
         {
-          title: "异常提醒和数据质控",
-          text: "帮助发现缺测、跳变、延迟或与邻近站不一致的数据，并提示当前输入是否适合直接模拟。 "
+          title: "观测数据分析和风险识别",
+          text: "对雨水情、工情或安全监测数据做缺测、跳变、延迟和异常变化识别，提示可能需要关注的风险信号。 "
         },
         {
-          title: "可根据实际业务继续扩展",
-          text: "针对一线工作中其他重复性、流程性、自动化需求，我们可以为您开发实现。HydroAgent 的价值不只是一个单点工具，而是逐步围绕基层水文业务形成一个可扩展的智能助手。 "
+          title: "高频小功能和本地服务响应",
+          text: "围绕一线单位的小而高频需求，持续补充提醒通知、电话叫醒、报告初稿、值班交接、数据质控等实用功能，并快速响应现场反馈。 "
         }
       ]
     }

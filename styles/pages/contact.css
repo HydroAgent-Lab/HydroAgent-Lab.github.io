@@ -2,6 +2,16 @@
    Contact Page — Primary card, details, steps, callout
    ========================================================== */
 
+/* Alternating backgrounds (same #F9FAFB as the Join Us page):
+   lead = gray, then primary white, inquiry gray, steps white. */
+.contact-page > .page-lead {
+  background: #F9FAFB;
+}
+
+.contact-page > .content-section:nth-child(even of .content-section) {
+  background: #F9FAFB;
+}
+
 .contact-primary-card {
   margin-bottom: 32px;
 }

@@ -10,7 +10,7 @@ export function ContactPageContent({ lang = "en" }) {
 
   return (
     <SiteShell lang={lang}>
-      <main className="main-content">
+      <main className="main-content contact-page">
         <PageLead
           eyebrow={page.lead.eyebrow}
           title={page.lead.title}
