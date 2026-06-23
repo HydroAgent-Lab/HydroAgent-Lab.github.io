@@ -2,6 +2,21 @@
 
 ## 2026-06-23
 
+### Capabilities 页面排版优化
+
+**1. Section 2 改为 split-row 布局 + 交替背景色**
+- 9 个能力项从 3×3 卡片网格改为左右分列行式布局（dt 标题 + dd 说明），带序号标记
+- Section 2 加 `#F9FAFB` 灰底，形成 PageLead(灰) → Section1(白) → Section2(灰) → CTA(灰) 的视觉节奏
+
+**2. Hero (PageLead) Facts 纵向排列**
+- Facts 从横排 flex-row 改为纵向 stacked，每个 fact 独占一行
+- 每行用 `grid: 120px label | 1fr value`，上下加 `border-top` 分割线
+- Value 字号从 18px bold 降为 15px medium，长句子以正文方式阅读而非标题
+
+**Files modified:**
+- `components/pages/capabilities.js` — Section 2 改为 `<dl class="split-list">` + `<div class="split-row">`
+- `styles/pages/capabilities.css` — facts 纵排 + 分割线 + value 字号调整 + tasks section 灰底 + split-index 样式
+
 ### Contact Page Redesign
 
 Redesigned the Contact page layout from 4 sections with duplicate data to a cleaner 4-section design matching Home page section heights (80px padding).

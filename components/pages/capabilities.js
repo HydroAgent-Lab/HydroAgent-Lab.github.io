@@ -23,10 +23,10 @@ export function CapabilitiesPageContent({ lang = "en" }) {
             eyebrow={page.collaborationSection.eyebrow}
             title={page.collaborationSection.title}
           />
-          <div className="three-up-grid">
+          <div className="collab-bento">
             {page.collaborationSection.items.map((item, index) => (
-              <article className="info-card" key={item.title}>
-                <span className="offering-type">{`0${index + 1}`}</span>
+              <article className={`collab-card collab-card-${index}`} key={item.title}>
+                <span className="collab-index">{`0${index + 1}`}</span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
                 {item.cta ? (
@@ -39,7 +39,7 @@ export function CapabilitiesPageContent({ lang = "en" }) {
           </div>
         </section>
 
-        <section className="content-section">
+        <section className="content-section capabilities-tasks-section">
           <SectionHeader
             eyebrow={page.tasksSection.eyebrow}
             title={page.tasksSection.title}
@@ -51,15 +51,14 @@ export function CapabilitiesPageContent({ lang = "en" }) {
             </a>
             {page.tasksSection.text.after}
           </p>
-          <div className="three-up-grid">
+          <dl className="split-list">
             {page.tasksSection.items.map((item, i) => (
-              <article className="info-card" key={item.title}>
-                <span className="offering-type">{`0${i + 1}`}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
+              <div className="split-row" key={item.title}>
+                <dt><span className="split-index">{`0${i + 1}`}</span>{item.title}</dt>
+                <dd>{item.text}</dd>
+              </div>
             ))}
-          </div>
+          </dl>
         </section>
 
         <CtaBand lang={lang} content={content} />
