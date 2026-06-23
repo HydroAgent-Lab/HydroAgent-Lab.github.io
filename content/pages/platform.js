@@ -3,7 +3,7 @@ export const platformContent = {
     lead: {
       eyebrow: "Product",
       title: "HydroAgent-FF",
-      tagline: "Agentic workflow for flood forecasting — organized, reviewable, reproducible.",
+      tagline: "Agentic workflow for flood forecasting: organized, reviewable, reproducible.",
       text:
         "An agentic workflow product for flood forecasting operations. Climate change is driving more extreme floods, and forecasting is the first line of defense. Operational forecasting today starts from a hydrological model, but the final bulletin is never the model's raw output. Experienced forecasters remain responsible for review and release decisions, combining rainfall and water-regime information with local experience before the forecast is revised and released.",
       facts: [
@@ -14,7 +14,7 @@ export const platformContent = {
     },
     valueSection: {
       eyebrow: "What It Gives You",
-      title: "Organized, reviewable, reproducible — with experts in control.",
+      title: "Organized, reviewable, reproducible, with experts in control.",
       paragraphs: [
         "HydroAgent-FF is not about letting an LLM replace the hydrological model, nor about automating the forecaster away. It organizes real flood forecasting work into a structured, reviewable, and reproducible process, while keeping forecasters in control.",
         "It works alongside your existing hydrological models and forecasters to make the whole forecasting effort more organized, easier to review, and easier to reproduce. Expert review stays built in, so the people responsible confirm the key results and keep full control of what gets released."
@@ -74,7 +74,7 @@ export const platformContent = {
     lead: {
       eyebrow: "产品",
       title: "HydroAgent-FF",
-      tagline: "面向洪水预报的智能体工作流 — 有条理、可复核、可复现。",
+      tagline: "面向洪水预报的智能体工作流：有条理、可复核、可复现。",
       text:
         "面向洪水预报业务的智能体工作流产品。气候变化带来越来越极端的洪水，而预报是防御洪水的第一道防线。当前的业务洪水预报从水文模型起步，但最终预报单从来不是模型直接输出的结果。经验丰富的预报员始终参与复核与发布决策，把雨水情信息和本地经验结合起来，再决定如何修正和发布。",
       facts: [

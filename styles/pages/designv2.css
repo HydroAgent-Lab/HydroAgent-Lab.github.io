@@ -19,6 +19,16 @@
 .white-papers-page .page-lead {
   grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
 }
+
+/* Alternating backgrounds (same #F9FAFB as the Join Us / Contact pages):
+   lead = gray, then sections alternate starting white. */
+.white-papers-page > .page-lead {
+  background: #F9FAFB;
+}
+
+.white-papers-page > .content-section:nth-child(even of .content-section) {
+  background: #F9FAFB;
+}
 .white-papers-page .page-lead-facts {
   justify-content: space-between;
   gap: clamp(48px, 8vw, 112px);

@@ -4,7 +4,7 @@ export const contactContent = {
       eyebrow: "Contact",
       title: "Tell us what you're working on.",
       text:
-        "Use this page to start a focused conversation about product fit, pilot work, or research collaboration. A short note with concrete context is enough to begin.",
+        "Use this page to start a focused conversation about product fit, pilot work, or research collaboration. If HydroAgent may be relevant to your forecasting work, a short note with concrete context is enough to begin.",
       email: "contact@hydroagentlab.com",
       emailCta: "Send us an email",
       response: "Usually within 3 business days",
@@ -37,7 +37,7 @@ export const contactContent = {
     },
     stepsSection: {
       eyebrow: "How It Works",
-      title: "Three steps to get started.",
+      title: "Once we connect, the next steps are usually straightforward.",
       items: [
         {
           id: "01",
@@ -52,13 +52,13 @@ export const contactContent = {
         {
           id: "03",
           title: "Move forward",
-          text: "We schedule a focused call, prepare a scoped follow-up, or exchange the materials needed."
+          text: "We schedule a focused call, prepare a scoped follow-up, or exchange the materials needed for the next step."
         }
       ]
     },
     ctaCallout: {
-      title: "Ready to start?",
-      text: "Include your team, region or basin, current workflow maturity, and the type of collaboration you have in mind — that's usually enough.",
+      title: "For the fastest path, include your operational context in the first message.",
+      text: "Your team, region or basin, current workflow maturity, pain points, and the type of collaboration you have in mind are usually enough to start.",
       cta: "Write to us",
       email: "contact@hydroagentlab.com"
     }
@@ -68,7 +68,7 @@ export const contactContent = {
       eyebrow: "联系",
       title: "告诉我们你正在解决的问题",
       text:
-        "如果你想了解产品、探讨试点，或发起研究合作，都可以从这里联系我们。第一封消息不需要写成正式方案，把场景和问题讲清楚就足够。",
+        "如果你想了解产品、探讨试点，或发起研究合作，都可以从这里联系我们。第一封消息不需要写成正式方案，只要把场景和问题讲清楚，就足够开始一次有效沟通。",
       email: "contact@hydroagentlab.com",
       emailCta: "发送邮件",
       response: "一般 3 个工作日内回复",
@@ -101,12 +101,12 @@ export const contactContent = {
     },
     stepsSection: {
       eyebrow: "如何开始",
-      title: "三步开始合作",
+      title: "建立联系后，通常会按以下方式推进。",
       items: [
         {
           id: "01",
           title: "澄清背景",
-          text: "我们可能会围绕你的工作、所在流域、数据或决策流程补充几个问题。"
+          text: "我们可能会围绕你的工作、所在地区或流域、数据或决策流程补充几个具体问题。"
         },
         {
           id: "02",
@@ -116,13 +116,13 @@ export const contactContent = {
         {
           id: "03",
           title: "推进下一步",
-          text: "安排一次聚焦沟通、准备跟进材料，或交换后续所需资料。"
+          text: "安排一次聚焦沟通、准备有针对性的跟进材料，或交换后续所需资料。"
         }
       ]
     },
     ctaCallout: {
-      title: "准备好了吗？",
-      text: "在第一封消息中带上你的团队、所在流域、当前流程成熟度和期望的合作类型，通常就足够开始。",
+      title: "想最快推进，第一封消息就带上你的业务背景。",
+      text: "你的团队、所在地区或流域、当前流程成熟度、痛点，以及希望开展的合作类型，通常就足够开始。",
       cta: "写封邮件",
       email: "contact@hydroagentlab.com"
     }

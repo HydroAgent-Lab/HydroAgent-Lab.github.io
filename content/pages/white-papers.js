@@ -4,7 +4,7 @@ export const whitePapersContent = {
       eyebrow: "White Papers",
       title: "Our first white paper is coming soon.",
       text:
-        "HydroAgent white papers are industry briefings on AI for hydrology and water operations — a curated digest of new academic papers, news, products, policies, and other developments worth following.",
+        "HydroAgent white papers are industry briefings on AI for hydrology and water operations: a curated digest of new academic papers, news, products, policies, and other developments worth following.",
       facts: [
         { label: "Scope", value: "AI for hydrology and water operations" },
         { label: "Format", value: "Notes, white papers, and an annual review" },
@@ -30,7 +30,7 @@ export const whitePapersContent = {
       eyebrow: "白皮书",
       title: "首份白皮书即将发布 ",
       text:
-        "HydroAgent 白皮书是面向水文与水利领域 AI 应用的行业白皮书——汇总值得关注的学术论文、行业新闻、新产品、新政策等动态。",
+        "HydroAgent 白皮书是面向水文与水利领域 AI 应用的行业白皮书：汇总值得关注的学术论文、行业新闻、新产品、新政策等动态。",
       facts: [
         { label: "范围", value: "水文与水利领域的 AI 应用" },
         { label: "形式", value: "月度简报、季度白皮书与年度综述" },

@@ -45,6 +45,20 @@
   margin-bottom: 28px;
 }
 
+/* Inline link to the HydroAgent-FF product page — accent + underline so it
+   reads as a link (global default is color: inherit; text-decoration: none) */
+.capabilities-page .tasks-intro a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+
+.capabilities-page .tasks-intro a:hover {
+  color: var(--accent-hover);
+}
+
 .capability-directory {
   padding: 0 var(--gutter) 64px;
 }

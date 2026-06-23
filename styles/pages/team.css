@@ -5,6 +5,16 @@
 
 .team-about-page { }
 
+/* Alternating backgrounds (same #F9FAFB as the Join Us / Contact pages):
+   lead = gray, then question white, credibility gray. */
+.team-page > .page-lead {
+  background: #F9FAFB;
+}
+
+.team-page > .content-section:nth-child(even of .content-section) {
+  background: #F9FAFB;
+}
+
 .team-about-frame {
   padding: 0 var(--gutter);
 }
