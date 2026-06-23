@@ -37,7 +37,7 @@ export const eventsContent = {
         title: "Tsinghua University · Beijing",
         meta: "21 May 2026 · Guest session",
         text:
-          "Prof. Xudong Zhou — founder of the Hydro90 community, which several HydroAgent-Lab members come from — presented Hydro90 at Tsinghua University and used HydroAgent as a case study, introducing the human-in-the-loop approach to students and young builders.",
+          "Prof. Xudong Zhou (founder of the Hydro90 community, which several HydroAgent-Lab members come from) presented Hydro90 at Tsinghua University and used HydroAgent as a case study, introducing the human-in-the-loop approach to students and young builders.",
         photo: "Tsinghua University guest session photo",
         photos: [{ src: "/assets/events/zhouxudong_2026.png", alt: "Xudong Zhou guest session at Tsinghua University" }],
         links: []

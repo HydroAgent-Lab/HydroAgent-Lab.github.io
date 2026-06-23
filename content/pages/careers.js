@@ -12,7 +12,7 @@ export const careersContent = {
       title: "We are looking for contributors who can take ownership of real work.",
       text: [
         "This is currently community-driven and volunteer-led. The right fit is someone who wants to build useful systems, produce credible evidence, and learn through serious collaboration.",
-        "Code and technical work are organized on GitHub; day-to-day discussion happens in WeChat groups — both free to join, with translation that helps people work across languages.",
+        "Code and technical work are organized on GitHub; day-to-day discussion happens in WeChat groups, both free to join, with translation that helps people work across languages.",
         "We promise that every contribution will be seen and respected."
       ]
     },

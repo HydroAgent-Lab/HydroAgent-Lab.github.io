@@ -17,11 +17,11 @@ export const capabilitiesContent = {
       items: [
         {
           title: "A localized HydroAgent",
-          text: "Adapt HydroAgent to your basin, data sources, hydrological model, and operational workflow — working with what you already use, rather than a generic demo."
+          text: "Adapt HydroAgent to your basin, data sources, hydrological model, and operational workflow, working with what you already use, rather than a generic demo."
         },
         {
           title: "Integrate with your existing forecasting platform or digital twin",
-          text: "Run HydroAgent as an AI workflow and review layer on top of your existing digital twin or operational forecasting system. Your system keeps the data foundation and model computation; HydroAgent adds organized reasoning, visible expert judgment, and human-in-the-loop review — augmenting, not replacing."
+          text: "Run HydroAgent as an AI workflow and review layer on top of your existing digital twin or operational forecasting system. Your system keeps the data foundation and model computation; HydroAgent adds organized reasoning, visible expert judgment, and human-in-the-loop review, augmenting rather than replacing."
         },
         {
           title: "Pilots, research & briefings",
@@ -37,7 +37,7 @@ export const capabilitiesContent = {
       items: [
         {
           title: "Real-time flood forecast judgment",
-          text: "Combine historical floods, live rain and water conditions, and forecast rainfall to assess the coming flood and auto-match better parameter sets — every step pauses for human review and confirmation, and stays traceable and auditable."
+          text: "Combine historical floods, live rain and water conditions, and forecast rainfall to assess the coming flood and auto-match better parameter sets; every step pauses for human review and confirmation, and stays traceable and auditable."
         },
         {
           title: "Rapid scenario simulation",
@@ -45,11 +45,11 @@ export const capabilitiesContent = {
         },
         {
           title: "Pre-flood drills & contingency rehearsal",
-          text: "Quickly run multiple what-if scenarios — e.g. \"another 50 mm upstream in 12 hours, will it exceed the warning level?\" — to prepare plans, rehearse, and assess risk ahead of time."
+          text: "Quickly run multiple what-if scenarios (e.g. \"another 50 mm upstream in 12 hours, will it exceed the warning level?\") to prepare plans, rehearse, and assess risk ahead of time."
         },
         {
           title: "Automated operational materials & reports",
-          text: "From a few report templates plus meeting or process notes, draft briefing minutes, reporting materials, and review reports — a multi-thousand-word first draft in minutes."
+          text: "From a few report templates plus meeting or process notes, draft briefing minutes, reporting materials, and review reports: a multi-thousand-word first draft in minutes."
         },
         {
           title: "Alerts & risk-change phone notifications",
@@ -61,7 +61,7 @@ export const capabilitiesContent = {
         },
         {
           title: "Shift handover & process trail",
-          text: "Automatically compile current conditions, judgments made, why parameters were chosen, and what the next shift should watch — fewer handover gaps, easier review."
+          text: "Automatically compile current conditions, judgments made, why parameters were chosen, and what the next shift should watch: fewer handover gaps, easier review."
         },
         {
           title: "Anomaly alerts & data QC",
