@@ -9,7 +9,7 @@ export const contactContent = {
       emailCta: "Send us an email",
       response: "Usually within 3 business days",
       channels: [
-        { label: "GitHub", value: "github.com/HydroAgent-Lab", href: "https://github.com/HydroAgent-Lab" },
+        { label: "Email", value: "contact@hydroagentlab.com", href: "mailto:contact@hydroagentlab.com" },
         { label: "WeChat", value: "HydroAgentLab" }
       ]
     },
@@ -73,7 +73,7 @@ export const contactContent = {
       emailCta: "发送邮件",
       response: "一般 3 个工作日内回复",
       channels: [
-        { label: "GitHub", value: "github.com/HydroAgent-Lab", href: "https://github.com/HydroAgent-Lab" },
+        { label: "邮箱", value: "contact@hydroagentlab.com", href: "mailto:contact@hydroagentlab.com" },
         { label: "微信公众号", value: "HydroAgentLab" }
       ]
     },

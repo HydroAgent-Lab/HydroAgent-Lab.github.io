@@ -2,6 +2,44 @@
 
 ## 2026-06-24
 
+### Events 页面排版重构
+
+将 Events 页从竖向卡片列表（左窄图 + 右文字）改为 zigzag 交错布局：
+
+**新布局：**
+- **A. Hero** — PageLead 改为 Capabilities 风格（facts 纵向排列 + 分割线 + grid 120px/1fr），与 Research / White Papers 一致
+- **B. Zigzag 事件列表** — 左右对称两列（1fr 1fr），奇数行"图左文右"、偶数行"文左图右"交错排列。图片 4:3 比例圆角裁切，文字区含 meta / 标题 / 描述 / 链接
+- **C. CtaBand** — 新增（之前没有）
+
+**所有文字内容未做任何修改。**
+
+**Files created:**
+- `styles/pages/events.css` — 独立 CSS（hero facts / zigzag 行 / media / body / 响应式）
+
+**Files modified:**
+- `components/pages/events.js` — 完整重写：zigzag 布局 + SectionHeader + CtaBand
+- `app/globals.css` — 新增 events.css import
+- `styles/pages/designv2.css` — 移除旧的 events 样式（已迁移至独立文件）
+
+### White Papers 页面排版重构
+
+与 Research Papers 页面布局对齐，从"三卡片网格 + contact-callout"改为统一的专业排版：
+
+**新布局：**
+- **A. Hero** — PageLead 改为 Capabilities 风格（facts 纵向排列 + 分割线 + grid 120px/1fr）
+- **B. Cadence + Status** — 左右对称分栏（1fr 1fr）。左列：SectionHeader + 3 条 cadence items（分割线列表，无边框卡片）。右列：empty state 卡片（虚线边框 + Follow us 链接）
+- **C. CtaBand** — 保持不变
+
+**所有文字内容未做任何修改。**
+
+**Files created:**
+- `styles/pages/white-papers.css` — 独立 CSS 文件（hero facts / 对称分栏 / cadence 列表 / empty state / 响应式）
+
+**Files modified:**
+- `components/pages/white-papers.js` — 完整重写：对齐 Research 页布局结构
+- `app/globals.css` — 新增 white-papers.css import
+- `styles/pages/designv2.css` — 移除旧的 white-papers 样式（已迁移至独立文件）
+
 ### Home Architecture 图替换为中英文双版本
 
 将 Home 页 Architecture 区域的 SVG 架构图从单一英文版改为中英文双版本：
@@ -12,6 +50,28 @@
 
 **Files modified:**
 - `components/pages/home.js` — img src 改为基于 lang 的三元表达式
+
+### Research Papers 页面排版重构
+
+将 Research 页从简单的"动机文本 + 状态卡片"两区块布局，重构为 4 段式专业学术页面：
+
+**新布局：**
+- **A. Hero** — PageLead 改为 Capabilities 页风格（facts 纵向排列 + 分割线 + grid 120px/1fr）
+- **B. Motivation + Themes** — 左侧保留全部 3 段动机文字；右侧从"即将发布"状态卡片改为 3 张 Research Themes 主题卡片（带序号、hover 效果）
+- **C. Paper List** — 新增论文列表区块（灰底），支持序号 / 标题 / 摘要 / method / 标签 pills / 状态 badge / preprint 链接。当前 `papers[]` 为空，显示 empty state（虚线边框居中卡片 + Follow us 链接）
+- **D. CtaBand** — 保持不变
+
+**数据结构扩展：**
+- 新增 `themes[]`（3 项，中英双语）：LLM Agent × Hydrology / Forecaster-in-the-loop / Workflow automation
+- 新增 `papers[]`（初始为空数组），预留 title / question / method / tags / status / year / links 字段
+- `status` 保留用于 empty state 文案
+
+**Files modified:**
+- `content/pages/research.js` — 新增 themes[], papers[] 字段（en/zh）
+- `components/pages/research.js` — 完整重写：4 区块布局 + paper row + empty state + status badge
+- `styles/pages/research.css` — 完整重写：Capabilities 风格 hero facts + theme 卡片 + paper list + empty state + 响应式
+
+**Verified:** `next build` succeeds, all 22 pages exported. `/research` 和 `/zh/research` 均返回 HTTP 200。
 
 ## 2026-06-23
 

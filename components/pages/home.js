@@ -44,7 +44,7 @@ export function HomePageContent({ lang = "en" }) {
                 </a>
               </div>
               <div className="flagship-image">
-                <img src="https://images.unsplash.com/photo-1446776858070-70c3d5ed6758?w=720&h=600&fit=crop&crop=center" alt="Flood forecasting operations" />
+                <img src="/assets/assets/hero-hydroagent-lab.png" alt="HydroAgent Lab" />
               </div>
             </div>
           </div>

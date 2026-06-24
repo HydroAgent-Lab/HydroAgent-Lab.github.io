@@ -1,3 +1,4 @@
+import { CtaBand } from "@/components/cta-band";
 import { PageLead } from "@/components/page-lead";
 import { SectionHeader } from "@/components/section-header";
 import { SiteShell } from "@/components/shell";
@@ -20,7 +21,7 @@ function renderStatusText(text, followLabel, followSocial) {
   return (
     <>
       {before}
-      <a className="white-paper-status-social-link" href={followSocial.href} target="_blank" rel="noreferrer">
+      <a className="wp-status-social-link" href={followSocial.href} target="_blank" rel="noreferrer">
         {followLabel}
       </a>
       {after}
@@ -37,6 +38,7 @@ export function WhitePapersPageContent({ lang = "en" }) {
   return (
     <SiteShell lang={lang}>
       <main className="main-content white-papers-page">
+        {/* A — Hero */}
         <PageLead
           eyebrow={c.lead.eyebrow}
           title={c.lead.title}
@@ -44,24 +46,36 @@ export function WhitePapersPageContent({ lang = "en" }) {
           facts={c.lead.facts}
         />
 
+        {/* B — Cadence */}
         <section className="content-section">
           <SectionHeader
             eyebrow={c.cadenceSection.eyebrow}
             title={c.cadenceSection.title}
           />
-          <div className="three-up-grid">
+          <div className="wp-cadence-list">
             {c.cadenceSection.items.map((item) => (
-              <article className="info-card" key={item.label}>
+              <article className="wp-cadence-item" key={item.label}>
                 <h3>{item.label}</h3>
                 <p>{item.text}</p>
               </article>
             ))}
           </div>
-          <div className="contact-callout">
+        </section>
+
+        {/* C — Archive (empty state) */}
+        <section className="content-section wp-archive-section">
+          <SectionHeader
+            eyebrow={lang === "zh" ? "归档" : "Archive"}
+            title={lang === "zh" ? "白皮书归档" : "White paper archive"}
+          />
+          <div className="wp-empty">
             <strong>{c.status.title}</strong>
             <p>{renderStatusText(c.status.text, followLabel, followSocial)}</p>
           </div>
         </section>
+
+        {/* D — CTA */}
+        <CtaBand lang={lang} content={content} />
       </main>
     </SiteShell>
   );

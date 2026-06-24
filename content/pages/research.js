@@ -20,6 +20,12 @@ export const researchContent = {
         "HydroAgent is built around that gap: the forecaster's work needs to be captured, reviewed, and run in the tools people actually use."
       ]
     },
+    themes: [
+      { label: "LLM Agent × Hydrology", text: "Exploring how large language model agents can interface with hydrological models and operational data." },
+      { label: "Forecaster-in-the-loop", text: "Keeping human expertise central while automating routine steps in the forecast workflow." },
+      { label: "Workflow automation", text: "End-to-end orchestration from data ingestion to bulletin generation and review." }
+    ],
+    papers: [],
     status: {
       title: "Our first papers will be listed here soon.",
       text:
@@ -29,7 +35,7 @@ export const researchContent = {
   zh: {
     lead: {
       eyebrow: "研究",
-      title: "从研究走向实际预报业务 ",
+      title: "从研究走向实际预报业务",
       text:
         "我们研究大语言模型智能体能否进入一线洪水预报，同时不削弱科学责任。",
       facts: [
@@ -47,8 +53,14 @@ export const researchContent = {
         "HydroAgent 要补上的正是这道缺口：把预报员的工作记录下来，让它可以被复核，并进入真实工具环境。"
       ]
     },
+    themes: [
+      { label: "大语言模型智能体 × 水文", text: "探索大语言模型智能体如何与水文模型和业务数据对接。" },
+      { label: "预报员在环", text: "在自动化常规流程的同时，让人类专业判断始终处于核心位置。" },
+      { label: "工作流自动化", text: "从数据接入到简报生成与审核的端到端编排。" }
+    ],
+    papers: [],
     status: {
-      title: "首批预印本即将发布 ",
+      title: "首批预印本即将发布",
       text:
         "这里之后会列出每篇论文的核心问题、方法、关键图示和预印本链接。关注我们，第一篇上线时第一时间告诉你。"
     }
