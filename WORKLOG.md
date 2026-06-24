@@ -1,5 +1,18 @@
 # Work Log
 
+## 2026-06-24
+
+### Home Architecture 图替换为中英文双版本
+
+将 Home 页 Architecture 区域的 SVG 架构图从单一英文版改为中英文双版本：
+- EN (`/`) → `HydroAgent_Diagram.svg`
+- ZH (`/zh`) → `HydroAgent_No_智能体运行层.svg`
+
+通过 `lang` prop 动态选择 `<img src>`，无需修改内容数据文件。
+
+**Files modified:**
+- `components/pages/home.js` — img src 改为基于 lang 的三元表达式
+
 ## 2026-06-23
 
 ### Capabilities 页面排版优化
