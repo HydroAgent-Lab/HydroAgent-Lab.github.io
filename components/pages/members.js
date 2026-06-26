@@ -64,7 +64,7 @@ export function MembersPageContent({ lang = "en" }) {
                     <span>{focus}</span>
                   </h3>
                   <p>{affiliation}</p>
-                  {member.email || member.orcid || member.linkedin ? (
+                  {member.email || member.orcid || member.linkedin || member.website ? (
                     <div className="team-about-member-links">
                       {member.email ? (
                         <a href={`mailto:${member.email}`}>{c.roster.emailLabel}</a>
@@ -77,6 +77,11 @@ export function MembersPageContent({ lang = "en" }) {
                       {member.linkedin ? (
                         <a href={member.linkedin} target="_blank" rel="noreferrer">
                           LinkedIn
+                        </a>
+                      ) : null}
+                      {member.website ? (
+                        <a href={member.website} target="_blank" rel="noreferrer">
+                          Website
                         </a>
                       ) : null}
                     </div>

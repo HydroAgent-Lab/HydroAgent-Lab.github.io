@@ -246,6 +246,19 @@ export const hydroAgentTeamMembers = [
     focusZh: ""
   },
   {
+    name: "Tianlong Jia",
+    nameZh: "贾天龙",
+    initials: "TJ",
+    photo: "/assets/lab-members/jiatianllong.jpg",
+    affiliation: "Institute of Water and Environment (IWU), Karlsruhe Institute of Technology (KIT), Karlsruhe, Germany",
+    affiliationZh: "卡尔斯鲁厄理工学院 (KIT) 水与环境研究所 (IWU)，德国卡尔斯鲁厄",
+    email: "tianlong.jia@kit.edu",
+    orcid: "https://orcid.org/0000-0001-5142-1321",
+    website: "https://tianlongjia.github.io/",
+    focus: "",
+    focusZh: ""
+  },
+  {
     name: "Qingwen Deng",
     nameZh: "邓清文",
     initials: "QD",
