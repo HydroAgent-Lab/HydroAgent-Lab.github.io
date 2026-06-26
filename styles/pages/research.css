@@ -225,6 +225,16 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
+  .research-page .page-lead {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .research-page .page-lead-fact {
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+  }
+
   .research-motivation-layout {
     grid-template-columns: 1fr;
     gap: 28px;

@@ -72,6 +72,16 @@
 }
 
 @media (max-width: 900px) {
+  .white-papers-page .page-lead {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .white-papers-page .page-lead-fact {
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+  }
+
   .wp-cadence-list {
     grid-template-columns: 1fr;
   }

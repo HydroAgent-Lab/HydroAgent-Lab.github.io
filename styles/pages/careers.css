@@ -421,7 +421,14 @@
   .careers-hero-inner { padding: 64px var(--gutter) 48px; }
   .careers-hero-inner h1 { font-size: 1.75rem; }
   .careers-split-row { grid-template-columns: 1fr; }
-  .careers-contribution-row { gap: 32px; }
+  .careers-contribution-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .careers-contribution .careers-split-media {
+    min-height: auto;
+    aspect-ratio: 16 / 9;
+  }
   .careers-contribution-copy { max-width: none; }
   .careers-split-reverse .careers-split-row { direction: ltr; }
   .careers-statement-grid { grid-template-columns: 1fr; }

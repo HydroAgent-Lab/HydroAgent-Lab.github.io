@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useState, useCallback, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
+import { useState, useCallback, useEffect } from "react";
 import {
   getLanguageSwitchHref,
   getSiteContent,
   localizeHref,
-  normalizePath,
-  stripLangPrefix
+  normalizePath
 } from "@/content/site";
 import { Breadcrumb } from "./breadcrumb";
 
@@ -45,39 +44,6 @@ export function SiteShell({ children, lang = "en" }) {
     setExpandedId(null);
   }, []);
 
-  // Scroll-to-advance: reaching the bottom auto-navigates to the next page
-  // WITHIN the same top-level section only (does not cross into the next section).
-  const router = useRouter();
-  const basePath = stripLangPrefix(normalizedPathname);
-  let nextBase = null;
-  for (const it of topNav) {
-    if (!it.children) continue;
-    const paths = it.children.filter((c) => c.path).map((c) => normalizePath(c.path));
-    const i = paths.indexOf(basePath);
-    if (i >= 0) {
-      nextBase = i < paths.length - 1 ? paths[i + 1] : null;
-      break;
-    }
-  }
-
-  const advancedRef = useRef(false);
-  useEffect(() => {
-    advancedRef.current = false;
-    if (!nextBase) return undefined;
-    let scrolledOnce = false;
-    const onScroll = () => {
-      if (window.scrollY > 4) scrolledOnce = true;
-      const doc = document.documentElement;
-      const scrollable = doc.scrollHeight > window.innerHeight + 8;
-      const atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 2;
-      if (scrollable && scrolledOnce && atBottom && !advancedRef.current) {
-        advancedRef.current = true;
-        router.push(localizeHref(lang, nextBase));
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [basePath, nextBase, lang, router]);
 
   return (
     <div className={`page-shell lang-${lang}`} id="top">

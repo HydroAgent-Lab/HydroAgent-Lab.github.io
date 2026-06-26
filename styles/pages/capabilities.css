@@ -125,6 +125,16 @@
 }
 
 @media (max-width: 900px) {
+  .capabilities-page .page-lead {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .capabilities-page .page-lead-fact {
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+  }
+
   .collab-bento {
     grid-template-columns: 1fr;
   }

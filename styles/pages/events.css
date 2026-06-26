@@ -132,6 +132,16 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
+  .events-page .page-lead {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .events-page .page-lead-fact {
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+  }
+
   .event-row,
   .event-row-reverse {
     grid-template-columns: 1fr;

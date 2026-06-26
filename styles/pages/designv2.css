@@ -64,6 +64,38 @@
   color: var(--text);
 }
 
+@media (max-width: 900px) {
+  .members-hero .page-lead-facts {
+    flex-direction: column;
+    gap: 0;
+    margin-top: 40px;
+  }
+
+  .members-hero .page-lead-fact {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    align-items: baseline;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .members-hero .page-lead-fact:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .members-hero .page-lead-fact strong {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .members-hero .page-lead-fact span {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
 /* --- Drawer group label (Follow Us, mobile) --- */
 .drawer-grouplabel {
   color: var(--text);

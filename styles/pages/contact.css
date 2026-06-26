@@ -186,9 +186,24 @@
     padding: 22px 0;
   }
 
-
   .contact-channels {
     flex-direction: column;
     gap: 16px;
+  }
+
+  /* How It Works — horizontal swipe cards */
+  .home-bottom-band .scroll-strip {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+  }
+
+  .home-bottom-band .scroll-strip .scroll-card {
+    min-width: 44vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
   }
 }
