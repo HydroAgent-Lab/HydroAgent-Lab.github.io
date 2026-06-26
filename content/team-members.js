@@ -249,7 +249,7 @@ export const hydroAgentTeamMembers = [
     name: "Tianlong Jia",
     nameZh: "贾天龙",
     initials: "TJ",
-    photo: "/assets/lab-members/jiatianllong.jpg",
+    photo: "/assets/lab-members/jiatianlong.jpg",
     affiliation: "Institute of Water and Environment (IWU), Karlsruhe Institute of Technology (KIT), Karlsruhe, Germany",
     affiliationZh: "卡尔斯鲁厄理工学院 (KIT) 水与环境研究所 (IWU)，德国卡尔斯鲁厄",
     email: "tianlong.jia@kit.edu",
