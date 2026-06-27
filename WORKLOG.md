@@ -2,6 +2,13 @@
 
 ## 2026-06-28
 
+### 首页 Hero 手机端两图改左对齐（图靠左、文字让位）
+
+按用户选择，手机端两图由「沿用电脑端右偏」改为左对齐：`--hero-img-tx: 0%`（去右移）、两图 `transform-origin` 改 `left top/left bottom`（从左边缘缩放，贴左不右溢）；`--hero-img-scale: 0.6`（0.65 偏大下调）。文字仍在左下、与上方图错开垂直区，不被遮挡。
+
+**Files modified:**
+- `styles/hero.css` — `@media (max-width:900px)`：`--hero-img-tx:0%`、两图 origin 改 left、scale 0.65→0.6
+
 ### 首页 Hero 手机端改双图等比模型并缩小
 
 手机端原为单张 cover 满屏图（隐藏底栏）。改为与电脑端一致的双图 width 等比模型：取消底栏 `display:none`、删除主图 cover 覆盖（继承电脑端 width 等比），在 `.hero` 上覆盖共享 `--hero-img-scale: 0.5`（电脑端 0.75）使两图同步缩小且对齐；`--hero-img-top: 96px` 手机端主图下移量。底栏竖向/横向暂沿用电脑端值，待手机端实测再调。
