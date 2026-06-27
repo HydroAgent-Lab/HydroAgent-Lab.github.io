@@ -1,0 +1,125 @@
+/* ==========================================================
+   HydroAgent-Lab — designV2 additions
+   New components introduced when applying v2 content:
+   Events cards, Members map, footer social links.
+   ========================================================== */
+
+/* --- Lab Members hero (world map as backdrop behind the lead text) --- */
+.members-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+/* World-map image sits behind everything; faded so text stays readable */
+.members-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/team-global-map.webp");
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+  z-index: 0;
+}
+
+/* White scrim — strongest top/bottom and toward the left where the
+   title sits, so the map reads as a subtle texture, not noise */
+.members-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.2) 45%,
+      rgba(255, 255, 255, 0.75) 100%
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(255, 255, 255, 0.35) 40%,
+      rgba(255, 255, 255, 0.12) 100%
+    );
+  z-index: 1;
+}
+
+/* Lift the lead text above backdrop + scrim, give the map room to breathe */
+.members-hero .page-lead {
+  position: relative;
+  z-index: 2;
+  padding-top: 96px;
+  padding-bottom: 88px;
+  background: transparent;
+}
+
+/* Map backdrop is dark, so force the lead copy to dark/high-contrast
+   (defaults use muted gray, which vanishes against the imagery) */
+.members-hero .page-lead-side p,
+.members-hero .page-lead-fact span {
+  color: var(--text);
+}
+
+.members-hero .page-lead-fact strong {
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .members-hero .page-lead-facts {
+    flex-direction: column;
+    gap: 0;
+    margin-top: 40px;
+  }
+
+  .members-hero .page-lead-fact {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    align-items: baseline;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .members-hero .page-lead-fact:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .members-hero .page-lead-fact strong {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .members-hero .page-lead-fact span {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+/* --- Drawer group label (Follow Us, mobile) --- */
+.drawer-grouplabel {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* --- Footer social --- */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 0;
+}
+.footer-social a,
+.footer-social span {
+  font-size: 12px;
+  color: var(--text-muted);
+  opacity: 0.9;
+}
+.footer-social a {
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer-social a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}

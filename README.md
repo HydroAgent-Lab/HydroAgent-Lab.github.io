@@ -1,31 +1,69 @@
-# HydroAgent Website
+# HydroAgent-Lab Website
 
-This folder contains a standalone static website for HydroAgent and is ready to deploy to GitHub Pages.
+Multi-page bilingual (en/zh) website for HydroAgent-Lab, built with Next.js 15 App Router and exported as static files.
 
-## Files
+## Development
 
-- `index.html`: main landing page
-- `styles.css`: visual design and responsive layout
-- `script.js`: mobile navigation behavior
-- `egu-2026.html`: conference summary page
-- `manuscript-brief.html`: manuscript and benchmark brief
-- `assets/`: logo, WebUI images, and proof figures
+```bash
+npm install
+npm run dev -- -p 3001
+```
 
-## Notes
+## Production build
 
-- All site assets now live inside this folder, so the site can be deployed directly as a static root.
-- Content is based on the current HydroAgent product framing, EGU deck framing, and repository notes.
+```bash
+npm run build
+```
 
-## Preview
+The exported static site is generated in `out/`.
 
-Open `index.html` directly in a browser, or serve the folder with any static file server.
+## Project Structure
 
-## Deploy To GitHub Pages
+```
+app/                      # Next.js App Router pages (en + zh, 24 pages total)
+  globals.css             # CSS entry point (@imports all styles)
+  layout.js               # Root layout
+  page.js                 # Home (en)
+  zh/                     # Chinese locale mirror
+  platform/, capabilities/, workflow/, research/, runs/, team/, careers/, contact/
+  white-papers/, events/, members/   # New placeholder pages
 
-1. Create a repository such as `hydroagent-lab.github.io` or any project repo.
-2. Upload the full contents of this folder to the repository root.
-3. In GitHub, open `Settings -> Pages`.
-4. Set the source to deploy from the main branch root.
-5. Wait for GitHub Pages to publish the site.
+components/
+  hero.js                 # Hero section — split layout (left text/CTA, right autoplay video)
+  shell.js                # Site shell (dropdown nav + hamburger menu + footer)
+  pages/                  # Per-page content components
+    home.js, platform.js, capabilities.js, workflow.js,
+    research.js, runs.js, team.js, careers.js, contact.js,
+    white-papers.js, events.js, members.js
+  cta-band.js, page-lead.js, section-header.js,
+  capability-directory.js, product-preview.js, highlight-grid.js
 
-If you use a project repository instead of a user/org site, keep all links relative as they are now.
+content/
+  site.js                 # Re-export assembler (imports sub-modules, exports getSiteContent + helpers)
+  helpers.js              # Utility functions (normalizePath, localizeHref, stripLangPrefix, getLanguageSwitchHref)
+  team-members.js         # hydroAgentTeamMembers array (15 members)
+  nav.js                  # Nested 2-level nav structure, footer groups, CTA, switchLabel (en/zh)
+  pages/                  # Per-page bilingual content
+    home.js, platform.js, capabilities.js, workflow.js,
+    research.js, runs.js, team.js, careers.js, contact.js,
+    white-papers.js, events.js, members.js
+
+styles/
+  tokens.css              # CSS custom properties (colors, spacing, fonts)
+  base.css                # Reset, body defaults, page-shell
+  typography.css          # Headings, eyebrow, lang-zh adjustments
+  nav.css                 # Site header/nav (dropdown, hamburger, drawer)
+  hero.css                # Hero section
+  sections.css            # Shared section layouts, cards, grids, buttons
+  footer.css              # Site footer
+  pages/                  # Per-page styles
+    home.css, platform.css, capabilities.css, workflow.css,
+    research.css, runs.css, team.css, careers.css, contact.css
+```
+
+## Design Language
+- Light background (#f0f0ee), pill navbar (#EDEDED), blue accent (#3B82F6)
+- Split-layout hero: left text/CTA column + right autoplay demo video
+- Multi-level nav: 5 top-level items, hover dropdown on desktop, hamburger drawer on mobile (≤900px)
+- System font stack, clean minimal cards, 200ms hover transitions
+- Dark theme placeholder in `styles/tokens.css` (via `[data-theme="dark"]`)

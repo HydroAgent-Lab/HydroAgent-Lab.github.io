@@ -1,0 +1,28 @@
+/* ==========================================================
+   HydroAgent-Lab — Global CSS Entry Point
+   All styles are organized into modular files under /styles.
+   ========================================================== */
+
+/* --- Foundation --- */
+@import "../styles/tokens.css";
+@import "../styles/base.css";
+@import "../styles/typography.css";
+
+/* --- Global Components --- */
+@import "../styles/nav.css";
+@import "../styles/breadcrumb.css";
+@import "../styles/hero.css";
+@import "../styles/sections.css";
+@import "../styles/footer.css";
+
+/* --- Page-specific --- */
+@import "../styles/pages/home.css";
+@import "../styles/pages/platform.css";
+@import "../styles/pages/capabilities.css";
+@import "../styles/pages/research.css";
+@import "../styles/pages/team.css";
+@import "../styles/pages/careers.css";
+@import "../styles/pages/contact.css";
+@import "../styles/pages/white-papers.css";
+@import "../styles/pages/events.css";
+@import "../styles/pages/designv2.css";
