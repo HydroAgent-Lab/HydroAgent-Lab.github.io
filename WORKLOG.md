@@ -2,6 +2,14 @@
 
 ## 2026-06-28
 
+### 首页 Hero 移除输入栏叠加图（桌面+手机）
+
+主图重裁后已含搜索框，输入栏叠加图全局多余。从 `components/hero.js` 删除 `<img class="hero-bottom-bar">`（省一次图片请求），并清理 `styles/hero.css` 中失效的 `.hero-bottom-bar` 基础规则及手机端 display:none 引用。
+
+**Files modified:**
+- `components/hero.js` — 删除 hero-bottom-bar 图片元素
+- `styles/hero.css` — 移除 `.hero-bottom-bar` 基础规则、手机端 display:none 中的该选择器
+
 ### 首页 Hero 手机端去掉输入栏图（主图已含搜索框）
 
 用户重裁主图，已包含四卡片+底部搜索框。手机端将 `.hero-bottom-bar` 加入 `display:none` 组，仅保留全宽主图 + 文字流式堆叠。电脑端未改（仍叠加底栏）——注意：主图既含搜索框、桌面又叠输入栏，桌面可能出现重复，待用户确认。

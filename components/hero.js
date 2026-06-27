@@ -14,15 +14,6 @@ export function Hero({ lang = "en", content }) {
         aria-hidden="true"
       />
 
-      {/* Bottom input-bar strip — the scaled background pushes the real
-          input bar off-screen, so this cropped strip restores it. */}
-      <img
-        className="hero-bottom-bar"
-        src="/assets/webui_light_bottom.jpeg"
-        alt=""
-        aria-hidden="true"
-      />
-
       {/* Mobile-only: cropped banner focusing on the four function cards */}
       <div className="hero-cards-crop" aria-hidden="true" />
 

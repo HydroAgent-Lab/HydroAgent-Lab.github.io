@@ -42,26 +42,6 @@
   z-index: 0;
 }
 
-/* Bottom input-bar overlay — the scaled background image pushes the real
-   input bar off-screen, so this cropped strip restores it at the hero
-   bottom, matched to the background's horizontal scale/origin. Sits above
-   the background but below the scrim/text. */
-.hero-bottom-bar {
-  position: absolute;
-  left: 0;
-  /* sit just above the "...workflow demo" caption (.hero-video-tag @ 24px) */
-  bottom: 56px;
-  width: 100%;
-  height: auto;
-  z-index: 1;
-  pointer-events: none;
-  /* Same width model/scale as .hero-video-bg; translateX is the shared value
-     +5% so the strip sits slightly right of the main image. translateY pins it
-     near the hero bottom. */
-  transform: scale(var(--hero-img-scale)) translateX(calc(var(--hero-img-tx) + 1%)) translateY(-125%);
-  transform-origin: 30% bottom;
-}
-
 /* Mobile-only cropped card banner — hidden on desktop */
 .hero-cards-crop {
   display: none;
@@ -364,8 +344,7 @@
     transform: none;
   }
 
-  /* Hide the desktop-only overlays/caption + the now-redundant input-bar strip */
-  .hero-bottom-bar,
+  /* Hide the desktop-only overlays/caption on mobile */
   .brand-hero-scrim,
   .brand-hero::after,
   .hero-video-tag {
