@@ -1,5 +1,232 @@
 # Work Log
 
+## 2026-06-27
+
+### 首页 WHO IT SERVES 卡片加高
+
+将首页"适用对象 / Who It Serves"区域的三张卡片（`.scroll-card`）高度加长，新增 `min-height: 260px`。该样式由中英文版本共用，故一处修改即同时生效。
+
+**Files modified:**
+- `styles/pages/home.css` — `.scroll-card` 新增 `min-height: 260px`
+
+### 首页 WHO IT SERVES 卡片高度回退 + 手机端宽度缩减 20%（同日修订）
+
+- **网页端恢复**：移除 `.scroll-card` 的 `min-height: 260px`，恢复为由内容/padding 决定的原始高度。
+- **手机端宽度 -20%**：`@media (max-width: 900px)` 下 `.scroll-card` 的 `min-width` 由 `44vw` 改为 `35.2vw`（44 × 0.8）。
+
+**Files modified:**
+- `styles/pages/home.css` — `.scroll-card` 移除 `min-height`；移动端 `min-width` 44vw → 35.2vw
+
+### 首页 WHO IT SERVES 三卡尺寸统一 + 手机端固定宽度（同日修订）
+
+- **电脑端**：`.scroll-strip` 本身为 `grid repeat(3,1fr)` + 默认 `stretch`，三卡已等宽等高，无需改动。
+- **手机端**：`.scroll-card` 原 `min-width: 35.2vw` 无上限，最长文案卡会被撑到一行那么宽 → 三卡不等宽。改为固定 `flex: 0 0 52vw`，三卡等宽、收窄后长文案自然换两行，`flex` 默认 `stretch` 保证等高。
+
+**Files modified:**
+- `styles/pages/home.css` — 移动端 `.scroll-card` 由 `min-width: 35.2vw` 改为 `flex: 0 0 52vw`
+
+### 首页 WHO IT SERVES 手机端短正文孤字修复（同日修订）
+
+第一张卡中文正文"水文预报机构和业务团队"（11 字）在 52vw 下末字"队"被挤到第二行（孤字难看）。手机端卡片略加宽 + 缩小内边距给文字腾空间：`flex: 0 0 52vw → 54vw`，新增 `padding: 26px 16px`（桌面 32px 28px 不变）。短正文可放一行，最长第三张卡仍换两行，stretch 保持等高。
+
+**Files modified:**
+- `styles/pages/home.css` — 移动端 `.scroll-card` 宽度 52vw→54vw，新增 `padding: 26px 16px`
+
+### 首页 WHO IT SERVES 手机端正文均衡换行（同日修订）
+
+手机端 `.scroll-card p` 新增 `text-wrap: balance`，让多行正文各行长度更均衡，避免末行单字孤行。
+
+**Files modified:**
+- `styles/pages/home.css` — 移动端新增 `.scroll-card p { text-wrap: balance; }`
+
+### 首页 Hero 背景由视频改为静态图（同日修订）
+
+将 Hero 背景的 `<video>`（CloudFront mp4）替换为静态图片 `<img src="/assets/webui_light.jpg">`，保留 `hero-video-bg` class 以继承 `object-fit: cover` 及 `transform: scale(1.4)` 等样式。注意：原 `scale(1.4)` 缩放是为视频设计，UI 截图可能被裁切/略糊，必要时在 `styles/hero.css` 调整 `.hero-video-bg` 的 transform。
+
+**Files modified:**
+- `components/hero.js` — Hero 背景 `<video>` → `<img src="/assets/webui_light.jpg">`
+
+### 首页 Hero 背景换深色图 + 取消缩放（同日修订）
+
+- 图片源 `webui_light.jpg` → `webui_black.jpg`（深色）。
+- 移除 `.hero-video-bg` 的 `transform: scale(1.4)` 与 `transform-origin: 30% center`，图片按 `object-fit: cover` 原比例铺满、不再放大；同时删除移动端无用的 `transform-origin` 残留。
+- ⚠️ 背景变深色后，左侧白色 scrim 上的深色文字对比度需复核。
+
+**Files modified:**
+- `components/hero.js` — Hero 图片源改为 `/assets/webui_black.jpg`
+- `styles/hero.css` — 移除 `.hero-video-bg` 的 transform 缩放及移动端 transform-origin 残留
+
+### 首页 Hero 改回浅色图 + 手机端堆叠布局（同日修订）
+
+- 背景图改回 `webui_light.jpg`（深色不和谐）。
+- 手机端原为"满屏背景图 + 底部文字"，但宽屏浅色截图竖屏裁切后大片留白、图近乎隐形、文字孤悬左下。改为**堆叠布局**：`.hero-video-bg` 在 ≤900px 拉入正常流，成为顶部带圆角边框的截图 banner（`aspect-ratio:16/10`、`object-fit:cover`），文字排其下白底；`.hero` 取消 `min-height:100vh`，隐藏 `.brand-hero-scrim` 与 `.hero-video-tag`。
+
+**Files modified:**
+- `components/hero.js` — Hero 图片源改回 `/assets/webui_light.jpg`
+- `styles/hero.css` — 移动端 Hero 改为堆叠布局（图 banner 在上、文字在下）
+
+### 首页 Hero 桌面梯度模糊 + 手机裁剪优化（同日修订）
+
+- **桌面**：新增 `.brand-hero::after` 模糊层，`backdrop-filter: blur(7px)` + 左→右 `mask` 渐变（0–30% 全模糊，62% 起清晰），文字区柔化、右侧 UI 锐利。
+- **手机**：堆叠 banner 裁切优化，`aspect-ratio` 16/10→4/3、`object-position` 改 `50% 30%` 聚焦中间产品界面；移动端隐藏 `.brand-hero::after`。
+
+**Files modified:**
+- `styles/hero.css` — 桌面新增梯度模糊层；移动端 banner 裁切焦点调整 + 隐藏模糊层
+
+### 首页 Hero 桌面恢复"内容偏右"设计（同日修订）
+
+按最初视频版思路，桌面端 `.hero-video-bg` 恢复 `transform: scale(1.4); transform-origin: 30% center`，使图片视觉重心推向右 ~2/3、文字压左侧；移动端 banner 加 `transform: none` 避免被缩放。
+
+**Files modified:**
+- `styles/hero.css` — 桌面 `.hero-video-bg` 恢复 scale(1.4)+origin 30%；移动端 banner `transform: none`
+
+### 首页 Hero 桌面图片下移避开导航栏（同日修订）
+
+桌面端图片满屏铺在透明导航栏下，放大后截图顶部与 nav 重叠。`.hero-video-bg` 的 transform 由 `scale(1.4)` 改为 `scale(1.4) translateY(10%)`，把图片内容下移避开导航栏（translateY 可调）。
+
+**Files modified:**
+- `styles/hero.css` — 桌面 `.hero-video-bg` transform 增加 `translateY(10%)`
+
+### 首页 Hero 背景图改回深色（同日修订）
+
+Hero 图片源 `webui_light.jpg` → `webui_black.jpg`。注意：左侧白色 scrim + 深色文字在深色图上对比度需复核。
+
+**Files modified:**
+- `components/hero.js` — Hero 图片源改为 `/assets/webui_black.jpg`
+
+### 首页 Hero 桌面"深底浅字"（同日修订）
+
+新增 `@media (min-width: 901px)` 区块（隔离桌面，手机端白底深字不受影响）：scrim 由白色渐变改为深色渐变压暗左侧；`h1`/副标题/正文转浅色；`.secondary-action` 改浅色描边玻璃；`.hero-video-tag` 改深底浅字。`.primary-action`（accent 蓝底白字）与 eyebrow/`h1 span`（accent 蓝）保持不变。
+
+**Files modified:**
+- `styles/hero.css` — 新增桌面 `@media (min-width: 901px)` 深底浅字样式
+
+### 首页 Hero 手机端改为与桌面一致（同日修订）
+
+按要求取消手机端"图在上、文在下"的堆叠布局，改为与网页端一致的**满屏深色背景图 + 浅色文字浮层**：移动端 `.hero-video-bg` 恢复满屏（继承 base 的 absolute/cover，仅 `transform:none`+`object-position:center` 适配竖屏）；`.brand-hero-scrim` 改为底部深色渐变；`h1`/副标题/正文转浅色、`.secondary-action` 改浅色玻璃；`.hero` 恢复满屏高（移除 min-height:auto）。`.brand-hero::after` 梯度模糊在移动端也保留（与桌面一致）。
+
+**Files modified:**
+- `styles/hero.css` — 移动端 Hero 由堆叠 banner 改回满屏背景图 + 深底浅字
+
+### 首页 Hero 深色版备份 + 恢复白色版（同日修订）
+
+- **备份**：深色"深底浅字"完整设置存为 `styles/hero.backup_darkcolor.css`（不被 globals.css 引入，仅存档；含还原说明：拷回 hero.css + hero.js 改 webui_black.jpg）。
+- **恢复白色**：图片源改回 `webui_light.jpg`；移动端 scrim 改回白色渐变、移除浅色文字覆盖（恢复基础深色字）；删除桌面 `@media(min-width:901px)` 深底浅字整块（桌面回到基础白 scrim + 深字）。桌面/手机均为白色版，结构（满屏图 + 浮层 + 梯度模糊 + scale 推右）保留。
+
+**Files created:**
+- `styles/hero.backup_darkcolor.css` — 深色版 Hero 备份（存档，未引入）
+
+**Files modified:**
+- `components/hero.js` — Hero 图片源改回 `/assets/webui_light.jpg`
+- `styles/hero.css` — 移动端 scrim 改回白色、移除浅字覆盖；删除桌面深底浅字块
+
+### 首页 Hero 底部提问栏叠层（同日修订）
+
+主图 `scale(1.4)` 放大后底部提问栏被推出视口，新增 `webui_light_bottom.jpeg` 切片作为 `.hero-bottom-bar` 叠在底部恢复输入框：绝对定位钉底、`transform: scale(1.4) origin 30% bottom` 与主图水平缩放/锚点对齐、`z-index:1`（主图之上、scrim/文字之下，左侧被白罩盖、右侧输入框露出）；手机端主图未缩放故隐藏该切片。
+
+**Files modified:**
+- `components/hero.js` — 新增 `.hero-bottom-bar` 提问栏切片 `<img>`
+- `styles/hero.css` — 新增 `.hero-bottom-bar` 样式 + 移动端隐藏
+
+### 首页 Hero 两图整体缩小 + 提问栏上移（同日修订）
+
+主图与提问栏切片缩放 `scale(1.4) → 1.25`；提问栏 `bottom: 0 → 56px`，抬到右下角 "HydroAgent-FF workflow demo"（`.hero-video-tag` @ bottom 24px）文字上方。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-video-bg` 与 `.hero-bottom-bar` scale 1.4→1.25；`.hero-bottom-bar` bottom 0→56px
+
+### 首页 Hero 两图再缩小 20%（同日修订）
+
+两图 `scale(1.25) → 1.0`（再缩 20%）。注意：scale=1.0 无溢出余量，主图 `translateY(10%)` 会顶部露白，故一并去掉（→ translateY(0)）；副作用是"内容偏右"效果减弱、趋于居中（origin 在 scale=1 时无效）。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-video-bg` scale→1、translateY→0；`.hero-bottom-bar` scale→1
+
+### 首页 Hero 换大图 + 两图右移（同日修订）
+
+大图源 `webui_light.jpg → webui_light.jpeg`（同界面、底部去掉输入框，与单独的提问栏切片配套）。两图各加 `translateX(5%)` 右移；左侧露出的小白边被白色 scrim 盖住。
+
+**Files modified:**
+- `components/hero.js` — 大图源 → `/assets/webui_light.jpeg`
+- `styles/hero.css` — `.hero-video-bg` 与 `.hero-bottom-bar` 各加 `translateX(5%)`
+
+### 首页 Hero 再缩小 10% + 右移 20%（同日修订）
+
+两图 `scale(1) translateX(5%)` → `scale(0.9) translateX(20%)`。注意 scale<1 后图片不铺满容器、四周露页面白底（大图本身白底，接缝基本不可见）。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-video-bg` 与 `.hero-bottom-bar` 改为 `scale(0.9) translateX(20%)`
+
+### 首页 Hero 微调：扩大 5% + 左移 10%（同日修订）
+
+两图 `scale(0.9) translateX(20%)` → `scale(0.95) translateX(10%)`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-video-bg` 与 `.hero-bottom-bar` 改为 `scale(0.95) translateX(10%)`
+
+### 首页 Hero 梯度模糊减 10%（同日修订）
+
+`.brand-hero::after` 的 `backdrop-filter` 由 `blur(7px)` → `blur(6.3px)`（-10%）。
+
+**Files modified:**
+- `styles/hero.css` — `.brand-hero::after` 模糊 7px→6.3px
+
+### 首页 Hero 提问栏单独右移 5%（同日修订）
+
+仅 `.hero-bottom-bar` 由 `translateX(10%)` → `translateX(15%)`（主图 10% 不变，两者不再完全对齐）。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-bottom-bar` translateX 10%→15%
+
+### 首页 Hero 提问栏左移 2%（同日修订）
+
+`.hero-bottom-bar` `translateX(15%)` → `translateX(13%)`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-bottom-bar` translateX 15%→13%
+
+### 首页 Hero 提问栏左移 0.8% + 上移 5%（同日修订）
+
+`.hero-bottom-bar` → `scale(0.95) translateX(12.2%) translateY(-5%)`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-bottom-bar` translateX 13%→12.2%，新增 translateY(-5%)
+
+### 首页 Hero 提问栏再上移 10%（同日修订）
+
+`.hero-bottom-bar` translateY `-5% → -15%`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-bottom-bar` translateY -5%→-15%
+
+### 首页 Hero 第二张图（提问栏）再上移 20%（同日修订）
+
+`.hero-bottom-bar` translateY `-15% → -35%`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-bottom-bar` translateY -15%→-35%
+
+### 首页 Hero 提问栏下移 10%（同日修订）
+
+`.hero-bottom-bar` translateY `-35% → -25%`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-bottom-bar` translateY -35%→-25%
+
+### 首页 Hero 手机端同步两图排版（同日修订）
+
+移除手机端对 `.hero-video-bg`（transform:none/object-position）和 `.hero-bottom-bar`（display:none）的覆盖，使两图在手机端继承桌面 base transform，排版与桌面一致。白色 scrim、文字内边距等手机特有设置保留。
+
+**Files modified:**
+- `styles/hero.css` — 移动端不再覆盖两图 transform/显示，继承桌面排版
+
+### 首页 Hero 手机端文字左下移 + 两图左移（同日修订）
+
+手机端 `.hero-copy` 内边距 `0 20px 56px → 0 14px 32px`（文字向左下角）；两图新增手机端 transform 左移：`.hero-video-bg` `scale(0.95) translateX(-5%)`、`.hero-bottom-bar` `scale(0.95) translateX(-3%) translateY(-25%)`。
+
+**Files modified:**
+- `styles/hero.css` — 移动端 hero-copy 内边距调整 + 两图 translateX 左移
+
 ## 2026-06-24
 
 ### Events 页面排版重构

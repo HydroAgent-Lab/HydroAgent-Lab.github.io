@@ -6,14 +6,21 @@ export function Hero({ lang = "en", content }) {
 
   return (
     <section className="hero brand-hero">
-      {/* Fullscreen background video — content weighted to the right */}
-      <video
+      {/* Fullscreen background image — content weighted to the right */}
+      <img
         className="hero-video-bg"
-        autoPlay
-        muted
-        loop
-        playsInline
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_215831_c6a8989c-d716-4d8d-8745-e972a2eec711.mp4"
+        src="/assets/webui_light.jpeg"
+        alt=""
+        aria-hidden="true"
+      />
+
+      {/* Bottom input-bar strip — the scaled background pushes the real
+          input bar off-screen, so this cropped strip restores it. */}
+      <img
+        className="hero-bottom-bar"
+        src="/assets/webui_light_bottom.jpeg"
+        alt=""
+        aria-hidden="true"
       />
 
       {/* Left-side gradient scrim for text readability */}

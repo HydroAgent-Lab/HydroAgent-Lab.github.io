@@ -1,0 +1,159 @@
+/* ==========================================================
+   BACKUP — Hero "深底浅字" dark-color variant (backup_darkcolor)
+   ----------------------------------------------------------
+   This is a SNAPSHOT, NOT imported anywhere. Kept for reuse.
+
+   To restore the dark version:
+   1. Copy the rules below over the matching rules in `styles/hero.css`
+      (or replace hero.css wholesale with this content, minus this header).
+   2. In `components/hero.js`, set the image source to the dark image:
+        src="/assets/webui_black.jpg"
+
+   Key differences from the white version:
+   - Desktop (>=901px): dark scrim + light text  (block @media min-width:901px)
+   - Mobile  (<=900px): dark bottom scrim + light text (full-bleed, no stacked banner)
+   - Image: webui_black.jpg
+   ========================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  margin-top: calc(-1 * var(--header-height));
+}
+
+.brand-hero {
+  min-height: calc(100vh - var(--header-height));
+}
+
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.4) translateY(10%);
+  transform-origin: 30% center;
+  z-index: 0;
+}
+
+/* DARK scrim — left strong, fades right (desktop base lives in hero.css as WHITE;
+   the dark desktop override is in the @media(min-width:901px) block below) */
+.brand-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.85) 25%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.05) 75%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+/* Gradient blur — strong on the left (behind text), sharp on the right (UI) */
+.brand-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 30%, rgba(0, 0, 0, 0) 62%);
+  mask-image: linear-gradient(to right, #000 0%, #000 30%, rgba(0, 0, 0, 0) 62%);
+}
+
+/* --- Mobile: full-bleed dark image + light text overlay --- */
+@media (max-width: 900px) {
+  .hero-video-bg {
+    object-position: center;
+    transform: none;
+  }
+
+  .brand-hero-scrim {
+    background: linear-gradient(
+      to top,
+      rgba(12, 17, 28, 0.92) 0%,
+      rgba(12, 17, 28, 0.75) 38%,
+      rgba(12, 17, 28, 0.4) 68%,
+      rgba(12, 17, 28, 0.15) 100%
+    );
+  }
+
+  .hero-copy {
+    padding: 0 20px 56px;
+    max-width: 100%;
+  }
+
+  .hero-copy h1 {
+    font-size: 1.75rem;
+    color: #f5f7fa;
+  }
+
+  .hero-subtitle {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .hero-text {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .secondary-action {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .hero-video-tag {
+    display: none;
+  }
+}
+
+/* --- Desktop: dark scrim + light text ("深底浅字") --- */
+@media (min-width: 901px) {
+  .brand-hero-scrim {
+    background: linear-gradient(
+      to right,
+      rgba(12, 17, 28, 0.88) 0%,
+      rgba(12, 17, 28, 0.72) 25%,
+      rgba(12, 17, 28, 0.38) 50%,
+      rgba(12, 17, 28, 0.08) 75%,
+      transparent 100%
+    );
+  }
+
+  .hero-copy h1 {
+    color: #f5f7fa;
+  }
+
+  .hero-subtitle {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .hero-text {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .secondary-action {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .secondary-action:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  .hero-video-tag {
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(0, 0, 0, 0.35);
+  }
+}

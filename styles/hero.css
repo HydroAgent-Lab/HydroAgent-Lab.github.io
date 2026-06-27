@@ -24,9 +24,29 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.4);
+  /* Weight the image content to the right ~2/3 (text sits on the left),
+     matching the original background-video setup. translateY nudges the
+     image down so its top toolbar clears the fixed nav bar. */
+  transform: scale(0.95) translateX(10%);
   transform-origin: 30% center;
   z-index: 0;
+}
+
+/* Bottom input-bar overlay — the scaled background image pushes the real
+   input bar off-screen, so this cropped strip restores it at the hero
+   bottom, matched to the background's horizontal scale/origin. Sits above
+   the background but below the scrim/text. */
+.hero-bottom-bar {
+  position: absolute;
+  left: 0;
+  /* sit just above the "...workflow demo" caption (.hero-video-tag @ 24px) */
+  bottom: 56px;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  transform: scale(0.95) translateX(12.2%) translateY(-25%);
+  transform-origin: 30% bottom;
 }
 
 /* Left-side gradient scrim — strong on the left, fades out toward right */
@@ -42,6 +62,30 @@
     transparent 100%
   );
   z-index: 1;
+}
+
+/* Gradient blur — strong on the left (behind text), sharp on the right (UI).
+   A mask fades the backdrop-filter from left to right. */
+.brand-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(6.3px);
+  backdrop-filter: blur(6.3px);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 30%,
+    rgba(0, 0, 0, 0) 62%
+  );
+  mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 30%,
+    rgba(0, 0, 0, 0) 62%
+  );
 }
 
 /* Text overlay — bottom-left, above scrim */
@@ -267,8 +311,23 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
+  /* Same two-image composition as desktop: both .hero-video-bg and
+     .hero-bottom-bar inherit the base transforms (no mobile overrides),
+     so the layout matches the desktop hero. */
+
+  /* White scrim, strongest at the bottom where the text sits */
+  .brand-hero-scrim {
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.8) 40%,
+      rgba(255, 255, 255, 0.4) 70%,
+      rgba(255, 255, 255, 0.15) 100%
+    );
+  }
+
   .hero-copy {
-    padding: 0 20px 60px;
+    padding: 0 14px 32px;
     max-width: 100%;
   }
 
@@ -276,18 +335,17 @@
     font-size: 1.75rem;
   }
 
-  /* On mobile, strengthen the scrim since text covers more width */
-  .brand-hero-scrim {
-    background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 255, 255, 0.75) 40%,
-      rgba(255, 255, 255, 0.3) 100%
-    );
+  /* Shift both images left on mobile (base shifts them right for desktop) */
+  .hero-video-bg {
+    transform: scale(0.95) translateX(-5%);
   }
 
-  .hero-video-bg {
-    transform-origin: 50% center;
+  .hero-bottom-bar {
+    transform: scale(0.95) translateX(-3%) translateY(-25%);
+  }
+
+  .hero-video-tag {
+    display: none;
   }
 }
 
