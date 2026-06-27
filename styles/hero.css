@@ -335,35 +335,59 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
-  /* Mobile: same two-image width-based model as desktop, but LEFT-anchored
-     ("图靠左") instead of right-weighted — both images hug the left edge and
-     shrink together via the shared --hero-img-scale. Text stays lower-left and
-     occupies a different vertical band, so it isn't covered ("文字让位"). */
+  /* Mobile = vertical FLOW stack (no absolute overlays). DOM order is already
+     main-image → input-bar → copy, so making them in-flow blocks stacks them
+     top→bottom. The two images are 1907px-wide crops of the same screenshot
+     (cards UI without the input bar / the input bar), so at full width they
+     reconstruct the interface continuously, with the text below. Document flow
+     fixes all spacing → image↔image and image↔text relationships never drift. */
   .hero {
-    --hero-img-scale: 0.6;   /* mobile size; both images share it */
-    --hero-img-tx: 0%;       /* no right push → images sit at the left */
-    --hero-img-top: 88px;    /* main image top offset on mobile */
-    min-height: 100dvh;      /* dvh tracks the phone's visible area (≈ one screen) */
+    min-height: auto;
+    /* content now starts at the top in flow, so pad past the fixed nav */
+    padding-top: calc(var(--header-height) + 8px);
+    padding-bottom: 36px;
   }
 
   .brand-hero {
-    min-height: 100dvh;
+    min-height: auto;
   }
 
-  /* Scale both images from the LEFT edge so they stay pinned left as they shrink */
+  /* Main image: in-flow, full-width block (no transform/absolute). The re-cropped
+     main image already contains the four cards AND the bottom search box, so the
+     separate input-bar strip is no longer needed on mobile. */
   .hero-video-bg {
-    transform-origin: left top;
+    position: static;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    transform: none;
   }
 
-  .hero-bottom-bar {
-    transform-origin: left bottom;
-  }
-
+  /* Hide the desktop-only overlays/caption + the now-redundant input-bar strip */
+  .hero-bottom-bar,
+  .brand-hero-scrim,
+  .brand-hero::after,
   .hero-video-tag {
     display: none;
   }
 
-  /* Text lower-left; heading reduced for small screens */
+  /* Text flows below the image but is pulled UP with a negative margin so it
+     overlaps the main image (text paints over it as a later sibling). vw keeps
+     the overlap proportional to the width-scaled image → no drift across screens.
+     Make the margin more negative to overlap further up the image. A faint
+     translucent-white backing (+ slight blur) keeps the text readable where it
+     sits over the light screenshot. */
+  .hero-copy {
+    position: static;
+    max-width: 100%;
+    margin-top: -30vw;
+    padding: 28px 20px 24px;
+    background: rgba(255, 255, 255, 0.55);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+
   .hero-copy h1 {
     font-size: 1.75rem;
   }

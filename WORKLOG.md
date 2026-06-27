@@ -2,6 +2,41 @@
 
 ## 2026-06-28
 
+### 首页 Hero 手机端去掉输入栏图（主图已含搜索框）
+
+用户重裁主图，已包含四卡片+底部搜索框。手机端将 `.hero-bottom-bar` 加入 `display:none` 组，仅保留全宽主图 + 文字流式堆叠。电脑端未改（仍叠加底栏）——注意：主图既含搜索框、桌面又叠输入栏，桌面可能出现重复，待用户确认。
+
+**Files modified:**
+- `styles/hero.css` — `@media (max-width:900px)`：`.hero-bottom-bar` 改 display:none，主图单独 static 全宽
+
+### 首页 Hero 手机端改为流式堆叠（彻底锁定图↔图↔文字关系）
+
+此前两图用 vw 定位、文字用 vh(bottom) 定位，宽高比不同的手机上文字与图仍会错位。用户选「流式堆叠」。手机端媒体查询整体重写：取消所有绝对定位/transform/scrim/blur，`.hero-video-bg`、`.hero-bottom-bar` 改 `position:static; width:100%; height:auto`，按 DOM 顺序（主图→输入栏→文字）自上而下流式排列；两图同宽(1907)全宽拼回完整界面。`.hero` min-height:auto、`padding-top: header+8px` 避开固定导航。间距由文档流决定，任意手机不再漂移。移除手机端不再用的 `--hero-img-*`/`--hero-bar-top` 等变量。
+
+**Files modified:**
+- `styles/hero.css` — `@media (max-width:900px)` 重写为流式堆叠（static 全宽图 + 文字流排，隐藏 scrim/blur/tag）
+
+### 首页 Hero 手机端两图竖向偏移改 vw（锁定相对位置）
+
+问题：两图 `width:100%×scale`，高度随屏宽变；而竖向偏移 `--hero-img-top/--hero-bar-top` 是固定 px，一个随宽变一个不变 → 换屏幕两图相对位置漂移。改为 vw 单位（`16vw` / `21.5vw`，按 ~560px 测试宽换算自原 88px/120px），偏移与图高同用「按屏宽」标尺，任意屏宽下两图相对关系锁定不漂移。横移 `--hero-img-tx:0%`（百分比本就按宽）、scale 无单位，均已按宽自适应。
+
+**Files modified:**
+- `styles/hero.css` — `@media (max-width:900px)`：`--hero-img-top` 88px→16vw、`--hero-bar-top` 120px→21.5vw
+
+### 首页 Hero 手机端底栏上移（贴顶跟在主图下方）
+
+底栏被压在底部且在文字图层(z-index2)之下而看不见。手机端把底栏从「贴底 bottom:56px + translateY(-125%)」改为「贴顶 top:var(--hero-bar-top,210px) + bottom:auto」，origin 改 left top，去掉竖向 translateY，使其位于主图正下方、避开下方文字。新增变量 `--hero-bar-top` 便于上下微调。
+
+**Files modified:**
+- `styles/hero.css` — `@media (max-width:900px)`：底栏改 top 锚定 + `--hero-bar-top:210px`
+
+### 首页 Hero 手机端关掉左侧遮罩/模糊（修复图看不见）
+
+图靠左后正好落在「左→右白色 scrim + 左侧 blur」最浓处被糊掉，用户以为没图。手机端禁用 `.brand-hero::after`（blur）、`.brand-hero-scrim` 背景设 none。文字在下方白底为深色，无需遮罩仍清晰。
+
+**Files modified:**
+- `styles/hero.css` — `@media (max-width:900px)`：`.brand-hero::after{display:none}`、`.brand-hero-scrim{background:none}`
+
 ### 首页 Hero 手机端两图改左对齐（图靠左、文字让位）
 
 按用户选择，手机端两图由「沿用电脑端右偏」改为左对齐：`--hero-img-tx: 0%`（去右移）、两图 `transform-origin` 改 `left top/left bottom`（从左边缘缩放，贴左不右溢）；`--hero-img-scale: 0.6`（0.65 偏大下调）。文字仍在左下、与上方图错开垂直区，不被遮挡。
