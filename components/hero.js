@@ -23,6 +23,9 @@ export function Hero({ lang = "en", content }) {
         aria-hidden="true"
       />
 
+      {/* Mobile-only: cropped banner focusing on the four function cards */}
+      <div className="hero-cards-crop" aria-hidden="true" />
+
       {/* Left-side gradient scrim for text readability */}
       <div className="brand-hero-scrim" aria-hidden="true" />
 

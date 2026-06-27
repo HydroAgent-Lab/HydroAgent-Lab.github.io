@@ -27,7 +27,7 @@
   /* Weight the image content to the right ~2/3 (text sits on the left),
      matching the original background-video setup. translateY nudges the
      image down so its top toolbar clears the fixed nav bar. */
-  transform: scale(0.95) translateX(10%);
+  transform: scale(0.55) translateX(10%);
   transform-origin: 30% center;
   z-index: 0;
 }
@@ -47,6 +47,11 @@
   pointer-events: none;
   transform: scale(0.95) translateX(12.2%) translateY(-25%);
   transform-origin: 30% bottom;
+}
+
+/* Mobile-only cropped card banner — hidden on desktop */
+.hero-cards-crop {
+  display: none;
 }
 
 /* Left-side gradient scrim — strong on the left, fades out toward right */
@@ -311,32 +316,29 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
-  /* Overlay layout: image as full-bleed background, buttons bottom-left,
-     the four function cards weighted to the right, and the left→right
-     gradient blur (inherited from base: scrim + .brand-hero::after). */
-  /* Text moved up (top-aligned, clearing the header) */
+  /* Overlay (initial layout): full-bleed background image + bottom-left text
+     + inherited left→right gradient blur (scrim + .brand-hero::after).
+     The image is enlarged via scale. */
+  .hero-bottom-bar,
+  .hero-video-tag {
+    display: none;
+  }
+
+  /* Enlarge the full-bleed background image */
+  .hero-video-bg {
+    transform: scale(1.5) translateX(8%);
+    transform-origin: 30% center;
+  }
+
+  /* Text back at the bottom-left (initial position) */
   .hero-copy {
-    justify-content: flex-start;
-    padding: calc(var(--header-height) + 24px) 16px 24px;
+    justify-content: flex-end;
+    padding: 0 20px 56px;
     max-width: 100%;
   }
 
   .hero-copy h1 {
     font-size: 1.75rem;
-  }
-
-  /* Image moved down so the UI/cards sit below the two buttons */
-  .hero-video-bg {
-    transform: scale(1.15) translateX(12%) translateY(25%);
-    transform-origin: 30% center;
-  }
-
-  .hero-bottom-bar {
-    transform: scale(1.15) translateX(12%) translateY(-5%);
-  }
-
-  .hero-video-tag {
-    display: none;
   }
 }
 

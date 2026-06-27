@@ -248,6 +248,28 @@ Hero 图片源 `webui_light.jpg` → `webui_black.jpg`。注意：左侧白色 s
 **Files modified:**
 - `styles/hero.css` — 移动端 hero-copy 顶部对齐；两图 translateY 下移
 
+### 首页 Hero 手机端改为"卡片裁剪横幅在上、文字左下"（同日修订）
+
+弃用难控的叠加变换。手机端新增 `.hero-cards-crop`（`components/hero.js` 加 div），用 `background-image` + `background-size:330%` + `background-position:57% 54%` 裁出四个功能卡片做居中横幅（`order:-1` 置顶、aspect 3/1、圆角边框）；隐藏 `.hero-video-bg`/`.hero-bottom-bar`/scrim/模糊/tag；文字 `.hero-copy` 仍 `flex-end` 左下。桌面端不变（`.hero-cards-crop` 默认 display:none）。
+
+**Files created/modified:**
+- `components/hero.js` — 新增 `.hero-cards-crop` div
+- `styles/hero.css` — 新增 `.hero-cards-crop`（base 隐藏 + 移动端卡片裁剪横幅）；移动端隐藏原叠加元素
+
+### 首页 Hero 手机端改为整图放大置于文字上方（同日修订）
+
+按澄清：不裁四卡片，整张图 scale 放大放文字上方。`.hero-cards-crop` 参数由紧裁卡片改为整图轻度放大：`aspect-ratio 3/1→16/9`、`background-size 330%→150%`、`background-position 57% 54%→center`。缩放用 background-size 控制（=scale）。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-cards-crop` 改为整图放大（16/9、150%、center）
+
+### 首页 Hero 手机端回到叠加版（满屏底图+左下文字+左右梯度模糊）（同日修订）
+
+按需求手机端弃用裁剪横幅，回到最初叠加版：`.hero-video-bg` 满屏底图放大 `scale(1.5) translateX(8%)`；文字 `.hero-copy` `flex-end` 左下；scrim 与 `.brand-hero::after`（左→右梯度模糊）继承 base 生效；隐藏 `.hero-bottom-bar`/`.hero-video-tag`；`.hero-cards-crop` 不再用（base 默认隐藏）。
+
+**Files modified:**
+- `styles/hero.css` — 移动端回到叠加式：底图放大 + 左下文字 + 继承左右梯度模糊
+
 ## 2026-06-24
 
 ### Events 页面排版重构
