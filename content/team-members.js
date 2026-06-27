@@ -250,13 +250,13 @@ export const hydroAgentTeamMembers = [
     nameZh: "贾天龙",
     initials: "TJ",
     photo: "/assets/lab-members/jiatianlong.jpg",
-    affiliation: "Institute of Water and Environment (IWU), Karlsruhe Institute of Technology (KIT), Karlsruhe, Germany",
-    affiliationZh: "卡尔斯鲁厄理工学院 (KIT) 水与环境研究所 (IWU)，德国卡尔斯鲁厄",
+    affiliation: "Institute of Water and Environment (IWU), Karlsruhe Institute of Technology (KIT), Germany",
+    affiliationZh: "卡尔斯鲁厄理工大学水利与环境学院，德国",
     email: "tianlong.jia@kit.edu",
     orcid: "https://orcid.org/0000-0001-5142-1321",
     website: "https://tianlongjia.github.io/",
-    focus: "",
-    focusZh: ""
+    focus: "Artificial Intelligence, Flood Forecasting, Environment Monitoring",
+    focusZh: "人工智能，洪水预报，环境监测"
   },
   {
     name: "Qingwen Deng",
