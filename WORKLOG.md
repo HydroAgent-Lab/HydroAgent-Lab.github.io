@@ -2,6 +2,74 @@
 
 ## 2026-06-28
 
+### 首页 Hero 桌面全宽段统一图片上移（2/3 宽不再与文字平行）
+
+问题：base 桌面 `--hero-img-top=2×header`（图偏低），仅 ≥1440px 才升到 1.1×header；故 ~2/3 宽（<1440）时图下落与文字平行。改为全桌面统一用"最宽屏"处理：base `--hero-img-top` 直接设 `1.1×header`，`.hero-video-bg` 加 `max-width: var(--hero-img-maxw,820px)` 封顶（防止宽屏图变高掉到文字层）；删除 1440px 特例。任意桌面宽度图片都稳定在文字右上方。手机端不受影响（仍覆盖 --hero-img-top，图小于 820 cap 无效）。
+
+**Files modified:**
+- `styles/hero.css` — base `--hero-img-top` 2×→1.1×header；`.hero-video-bg` 加 max-width 封顶；删 `@media min-width:1440px`
+
+### 首页 Hero 手机端改为与电脑端一致（图右上、文左下）
+
+手机端原为竖向流式堆叠（图上文下、负 margin 重叠）。现因图文已用「固定锚点」模型不漂移，手机端直接沿用桌面布局：取消流式覆盖，`.hero-stage` 保持 `display:contents`、图文恢复绝对定位。手机端仅重设旋钮：`--hero-img-top=header+12px`、`--hero-img-cx:70%`（中心偏右）、`--hero-img-width:50%`、`--hero-copy-left:6%`、`--hero-copy-bottom:8%`；`.hero-copy max-width:58%`（窄屏文字加宽）、h1 1.5rem。`.hero` 恢复 base 的 `min-height:100vh`（不再 auto），底部文字有参照。移除负 margin 重叠、白底 blur、流式 padding。
+
+**Files modified:**
+- `styles/hero.css` — 重写 `@media max-width:900px`：手机端沿用桌面绝对锚定，仅调旋钮；删除流式堆叠/重叠/白底
+
+### 首页 Hero 去掉背景模糊
+
+删除 `.brand-hero::after`（左→右渐变 backdrop-filter blur 层），hero 背景改为清晰；并移除手机端 display:none 组里对它的引用。保留文字左侧白色渐变 scrim（仅做可读性，不模糊）。注：手机端文字白底的轻微 blur 与按钮玻璃 blur 未动，如需一并去掉请告知。
+
+**Files modified:**
+- `styles/hero.css` — 删除 `.brand-hero::after` 模糊层及手机端引用
+
+### 首页 Hero 宽屏图片上移（脱离底部）
+
+宽屏（`@media min-width:1440px`）图片按宽变高、底部逼近 hero 底。新增覆盖：`--hero-img-top` 降为 `1.1×header`（整体上移）+ `.hero-video-bg max-width:820px`（封顶尺寸，不再变高）→ 底部抬离地面。其它屏宽不受影响。
+
+**Files modified:**
+- `styles/hero.css` — 新增 `@media min-width:1440px`：图上移 + max-width 封顶
+
+### 首页 Hero 图片改 TOP 锚定（导航下一格）、文字独立锚左下，宽度变化不漂移
+
+问题：group 底对齐时，缩窄屏幕→图片（按宽缩放）变矮→其顶部下移逼近文字，间距变了。改为图文各自独立锚定到 hero 固定点：
+- 图片：`position:absolute; top: var(--hero-img-top,=2×header)`（顶部位于导航栏下方一个导航高度），`left: var(--hero-img-cx,66%) + translateX(-50%)`（水平中心落在中心偏右）→ 顶点与中心 x 固定，任意宽度位置不变，仅尺寸随宽缩放。
+- 文字：`position:absolute; left/bottom`（左下），固定偏移不漂移。
+`.hero-stage` 桌面端改 `display:contents`（溶解盒子，让图文成为 .hero 直接子级以各自绝对定位）；手机端补 `display:flex` 恢复竖向流式。移除 1600px 断点特例（它正是"最大屏≠窄屏"的根源）及 `--hero-img-shift/-rise/-stage-*` 变量，新增 `--hero-img-top/-cx`、`--hero-copy-bottom`。
+
+**Files modified:**
+- `styles/hero.css` — 图片 TOP+中心 x 绝对锚定；文字左下绝对锚定；`.hero-stage` 桌面 display:contents/手机 display:flex；删 1600px 特例；变量改版
+
+### 首页 Hero 替换主图为 Webui.png
+
+`components/hero.js` 的 `.hero-video-bg` src 由 `/assets/webui_light.jpeg` 改为 `/assets/Webui.png`。
+
+**Files modified:**
+- `components/hero.js` — 主图 src 改为 `/assets/Webui.png`
+
+### 首页 Hero 最宽屏图片放大+左移
+
+最宽屏（`@media min-width:1600px`）图片放大 10%（`--hero-img-width:50%→55%`）并左移（`--hero-img-shift:-15%`，translateX 按图自身宽）。`.hero-video-bg` 新增 `transform: translateX(var(--hero-img-shift,0%))`——用 transform 而非 margin，避免 55% 宽时无剩余空间导致 margin 失效/溢出，且不挤压文字。仅覆盖变量，文字↔图片锁定关系不变；其它屏宽不受影响。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-video-bg` 加 translateX(`--hero-img-shift`)；新增 `@media min-width:1600px` 覆盖 `--hero-img-width/-shift`
+
+### 首页 Hero 桌面端文字+图片合并为一个 group（彻底锁定相对位置，自适应屏幕）
+
+问题：百分比锚定仍把文字锚到 hero 底、图片锚到 hero 中上，二者分属不同基准 → 大屏上 hero 变高、间距随之拉大，图片"飘到顶部"。根因：只要文字与图片各自锚到 hero 的不同边，二者「相互距离」就不可能恒定。
+方案：把图片与文字放进同一个 `.hero-stage`（flex 行，`align-items:flex-end` 底对齐），group 以「底部距 hero 底 8%」整体锚定，图片在右、上抬 `--hero-img-rise`，文字在左。二者相对位置由布局决定 → 恒定；group 作为整体随屏幕平移，图片不再飘顶。新增 DOM 包裹层 `.hero-stage`（`components/hero.js`）。手机端 `.hero-stage` 改 `flex-direction:column` 静态流式（图上文下，重置 order），沿用既有重叠/白底。新增变量 `--hero-stage-bottom/-gap`、`--hero-copy-width`、`--hero-img-rise`，移除 `--hero-img-left/-top`、1200px 的 `.hero-copy max-width` 覆盖。
+
+**Files modified:**
+- `components/hero.js` — 用 `.hero-stage` 包裹 `.hero-video-bg` + `.hero-copy`；scrim 移到 stage 外作背景层；删除空的 `.hero-cards-crop`
+- `styles/hero.css` — 新增 `.hero-stage` flex group；`.hero-video-bg`/`.hero-copy` 改为 group 内列项；手机端 stage 改 column 静态；移除 1200px max-width 覆盖；变量改版
+
+### 首页 Hero 桌面端文字/图片改为「百分比锚定」（锁定相对位置不漂移）
+
+问题：桌面文字与图片位置随屏幕变化漂移（图用 scale+translateX(vw/%)、文字用 vh 内边距，标尺不一致）。改为全部以 **hero 盒子的百分比** 定位：文字 `left:15% / bottom:10%`；主图锚在中心偏右——`left:48%` 为图左缘、`width:52%` 为图宽（均按 hero 宽）、`top:40%` 标记图的垂直中心（hero 正中再上移 10% → 偏上 10%），`translateY(-50%)` 把图自身中线对到该点。所有值相对 hero → 任意屏幕尺寸下文字↔图片比例关系恒定。新增可调变量 `--hero-copy-left/-bottom`、`--hero-img-left/-top/-width`，移除旧的 `--hero-img-scale/-tx`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero` 变量改为百分比锚点；`.hero-video-bg`、`.hero-copy` 改用 hero 百分比定位
+
 ### 首页 Hero 移除输入栏叠加图（桌面+手机）
 
 主图重裁后已含搜索框，输入栏叠加图全局多余。从 `components/hero.js` 删除 `<img class="hero-bottom-bar">`（省一次图片请求），并清理 `styles/hero.css` 中失效的 `.hero-bottom-bar` 基础规则及手机端 display:none 引用。

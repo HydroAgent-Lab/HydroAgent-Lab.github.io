@@ -11,13 +11,17 @@
   flex-direction: column;
   background: #ffffff;
   margin-top: calc(-1 * var(--header-height));
-  /* Shared horizontal scale/translateX for the two hero images. Both images
-     are 1907px-wide crops of the same screenshot and BOTH render width-based
-     (width:100% height:auto), so identical scale + translateX = perfect
-     left-right alignment at any viewport. Change here once → both update. */
-  --hero-img-scale: 0.75;
-  --hero-img-tx: 16%;
-  --hero-img-top: 160px; /* push the main image down to clear the fixed nav */
+  /* ---- Layout knobs ----
+     Image and text are anchored INDEPENDENTLY to fixed points of the hero, so
+     their positions never drift as the width changes (only the image's size
+     scales with the hero). Image = top-anchored just below the nav, centered on
+     a center-right x. Text = bottom-left. Tune freely. */
+  --hero-img-top: calc(var(--header-height) * 1.1); /* image top = just below the navbar (kept high so it stays ABOVE the text at every desktop width) */
+  --hero-img-cx: 66%;        /* image's horizontal CENTER (center-right of hero) */
+  --hero-img-width: 52%;     /* image width (% of hero width) */
+  --hero-copy-left: 8%;      /* text's distance from the hero LEFT edge */
+  --hero-copy-bottom: 10%;   /* text's distance from the hero BOTTOM edge */
+  --hero-copy-width: 400px;  /* text column width */
 }
 
 .brand-hero {
@@ -27,18 +31,28 @@
   min-height: 100vh;
 }
 
-/* Main background image — width-based (NOT object-fit:cover) so it maps its
-   1907px width to 100vw, exactly like the bottom strip. Same width model +
-   same scale/translateX → the two images stay horizontally aligned. The image
-   fills the width and keeps its natural height; vertical position via top var. */
+/* On desktop the stage box is dissolved (display:contents) so the image and text
+   become direct children of .hero and can be absolutely positioned against it,
+   each to its own fixed anchor. (On mobile it becomes a real flex column — see
+   the media query.) */
+.hero-stage {
+  display: contents;
+}
+
+/* Image — TOP-anchored one nav-height below the navbar, horizontally CENTERED on
+   a center-right x (translateX(-50%) puts the image's own center on --hero-img-cx).
+   Top and center-x are fixed, so the image keeps its place at any width; only its
+   size scales with the hero. */
 .hero-video-bg {
   position: absolute;
-  top: var(--hero-img-top, 0);
-  left: 0;
-  width: 100%;
+  top: var(--hero-img-top, 120px);
+  left: var(--hero-img-cx, 66%);
+  width: var(--hero-img-width, 52%);
+  /* cap so the width-based image can't grow tall enough to drop level with the
+     text on wide screens — keeps it upper-right consistently. */
+  max-width: var(--hero-img-maxw, 820px);
   height: auto;
-  transform: scale(var(--hero-img-scale)) translateX(var(--hero-img-tx));
-  transform-origin: 30% top;
+  transform: translateX(-50%);
   z-index: 0;
 }
 
@@ -62,49 +76,21 @@
   z-index: 1;
 }
 
-/* Gradient blur — strong on the left (behind text), sharp on the right (UI).
-   A mask fades the backdrop-filter from left to right. */
-.brand-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  -webkit-backdrop-filter: blur(6.3px);
-  backdrop-filter: blur(6.3px);
-  -webkit-mask-image: linear-gradient(
-    to right,
-    #000 0%,
-    #000 30%,
-    rgba(0, 0, 0, 0) 62%
-  );
-  mask-image: linear-gradient(
-    to right,
-    #000 0%,
-    #000 30%,
-    rgba(0, 0, 0, 0) 62%
-  );
-}
+/* (Removed) The left→right gradient blur layer (.brand-hero::after) — the hero
+   now renders sharp; no backdrop-filter. */
 
-/* Text overlay — pinned bottom-left, above scrim. Absolute (not flex:1) so it
-   stays at the hero bottom regardless of whether an in-flow child gives the
-   hero extra height (the main image is now absolute/auto-height, so flex:1 no
-   longer has spare space to push the copy down). */
+/* Text — anchored to the hero's bottom-left, independent of the image. Fixed
+   left/bottom offsets → never drifts when the width changes. */
 .hero-copy {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  left: var(--hero-copy-left, 8%);
+  bottom: var(--hero-copy-bottom, 10%);
   z-index: 2;
+  width: var(--hero-copy-width, 400px);
+  max-width: 42%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* max-width must include the gutter padding-left, otherwise the text
-     content area = max-width - gutter - 28px collapses on wide screens
-     (gutter can reach ~360px), forcing 2–3 chars per line. */
-  max-width: calc(var(--gutter) + 460px);
-  /* bottom padding lifts the copy up off the very bottom → "lower-left",
-     not pinned to the corner. Increase to raise the text further. */
-  padding: 0 28px 18vh var(--gutter);
 }
 
 .hero-copy .eyebrow {
@@ -315,60 +301,36 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
-  /* Mobile = vertical FLOW stack (no absolute overlays). DOM order is already
-     main-image → input-bar → copy, so making them in-flow blocks stacks them
-     top→bottom. The two images are 1907px-wide crops of the same screenshot
-     (cards UI without the input bar / the input bar), so at full width they
-     reconstruct the interface continuously, with the text below. Document flow
-     fixes all spacing → image↔image and image↔text relationships never drift. */
+  /* Mobile MIRRORS desktop: image top-right, text bottom-left. Same fixed-anchor
+     model (image top-anchored just below the nav + horizontally centered on a
+     center-right x; text anchored bottom-left). Because both are pinned to fixed
+     points of the full-height hero, their positions don't drift as the phone
+     width changes — only the image's size scales. We just retune the knobs for a
+     narrow screen. The hero keeps its base min-height:100vh, so the bottom-left
+     text has a reference; the .hero-stage stays display:contents (NOT a flow
+     column), so the image/text remain absolutely positioned like on desktop. */
   .hero {
-    min-height: auto;
-    /* content now starts at the top in flow, so pad past the fixed nav */
-    padding-top: calc(var(--header-height) + 8px);
-    padding-bottom: 36px;
+    --hero-img-top: calc(var(--header-height) + 12px); /* just below the nav */
+    --hero-img-cx: 70%;        /* image center — pushed to the right */
+    --hero-img-width: 50%;     /* image width on the narrow screen */
+    --hero-copy-left: 6%;      /* text closer to the left edge */
+    --hero-copy-bottom: 8%;
   }
 
-  .brand-hero {
-    min-height: auto;
+  /* Wider text column (42% is too narrow on a phone) */
+  .hero-copy {
+    width: auto;
+    max-width: 58%;
   }
 
-  /* Main image: in-flow, full-width block (no transform/absolute). The re-cropped
-     main image already contains the four cards AND the bottom search box, so the
-     separate input-bar strip is no longer needed on mobile. */
-  .hero-video-bg {
-    position: static;
-    inset: auto;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    transform: none;
+  .hero-copy h1 {
+    font-size: 1.5rem;
   }
 
   /* Hide the desktop-only overlays/caption on mobile */
   .brand-hero-scrim,
-  .brand-hero::after,
   .hero-video-tag {
     display: none;
-  }
-
-  /* Text flows below the image but is pulled UP with a negative margin so it
-     overlaps the main image (text paints over it as a later sibling). vw keeps
-     the overlap proportional to the width-scaled image → no drift across screens.
-     Make the margin more negative to overlap further up the image. A faint
-     translucent-white backing (+ slight blur) keeps the text readable where it
-     sits over the light screenshot. */
-  .hero-copy {
-    position: static;
-    max-width: 100%;
-    margin-top: -30vw;
-    padding: 28px 20px 24px;
-    background: rgba(255, 255, 255, 0.55);
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-  }
-
-  .hero-copy h1 {
-    font-size: 1.75rem;
   }
 }
 
@@ -379,14 +341,11 @@
 }
 
 @media (min-width: 1200px) {
-  .hero-copy {
-    max-width: calc(var(--gutter) + 500px);
-  }
-
   .hero-copy h1 {
     font-size: 2.5rem;
   }
 }
+
 
 /* --- Chinese language --- */
 .lang-zh .hero-subtitle,
