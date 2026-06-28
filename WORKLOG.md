@@ -2,6 +2,61 @@
 
 ## 2026-06-28
 
+### 首页 Hero 图片下移 10%
+
+桌面 `--hero-img-top` 由 6% 调到 16%（占画布高，下移 10 个百分点）。手机端 `--hero-img-top:3%` 未动。
+
+**Files modified:**
+- `styles/hero.css` — 桌面 `--hero-img-top` 6%→16%
+
+### 首页 Hero 去掉白底毛玻璃，改回左→右梯度模糊
+
+撤销 `.hero-copy` 的白色毛玻璃卡片（背景/模糊/边框/投影/padding 全移除，恢复纯文字）。改加 `.hero-stage::before` 梯度模糊层：`backdrop-filter: blur(5px)` + 左→右 mask（0–28% 实、58% 淡出），左侧（文字处）模糊、右侧（图片）清晰。z-index:1 处于图片(0)与文字(2)之间 → 文字仍清晰。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-copy` 移除毛玻璃；新增 `.hero-stage::before` 左→右梯度模糊
+
+### 首页 Hero 文字区加白色毛玻璃背景
+
+`.hero-copy` 加毛玻璃卡片：`background: rgba(255,255,255, var(--hero-copy-bg-alpha,0.2))`（高透明 ~80%）+ `backdrop-filter: blur(14px) saturate(120%)`，配淡边 `border rgba(255,255,255,.55)` 与轻投影，使其在白底上也可见。加 `box-sizing:border-box`、`padding clamp(16-26px)`、`border-radius:16px`。alpha 由 `--hero-copy-bg-alpha` 可调。桌面手机共用。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-copy` 增加毛玻璃背景/模糊/边框/投影/内边距
+
+### 首页 Hero 文字上移（桌面+手机）
+
+截图显示文字掉到折叠线以下。原因：画布 aspect 1.9 在宽屏算出来过高、超过可视区，文字又锚在底部 12%。调整：桌面 `--hero-aspect 1.9→2.35`（画布压扁落回一屏）+ `--hero-copy-bottom 12%→18%`（文字抬高）；手机 `--hero-aspect 0.82→0.92` + `--hero-copy-bottom 9%→20%`。
+
+**Files modified:**
+- `styles/hero.css` — 桌面/手机的 `--hero-aspect`、`--hero-copy-bottom` 上调
+
+### 首页 Hero 改为「固定宽高比画布 + 百分比布局」（方案 A，位置锁定/尺寸自适应）
+
+用户诉求：改变窗口宽/高时，图文相对位置不变、尺寸自适应。根因：旧方案图片按视口宽(%)、hero 高按 100vh，横竖两把尺子 → 宽高比变化就漂移。选方案 A 实现：
+- `.hero` 改为画布容器（`padding-top:header` 避导航、`display:flex; justify-content:center` 居中画布），去掉 `min-height:100vh`。
+- `.hero-stage` 改为**固定宽高比画布**：`aspect-ratio: var(--hero-aspect)`、`width:100%`、`max-width: var(--hero-canvas-maxw,1600px)`。形状恒定 → 内部一切百分比恒定。
+- `.hero-video-bg`、`.hero-copy` 全部用画布百分比定位（top/left/bottom/width 均 %）。新增变量：`--hero-aspect/-canvas-maxw/-img-top/-cx/-width/-copy-left/-bottom/-width`（全 %）。
+- 字体改 `clamp()`（h1/subtitle/text）随画布缩放；移除 640/1200px 的 h1 断点覆盖。
+- 手机端：同一画布换**竖向比例** `--hero-aspect:0.82`、`--hero-canvas-maxw:none`，重设 % 旋钮；h1 用 clamp。
+- `.brand-hero-scrim` 改 display:none（文字已在白底上，不再压图）。
+
+**Files modified:**
+- `styles/hero.css` — 重写 `.hero`/`.brand-hero`/`.hero-stage`/`.hero-video-bg`/`.hero-copy`；字体 clamp；scrim 隐藏；手机端画布竖向比例；删 640/1200 h1 覆盖
+
+### 首页 Hero 手机端图片放大
+
+手机端 `--hero-img-width` 由 50% 提到 62%，`--hero-img-cx` 由 70% 微调到 68%（放大后避免右缘溢出）。
+
+**Files modified:**
+- `styles/hero.css` — `@media max-width:900px`：`--hero-img-width` 50%→62%、`--hero-img-cx` 70%→68%
+
+### 首页 Hero 手机端图片上移
+
+手机端 `--hero-img-top` 由 `header+12px` 改为 `var(--header-height)`（贴齐导航底边，上移 12px）。这是图不被固定导航遮挡的最高位置。
+
+**Files modified:**
+- `styles/hero.css` — `@media max-width:900px` 的 `--hero-img-top` 上移到 header 高度
+
 ### 首页 Hero 桌面全宽段统一图片上移（2/3 宽不再与文字平行）
 
 问题：base 桌面 `--hero-img-top=2×header`（图偏低），仅 ≥1440px 才升到 1.1×header；故 ~2/3 宽（<1440）时图下落与文字平行。改为全桌面统一用"最宽屏"处理：base `--hero-img-top` 直接设 `1.1×header`，`.hero-video-bg` 加 `max-width: var(--hero-img-maxw,820px)` 封顶（防止宽屏图变高掉到文字层）；删除 1440px 特例。任意桌面宽度图片都稳定在文字右上方。手机端不受影响（仍覆盖 --hero-img-top，图小于 820 cap 无效）。

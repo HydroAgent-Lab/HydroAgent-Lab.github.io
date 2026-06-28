@@ -5,52 +5,52 @@
 
 .hero {
   position: relative;
-  min-height: 100vh;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   background: #ffffff;
   margin-top: calc(-1 * var(--header-height));
-  /* ---- Layout knobs ----
-     Image and text are anchored INDEPENDENTLY to fixed points of the hero, so
-     their positions never drift as the width changes (only the image's size
-     scales with the hero). Image = top-anchored just below the nav, centered on
-     a center-right x. Text = bottom-left. Tune freely. */
-  --hero-img-top: calc(var(--header-height) * 1.1); /* image top = just below the navbar (kept high so it stays ABOVE the text at every desktop width) */
-  --hero-img-cx: 66%;        /* image's horizontal CENTER (center-right of hero) */
-  --hero-img-width: 52%;     /* image width (% of hero width) */
-  --hero-copy-left: 8%;      /* text's distance from the hero LEFT edge */
-  --hero-copy-bottom: 10%;   /* text's distance from the hero BOTTOM edge */
-  --hero-copy-width: 400px;  /* text column width */
+  padding-top: var(--header-height); /* push the canvas below the fixed nav */
+  display: flex;
+  justify-content: center;
+  /* ===== METHOD A — fixed-aspect CANVAS + percentage layout =====
+     Everything inside .hero-stage is positioned/sized as a % of the stage. The
+     stage has a fixed aspect-ratio, so its SHAPE never changes — only its overall
+     SIZE scales with the width. Result: the text/image positions are perfectly
+     LOCKED relative to each other, while sizes adapt. Fonts use clamp() so the
+     type scales with the viewport too. Every knob below is a % of the stage. */
+  --hero-aspect: 2.35;         /* stage width ÷ height — wider/shorter so the canvas fits one screen on wide monitors */
+  --hero-canvas-maxw: 1600px;  /* stop the canvas growing on ultra-wide screens */
+  --hero-img-top: 16%;         /* image top    (% of stage HEIGHT) — moved down 10% */
+  --hero-img-cx: 66%;          /* image center (% of stage WIDTH)  */
+  --hero-img-width: 50%;       /* image width  (% of stage WIDTH)  */
+  --hero-copy-left: 8%;        /* text left    (% of stage WIDTH)  */
+  --hero-copy-bottom: 18%;     /* text bottom  (% of stage HEIGHT) — raised so it stays in view */
+  --hero-copy-width: 34%;      /* text column  (% of stage WIDTH)  */
 }
 
 .brand-hero {
-  /* .hero is pulled up by margin-top:-header to sit under the fixed nav.
-     min-height:100vh keeps the hero a full viewport tall (its bottom lands one
-     header height above the viewport bottom, leaving the copy lower-left). */
-  min-height: 100vh;
+  /* Height now comes entirely from the canvas's aspect-ratio (no viewport unit),
+     which is exactly what keeps the inner % layout from drifting. */
+  min-height: auto;
 }
 
-/* On desktop the stage box is dissolved (display:contents) so the image and text
-   become direct children of .hero and can be absolutely positioned against it,
-   each to its own fixed anchor. (On mobile it becomes a real flex column — see
-   the media query.) */
+/* The CANVAS. A fixed aspect-ratio fixes its shape; width:100% (capped) makes it
+   scale with the screen. All children are absolutely positioned as % of THIS box,
+   so they keep identical relative positions at any size. */
 .hero-stage {
-  display: contents;
+  position: relative;
+  width: 100%;
+  max-width: var(--hero-canvas-maxw, 1600px);
+  aspect-ratio: var(--hero-aspect, 1.9);
 }
 
-/* Image — TOP-anchored one nav-height below the navbar, horizontally CENTERED on
-   a center-right x (translateX(-50%) puts the image's own center on --hero-img-cx).
-   Top and center-x are fixed, so the image keeps its place at any width; only its
-   size scales with the hero. */
+/* Image — placed by % of the stage (top % of height, center x % of width, width
+   % of width). Fixed %s on a fixed-shape stage → position & size are locked-then
+   -scaled. */
 .hero-video-bg {
   position: absolute;
-  top: var(--hero-img-top, 120px);
+  top: var(--hero-img-top, 6%);
   left: var(--hero-img-cx, 66%);
-  width: var(--hero-img-width, 52%);
-  /* cap so the width-based image can't grow tall enough to drop level with the
-     text on wide screens — keeps it upper-right consistently. */
-  max-width: var(--hero-img-maxw, 820px);
+  width: var(--hero-img-width, 50%);
   height: auto;
   transform: translateX(-50%);
   z-index: 0;
@@ -61,33 +61,49 @@
   display: none;
 }
 
-/* Left-side gradient scrim — strong on the left, fades out toward right */
+/* Scrim no longer needed — text sits on the white canvas, not over the image. */
 .brand-hero-scrim {
+  display: none;
+}
+
+/* Subtle left→right gradient blur over the canvas. A mask makes the backdrop-blur
+   strong on the LEFT (behind the text) and fade to sharp toward the RIGHT (the
+   image). It sits ABOVE the image (z0) but BELOW the text (z2), so the type stays
+   crisp. Tune the blur px and the mask stops to taste. */
+.hero-stage::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.85) 25%,
-    rgba(255, 255, 255, 0.45) 50%,
-    rgba(255, 255, 255, 0.05) 75%,
-    transparent 100%
-  );
   z-index: 1;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 28%,
+    rgba(0, 0, 0, 0) 58%
+  );
+  mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 28%,
+    rgba(0, 0, 0, 0) 58%
+  );
 }
 
 /* (Removed) The left→right gradient blur layer (.brand-hero::after) — the hero
    now renders sharp; no backdrop-filter. */
 
-/* Text — anchored to the hero's bottom-left, independent of the image. Fixed
-   left/bottom offsets → never drifts when the width changes. */
+/* Text — placed by % of the stage (left % of width, bottom % of height, column
+   width % of width). Same fixed-shape stage → its position relative to the image
+   is locked at any size. */
 .hero-copy {
   position: absolute;
   left: var(--hero-copy-left, 8%);
-  bottom: var(--hero-copy-bottom, 10%);
+  bottom: var(--hero-copy-bottom, 12%);
+  width: var(--hero-copy-width, 34%);
   z-index: 2;
-  width: var(--hero-copy-width, 400px);
-  max-width: 42%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -106,7 +122,8 @@
 }
 
 .hero-copy h1 {
-  font-size: 2.25rem;
+  /* fluid type so it scales with the canvas instead of stepping at breakpoints */
+  font-size: clamp(1.5rem, 2.6vw, 2.6rem);
   line-height: 1.1;
   font-weight: 600;
   color: var(--text);
@@ -119,7 +136,7 @@
 }
 
 .hero-subtitle {
-  font-size: 15px;
+  font-size: clamp(13px, 1.05vw, 16px);
   font-weight: 500;
   color: var(--text-secondary);
   line-height: 1.45;
@@ -127,7 +144,7 @@
 }
 
 .hero-text {
-  font-size: 13.5px;
+  font-size: clamp(12px, 0.95vw, 14px);
   color: var(--text-muted);
   font-weight: 400;
   line-height: 1.6;
@@ -301,48 +318,27 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
-  /* Mobile MIRRORS desktop: image top-right, text bottom-left. Same fixed-anchor
-     model (image top-anchored just below the nav + horizontally centered on a
-     center-right x; text anchored bottom-left). Because both are pinned to fixed
-     points of the full-height hero, their positions don't drift as the phone
-     width changes — only the image's size scales. We just retune the knobs for a
-     narrow screen. The hero keeps its base min-height:100vh, so the bottom-left
-     text has a reference; the .hero-stage stays display:contents (NOT a flow
-     column), so the image/text remain absolutely positioned like on desktop. */
+  /* Same METHOD-A canvas, just a PORTRAIT shape so the stacked image (top) and
+     text (bottom) get vertical room. The % knobs below are all % of this taller
+     stage, so the phone layout is just as locked as the desktop one. */
   .hero {
-    --hero-img-top: calc(var(--header-height) + 12px); /* just below the nav */
-    --hero-img-cx: 70%;        /* image center — pushed to the right */
-    --hero-img-width: 50%;     /* image width on the narrow screen */
-    --hero-copy-left: 6%;      /* text closer to the left edge */
-    --hero-copy-bottom: 8%;
-  }
-
-  /* Wider text column (42% is too narrow on a phone) */
-  .hero-copy {
-    width: auto;
-    max-width: 58%;
+    --hero-aspect: 0.92;       /* portrait: width ÷ height < 1 (a bit shorter than before) */
+    --hero-canvas-maxw: none;  /* let the canvas use the full phone width */
+    --hero-img-top: 3%;        /* image near the top */
+    --hero-img-cx: 66%;        /* image center, right side */
+    --hero-img-width: 64%;     /* image width */
+    --hero-copy-left: 7%;      /* text left */
+    --hero-copy-bottom: 20%;   /* text bottom — raised up off the floor */
+    --hero-copy-width: 82%;    /* wider text column on the narrow screen */
   }
 
   .hero-copy h1 {
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 6vw, 1.9rem);
   }
 
-  /* Hide the desktop-only overlays/caption on mobile */
-  .brand-hero-scrim,
+  /* Hide the desktop-only caption on mobile */
   .hero-video-tag {
     display: none;
-  }
-}
-
-@media (min-width: 640px) {
-  .hero-copy h1 {
-    font-size: 2.25rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .hero-copy h1 {
-    font-size: 2.5rem;
   }
 }
 
