@@ -268,5 +268,20 @@ export const hydroAgentTeamMembers = [
     email: "qingwen_deng@smail.nju.edu.cn",
     focus: "",
     focusZh: ""
+  },
+  {
+    name: "Jian Sun",
+    nameZh: "孙剑",
+    initials: "JS",
+    photo: "/assets/lab-members/sunjian.png",
+    affiliation:
+      "Ph.D. in Hydraulic Engineering; Zhejiang Institute of Geological Exploration, China Chemical Geology and Mine Bureau; Department of Hydraulic Engineering, Guangxi University, Nanning, China",
+    affiliationZh:
+      "水利工程博士；中化地质矿山总局浙江地质勘查院；广西大学水利工程系，中国南宁",
+    email: "kimsuen.cn@gmail.com",
+    orcid: "https://orcid.org/0000-0002-2782-3926",
+    focus:
+      "AI-Enhanced Hydroinformatics, Deep Learning-Based Hydrologic Modeling, Karst Hydroclimatic Extremes",
+    focusZh: "AI 增强水文信息学、基于深度学习的水文模型、喀斯特水文气候极端"
   }
 ];
