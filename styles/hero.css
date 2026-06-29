@@ -318,22 +318,46 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
-  /* Same METHOD-A canvas, just a PORTRAIT shape so the stacked image (top) and
-     text (bottom) get vertical room. The % knobs below are all % of this taller
-     stage, so the phone layout is just as locked as the desktop one. */
+  /* Mobile reverts to the earlier simple FLOW STACK: main image on top (centered),
+     text below it in document order. (Desktop keeps the fixed-aspect canvas.) The
+     stage stops being a fixed-shape canvas and becomes a vertical flex column. */
   .hero {
-    --hero-aspect: 0.92;       /* portrait: width ÷ height < 1 (a bit shorter than before) */
-    --hero-canvas-maxw: none;  /* let the canvas use the full phone width */
-    --hero-img-top: 3%;        /* image near the top */
-    --hero-img-cx: 66%;        /* image center, right side */
-    --hero-img-width: 64%;     /* image width */
-    --hero-copy-left: 7%;      /* text left */
-    --hero-copy-bottom: 20%;   /* text bottom — raised up off the floor */
-    --hero-copy-width: 82%;    /* wider text column on the narrow screen */
+    padding-bottom: 32px;
+  }
+
+  .hero-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* center the image horizontally */
+    aspect-ratio: auto;    /* drop the fixed canvas shape on mobile */
+    max-width: none;
+  }
+
+  /* the desktop left→right gradient blur isn't needed in the stacked layout */
+  .hero-stage::before {
+    display: none;
+  }
+
+  /* Main image: in document flow, centered, near full width */
+  .hero-video-bg {
+    position: static;
+    transform: none;
+    width: 86%;
+    height: auto;
+    margin: 8px auto 0;
+  }
+
+  /* Text: flows below the image, full width (its styling is unchanged) */
+  .hero-copy {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 24px 20px 0;
   }
 
   .hero-copy h1 {
-    font-size: clamp(1.3rem, 6vw, 1.9rem);
+    font-size: clamp(1.4rem, 7vw, 2rem);
   }
 
   /* Hide the desktop-only caption on mobile */

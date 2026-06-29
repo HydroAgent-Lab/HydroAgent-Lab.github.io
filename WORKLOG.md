@@ -1,5 +1,14 @@
 # Work Log
 
+## 2026-06-29
+
+### 首页 Hero 手机端改回流式堆叠（图上居中、文下）
+
+手机端从「方案 A 竖向画布 + 绝对定位」改回**流式堆叠**：`.hero-stage` 改 `display:flex; flex-direction:column; align-items:center; aspect-ratio:auto; max-width:none`；`.hero-video-bg` 改 `position:static; width:86%; margin:8px auto 0`（居中）；`.hero-copy` 改 `position:static; width:100%; padding:24px 20px 0`（在图下方，样式不变）；隐藏 `.hero-stage::before` 梯度模糊；h1 clamp 微调。桌面端固定画布不受影响。
+
+**Files modified:**
+- `styles/hero.css` — 重写 `@media max-width:900px`：手机端流式堆叠（图上居中/文下），隐藏梯度模糊层
+
 ## 2026-06-28
 
 ### 首页 Hero 图片下移 10%
