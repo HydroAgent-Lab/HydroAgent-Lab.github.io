@@ -43,17 +43,31 @@
   aspect-ratio: var(--hero-aspect, 1.9);
 }
 
-/* Image — placed by % of the stage (top % of height, center x % of width, width
-   % of width). Fixed %s on a fixed-shape stage → position & size are locked-then
-   -scaled. */
-.hero-video-bg {
+/* Monitor shell — positioned with the same stage coordinates as the original
+   product image. The slightly deeper lower bezel reads as a display without
+   adding a stand or base. */
+.hero-monitor {
   position: absolute;
   top: var(--hero-img-top, 6%);
   left: var(--hero-img-cx, 66%);
   width: var(--hero-img-width, 50%);
-  height: auto;
   transform: translateX(-50%);
   z-index: 0;
+  box-sizing: border-box;
+  padding: clamp(1px, 0.12vw, 2px) clamp(1px, 0.12vw, 2px) clamp(2px, 0.2vw, 3px);
+  background: #18202c;
+  border: 1px solid #0b111b;
+  border-radius: clamp(9px, 0.8vw, 14px);
+  box-shadow:
+    0 18px 42px rgba(15, 23, 42, 0.16),
+    0 3px 9px rgba(15, 23, 42, 0.1);
+}
+
+.hero-video-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(5px, 0.45vw, 8px);
 }
 
 /* Mobile-only cropped card banner — hidden on desktop */
@@ -338,13 +352,17 @@
     display: none;
   }
 
-  /* Main image: in document flow, centered, near full width */
-  .hero-video-bg {
+  /* Monitor: in document flow, centered, near full width */
+  .hero-monitor {
     position: static;
     transform: none;
     width: 86%;
-    height: auto;
     margin: 8px auto 0;
+  }
+
+  .hero-video-bg {
+    width: 100%;
+    margin: 0;
   }
 
   /* Text: flows below the image, full width (its styling is unchanged) */

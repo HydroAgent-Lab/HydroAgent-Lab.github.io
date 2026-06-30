@@ -13,13 +13,15 @@ export function Hero({ lang = "en", content }) {
           different hero edge) keeps their relative position constant on any
           screen: image upper-right, text lower-left, fixed gap. */}
       <div className="hero-stage">
-        {/* Background/product image — content weighted to the right */}
-        <img
-          className="hero-video-bg"
-          src="/assets/Webui.png"
-          alt=""
-          aria-hidden="true"
-        />
+        {/* Product UI framed as a monitor, without a stand or base. */}
+        <div className="hero-monitor">
+          <img
+            className="hero-video-bg"
+            src="/assets/Webui.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
 
         {/* Text overlay — part of the same group as the image */}
         <div className="hero-copy">
