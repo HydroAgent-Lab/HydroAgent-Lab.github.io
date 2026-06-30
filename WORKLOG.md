@@ -2,6 +2,125 @@
 
 ## 2026-06-30
 
+### Hero 流光改浅蓝
+
+流光色 → 浅蓝 `rgba(147,197,253,0.9)`(#93C5FD)。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 流光色 → 浅蓝 `rgba(147,197,253,0.9)`
+
+### Hero 流光改蓝紫色
+
+流光色 → 蓝紫 `rgba(124,92,255,0.9)`。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 流光色 → 蓝紫 `rgba(124,92,255,0.9)`
+
+### Hero 流光改柠檬黄
+
+流光色 `rgba(224,229,234,0.9)` → 柠檬黄 `rgba(255,237,74,0.9)`。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 流光色 → 柠檬黄 `rgba(255,237,74,0.9)`
+
+### Hero 流光加一点灰
+
+流光色 `rgba(255,255,255,0.9)` → 淡灰白 `rgba(224,229,234,0.9)`。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 流光色 → `rgba(224,229,234,0.9)`
+
+### Hero 流光换回普通白色
+
+撤销金属多段渐变，改回普通 `linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent)`。粗细 2.5px 不变。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 改回普通白色流光
+
+### Hero 流光白核拉长
+
+纯白由单点改为 `47%–53%` 平台(白核更长)，两侧 `43/57` 近白过渡、`36/64` 银灰肩，保持柔和。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 白核改 47–53% 平台
+
+### Hero 流光白核窄但更柔
+
+肩部 `44/56`→`40/60`，并在 `47%/53%` 加近白过渡色，使亮度平滑升白→白核窄但不尖锐。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 渐变加过渡色(白核窄而柔)
+
+### Hero 流光白核收窄
+
+银灰肩部由 `34%/66%` 移近到 `44%/56%`，白色 50% 尖峰过渡更短→白核更窄更锐。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 渐变肩部移近(白核变窄)
+
+### Hero 流光调细
+
+`background-size` 高度 `4px → 2.5px`。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` background-size 高 4px→2.5px
+
+### Hero 流光改金属反光多段渐变
+
+流光由单色改为金属反光带：`透明→银(205,214,224,.55)→亮白#fff高光核→银→透明` 多段 `linear-gradient`，模拟光滑过金属面。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 流光改多段金属反光渐变
+
+### Hero 流光改亮银色
+
+流光色由银灰 `rgba(216,222,229,1)` 提亮为亮银 `rgba(238,242,246,1)`(减灰)。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 色 → 亮银 `rgba(238,242,246,1)`
+
+### Hero 流光调亮加粗改银灰
+
+流光色 `rgba(232,237,242,0.95)`→银灰 `rgba(216,222,229,1)`(满透明度更亮)，粗细 `2px`→`4px`。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 色→银灰满透明、`background-size` 高 2px→4px
+
+### Hero 流光改为银白色
+
+上下边流光由 `var(--accent)`(主题蓝)改为银白 `rgba(232,237,242,0.95)`。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 流光色 → 银白 `rgba(232,237,242,0.95)`
+
+### Hero 手机端修复副作用：top/left 归零恢复居中
+
+上次 `static→relative` 后，基础规则的 `top:1%/left:66%` 在 relative 下生效导致主图右下偏移。补 `top:auto;left:auto;`，主图回到居中(同 static 视觉)，同时保留 relative 以修复背景光定位上下文。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `@media max-width:900px` 内 `.hero-monitor-wrap` 加 `top:auto;left:auto`
+
+### Hero 修复手机端背景光铺满整个 hero
+
+手机端 `.hero-monitor-wrap` 原为 `position:static`，导致内部 `position:absolute` 的 `.hero-glow`(inset -6px)失去定位上下文、相对 `.hero` 定位而铺满整个 hero。改为 `position:relative`(仍在流内、margin auto 居中)恢复定位上下文。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `@media max-width:900px` 内 `.hero-monitor-wrap` `static`→`relative`
+
+### Hero 流光改为主题蓝
+
+上下边流光由白色 `rgba(255,255,255,0.85)` 改为 `var(--accent)`(主题蓝 #3b82f6，暗色模式自动 #60a5fa)。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-monitor::before` 流光色 → `var(--accent)`
+
+### Hero 羽化背景光移到左上/右下
+
+两层 `.hero-glow` radial 由 top-right/bottom-left 移到 top-left/bottom-right(即移到缺角处)。仅改 `styles/hero.css`。
+
+**Files modified:**
+- `styles/hero.css` — `.hero-glow-1/2` radial 移到 top-left/bottom-right
+
 ### Hero 去掉缺角包边
 
 删除 `.hero-monitor-wrap::before` 整条规则(缺角斜边包边)。缺角处保留 `::after` 蓝色柔罩；直角处保留羽化柔光。仅改 `styles/hero.css`。
